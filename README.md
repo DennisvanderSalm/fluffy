@@ -50,6 +50,6 @@ Zie [public/audio/nl/LEESMIJ.txt](public/audio/nl/LEESMIJ.txt) om ze te vervange
 src/core/        gedeelde kern: engine (mastery + planner), sessie, audio, Fluffy, opslag, schermen
 src/domains/     domeinmodules: rekenen (nu), lezen (later)
 src/content/     alle gesproken zinnen
-tests/           Vitest: engine, planner, sessielogica
+tests/           Vitest: engine, planner, sessielogica, rekenactiviteiten
 oud/             de eerdere app ("Tellen & Hoeveelheden"), ter referentie bewaard
 ```

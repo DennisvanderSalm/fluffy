@@ -2,7 +2,8 @@ import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { Seg } from '../../core/audio/speech';
 import type { LineId } from '../../content/spraak.nl';
 import { attachDrag, onTap } from '../../core/ui/drag';
-import { el, pick, randInt, shuffle, sleep, svgEl, type Rng } from '../../core/util';
+import { el, pick, randInt, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
+import { place, THUMB_SVG, type Box } from './veld';
 
 /**
  * MANDJE VULLEN — Geef-me-N (Wynn, 1990; Sarnecka & Carey, 2008).
@@ -69,16 +70,12 @@ const FRUIT_SVG: Record<Fruit, string> = {
     <ellipse cx="38" cy="44" rx="10" ry="5" fill="#fff" opacity=".5"/></svg>`,
 };
 
-const THUMB_SVG = `<svg viewBox="0 0 100 100"><path d="M24 48 h12 v40 h-12 z M42 48 L54 20 C57 12 69 15 67 26 L63 42 H80 C87 42 90 49 88 56 L82 80 C80 87 75 89 69 89 H42 Z"
-  fill="#fff" stroke="#3b4a6b" stroke-width="5" stroke-linejoin="round"/></svg>`;
 
 interface Obj {
   el: HTMLElement;
   home: number;
   inBasket: boolean;
 }
-
-interface Box { x: number; y: number; w: number; h: number }
 
 class Round {
   private root: HTMLElement;
@@ -432,12 +429,13 @@ class Round {
   }
 }
 
-function place(node: HTMLElement, b: Box): void {
-  node.style.left = `${b.x}px`;
-  node.style.top = `${b.y}px`;
-  node.style.width = `${b.w}px`;
-  node.style.height = `${b.h}px`;
-}
+/** Plaatje voor het keuzemoment: een mandje met appels. */
+const ICON = `<svg viewBox="0 0 200 160">
+  <path d="M60 70 C60 20 140 20 140 70" fill="none" stroke="#d6ba8c" stroke-width="9" stroke-linecap="round"/>
+  <svg x="46" y="30" width="56" height="56" viewBox="0 0 100 100">${svgInner(FRUIT_SVG.appel)}</svg>
+  <svg x="98" y="30" width="56" height="56" viewBox="0 0 100 100">${svgInner(FRUIT_SVG.appel)}</svg>
+  <path d="M28 70 H172 L156 140 C154 148 148 150 140 150 H60 C52 150 46 148 44 140 Z" fill="#f0dfc2" stroke="#d6ba8c" stroke-width="6" stroke-linejoin="round"/>
+</svg>`;
 
 export const mandje: Activity<MandjeItem> = {
   id: 'mandje',
@@ -454,4 +452,6 @@ export const mandje: Activity<MandjeItem> = {
     }
   },
   summary: ['einde.mandje'],
+  icon: ICON,
+  choice: ['keuze.mandje'],
 };

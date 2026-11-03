@@ -1,6 +1,8 @@
 import type { Activity, ActivityContext, DomainModule } from '../domain';
 import { assumeMastered, initialState, recordAttempt } from '../engine/mastery';
-import { pickNext, scheduleRetry, type PlayedRef, type RetryEntry } from '../engine/planner';
+import {
+  choiceOptions, isChoiceMoment, pickNext, scheduleRetry, type PlannerInput, type PlayedRef, type RetryEntry,
+} from '../engine/planner';
 import type { SkillState } from '../engine/types';
 import { Fluffy } from '../fluffy/fluffy';
 import { Speech, type Seg } from '../audio/speech';
@@ -9,7 +11,8 @@ import {
   canStartSession, closeDangling, playUntilTimeUp, SessionClock, type SessionRecord,
 } from '../session/session';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
-import { el, isoDate, pick, sleep, svgEl } from '../util';
+import { el, isoDate, pick, shuffle, sleep, svgEl } from '../util';
+import { askChoice } from './choice';
 import { onTap } from './drag';
 import { openParentArea } from './parent';
 
@@ -173,14 +176,15 @@ export class App {
 
   private async playOne(played: PlayedRef[], retries: RetryEntry[]): Promise<boolean> {
     const today = isoDate(Date.now());
-    const choice = pickNext({
+    const input: PlannerInput = {
       skills: this.domain.skills,
       playable: this.playable,
       states: this.data.skills,
       today,
       played,
       retries,
-    });
+    };
+    const choice = pickNext(input);
     if (!choice) return false;
 
     let activity: Activity<unknown>;
@@ -189,21 +193,35 @@ export class App {
     let isRetry = false;
     if (choice.kind === 'retry') {
       retries.splice(retries.indexOf(choice.entry), 1);
-      activity = this.domain.activities.find((a) => a.id === choice.entry.activity)!;
+      activity = this.activity(choice.entry.activity);
       skill = choice.entry.skill;
       params = choice.entry.params;
       isRetry = true;
     } else {
       skill = choice.skill;
-      const level = this.stateOf(skill).level;
-      activity = pick(this.rng, this.domain.activities.filter((a) => a.skills.includes(skill)));
-      params = activity.makeItem(skill, level, this.rng);
+      activity = pick(this.rng, this.activitiesFor(skill));
+      // Keuzemoment: ze kiest zelf uit twee activiteiten die allebei in het plan passen.
+      const options = isChoiceMoment(played)
+        ? choiceOptions(input, (s) => shuffle(this.rng, this.activitiesFor(s)).map((a) => a.id))
+        : [];
+      if (options.length === 2) {
+        const order = shuffle(this.rng, options);
+        const i = await askChoice(this.context(null), order.map((o) => ({
+          icon: this.activity(o.activity).icon,
+          label: this.activity(o.activity).choice,
+        })));
+        await this.whenResumed();
+        skill = order[i].skill;
+        activity = this.activity(order[i].activity);
+      }
+      params = activity.makeItem(skill, this.stateOf(skill).level, this.rng);
     }
     const before = this.stateOf(skill);
     const levelPlayed = isRetry ? (choice as { entry: RetryEntry }).entry.level : before.level;
 
-    const result = await activity.run(this.context(), params, isRetry);
+    const result = await activity.run(this.context(activity.id), params, isRetry);
     await this.whenResumed();
+    this.data.seen[activity.id] = (this.data.seen[activity.id] ?? 0) + 1;
 
     const def = this.skillsById.get(skill)!;
     this.data.skills[skill] = recordAttempt(def, before, {
@@ -239,7 +257,7 @@ export class App {
     await sleep(1200);
 
     const summary: Seg[] = ['einde.start'];
-    for (const id of r.activities) summary.push(...this.domain.activities.find((a) => a.id === id)!.summary);
+    for (const id of r.activities) summary.push(...this.activity(id).summary);
     summary.push(r.helped > 0 ? 'einde.lof.doorzetten' : 'einde.lof.precies');
     await this.say(summary);
     this.fluffy.set('slaperig');
@@ -254,7 +272,15 @@ export class App {
     this.showNight(true);
   }
 
-  private context(): ActivityContext {
+  private activity(id: string): Activity<unknown> {
+    return this.domain.activities.find((a) => a.id === id)!;
+  }
+
+  private activitiesFor(skill: string): Activity<unknown>[] {
+    return this.domain.activities.filter((a) => a.skills.includes(skill));
+  }
+
+  private context(activityId: string | null): ActivityContext {
     return {
       stage: this.stage,
       fluffy: this.fluffy,
@@ -262,7 +288,7 @@ export class App {
       speechStop: () => this.speech.stop(),
       sounds: this.sounds,
       setRepeat: (fn) => (this.repeatFn = fn),
-      beginner: this.data.sessions.length <= 2 && (this.record?.items ?? 0) < 2,
+      beginner: activityId !== null && (this.data.seen[activityId] ?? 0) < 2,
       rng: this.rng,
     };
   }
@@ -361,6 +387,7 @@ export class App {
         this.data.skills = {};
         this.data.sessions = this.record ? [this.record] : [];
         this.data.introduced = false;
+        this.data.seen = {};
         this.applyStartLevel(settings.startLevel);
         save(this.data);
       },

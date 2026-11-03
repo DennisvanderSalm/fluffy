@@ -9,6 +9,8 @@ export interface SaveData {
   sessions: SessionRecord[];
   /** Heeft Fluffy zich al eens voorgesteld? */
   introduced: boolean;
+  /** Hoe vaak elke activiteit gespeeld is (voor extra uitleg de eerste keren). */
+  seen: Record<string, number>;
   /** De ouder heeft een nieuwe sessie toegestaan (tijdstip), of null. */
   parentAllowedAt: number | null;
   startLevelApplied: string | null;
@@ -24,6 +26,7 @@ export function emptyData(): SaveData {
     skills: {},
     sessions: [],
     introduced: false,
+    seen: {},
     parentAllowedAt: null,
     startLevelApplied: null,
   };

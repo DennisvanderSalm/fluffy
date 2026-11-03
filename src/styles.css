@@ -217,6 +217,88 @@ body.is-night .gear { filter: invert(1); }
 .m-duim:active { transform: scale(0.95); }
 .is-locked .m-obj, .is-locked .m-duim { pointer-events: none; }
 
+/* ── Telveld (Samen tellen, Fluffy telt fout) ── */
+.veld { position: absolute; inset: 0; }
+.v-obj {
+  position: absolute;
+  z-index: 5;
+  touch-action: none;
+}
+.v-obj svg { width: 100%; height: 100%; display: block; pointer-events: none; }
+.v-obj.is-counted::after {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  border: 5px solid var(--glow);
+  background: rgba(255, 233, 168, 0.35);
+  z-index: -1;
+}
+.v-obj.is-again { animation: again 0.5s ease; }
+@keyframes again { 40% { transform: scale(1.12); } }
+.v-pointer {
+  position: absolute;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
+  transition: left 0.35s ease, top 0.35s ease, opacity 0.3s ease;
+}
+.v-pointer.is-on { opacity: 0.95; }
+.v-pointer svg { width: 100%; height: 100%; display: block; }
+.v-card, .v-thumb {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.15s ease;
+}
+.v-card {
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 4px solid var(--panel-edge);
+  border-radius: 24px;
+  font: 800 clamp(56px, 10vh, 96px) / 1 var(--font);
+  color: var(--ink);
+}
+.show-cards .v-card, .show-thumbs .v-thumb { opacity: 1; pointer-events: auto; }
+.v-card.is-picked { transform: scale(1.06); border-color: var(--ink-soft); }
+.v-card.is-counted { box-shadow: 0 0 0 10px var(--glow); }
+.v-thumb { border-radius: 50%; display: grid; place-items: center; }
+.v-thumb svg { width: 60%; height: 60%; }
+.v-thumb.is-yes { background: var(--ok); border: 4px solid var(--ok-edge); }
+.v-thumb.is-no { background: #ddd6f0; border: 4px solid #b3a8d6; }
+.v-thumb.is-no svg { transform: rotate(180deg); }
+.v-thumb:active, .v-thumb.is-picked { transform: scale(0.95); }
+.is-locked .v-obj { pointer-events: none; }
+
+/* ── Keuzemoment ── */
+.keuze {
+  position: absolute;
+  left: 20%;
+  right: 2%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6vw;
+}
+.k-card {
+  width: min(42vh, 30vw);
+  aspect-ratio: 1;
+  background: #fff;
+  border: 4px solid var(--panel-edge);
+  border-radius: 36px;
+  display: grid;
+  place-items: center;
+  transition: box-shadow 0.4s ease, opacity 0.5s ease, transform 0.3s ease;
+}
+.k-card svg { width: 82%; height: 82%; pointer-events: none; }
+.k-card.is-named { box-shadow: 0 0 0 10px var(--glow); }
+.k-card.is-chosen { box-shadow: 0 0 0 10px var(--ok); transform: scale(1.04); }
+.k-card.is-other { opacity: 0.35; }
+
 /* ── Ouderdeel ── */
 .overlay {
   position: absolute;

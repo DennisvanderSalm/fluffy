@@ -128,9 +128,10 @@ Zo hoeft de startinschatting niet perfect te zijn.
 | # | Vaardigheid (id) | Voorwaarden | Activiteit(en) |
 |---|---|---|---|
 | 1 | Synchroon tellen tot 5 (`tellen-5`) | geen | Samen tellen |
-| 2 | Synchroon tellen tot 10 (`tellen-10`) | tellen-5 | Samen tellen, Fluffy telt fout |
+| 2 | Synchroon tellen tot 10 (`tellen-10`) | tellen-5 | Samen tellen |
+| 2b | Telbegrip: fouten zien, volgorde mag (`telbegrip`) | tellen-10 | Fluffy telt fout |
 | 3 | Kardinaliteit tot 5 (`hoeveel-5`) | tellen-5 | **Mandje vullen**, Samen tellen |
-| 4 | Kardinaliteit tot 10 (`hoeveel-10`) | hoeveel-5, tellen-10 | **Mandje vullen** (tienveld) |
+| 4 | Kardinaliteit tot 10 (`hoeveel-10`) | hoeveel-5, tellen-10 | **Mandje vullen** (tienveld), Samen tellen |
 | 5 | Subitizing tot 5 (`zien-5`) | hoeveel-5 | Kiekeboe-stippen, vingers |
 | 6 | Subitizing tot 10 via vijfstructuur (`zien-10`) | zien-5, hoeveel-10 | Kiekeboe (tienveld, rekenrek, 2 handen) |
 | 7 | Vergelijken (`vergelijken`) | hoeveel-5 | Wie heeft er meer? / Maak evenveel |
@@ -146,6 +147,10 @@ Zo hoeft de startinschatting niet perfect te zijn.
 
 Binnen elke vaardigheid lopen de niveaus van **concreet → beeld → symbool** en van **veel hulp → weinig hulp**.
 
+`telbegrip` is in stap 2 toegevoegd als eigen vaardigheid. Fouten herkennen is iets anders dan zelf goed tellen,
+en zo komt "Fluffy telt fout" ook aan bod bij een kind dat tellen tot 10 al beheerst (dat is dan "aangenomen"
+en komt alleen nog als herhaling langs).
+
 **Startniveau voor nu** (telt tot 10+, kent cijfers): `tellen-5`, `tellen-10` en `hoeveel-5` als
 "aangenomen" (worden snel gecontroleerd). Ze begint bij `hoeveel-10`, gevolgd door `cijfers-10`,
 `zien-5` en `patroon-ab`. De cijfers *herkennen* is iets anders dan begrijpen dat 7 bij zeven
@@ -158,8 +163,8 @@ dingen hoort. Daarom beginnen we bij hoeveelheid ↔ cijfer en niet bij het cijf
 | Activiteit | Didactisch doel | Principe / bron |
 |---|---|---|
 | **Mandje vullen** (Geef-me-N): "Kun je vier appels in het mandje leggen?" Slepen of tikken; in het mandje zit vanaf 6 een tienveld. Bij een cijferkaart: "Leg er zoveel in als dit cijfer." | Kardinaliteit: weten dat je stopt bij het getalwoord. Koppeling woord ↔ hoeveelheid ↔ cijfer. | Give-N-taak (Wynn, 1990; Sarnecka & Carey, 2008). Concreet → symbool. Tienveld/vijfstructuur (NL kleuterdidactiek). Hulp afbouwen: Fluffy telt eerst mee, later niet meer. |
-| **Samen tellen**: tik elk diertje aan, Fluffy zegt het telwoord; daarna: "Hoeveel zijn het er?" | Eén-op-één tellen, vaste volgorde, laatste telwoord = hoeveelheid | Telprincipes (Gelman & Gallistel, 1978); leerlijn tellen (Clements & Sarama). |
-| **Fluffy telt fout** (protégé): "1, 2, 4… klopt dat?", "Kun je mij helpen?" | Telprincipes expliciet maken door fouten te herkennen | Gelman & Meck (1983); learning by teaching (Chase e.a., 2009). |
+| **Samen tellen**: tik elk beestje aan, Fluffy zegt het telwoord; daarna: "Hoeveel zijn het er?" en ze tikt het getal aan. Opstelling: op een rij → twee rijen (5 en de rest) → los. Bij "hoeveel" telt Fluffy op de hogere niveaus niet meer mee. Een al geteld beestje telt niet dubbel ("Die hebben we al geteld"). | Eén-op-één tellen, vaste volgorde, laatste telwoord = hoeveelheid | Telprincipes (Gelman & Gallistel, 1978); leerlijn tellen (Clements & Sarama): rij is makkelijker dan los. |
+| **Fluffy telt fout** (protégé): Fluffy telt hardop en wijst aan met een handje, en vraagt "Heb ik het goed geteld?" (duim omhoog / duim omlaag). Fouten per niveau: overslaan en dubbel tellen → ook een telwoord overslaan → ook een verkeerd eindgetal, en "goed, maar van de andere kant" (dat klopt wél). Ongeveer 40% van de keren telt Fluffy goed, en nooit drie keer hetzelfde antwoord op rij. Heeft ze een fout gevonden, dan tellen ze samen opnieuw. | Telprincipes expliciet maken door fouten te herkennen | Gelman & Meck (1983); Briars & Siegler (1984): dat de volgorde niet uitmaakt, begrijpen kinderen pas later, daarom pas op het hoogste niveau. Learning by teaching (Chase e.a., 2009). |
 | **Kiekeboe-stippen**: dobbelsteenbeeld, vingers of tienveld ±2 s zichtbaar, dan zakt er een dekentje over. Antwoorden zonder tijdsdruk; daarna kijken ze samen. | Subitizing, vijfstructuur | Clements (1999); Starkey & Cooper (1995). Het dekentje zorgt dat ze het beeld in één keer ziet en niet telt; antwoorden mag zo lang als ze wil. |
 | **Wie heeft er meer?** / **Maak evenveel** | Vergelijken, één-op-één koppelen | Leerlijn vergelijken (Clements & Sarama); Mix (1999). |
 | **Cijfermatch**: hoeveelheid ↔ cijfer ↔ gesproken woord | Drie representaties koppelen | Triple-code-model (Dehaene); Number Worlds (Griffin & Case). |
@@ -180,7 +185,12 @@ dingen hoort. Daarom beginnen we bij hoeveelheid ↔ cijfer en niet bij het cijf
   (Lepper, Greene & Nisbett, 1973; Deci, Koestner & Ryan, 1999).
 - **Mayer**: gesproken uitleg bij beeld (modaliteit), één ding tegelijk (coherentie), Fluffy kijkt naar
   waar het om gaat (signalering). Geen bewegende decoraties tijdens een opdracht.
-- **Autonomie**: ongeveer om de 3 items kiest ze uit 2 activiteiten (vanaf stap 2, als er meer dan één is).
+- **Autonomie**: om de 3 items kiest ze uit 2 activiteiten. Fluffy noemt beide (het plaatje licht zacht op),
+  één tik kiest. Beide opties komen uit het plan (dezelfde vaardigheid met een andere activiteit, of het item
+  dat daarna aan de beurt was), dus kiezen gaat nooit ten koste van de leerlijn. Geen keuze als er een
+  voorgedaan item terugkomt. Kleine, echte keuzes versterken de intrinsieke motivatie (Patall, Cooper &
+  Robinson, 2008); twee opties is genoeg voor een kind dat niet leest.
+- **Eerste keren**: de eerste 2 keer met een activiteit geeft Fluffy wat meer uitleg (per activiteit bijgehouden).
 
 ---
 
@@ -244,8 +254,8 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 
 | Stap | Inhoud |
 |---|---|
-| **1 (nu)** | Verticale slice: kern (engine, sessie, opslag, audio, Fluffy), **Mandje vullen** (hoeveel-5/10, cijfers-10) met adaptiviteit en feedbackladder, rustig einde, ouderdeel, tests, GitHub Pages-workflow |
-| 2 | Samen tellen + Fluffy telt fout; keuzemomenten tussen 2 activiteiten |
+| **1 (klaar)** | Verticale slice: kern (engine, sessie, opslag, audio, Fluffy), **Mandje vullen** (hoeveel-5/10, cijfers-10) met adaptiviteit en feedbackladder, rustig einde, ouderdeel, tests, GitHub Pages-workflow |
+| **2 (klaar)** | Samen tellen + Fluffy telt fout (nieuwe vaardigheid `telbegrip`); keuzemomenten tussen 2 activiteiten |
 | 3 | Kiekeboe-stippen (subitizing, vingers, vijfstructuur) |
 | 4 | Vergelijken + cijfermatch |
 | 5 | Getallenpad-bordspel + ervoor/erna + waar woont 7? |

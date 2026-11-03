@@ -39,6 +39,8 @@ export const PLAN_RULES = {
   reviewEvery: 3,
   /** Minimaal zoveel andere items tussen voordoen en terugkomen. */
   retryGap: 2,
+  /** Elk zoveelste item mag ze kiezen uit twee activiteiten. */
+  choiceEvery: 3,
 } as const;
 
 const stateOf = (input: PlannerInput, id: SkillId) => input.states[id] ?? initialState();
@@ -103,4 +105,31 @@ export function scheduleRetry<P>(
   playedCount: number,
 ): RetryEntry<P> {
   return { ...entry, after: playedCount + PLAN_RULES.retryGap };
+}
+
+export type LearnOrReview = Exclude<Pick, { kind: 'retry' }>;
+export type ChoiceOption = LearnOrReview & { activity: string };
+
+/** Is dit item een keuzemoment? Niet het eerste item, daarna om de paar items. */
+export function isChoiceMoment(played: readonly PlayedRef[]): boolean {
+  return played.length > 0 && played.length % PLAN_RULES.choiceEvery === 0;
+}
+
+/**
+ * Keuzemoment (autonomie): twee opties met verschillende activiteiten, allebei uit het plan.
+ * De eerste komt van het item dat de planner nu zou kiezen, de tweede van een andere activiteit
+ * voor dezelfde vaardigheid, of anders van het item dat erna aan de beurt zou zijn.
+ * Geeft een lege lijst als er niets te kiezen valt (bv. een item dat terugkomt).
+ */
+export function choiceOptions(input: PlannerInput, activitiesFor: (skill: SkillId) => string[]): ChoiceOption[] {
+  const first = pickNext(input);
+  if (!first || first.kind === 'retry') return [];
+  const candidates: ChoiceOption[] = activitiesFor(first.skill).map((activity) => ({ ...first, activity }));
+  const next = pickNext({ ...input, played: [...input.played, { skill: first.skill, review: first.kind === 'review' }] });
+  if (next && next.kind !== 'retry' && next.skill !== first.skill) {
+    candidates.push(...activitiesFor(next.skill).map((activity) => ({ ...next, activity })));
+  }
+  const out: ChoiceOption[] = [];
+  for (const c of candidates) if (!out.some((o) => o.activity === c.activity)) out.push(c);
+  return out.length >= 2 ? out.slice(0, 2) : [];
 }

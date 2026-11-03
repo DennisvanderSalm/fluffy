@@ -61,6 +61,11 @@ export function el<K extends keyof HTMLElementTagNameMap>(
   return n;
 }
 
+/** De inhoud van een <svg>, om in een groter plaatje te nesten. */
+export function svgInner(markup: string): string {
+  return markup.trim().replace(/^<svg[^>]*>|<\/svg>$/g, '');
+}
+
 export function svgEl(markup: string): SVGSVGElement {
   const t = document.createElement('template');
   t.innerHTML = markup.trim();

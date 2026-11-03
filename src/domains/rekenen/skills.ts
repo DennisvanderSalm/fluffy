@@ -18,7 +18,13 @@ export const REKEN_SKILLS: SkillInfo[] = [
     id: 'tellen-10', domain: d, requires: ['tellen-5'], levels: 3, stage: 1,
     name: 'Tellen tot 10',
     about: 'Tot tien tellen en daarbij elk ding één keer aanwijzen.',
-    offScreen: 'Tel de appels in de fruitschaal en wijs ze aan. Laat haar ook eens jou verbeteren als je "per ongeluk" een appel overslaat.',
+    offScreen: 'Tel de appels in de fruitschaal en wijs ze aan. Tel ook eens de stappen naar de voordeur.',
+  },
+  {
+    id: 'telbegrip', domain: d, requires: ['tellen-10'], levels: 3, stage: 1,
+    name: 'Snappen hoe tellen werkt',
+    about: 'Zien wanneer iemand fout telt (eentje overslaan, dubbel tellen, een getal vergeten) en weten dat je in elke volgorde mag tellen.',
+    offScreen: 'Tel zelf eens "per ongeluk" fout: sla een knuffel over of tel er een dubbel. Mag zij je verbeteren? Tel ook eens van rechts naar links: klopt het dan nog?',
   },
   {
     id: 'hoeveel-5', domain: d, requires: ['tellen-5'], levels: 3, stage: 2,

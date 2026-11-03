@@ -51,7 +51,7 @@ export interface ActivityContext {
   sounds: Sounds;
   /** Wat Fluffy zegt als het kind op Fluffy tikt (null = niets). */
   setRepeat(fn: (() => void) | null): void;
-  /** Eerste items van de eerste sessies: iets meer uitleg. */
+  /** De eerste keren met deze activiteit: iets meer uitleg. */
   beginner: boolean;
   rng: Rng;
 }
@@ -65,4 +65,7 @@ export interface Activity<P> {
   run(ctx: ActivityContext, item: P, retry: boolean): Promise<ItemResult>;
   /** Zinnetje voor de samenvatting aan het einde ("We hebben ... gedaan"). */
   summary: Seg[];
+  /** Plaatje (SVG) en gesproken naam voor het keuzemoment. */
+  icon: string;
+  choice: Seg[];
 }
