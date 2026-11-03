@@ -1,0 +1,92 @@
+import { describe, expect, it } from 'vitest';
+import { assumeMastered, initialState } from '../src/core/engine/mastery';
+import { frontier, pickNext, scheduleRetry, type PlannerInput } from '../src/core/engine/planner';
+import type { SkillDef, SkillState } from '../src/core/engine/types';
+
+const today = '2026-11-01';
+const skills: SkillDef[] = [
+  { id: 'a', domain: 'x', requires: [], levels: 2 },
+  { id: 'b', domain: 'x', requires: ['a'], levels: 2 },
+  { id: 'c', domain: 'x', requires: ['b'], levels: 2 },
+  { id: 'los', domain: 'x', requires: ['nog-niet-gebouwd'], levels: 2 },
+  { id: 'nog-niet-gebouwd', domain: 'x', requires: [], levels: 2 },
+];
+
+function input(states: Record<string, SkillState>, extra: Partial<PlannerInput> = {}): PlannerInput {
+  return {
+    skills,
+    playable: new Set(['a', 'b', 'c', 'los']),
+    states,
+    today,
+    played: [],
+    retries: [],
+    ...extra,
+  };
+}
+
+const practicing = (): SkillState => ({ ...initialState(), status: 'practicing' });
+const mastered = (due = '2026-12-01'): SkillState => ({ ...initialState(), status: 'mastered', level: 1, review: { box: 1, due } });
+
+describe('voorwaarden', () => {
+  it('begint met vaardigheden zonder (gebouwde) voorwaarden', () => {
+    expect(frontier(input({}))).toEqual(['a', 'los']);
+  });
+
+  it('opent een vaardigheid pas als de voorwaarde beheerst is', () => {
+    expect(frontier(input({ a: practicing() }))).not.toContain('b');
+    expect(frontier(input({ a: mastered() }))).toContain('b');
+  });
+
+  it('laat een voorwaarde zonder activiteit niet blokkeren', () => {
+    expect(frontier(input({}))).toContain('los');
+  });
+
+  it('houdt hooguit twee vaardigheden tegelijk aan de grens', () => {
+    const f = frontier(input({ a: mastered(), b: practicing(), c: practicing() }));
+    expect(f).toHaveLength(2);
+  });
+});
+
+describe('volgorde van items', () => {
+  it('wisselt af tussen de vaardigheden aan de grens', () => {
+    const first = pickNext(input({}));
+    expect(first).toEqual({ kind: 'learn', skill: 'a' });
+    const second = pickNext(input({}, { played: [{ skill: 'a', review: false }] }));
+    expect(second).toEqual({ kind: 'learn', skill: 'los' });
+  });
+
+  it('mengt een herhaling erdoor als die aan de beurt is (interleaving)', () => {
+    const states = { a: mastered(today), b: practicing() };
+    expect(pickNext(input(states))).toEqual({ kind: 'learn', skill: 'b' });
+    expect(pickNext(input(states, { played: [{ skill: 'b', review: false }] }))).toEqual({ kind: 'review', skill: 'a' });
+  });
+
+  it('herhaalt een vaardigheid niet twee keer in één sessie', () => {
+    const states = { a: mastered(today), b: practicing() };
+    const played = [{ skill: 'b', review: false }, { skill: 'a', review: true }, { skill: 'b', review: false }, { skill: 'b', review: false }];
+    expect(pickNext(input(states, { played }))?.kind).toBe('learn');
+  });
+
+  it('laat een voorgedaan item terugkomen, met minstens twee andere items ertussen', () => {
+    const entry = scheduleRetry({ skill: 'a', activity: 'mandje', level: 0, params: { n: 4 } }, 1);
+    const played = [{ skill: 'a', review: false }];
+    expect(pickNext(input({}, { played, retries: [entry] }))?.kind).toBe('learn');
+    const twoMore = [...played, { skill: 'los', review: false }, { skill: 'a', review: false }];
+    expect(pickNext(input({}, { played: twoMore, retries: [entry] }))).toEqual({ kind: 'retry', entry });
+  });
+
+  it('kiest onderhoud als alles beheerst is', () => {
+    const states = { a: mastered(), b: mastered(), c: mastered(), los: mastered() };
+    states.a.lastPracticed = '2026-10-30';
+    states.b.lastPracticed = '2026-10-20';
+    states.c.lastPracticed = '2026-10-31';
+    states.los.lastPracticed = '2026-10-29';
+    expect(pickNext(input(states))).toEqual({ kind: 'review', skill: 'b' });
+  });
+
+  it('controleert aangenomen vaardigheden in de eerste sessie', () => {
+    const states = { a: assumeMastered(skills[0], today) };
+    const p = pickNext(input(states, { played: [{ skill: 'los', review: false }] }));
+    expect(p).toEqual({ kind: 'review', skill: 'a' });
+  });
+});

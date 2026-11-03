@@ -1,0 +1,7 @@
+Eigen opnames
+=============
+1. Neem een zinnetje op (bijv. met Spraakmemo's op de iPhone) en exporteer als .m4a.
+2. Geef het bestand de id uit src/content/spraak.nl.ts als naam, bijv. begroeting.terug.b.m4a
+   Getallen heten getal.1.m4a ... getal.20.m4a, de naam van je kind naam.m4a.
+3. Zet de id in manifest.json onder "clips", bijv.: { "clips": ["begroeting.terug.b", "getal.4"] }
+Ontbreekt een opname, dan gebruikt de app voor dat zinnetje de computerstem.
