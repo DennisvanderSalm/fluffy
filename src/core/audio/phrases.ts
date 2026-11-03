@@ -30,6 +30,11 @@ export function chunk(ids: readonly string[], hasClip: (id: string) => boolean):
   return out;
 }
 
+/** Stukjes tekst aan elkaar, zonder spatie voor leestekens. */
+export function joinText(parts: readonly string[]): string {
+  return parts.filter(Boolean).join(' ').replace(/\s+([,.?!])/g, '$1').trim();
+}
+
 export interface ClipJob {
   id: string;
   text: string;
@@ -65,7 +70,7 @@ export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
   for (const segs of phrases) {
     if (segs.length < 2 || segs.includes('naam')) continue;
     const id = phraseId(segs);
-    const text = segs.map((s) => lineText(segId(s), '')).join(' ').trim();
+    const text = joinText(segs.map((s) => lineText(segId(s), '')));
     jobs.set(id, { id, text: /[.?!]$/.test(text) ? text : `${text}.` });
   }
   return [...jobs.values()];

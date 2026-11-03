@@ -1,4 +1,5 @@
 import type { LineId } from '../../content/spraak.nl';
+import type { Seg } from '../../core/audio/speech';
 import type { ActivityContext } from '../../core/domain';
 import { onTap } from '../../core/ui/drag';
 import { el, randInt, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
@@ -226,4 +227,72 @@ export function tapToCount(field: Field, ctx: ActivityContext, along: boolean): 
     };
     field.lock(false);
   });
+}
+
+/**
+ * Drie getalkaartjes onderin: "Hoeveel?" → het getal dat ze aantikt.
+ * Gedeeld door "Samen tellen" en "Kiekeboe". `root` krijgt de klasse show-cards als ze zichtbaar zijn.
+ */
+export class NumberCards {
+  private cards: HTMLElement[];
+  private answer: ((v: number) => void) | null = null;
+
+  constructor(private root: HTMLElement, private stage: HTMLElement, private options: number[]) {
+    this.cards = options.map((v) => {
+      const c = el('div', 'v-card', String(v));
+      onTap(c, () => this.answer?.(v));
+      root.append(c);
+      return c;
+    });
+    this.layout();
+    window.addEventListener('resize', this.layout);
+  }
+
+  destroy(): void {
+    window.removeEventListener('resize', this.layout);
+  }
+
+  private layout = (): void => {
+    const W = this.stage.clientWidth;
+    const H = this.stage.clientHeight;
+    const c = Math.min(0.2 * H, 0.13 * W, 150);
+    const gap = c * 1.35;
+    this.cards.forEach((card, i) => {
+      const x = 0.59 * W + (i - (this.cards.length - 1) / 2) * gap - c / 2;
+      place(card, { x, y: 0.73 * H, w: c, h: c });
+    });
+  };
+
+  show(on: boolean): void {
+    this.root.classList.toggle('show-cards', on);
+  }
+
+  /** Het goede kaartje laten oplichten. */
+  mark(v: number): void {
+    this.cards[this.options.indexOf(v)].classList.add('is-counted');
+  }
+
+  /** Stelt de vraag (opnieuw bij een tik op Fluffy) en wacht op een tik op een kaartje. */
+  async ask(ctx: ActivityContext, question: Seg[]): Promise<number> {
+    this.cards.forEach((c) => c.classList.remove('is-picked', 'is-counted'));
+    this.show(true);
+    const prompt = async () => {
+      ctx.fluffy.set('rust');
+      await ctx.say(question);
+      ctx.fluffy.set('luisteren');
+    };
+    ctx.setRepeat(() => void prompt());
+    const v = await new Promise<number>((resolve) => {
+      this.answer = (val) => {
+        this.answer = null;
+        resolve(val);
+      };
+      void prompt();
+    });
+    ctx.setRepeat(null);
+    ctx.speechStop();
+    this.cards[this.options.indexOf(v)].classList.add('is-picked');
+    await ctx.say([v]);
+    return v;
+  }
 }

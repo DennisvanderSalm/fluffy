@@ -87,6 +87,18 @@ export const SPRAAK = {
   'foutje.kijk.volgorde': 'Ik begon aan de andere kant. Dat mag! Ik heb ze allemaal één keer geteld, dus het klopte.',
   'foutje.samen': 'Wil jij ze aantikken? Dan tellen we samen goed.',
 
+  // ── Kiekeboe-stippen ──
+  'kiekeboe.uitleg': 'Ik laat heel even iets zien. Daarna gaat het dekentje erover.',
+  'kiekeboe.kijk': 'Kiekeboe! Kijk goed.',
+  'kiekeboe.vraag': 'Hoeveel waren het er?',
+  'kiekeboe.nogeens': 'Zullen we nog een keer kijken? Kijk goed.',
+  'kiekeboe.rij': 'Een volle rij, dat is vijf.',
+  'kiekeboe.hand': 'Een hele hand, dat is vijf.',
+  'kiekeboe.dobbelvijf': 'Op deze dobbelsteen zijn het er vijf.',
+  'kiekeboe.dobbel': 'Zo ziet het er altijd uit op een dobbelsteen.',
+  'kiekeboe.vijfen': 'Vijf en',
+  'kiekeboe.isdat': ', dat is',
+
   // ── Keuzemoment ──
   'keuze.vraag': 'Wat wil je doen?',
   'keuze.of': 'Of',
@@ -94,6 +106,7 @@ export const SPRAAK = {
   'keuze.mandje': 'Fruit in het mandje leggen.',
   'keuze.tellen': 'Beestjes tellen.',
   'keuze.foutje': 'Kijken of ik goed tel.',
+  'keuze.kiekeboe': 'Kiekeboe spelen met stippen.',
   'keuze.goed': 'Goed, dat gaan we doen.',
 
   // ── Feedbackladder ──
@@ -126,12 +139,15 @@ export const SPRAAK = {
   'lof.laatste': 'Je wist het: het laatste getal zegt hoeveel het er zijn.',
   'lof.opletten': 'Je lette heel goed op.',
   'lof.helpen': 'Je keek goed of ik elk beestje één keer telde. Dank je wel.',
+  'lof.zien': 'Je keek goed naar hoe ze lagen.',
+  'lof.vijf': 'Je zag de volle vijf, en wat erbij kwam.',
 
   // ── Einde ──
   'einde.start': 'We hebben fijn gespeeld.',
   'einde.mandje': 'We hebben samen fruit in het mandje gelegd.',
   'einde.tellen': 'We hebben samen beestjes geteld.',
   'einde.foutje': 'En jij hebt mij geholpen met tellen.',
+  'einde.kiekeboe': 'We hebben kiekeboe gespeeld met stippen.',
   'einde.lof.precies': 'Je hebt heel precies geteld.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',

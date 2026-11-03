@@ -1,10 +1,9 @@
 import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { LineId } from '../../content/spraak.nl';
 import type { Seg } from '../../core/audio/speech';
-import { onTap } from '../../core/ui/drag';
-import { el, pick, randInt, shuffle, sleep, type Rng } from '../../core/util';
+import { pick, randInt, shuffle, sleep, type Rng } from '../../core/util';
 import {
-  ANIMAL_PLURAL, ANIMALS, animalInner, Field, place, readingOrder, tapToCount, type Animal, type Layout,
+  ANIMAL_PLURAL, ANIMALS, animalInner, Field, NumberCards, readingOrder, tapToCount, type Animal, type Layout,
 } from './veld';
 
 /**
@@ -70,37 +69,17 @@ export function makeTellenItem(skill: string, level: number, rng: Rng): TellenIt
 
 class Round {
   private field: Field;
-  private cards: HTMLElement[] = [];
-  private answer: ((v: number) => void) | null = null;
+  private cards: NumberCards;
 
   constructor(private ctx: ActivityContext, private item: TellenItem) {
     this.field = new Field(ctx.stage, item, ctx.rng, (W, H) => ({ x: 0.22 * W, y: 0.05 * H, w: 0.74 * W, h: 0.64 * H }));
-    this.cards = item.options.map((v) => {
-      const c = el('div', 'v-card', String(v));
-      onTap(c, () => this.answer?.(v));
-      this.field.root.append(c);
-      return c;
-    });
-    this.layoutCards();
-    window.addEventListener('resize', this.layoutCards);
+    this.cards = new NumberCards(this.field.root, ctx.stage, item.options);
   }
 
   destroy(): void {
-    window.removeEventListener('resize', this.layoutCards);
+    this.cards.destroy();
     this.field.destroy();
   }
-
-  private layoutCards = (): void => {
-    const W = this.ctx.stage.clientWidth;
-    const H = this.ctx.stage.clientHeight;
-    const c = Math.min(0.2 * H, 0.13 * W, 150);
-    const mid = 0.59 * W;
-    const gap = c * 1.35;
-    this.cards.forEach((card, i) => {
-      const x = mid + (i - (this.cards.length - 1) / 2) * gap - c / 2;
-      place(card, { x, y: 0.73 * H, w: c, h: c });
-    });
-  };
 
   private countPrompt(): LineId[] {
     return ['tellen.vraag.a', ANIMAL_PLURAL[this.item.animal], 'tellen.vraag.b'];
@@ -122,31 +101,6 @@ class Round {
     ctx.setRepeat(null);
   }
 
-  /** "Hoeveel zijn het er?" → het getal dat ze aantikt. */
-  private async ask(question: Seg[]): Promise<number> {
-    const { ctx } = this;
-    this.cards.forEach((c) => c.classList.remove('is-picked', 'is-counted'));
-    this.field.root.classList.add('show-cards');
-    const prompt = async () => {
-      ctx.fluffy.set('rust');
-      await ctx.say(question);
-      ctx.fluffy.set('luisteren');
-    };
-    ctx.setRepeat(() => void prompt());
-    const v = await new Promise<number>((resolve) => {
-      this.answer = (val) => {
-        this.answer = null;
-        resolve(val);
-      };
-      void prompt();
-    });
-    ctx.setRepeat(null);
-    ctx.speechStop();
-    this.cards[this.item.options.indexOf(v)].classList.add('is-picked');
-    await ctx.say([v]);
-    return v;
-  }
-
   async play(retry: boolean): Promise<ItemResult> {
     const { ctx, item } = this;
     ctx.fluffy.still(true);
@@ -154,27 +108,26 @@ class Round {
     await this.count(item.along, this.countPrompt());
     await sleep(400);
 
-    let v = await this.ask(ctx.beginner ? ['tellen.hoeveel', 'tellen.hoeveel.tik'] : ['tellen.hoeveel']);
+    let v = await this.cards.ask(this.ctx, ctx.beginner ? ['tellen.hoeveel', 'tellen.hoeveel.tik'] : ['tellen.hoeveel']);
     if (v === item.n) return this.celebrate(1, item.along);
 
     // Ladder 1: nog een keer samen tellen, nu telt Fluffy mee.
     ctx.fluffy.set('nadenken');
-    this.field.root.classList.remove('show-cards');
+    this.cards.show(false);
     await ctx.say(['tellen.hint']);
     await this.count(true, []);
     await sleep(400);
-    v = await this.ask(['tellen.hoeveel']);
+    v = await this.cards.ask(this.ctx, ['tellen.hoeveel']);
     if (v === item.n) return this.celebrate(2, true);
 
     // Ladder 2: Fluffy telt hardop voor, en ze tikken samen het getal aan.
     await this.model();
-    v = await this.ask(['tellen.tik.a', item.n, 'tellen.tik.b']);
-    const card = this.cards[item.options.indexOf(item.n)];
+    v = await this.cards.ask(this.ctx, ['tellen.tik.a', item.n, 'tellen.tik.b']);
     if (v === item.n) {
       ctx.fluffy.set('blij');
       await ctx.say(['tellen.zijnhet', item.n, 'lof.samen']);
     } else {
-      card.classList.add('is-counted');
+      this.cards.mark(item.n);
       await ctx.say(['tellen.kijkdeze', 'tellen.dushet', item.n]);
     }
     if (!retry) await ctx.say(['later.nog']);
@@ -184,7 +137,7 @@ class Round {
   private async model(): Promise<void> {
     const { ctx, item, field } = this;
     ctx.fluffy.set('nadenken');
-    this.field.root.classList.remove('show-cards');
+    this.cards.show(false);
     await ctx.say(['voordoen.start']);
     field.clearMarks();
     const order = readingOrder(field);
@@ -195,8 +148,8 @@ class Round {
       await ctx.say([k + 1]);
     }
     field.hidePointer();
-    this.cards[item.options.indexOf(item.n)].classList.add('is-counted');
-    this.field.root.classList.add('show-cards');
+    this.cards.mark(item.n);
+    this.cards.show(true);
     await ctx.say(['voordoen.laatste.a', item.n, 'tellen.dushet', item.n]);
     await sleep(600);
     ctx.fluffy.set('rust');
@@ -207,7 +160,7 @@ class Round {
     ctx.fluffy.set('blij');
     ctx.fluffy.hop();
     ctx.sounds.chime();
-    this.cards[item.options.indexOf(item.n)].classList.add('is-counted');
+    this.cards.mark(item.n);
     const praise: LineId =
       attempt === 2 ? 'lof.doorzetten'
       : along ? pick(ctx.rng, ['lof.laatste', 'lof.eenkeer'] as const)

@@ -3,6 +3,8 @@ import { seededRng } from '../src/core/util';
 import { countScript, FOUTJE_LEVELS, isCorrectCount, makeFoutjeItem, type FoutjeItem } from '../src/domains/rekenen/foutje';
 import { answerOptions, makeTellenItem, TELLEN_LEVELS } from '../src/domains/rekenen/tellen';
 import { layoutPositions } from '../src/domains/rekenen/veld';
+import { KIEKEBOE_LEVELS, makeKiekeboeItem } from '../src/domains/rekenen/kiekeboe';
+import { loosePoints, patternPoints, patternSvg, VIEW, type Pattern } from '../src/domains/rekenen/stippen';
 import { rekenen } from '../src/domains/rekenen';
 
 const item = (over: Partial<FoutjeItem>): FoutjeItem => ({
@@ -140,5 +142,60 @@ describe('domein rekenen', () => {
   it('elke voorwaarde verwijst naar een bestaande vaardigheid', () => {
     const ids = new Set(rekenen.skills.map((s) => s.id));
     for (const s of rekenen.skills) for (const r of s.requires) expect(ids.has(r)).toBe(true);
+  });
+});
+
+describe('Kiekeboe-stippen', () => {
+  it('heeft voor elk plaatje precies n punten om aan te wijzen, binnen het plaatje', () => {
+    const rng = seededRng(4);
+    const cases: [Pattern, number, number][] = [['dobbel', 1, 6], ['los', 1, 5], ['vingers', 1, 10], ['tienveld', 1, 10], ['dobbels', 6, 10]];
+    for (const [pattern, min, max] of cases) {
+      for (let n = min; n <= max; n++) {
+        const loose = pattern === 'los' ? loosePoints(n, rng) : [];
+        const pts = patternPoints(pattern, n, loose);
+        expect(pts).toHaveLength(n);
+        for (const p of pts) {
+          expect(p.x).toBeGreaterThan(0);
+          expect(p.x).toBeLessThan(VIEW.w);
+          expect(p.y).toBeGreaterThan(0);
+          expect(p.y).toBeLessThan(VIEW.h);
+        }
+        expect(patternSvg(pattern, n, loose)).toMatch(/^<svg/);
+      }
+    }
+  });
+
+  it('losse stippen liggen nooit op elkaar', () => {
+    const rng = seededRng(8);
+    for (let i = 0; i < 50; i++) {
+      const pts = loosePoints(5, rng);
+      for (let a = 0; a < pts.length; a++) {
+        for (let b = a + 1; b < pts.length; b++) expect(Math.hypot(pts[a].x - pts[b].x, pts[a].y - pts[b].y)).toBeGreaterThan(70);
+      }
+    }
+  });
+
+  it('blijft binnen het bereik van elk niveau, en "vijf en nog wat" alleen boven de vijf', () => {
+    const rng = seededRng(12);
+    for (const [skill, rows] of Object.entries(KIEKEBOE_LEVELS)) {
+      rows.forEach(([min, max, patterns], level) => {
+        for (let i = 0; i < 60; i++) {
+          const it = makeKiekeboeItem(skill, level, rng);
+          expect(it.n).toBeGreaterThanOrEqual(min);
+          expect(it.n).toBeLessThanOrEqual(max);
+          expect([...patterns, 'tienveld']).toContain(it.pattern);
+          if (it.pattern === 'dobbels') expect(it.n).toBeGreaterThan(5);
+          expect(it.options).toContain(it.n);
+        }
+      });
+    }
+  });
+
+  it('laat het plaatje langer zien op de makkelijke niveaus, en nooit korter dan 2 seconden', () => {
+    for (const rows of Object.values(KIEKEBOE_LEVELS)) {
+      const ms = rows.map((r) => r[3]);
+      expect(ms[0]).toBeGreaterThanOrEqual(ms[ms.length - 1]);
+      expect(Math.min(...ms)).toBeGreaterThanOrEqual(2000);
+    }
   });
 });

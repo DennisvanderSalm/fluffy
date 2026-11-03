@@ -1,6 +1,6 @@
 import { lineText, type LineId } from '../../content/spraak.nl';
 import { sleep } from '../util';
-import { chunk, segId } from './phrases';
+import { chunk, joinText, segId } from './phrases';
 
 /** Een segment: een zin-id uit het script, of een getal (→ 'getal.<n>'). */
 export type Seg = LineId | number;
@@ -101,7 +101,7 @@ export class Speech {
       // Groepeer: opeenvolgende stukken zonder opname worden één vloeiende zin.
       let ttsRun: string[] = [];
       const flush = async () => {
-        if (ttsRun.length && my === this.token) await this.speakTts(ttsRun.join(' '), my);
+        if (ttsRun.length && my === this.token) await this.speakTts(joinText(ttsRun), my);
         ttsRun = [];
       };
       for (const p of parts) {
@@ -143,7 +143,7 @@ export class Speech {
 
   /** Tekst voor de computerstem; een hele zin ('a+getal.4+b') wordt weer losse stukjes. */
   private text(id: string): string {
-    return id.split('+').map((part) => lineText(part as LineId, this.childName)).filter(Boolean).join(' ');
+    return joinText(id.split('+').map((part) => lineText(part as LineId, this.childName)));
   }
 
   private pickVoice(): SpeechSynthesisVoice | null {
