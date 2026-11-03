@@ -8,6 +8,8 @@ import { makeMeerItem, rightTray, SLOTS } from '../src/domains/rekenen/meer';
 import { cijferOptions, makeCijferItem } from '../src/domains/rekenen/cijfer';
 import { makePadItem, target as padTarget } from '../src/domains/rekenen/pad';
 import { makeWoontItem, nearestLandmark } from '../src/domains/rekenen/woont';
+import { makeRekenrekItem, rekAnswer, tapBead } from '../src/domains/rekenen/rekenrek';
+import { makeSplitsItem, SPLITS_LEVELS } from '../src/domains/rekenen/splitshuis';
 import { loosePoints, patternPoints, patternSvg, VIEW, type Pattern } from '../src/domains/rekenen/stippen';
 import { rekenen } from '../src/domains/rekenen';
 
@@ -311,5 +313,71 @@ describe('Waar woont…?', () => {
     expect(nearestLandmark({ n: 7, visible: [1, 5, 10] })).toBe(5);
     expect(nearestLandmark({ n: 8, visible: [1, 5, 10] })).toBe(10);
     expect(nearestLandmark({ n: 3, visible: [1, 10] })).toBe(1);
+  });
+});
+
+describe('Rekenrek', () => {
+  it('een tik schuift de kraal en alles ervoor opzij, of terug', () => {
+    expect(tapBead(0, 7)).toBe(7); // zeven in één tik
+    expect(tapBead(7, 7)).toBe(6); // de laatste terug
+    expect(tapBead(7, 3)).toBe(2); // terug tot vóór de derde
+    expect(tapBead(3, 10)).toBe(10);
+  });
+
+  it('maak: eerst 5–7, dan tot 10, dan vanaf een rekenrek waar al kralen opzij liggen', () => {
+    const rng = seededRng(7);
+    for (const level of [0, 1, 2]) {
+      for (let i = 0; i < 100; i++) {
+        const it = makeRekenrekItem('zien-10', level, rng);
+        expect(it.kind).toBe('maak');
+        const [min, max] = [[5, 7], [6, 10], [3, 10]][level];
+        expect(it.n).toBeGreaterThanOrEqual(min);
+        expect(it.n).toBeLessThanOrEqual(max);
+        if (level < 2) expect(it.start).toBe(0);
+        else {
+          expect(it.start).toBeGreaterThanOrEqual(1);
+          expect(it.start).not.toBe(it.n);
+        }
+      }
+    }
+  });
+
+  it('splits: de andere kant hoort bij tien, met een dekentje op het hoogste niveau', () => {
+    const rng = seededRng(8);
+    for (const level of [0, 1, 2]) {
+      for (let i = 0; i < 100; i++) {
+        const it = makeRekenrekItem('splitsen-10', level, rng);
+        expect(it.kind).toBe('splits');
+        expect(it.n).toBeGreaterThanOrEqual(level === 0 ? 5 : 1);
+        expect(it.n).toBeLessThanOrEqual(9);
+        expect(rekAnswer(it)).toBe(10 - it.n);
+        expect(it.options).toContain(rekAnswer(it));
+        expect(it.covered).toBe(level === 2);
+      }
+    }
+  });
+});
+
+describe('Splitshuisje', () => {
+  it('binnen en buiten zijn allebei minstens één, samen het geheel', () => {
+    const rng = seededRng(9);
+    for (const skill of ['splitsen-5', 'splitsen-10']) {
+      SPLITS_LEVELS[skill].forEach(([min, max, mode], level) => {
+        for (let i = 0; i < 100; i++) {
+          const it = makeSplitsItem(skill, level, rng);
+          expect(it.total).toBeGreaterThanOrEqual(min);
+          expect(it.total).toBeLessThanOrEqual(max);
+          expect(it.inside).toBeGreaterThanOrEqual(1);
+          expect(it.inside).toBeLessThan(it.total);
+          expect(it.mode).toBe(mode);
+          expect(it.options).toContain(it.inside);
+        }
+      });
+    }
+  });
+
+  it('splitsen tot 5 blijft tot 5, en het getal op het dak komt pas op het hoogste niveau', () => {
+    expect(Math.max(...SPLITS_LEVELS['splitsen-5'].map((r) => r[1]))).toBe(5);
+    for (const rows of Object.values(SPLITS_LEVELS)) expect(rows.map((r) => r[2])).toEqual(['kijk', 'kijk', 'dak']);
   });
 });

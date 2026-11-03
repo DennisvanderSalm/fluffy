@@ -5,6 +5,8 @@ import { kiekeboe } from './kiekeboe';
 import { mandje } from './mandje';
 import { meer } from './meer';
 import { pad } from './pad';
+import { rekenrek } from './rekenrek';
+import { splitshuis } from './splitshuis';
 import { REKEN_SKILLS, REKEN_START_LEVELS } from './skills';
 import { tellen } from './tellen';
 import { woont } from './woont';
@@ -14,6 +16,6 @@ export const rekenen: DomainModule = {
   id: 'rekenen',
   name: 'Rekenen',
   skills: REKEN_SKILLS,
-  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont],
+  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont, rekenrek, splitshuis],
   startLevels: REKEN_START_LEVELS,
 };

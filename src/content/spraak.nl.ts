@@ -47,6 +47,7 @@ export const SPRAAK = {
   'obj.eendjes': 'eendjes',
   'obj.lieveheersbeestjes': 'lieveheersbeestjes',
   'obj.visjes': 'visjes',
+  'obj.vlinders': 'vlinders',
 
   // ── Samen tellen ──
   'tellen.vraag.a': 'Zullen we de',
@@ -147,6 +148,40 @@ export const SPRAAK = {
   'woont.hier': 'Hier woont',
   'woont.zoekverder': 'Zoek maar verder vanaf hier.',
 
+  // ── Rekenrek ──
+  'rek.uitleg': 'Dit is een rekenrek. Tik op een kraal, dan schuiven de kralen naar mij toe. Ben je klaar? Tik dan op het duimpje.',
+  'rek.schuif.a': 'Schuif',
+  'rek.schuif.b': 'kralen naar mij toe',
+  'rek.maakervan.a': 'Maak er',
+  'rek.maakervan.b': 'van',
+  'rek.nujij': 'Nu jij.',
+  'rek.blauw': 'Kijk, alle blauwe kralen samen, dat zijn er vijf.',
+  'rek.vijf': 'Alle blauwe kralen in één keer. Dat is vijf.',
+  'rek.tien': 'Op het rekenrek zitten tien kralen.',
+  'rek.hiereen': 'Hier is er één.',
+  'rek.vraag.kant': 'Hoeveel kralen zijn er aan de andere kant?',
+  'rek.vraag.deken': 'Hoeveel kralen zitten er onder het dekentje?',
+  'rek.spieken': 'Zullen we even onder het dekentje kijken? Kijk goed.',
+  'rek.kijkhier': 'Kijk maar goed naar deze kralen.',
+  'rek.wit': 'Alle witte kralen samen, dat is vijf.',
+
+  // ── Splitshuisje ──
+  'splits.kijk': 'Kijk, hier zijn',
+  'splits.uitleg': 'Een paar vlinders gaan in het huisje slapen. Kijk maar.',
+  'splits.slapen': 'Een paar vlinders gaan slapen.',
+  'splits.welterusten': 'Deur dicht. Welterusten, vlinders.',
+  'splits.uitleg.dak': 'Op het dak staat hoeveel vlinders er in dit huisje wonen. Sommige zijn binnen, sommige buiten.',
+  'splits.waren.a': 'Er waren',
+  'splits.waren.b': 'vlinders',
+  'splits.wonen.a': 'In dit huisje wonen',
+  'splits.wonen.b': 'vlinders',
+  'splits.buiten': 'Buiten zijn er',
+  'splits.buiten.een': 'Buiten is er één.',
+  'splits.vraag': 'Hoeveel vlinders zitten er in het huisje?',
+  'splits.spieken': 'Zullen we even door de deur gluren? Kijk goed.',
+  'splits.is': 'is',
+  'splits.en': 'en',
+
   // ── Keuzemoment ──
   'keuze.vraag': 'Wat wil je doen?',
   'keuze.of': 'Of',
@@ -159,6 +194,8 @@ export const SPRAAK = {
   'keuze.cijfer': 'Cijfers zoeken.',
   'keuze.pad': 'Het konijntje naar huis brengen.',
   'keuze.woont': 'Huisjes zoeken in de straat.',
+  'keuze.rekenrek': 'Kralen schuiven op het rekenrek.',
+  'keuze.splitshuis': 'Vlinders zoeken bij het huisje.',
   'keuze.goed': 'Goed, dat gaan we doen.',
 
   // ── Feedbackladder ──
@@ -198,6 +235,9 @@ export const SPRAAK = {
   'lof.getallen': 'Je weet goed welk getal erna komt.',
   'lof.voor': 'Je wist welk getal ervoor komt.',
   'lof.plek': 'Je wist precies waar het hoort.',
+  'lof.eenkeerschuiven': 'Je schoof ze in één keer goed. Je zag de volle vijf.',
+  'lof.tien': 'Je zag hoe de tien kralen verdeeld waren.',
+  'lof.verstopt': 'Je bedacht hoeveel er binnen zaten.',
 
   // ── Einde ──
   'einde.start': 'We hebben fijn gespeeld.',
@@ -209,6 +249,8 @@ export const SPRAAK = {
   'einde.cijfer': 'We hebben cijfers gezocht.',
   'einde.pad': 'We hebben het konijntje naar huis gebracht.',
   'einde.woont': 'We hebben huisjes gezocht in de straat.',
+  'einde.rekenrek': 'We hebben kralen geschoven op het rekenrek.',
+  'einde.splitshuis': 'We hebben vlinders gezocht bij het huisje.',
   'einde.lof.precies': 'Je hebt heel precies geteld.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',

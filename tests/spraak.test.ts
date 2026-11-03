@@ -61,6 +61,9 @@ describe('wat er ingesproken wordt', () => {
     expect(text('woont.vraag+getal.7')).toBe('Waar woont zeven?');
     expect(text('pad.welkna+getal.6')).toBe('Welk getal komt na zes?');
     expect(text('getal.5+meer.ismeerdan+getal.3')).toBe('Vijf is meer dan drie.');
+    expect(text('getal.5+splits.is+getal.2+splits.en+getal.3')).toBe('Vijf is twee en drie.');
+    expect(text('rek.schuif.a+getal.7+rek.schuif.b')).toBe('Schuif zeven kralen naar mij toe.');
+    expect(text('splits.wonen.a+getal.6+splits.wonen.b')).toBe('In dit huisje wonen zes vlinders.');
   });
 
   it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {

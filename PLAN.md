@@ -135,13 +135,13 @@ Zo hoeft de startinschatting niet perfect te zijn.
 | 3 | Kardinaliteit tot 5 (`hoeveel-5`) | tellen-5 | **Mandje vullen**, Samen tellen |
 | 4 | Kardinaliteit tot 10 (`hoeveel-10`) | hoeveel-5, tellen-10 | **Mandje vullen** (tienveld), Samen tellen |
 | 5 | Subitizing tot 5 (`zien-5`) | hoeveel-5 | Kiekeboe-stippen, vingers |
-| 6 | Subitizing tot 10 via vijfstructuur (`zien-10`) | zien-5, hoeveel-10 | Kiekeboe (tienveld, rekenrek, 2 handen) |
+| 6 | Subitizing tot 10 via vijfstructuur (`zien-10`) | zien-5, hoeveel-10 | Kiekeboe (tienveld, 2 handen), Rekenrek (zeven zetten) |
 | 7 | Vergelijken (`vergelijken`) | hoeveel-5 | Koekjes vergelijken (meer, minder, maak evenveel) |
 | 8 | Cijfer ↔ hoeveelheid tot 10 (`cijfers-10`) | hoeveel-10 | **Mandje vullen** (cijferkaart), Cijfers zoeken |
 | 9 | Getallenlijn: ervoor/erna (`buren-10`) | tellen-10, cijfers-10 | Getallenpad |
 | 10 | Getallenlijn: plaats van een getal (`plaats-10`) | buren-10 | Waar woont…? |
-| 11 | Splitsen tot 5 (`splitsen-5`) | zien-5 | Splitshuisje, rekenrek |
-| 12 | Splitsen tot 10 (`splitsen-10`) | splitsen-5, zien-10 | Splitshuisje (tienveld) |
+| 11 | Splitsen tot 5 (`splitsen-5`) | zien-5 | Splitshuisje |
+| 12 | Splitsen tot 10 (`splitsen-10`) | splitsen-5, zien-10 | Splitshuisje (rijtjes van vijf), Rekenrek (tien splitsen) |
 | 13 | Erbij/eraf tot 5 met materiaal (`verhaal-5`) | splitsen-5 | Verhaaltjes |
 | 14 | Erbij/eraf tot 10 (`verhaal-10`) | verhaal-5, splitsen-10 | Verhaaltjes |
 | 15 | Patronen AB (`patroon-ab`) | geen | Kralenketting |
@@ -172,8 +172,8 @@ dingen hoort. Daarom beginnen we bij hoeveelheid ↔ cijfer en niet bij het cijf
 | **Cijfers zoeken**: cijfer → tienveld-kaartje, tienveld → getalkaartje, en (hoogste niveau) alleen gesproken: "Zoek het kaartje met zeven." Eerst getallen tot 6 met duidelijk andere keuzes, daarna tot 10 met keuzes die dicht bij elkaar liggen. Hint: Fluffy telt het gekozen kaartje ("Hier zijn er vijf. We zoeken zeven."). Voordoen met de vijfstructuur. | Drie representaties koppelen | Triple-code-model (Dehaene); Number Worlds (Griffin & Case). |
 | **Getallenpad**: tien vakjes op één rij, een konijntje en een huisje bij 10 (samen naar huis, geen winnaar). "Het konijntje springt één vakje verder. Op welk vakje komt het?" Bij elke sprong noemt Fluffy het getal: "Na vier komt vijf." Niveaus: één verder → ook twee verder of één terug → zonder nummers op het pad: "Welk getal komt na zes?" met getalkaartjes. | Lineair getalbegrip, ervoor/erna | Siegler & Ramani (2008, 2009): het *noemen van de vakgetallen* is het werkzame bestanddeel; een rechte rij werkt beter dan een rond bord. |
 | **Waar woont…?**: een straat met tien huisjes op een rij. "Waar woont zeven?" Niveaus: alleen het gezochte huisje zonder nummer → alleen 1, 5 en 10 → alleen 1 en 10. Hint: Fluffy wijst het dichtstbijzijnde bekende nummer aan ("Hier woont vijf. Zoek maar verder vanaf hier."). | Plaats van een getal op de getallenlijn | Siegler & Booth (2004): lineaire getallenlijn-schatting hangt samen met rekenvaardigheid. |
-| **Rekenrek**: kralen schuiven, 5 blauw + 5 crème | Vijfstructuur, splitsen, hoeveelheden in één keer zetten | Rekenrek (Treffers, Freudenthal Instituut). |
-| **Splitshuisje**: 5 vlinders, sommige binnen, sommige buiten | Deel-geheel, splitsen | NL kleuterdidactiek; part-whole (Resnick, 1983). |
+| **Rekenrek**: tien kralen op een stang, 5 blauw + 5 wit. Een tik op een kraal schuift die kraal en alle kralen ervoor naar Fluffy, dus zeven zet je in één tik. Zetten (`zien-10`): "Schuif zeven kralen naar mij toe"; eerst 5–7, dan tot 10, dan vanaf een rekenrek waar al kralen opzij liggen ("Maak er zeven van"); klaar met het duimpje. Hint: "Dat zijn er vier, we wilden er zeven" en de blauwe vijf lichten op. Voordoen: alle blauwe in één keer, dan verder tellen, "Vijf en twee, dat is zeven". Splitsen (`splitsen-10`): Fluffy schuift er zes opzij, "Hoeveel kralen zijn er aan de andere kant?"; eerst met 5–9 opzij, dan alles, dan met een dekentje over de andere kant. Afsluiting: "Tien is zes en vier." | Vijfstructuur, splitsen van tien, hoeveelheden in één keer zetten | Rekenrek (Treffers, Freudenthal Instituut). Aanwijzen in plaats van links/rechts, want dat kennen kleuters nog niet. |
+| **Splitshuisje**: vlinders in rijtjes van vijf; een paar vliegen het huisje in en de deur gaat dicht. "Er waren vijf vlinders. Buiten zijn er twee. Hoeveel vlinders zitten er in het huisje?" Getalkaartjes. Niveaus (tot 5 en tot 10): kijken hoe ze naar binnen vliegen → grotere aantallen → alleen het getal op het dak ("In dit huisje wonen zeven vlinders"). Hint: even door de deur gluren. Voordoen: deur open, binnen tellen, "Vijf is twee en drie." | Deel-geheel, splitsen | NL kleuterdidactiek; part-whole (Resnick, 1983). |
 | **Verhaaltjes**: "Er zitten 3 vogels op het dak. Er komt er 1 bij." Met materiaal naspelen. | Erbij/eraf modelleren | Cognitively Guided Instruction (Carpenter e.a.): kleuters lossen zulke verhalen op door ze na te spelen. |
 | **Kralenketting**: wat komt hierna? (AB-AB) | Patroonbegrip | Rittle-Johnson e.a. (2019): patroonbegrip voorspelt rekenen. |
 | **Opdracht in het echt**: "Kun je 3 lepels pakken? Tik op mij als je terug bent." Daarna tellen ze samen na; het kind tikt per lepel op een stip. | Transfer naar de echte wereld, concreet materiaal | Embodied cognition; concreet → beeld (Bruner). |
@@ -262,7 +262,7 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 | **3 (klaar)** | Kiekeboe-stippen (subitizing, vingers, vijfstructuur) |
 | **4 (klaar)** | Koekjes vergelijken + Cijfers zoeken |
 | **5 (klaar)** | Getallenpad (ervoor/erna) + Waar woont…? |
-| 6 | Rekenrek + splitshuisje |
+| **6 (klaar)** | Rekenrek + splitshuisje |
 | 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |
 | 8 | Kralenketting (patronen); eigen opnames inspreken; afronding v1 |
 | later | Leesmodule |
