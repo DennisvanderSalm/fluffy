@@ -272,9 +272,13 @@ export class NumberCards {
     this.cards[this.options.indexOf(v)].classList.add('is-counted');
   }
 
-  /** Stelt de vraag (opnieuw bij een tik op Fluffy) en wacht op een tik op een kaartje. */
-  async ask(ctx: ActivityContext, question: Seg[]): Promise<number> {
+  /**
+   * Stelt de vraag (opnieuw bij een tik op Fluffy) en wacht op een tik op een kaartje.
+   * `highlight`: dit kaartje blijft oplichten (als Fluffy het net heeft voorgedaan).
+   */
+  async ask(ctx: ActivityContext, question: Seg[], highlight?: number): Promise<number> {
     this.cards.forEach((c) => c.classList.remove('is-picked', 'is-counted'));
+    if (highlight !== undefined) this.mark(highlight);
     this.show(true);
     const prompt = async () => {
       ctx.fluffy.set('rust');

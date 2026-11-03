@@ -137,7 +137,7 @@ class Round {
 
     // Ladder 2: dekentje eraf, Fluffy laat zien hoe je het kunt zien, en dan samen.
     await this.model();
-    v = await this.cards.ask(ctx, ['tellen.tik.a', item.n, 'tellen.tik.b']);
+    v = await this.cards.ask(ctx, ['tellen.tik.a', item.n, 'tellen.tik.b'], item.n);
     if (v === item.n) {
       ctx.fluffy.set('blij');
       await ctx.say(['tellen.zijnhet', item.n, 'lof.samen']);

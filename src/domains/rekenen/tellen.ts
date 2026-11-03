@@ -122,7 +122,7 @@ class Round {
 
     // Ladder 2: Fluffy telt hardop voor, en ze tikken samen het getal aan.
     await this.model();
-    v = await this.cards.ask(this.ctx, ['tellen.tik.a', item.n, 'tellen.tik.b']);
+    v = await this.cards.ask(this.ctx, ['tellen.tik.a', item.n, 'tellen.tik.b'], item.n);
     if (v === item.n) {
       ctx.fluffy.set('blij');
       await ctx.say(['tellen.zijnhet', item.n, 'lof.samen']);

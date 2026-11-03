@@ -4,6 +4,8 @@ import { countScript, FOUTJE_LEVELS, isCorrectCount, makeFoutjeItem, type Foutje
 import { answerOptions, makeTellenItem, TELLEN_LEVELS } from '../src/domains/rekenen/tellen';
 import { layoutPositions } from '../src/domains/rekenen/veld';
 import { KIEKEBOE_LEVELS, makeKiekeboeItem } from '../src/domains/rekenen/kiekeboe';
+import { makeMeerItem, rightTray, SLOTS } from '../src/domains/rekenen/meer';
+import { cijferOptions, makeCijferItem } from '../src/domains/rekenen/cijfer';
 import { loosePoints, patternPoints, patternSvg, VIEW, type Pattern } from '../src/domains/rekenen/stippen';
 import { rekenen } from '../src/domains/rekenen';
 
@@ -196,6 +198,68 @@ describe('Kiekeboe-stippen', () => {
       const ms = rows.map((r) => r[3]);
       expect(ms[0]).toBeGreaterThanOrEqual(ms[ms.length - 1]);
       expect(Math.min(...ms)).toBeGreaterThanOrEqual(2000);
+    }
+  });
+});
+
+describe('Koekjes vergelijken', () => {
+  it('niveau 0: alleen "meer", met een duidelijk verschil', () => {
+    const rng = seededRng(21);
+    for (let i = 0; i < 200; i++) {
+      const it = makeMeerItem('vergelijken', 0, rng);
+      expect(it.kind).toBe('meer');
+      expect(Math.abs(it.top - it.bottom)).toBeGreaterThanOrEqual(2);
+      expect(it.conflict).toBe(false);
+    }
+  });
+
+  it('nooit evenveel bij meer/minder, en altijd passend op het bordje', () => {
+    const rng = seededRng(22);
+    for (let level = 0; level < 3; level++) {
+      for (let i = 0; i < 200; i++) {
+        const it = makeMeerItem('vergelijken', level, rng);
+        expect(it.top).toBeGreaterThanOrEqual(1);
+        expect(it.bottom).toBeGreaterThanOrEqual(1);
+        expect(Math.max(it.top, it.bottom)).toBeLessThan(SLOTS);
+        if (it.kind === 'evenveel') {
+          expect(level).toBe(2);
+          expect(it.bottom).toBeLessThan(it.top);
+        } else {
+          expect(it.top).not.toBe(it.bottom);
+        }
+        if (it.conflict) expect(level).toBe(2);
+      }
+    }
+  });
+
+  it('weet welk bordje goed is', () => {
+    expect(rightTray({ kind: 'meer', top: 5, bottom: 3, conflict: false })).toBe(0);
+    expect(rightTray({ kind: 'meer', top: 2, bottom: 3, conflict: true })).toBe(1);
+    expect(rightTray({ kind: 'minder', top: 2, bottom: 3, conflict: false })).toBe(0);
+  });
+});
+
+describe('Cijfers zoeken', () => {
+  it('drie verschillende keuzes tussen 1 en 10, met het goede erbij', () => {
+    const rng = seededRng(31);
+    for (const near of [true, false]) {
+      for (let n = 1; n <= 10; n++) {
+        const o = cijferOptions(n, near, rng);
+        expect(o).toHaveLength(3);
+        expect(o).toContain(n);
+        expect(new Set(o).size).toBe(3);
+        expect(o.every((k) => k >= 1 && k <= 10)).toBe(true);
+        if (!near) for (const k of o) if (k !== n) expect(Math.abs(k - n)).toBeGreaterThanOrEqual(2);
+      }
+    }
+  });
+
+  it('alleen gesproken getallen ("woord → stippen") pas op het hoogste niveau', () => {
+    const rng = seededRng(32);
+    for (let i = 0; i < 100; i++) {
+      const it = makeCijferItem('cijfers-10', 0, rng);
+      expect(it.mode).not.toBe('woord-stippen');
+      expect(it.n).toBeLessThanOrEqual(6);
     }
   });
 });

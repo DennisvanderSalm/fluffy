@@ -136,8 +136,8 @@ Zo hoeft de startinschatting niet perfect te zijn.
 | 4 | Kardinaliteit tot 10 (`hoeveel-10`) | hoeveel-5, tellen-10 | **Mandje vullen** (tienveld), Samen tellen |
 | 5 | Subitizing tot 5 (`zien-5`) | hoeveel-5 | Kiekeboe-stippen, vingers |
 | 6 | Subitizing tot 10 via vijfstructuur (`zien-10`) | zien-5, hoeveel-10 | Kiekeboe (tienveld, rekenrek, 2 handen) |
-| 7 | Vergelijken (`vergelijken`) | hoeveel-5 | Wie heeft er meer? / Maak evenveel |
-| 8 | Cijfer ↔ hoeveelheid tot 10 (`cijfers-10`) | hoeveel-10 | **Mandje vullen** (cijferkaart), Cijfermatch |
+| 7 | Vergelijken (`vergelijken`) | hoeveel-5 | Koekjes vergelijken (meer, minder, maak evenveel) |
+| 8 | Cijfer ↔ hoeveelheid tot 10 (`cijfers-10`) | hoeveel-10 | **Mandje vullen** (cijferkaart), Cijfers zoeken |
 | 9 | Getallenlijn: ervoor/erna (`buren-10`) | tellen-10, cijfers-10 | Getallenpad-bordspel |
 | 10 | Getallenlijn: plaats van een getal (`plaats-10`) | buren-10 | Waar woont 7? |
 | 11 | Splitsen tot 5 (`splitsen-5`) | zien-5 | Splitshuisje, rekenrek |
@@ -168,8 +168,8 @@ dingen hoort. Daarom beginnen we bij hoeveelheid ↔ cijfer en niet bij het cijf
 | **Samen tellen**: tik elk beestje aan, Fluffy zegt het telwoord; daarna: "Hoeveel zijn het er?" en ze tikt het getal aan. Opstelling: op een rij → twee rijen (5 en de rest) → los. Bij "hoeveel" telt Fluffy op de hogere niveaus niet meer mee. Een al geteld beestje telt niet dubbel ("Die hebben we al geteld"). | Eén-op-één tellen, vaste volgorde, laatste telwoord = hoeveelheid | Telprincipes (Gelman & Gallistel, 1978); leerlijn tellen (Clements & Sarama): rij is makkelijker dan los. |
 | **Fluffy telt fout** (protégé): Fluffy telt hardop en wijst aan met een handje, en vraagt "Heb ik het goed geteld?" (duim omhoog / duim omlaag). Fouten per niveau: overslaan en dubbel tellen → ook een telwoord overslaan → ook een verkeerd eindgetal, en "goed, maar van de andere kant" (dat klopt wél). Ongeveer 40% van de keren telt Fluffy goed, en nooit drie keer hetzelfde antwoord op rij. Heeft ze een fout gevonden, dan tellen ze samen opnieuw. | Telprincipes expliciet maken door fouten te herkennen | Gelman & Meck (1983); Briars & Siegler (1984): dat de volgorde niet uitmaakt, begrijpen kinderen pas later, daarom pas op het hoogste niveau. Learning by teaching (Chase e.a., 2009). |
 | **Kiekeboe-stippen**: dobbelsteenbeeld, vingers, tienveld of losse stippen zijn even zichtbaar (3 s op het makkelijkste niveau, 2 à 2,5 s daarna), dan zakt er een dekentje over. Ze antwoordt met een getalkaartje, zonder tijdsdruk. Hint: nog een keer kijken, iets langer. Voordoen: het dekentje gaat eraf en Fluffy wijst aan; boven de vijf zegt ze "Een hele hand, dat is vijf" en telt verder, en sluit af met "Vijf en twee, dat is zeven". Tot 5: dobbelsteen → ook vingers → ook losse stippen. Tot 10: tienveld → ook twee handen → ook twee dobbelstenen (vijf en nog wat). | Subitizing, vijfstructuur | Clements (1999); Starkey & Cooper (1995). Het dekentje zorgt dat ze het beeld in één keer ziet en niet telt; antwoorden mag zo lang als ze wil. |
-| **Wie heeft er meer?** / **Maak evenveel** | Vergelijken, één-op-één koppelen | Leerlijn vergelijken (Clements & Sarama); Mix (1999). |
-| **Cijfermatch**: hoeveelheid ↔ cijfer ↔ gesproken woord | Drie representaties koppelen | Triple-code-model (Dehaene); Number Worlds (Griffin & Case). |
+| **Koekjes vergelijken**: twee bordjes boven elkaar. "Op welk bordje liggen er meer (minder) koekjes?" Ze tikt het bordje aan. Niveaus: groot verschil → klein verschil en ook "minder" → "maak evenveel" (koekjes uit de pot erbij of terug) en rijen die misleiden (het kleinste groepje ligt wijd uit elkaar). Hint: maatjes maken, de koekjes schuiven onder elkaar en wie geen maatje heeft licht op. Voordoen: beide bordjes tellen, "Vijf is meer dan drie." | Vergelijken, één-op-één koppelen, aantal boven lengte | Leerlijn vergelijken (Clements & Sarama); Mix (1999); Piaget-taak (lengte versus aantal) als uitdaging op het hoogste niveau. |
+| **Cijfers zoeken**: cijfer → tienveld-kaartje, tienveld → getalkaartje, en (hoogste niveau) alleen gesproken: "Zoek het kaartje met zeven." Eerst getallen tot 6 met duidelijk andere keuzes, daarna tot 10 met keuzes die dicht bij elkaar liggen. Hint: Fluffy telt het gekozen kaartje ("Hier zijn er vijf. We zoeken zeven."). Voordoen met de vijfstructuur. | Drie representaties koppelen | Triple-code-model (Dehaene); Number Worlds (Griffin & Case). |
 | **Getallenpad**: lineair bordspel 1–10. Samen met Fluffy één pion naar huis brengen (samenwerken, geen winnaar). Bij elke stap zeg je het getal van het vakje. | Lineair getalbegrip, ervoor/erna | Siegler & Ramani (2008, 2009): het *noemen van de vakgetallen* is het werkzame bestanddeel. |
 | **Rekenrek**: kralen schuiven, 5 blauw + 5 crème | Vijfstructuur, splitsen, hoeveelheden in één keer zetten | Rekenrek (Treffers, Freudenthal Instituut). |
 | **Splitshuisje**: 5 vlinders, sommige binnen, sommige buiten | Deel-geheel, splitsen | NL kleuterdidactiek; part-whole (Resnick, 1983). |
@@ -259,7 +259,7 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 | **1 (klaar)** | Verticale slice: kern (engine, sessie, opslag, audio, Fluffy), **Mandje vullen** (hoeveel-5/10, cijfers-10) met adaptiviteit en feedbackladder, rustig einde, ouderdeel, tests, GitHub Pages-workflow |
 | **2 (klaar)** | Samen tellen + Fluffy telt fout (nieuwe vaardigheid `telbegrip`); keuzemomenten tussen 2 activiteiten |
 | **3 (klaar)** | Kiekeboe-stippen (subitizing, vingers, vijfstructuur) |
-| 4 | Vergelijken + cijfermatch |
+| **4 (klaar)** | Koekjes vergelijken + Cijfers zoeken |
 | 5 | Getallenpad-bordspel + ervoor/erna + waar woont 7? |
 | 6 | Rekenrek + splitshuisje |
 | 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |

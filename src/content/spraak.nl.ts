@@ -99,6 +99,33 @@ export const SPRAAK = {
   'kiekeboe.vijfen': 'Vijf en',
   'kiekeboe.isdat': ', dat is',
 
+  // ── Koekjes vergelijken ──
+  'meer.vraag.meer': 'Op welk bordje liggen er meer koekjes?',
+  'meer.vraag.minder': 'Op welk bordje liggen er minder koekjes?',
+  'meer.uitleg': 'Tik op het bordje.',
+  'meer.evenveel': 'Kun je op het onderste bordje evenveel koekjes leggen als op het bovenste?',
+  'meer.evenveel.uitleg': 'Tik op de pot voor een koekje. Tik op een koekje om het terug te leggen. Ben je klaar? Tik dan op het duimpje.',
+  'meer.maatjes': 'Laten we maatjes maken. Elk koekje krijgt een maatje.',
+  'meer.geenmaatje': 'Kijk, deze hebben geen maatje.',
+  'meer.allemaatje': 'Kijk, ze hebben allemaal een maatje.',
+  'meer.goed.meer': 'Ja, daar liggen er meer.',
+  'meer.goed.minder': 'Ja, daar liggen er minder.',
+  'meer.ismeerdan': 'is meer dan',
+  'meer.isminderdan': 'is minder dan',
+  'meer.nu': 'Nu liggen er',
+  'meer.en': 'en',
+  'meer.evenveelklaar': 'Dat is evenveel.',
+  'meer.tikjij': 'Tik jij maar op dat bordje.',
+  'hier.zijn': 'Hier zijn er',
+
+  // ── Cijfers zoeken ──
+  'cijfer.zoek': 'Zoek het kaartje met',
+  'cijfer.bijcijfer': 'Zoek het kaartje dat bij dit cijfer hoort.',
+  'cijfer.welkgetal': 'Welk getal hoort bij dit plaatje?',
+  'cijfer.zoeken': 'We zoeken',
+  'cijfer.netals': 'Net als het cijfer',
+  'cijfer.tikjij': 'Tik jij er maar op.',
+
   // ── Keuzemoment ──
   'keuze.vraag': 'Wat wil je doen?',
   'keuze.of': 'Of',
@@ -107,6 +134,8 @@ export const SPRAAK = {
   'keuze.tellen': 'Beestjes tellen.',
   'keuze.foutje': 'Kijken of ik goed tel.',
   'keuze.kiekeboe': 'Kiekeboe spelen met stippen.',
+  'keuze.meer': 'Koekjes vergelijken.',
+  'keuze.cijfer': 'Cijfers zoeken.',
   'keuze.goed': 'Goed, dat gaan we doen.',
 
   // ── Feedbackladder ──
@@ -141,6 +170,8 @@ export const SPRAAK = {
   'lof.helpen': 'Je keek goed of ik elk beestje één keer telde. Dank je wel.',
   'lof.zien': 'Je keek goed naar hoe ze lagen.',
   'lof.vijf': 'Je zag de volle vijf, en wat erbij kwam.',
+  'lof.vergelijk': 'Je keek heel goed naar allebei de bordjes.',
+  'lof.maatjes': 'Je zorgde dat elk koekje een maatje had.',
 
   // ── Einde ──
   'einde.start': 'We hebben fijn gespeeld.',
@@ -148,6 +179,8 @@ export const SPRAAK = {
   'einde.tellen': 'We hebben samen beestjes geteld.',
   'einde.foutje': 'En jij hebt mij geholpen met tellen.',
   'einde.kiekeboe': 'We hebben kiekeboe gespeeld met stippen.',
+  'einde.meer': 'We hebben koekjes vergeleken.',
+  'einde.cijfer': 'We hebben cijfers gezocht.',
   'einde.lof.precies': 'Je hebt heel precies geteld.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
