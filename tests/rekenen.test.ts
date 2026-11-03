@@ -6,6 +6,8 @@ import { layoutPositions } from '../src/domains/rekenen/veld';
 import { KIEKEBOE_LEVELS, makeKiekeboeItem } from '../src/domains/rekenen/kiekeboe';
 import { makeMeerItem, rightTray, SLOTS } from '../src/domains/rekenen/meer';
 import { cijferOptions, makeCijferItem } from '../src/domains/rekenen/cijfer';
+import { makePadItem, target as padTarget } from '../src/domains/rekenen/pad';
+import { makeWoontItem, nearestLandmark } from '../src/domains/rekenen/woont';
 import { loosePoints, patternPoints, patternSvg, VIEW, type Pattern } from '../src/domains/rekenen/stippen';
 import { rekenen } from '../src/domains/rekenen';
 
@@ -261,5 +263,53 @@ describe('Cijfers zoeken', () => {
       expect(it.mode).not.toBe('woord-stippen');
       expect(it.n).toBeLessThanOrEqual(6);
     }
+  });
+});
+
+describe('Getallenpad', () => {
+  it('het konijntje blijft altijd op het pad (1 tot 10)', () => {
+    const rng = seededRng(41);
+    for (let level = 0; level < 3; level++) {
+      for (let i = 0; i < 200; i++) {
+        const it = makePadItem('buren-10', level, rng);
+        expect(it.k).toBeGreaterThanOrEqual(1);
+        expect(it.k).toBeLessThanOrEqual(10);
+        expect(padTarget(it)).toBeGreaterThanOrEqual(1);
+        expect(padTarget(it)).toBeLessThanOrEqual(10);
+        if (level === 0) expect(it.step).toBe(1);
+        if (level === 2) {
+          expect(it.mode).toBe('kaart');
+          expect(it.options).toContain(padTarget(it));
+        } else {
+          expect(it.mode).toBe('tik');
+        }
+      }
+    }
+  });
+});
+
+describe('Waar woont…?', () => {
+  it('het gezochte nummer staat nooit op het huisje, en per niveau minder nummers', () => {
+    const rng = seededRng(42);
+    const counts = [0, 1, 2].map((level) => {
+      let total = 0;
+      for (let i = 0; i < 100; i++) {
+        const it = makeWoontItem('plaats-10', level, rng);
+        expect(it.visible).not.toContain(it.n);
+        expect(it.n).toBeGreaterThanOrEqual(2);
+        expect(it.n).toBeLessThanOrEqual(9);
+        if (level > 0) expect(it.visible).toEqual(expect.arrayContaining([1, 10]));
+        total += it.visible.length;
+      }
+      return total;
+    });
+    expect(counts[0]).toBeGreaterThan(counts[1]);
+    expect(counts[1]).toBeGreaterThan(counts[2]);
+  });
+
+  it('telt vanaf het dichtstbijzijnde zichtbare nummer', () => {
+    expect(nearestLandmark({ n: 7, visible: [1, 5, 10] })).toBe(5);
+    expect(nearestLandmark({ n: 8, visible: [1, 5, 10] })).toBe(10);
+    expect(nearestLandmark({ n: 3, visible: [1, 10] })).toBe(1);
   });
 });

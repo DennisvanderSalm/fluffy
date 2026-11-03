@@ -352,6 +352,41 @@ body.is-night .gear { filter: invert(1); }
 .cf-kaart.is-picked { transform: scale(1.04); border-color: var(--ink-soft); }
 .cf-kaart.is-counted { box-shadow: 0 0 0 10px var(--glow); }
 
+/* ── Getallenlijn (Getallenpad, Waar woont…?) ── */
+.pad, .woont, .lijn { position: absolute; inset: 0; }
+.lj-slot {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  transition: box-shadow 0.4s ease, transform 0.15s ease;
+}
+.is-vakjes .lj-slot { background: var(--panel); border: 3px solid var(--panel-edge); }
+.is-vakjes .lj-slot:nth-child(even) { background: var(--fl); border-color: var(--fl-edge); }
+.lj-nr { font: 800 clamp(28px, 5.5vh, 50px) / 1 var(--font); color: var(--ink); pointer-events: none; }
+.is-huisjes .lj-slot svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.is-huisjes .lj-nr {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 56%;
+  height: 1.3em;
+  padding: 0.12em 0.2em;
+  border-radius: 10px;
+  background: #fff;
+  border: 3px solid var(--panel-edge);
+  text-align: center;
+  font-size: clamp(20px, 3.6vh, 34px);
+}
+.lj-slot.is-counted { box-shadow: 0 0 0 8px var(--glow); }
+.lj-slot.is-picked { transform: scale(0.95); }
+.lijn.is-locked .lj-slot { pointer-events: none; }
+.pd-konijn, .pd-thuis { position: absolute; z-index: 6; pointer-events: none; }
+.pd-konijn { transition: left 0.35s ease, top 0.35s ease; }
+.pd-konijn svg, .pd-thuis svg { width: 100%; height: 100%; display: block; }
+.pd-thuis.is-counted { filter: drop-shadow(0 0 14px var(--glow)); }
+
 /* ── Keuzemoment ── */
 .keuze {
   position: absolute;

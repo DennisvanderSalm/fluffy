@@ -56,6 +56,13 @@ describe('wat er ingesproken wordt', () => {
     }
   });
 
+  it('vragen eindigen met een vraagteken, zinnen beginnen met een hoofdletter', () => {
+    const text = (id: string) => jobs.find((j) => j.id === id)!.text;
+    expect(text('woont.vraag+getal.7')).toBe('Waar woont zeven?');
+    expect(text('pad.welkna+getal.6')).toBe('Welk getal komt na zes?');
+    expect(text('getal.5+meer.ismeerdan+getal.3')).toBe('Vijf is meer dan drie.');
+  });
+
   it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {
     const drie = jobs.find((j) => j.id === 'getal.3')!;
     expect(drie).toMatchObject({ text: 'drie', before: 'één, twee', after: 'vier, vijf' });

@@ -126,6 +126,27 @@ export const SPRAAK = {
   'cijfer.netals': 'Net als het cijfer',
   'cijfer.tikjij': 'Tik jij er maar op.',
 
+  // ── Getallenpad ──
+  'pad.intro': 'We brengen het konijntje samen naar huis.',
+  'pad.sprong.verder': 'Het konijntje springt één vakje verder.',
+  'pad.sprong.twee': 'Het konijntje springt twee vakjes verder.',
+  'pad.sprong.terug': 'Oeps, het konijntje springt één vakje terug.',
+  'pad.waar': 'Op welk vakje komt het? Tik het maar aan.',
+  'pad.welkna': 'Welk getal komt na',
+  'pad.welkvoor': 'Welk getal komt vóór',
+  'pad.na': 'Na',
+  'pad.voor': 'Vóór',
+  'pad.komt': 'komt',
+  'pad.hint': 'Laten we samen kijken. Hier staat het konijntje.',
+  'pad.hint.terug': 'Laten we samen kijken. Hier staat het konijntje, en het springt terug.',
+  'pad.thuis': 'Het konijntje is thuis!',
+
+  // ── Waar woont…? ──
+  'woont.uitleg': 'In deze straat heeft elk huisje een nummer. Niet elk nummer kun je zien.',
+  'woont.vraag': 'Waar woont',
+  'woont.hier': 'Hier woont',
+  'woont.zoekverder': 'Zoek maar verder vanaf hier.',
+
   // ── Keuzemoment ──
   'keuze.vraag': 'Wat wil je doen?',
   'keuze.of': 'Of',
@@ -136,6 +157,8 @@ export const SPRAAK = {
   'keuze.kiekeboe': 'Kiekeboe spelen met stippen.',
   'keuze.meer': 'Koekjes vergelijken.',
   'keuze.cijfer': 'Cijfers zoeken.',
+  'keuze.pad': 'Het konijntje naar huis brengen.',
+  'keuze.woont': 'Huisjes zoeken in de straat.',
   'keuze.goed': 'Goed, dat gaan we doen.',
 
   // ── Feedbackladder ──
@@ -172,6 +195,9 @@ export const SPRAAK = {
   'lof.vijf': 'Je zag de volle vijf, en wat erbij kwam.',
   'lof.vergelijk': 'Je keek heel goed naar allebei de bordjes.',
   'lof.maatjes': 'Je zorgde dat elk koekje een maatje had.',
+  'lof.getallen': 'Je weet goed welk getal erna komt.',
+  'lof.voor': 'Je wist welk getal ervoor komt.',
+  'lof.plek': 'Je wist precies waar het hoort.',
 
   // ── Einde ──
   'einde.start': 'We hebben fijn gespeeld.',
@@ -181,6 +207,8 @@ export const SPRAAK = {
   'einde.kiekeboe': 'We hebben kiekeboe gespeeld met stippen.',
   'einde.meer': 'We hebben koekjes vergeleken.',
   'einde.cijfer': 'We hebben cijfers gezocht.',
+  'einde.pad': 'We hebben het konijntje naar huis gebracht.',
+  'einde.woont': 'We hebben huisjes gezocht in de straat.',
   'einde.lof.precies': 'Je hebt heel precies geteld.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
