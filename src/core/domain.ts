@@ -68,4 +68,6 @@ export interface Activity<P> {
   /** Plaatje (SVG) en gesproken naam voor het keuzemoment. */
   icon: string;
   choice: Seg[];
+  /** Zinnen die als geheel ingesproken worden (zie core/audio/phrases.ts). */
+  phrases(): Seg[][];
 }

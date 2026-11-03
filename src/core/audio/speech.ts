@@ -1,44 +1,71 @@
 import { lineText, type LineId } from '../../content/spraak.nl';
 import { sleep } from '../util';
+import { chunk, segId } from './phrases';
 
 /** Een segment: een zin-id uit het script, of een getal (→ 'getal.<n>'). */
 export type Seg = LineId | number;
 
 type SpeakingListener = (speaking: boolean) => void;
 
-const toId = (s: Seg): LineId => (typeof s === 'number' ? `getal.${s}` : s);
+/** manifest.json: id → bestandsnaam. Een lijst id's (oud formaat) betekent '<id>.m4a'. */
+export function parseManifest(data: unknown): Map<string, string> {
+  const clips = (data as { clips?: unknown } | null)?.clips;
+  if (Array.isArray(clips)) return new Map(clips.map((id: string) => [id, `${id}.m4a`]));
+  if (clips && typeof clips === 'object') return new Map(Object.entries(clips as Record<string, string>));
+  return new Map();
+}
+
+/** Zoveel gedecodeerde opnames houden we in het geheugen (getallen komen vaak terug). */
+const BUFFER_CACHE = 60;
 
 /**
- * Spraak met twee bronnen: eigen opnames (voorkeur) en de Nederlandse computerstem (terugval).
- * Opnames staan in public/audio/nl/<id>.m4a en worden aangemeld in manifest.json.
+ * Spraak met twee bronnen: opnames (voorkeur) en de Nederlandse computerstem (terugval).
+ * Opnames staan in public/audio/nl/ en worden aangemeld in manifest.json; dat kunnen losse
+ * zinnetjes zijn of hele zinnen (zie phrases.ts). Ze spelen af via Web Audio: de app haalt
+ * alle stukjes van een zin vooraf op, zodat ze zonder haperen achter elkaar klinken.
  */
 export class Speech {
   volume = 0.8;
   childName = '';
   voiceURI: string | null = null;
 
-  private clips = new Set<string>();
+  private clips = new Map<string, string>();
   private listeners = new Set<SpeakingListener>();
   private token = 0;
   private audio: HTMLAudioElement | null = null;
+  private ctx: AudioContext | null = null;
+  private source: AudioBufferSourceNode | null = null;
+  private buffers = new Map<string, Promise<AudioBuffer | null>>();
   private synth: SpeechSynthesis | null = 'speechSynthesis' in window ? window.speechSynthesis : null;
 
   async init(): Promise<void> {
     try {
       const res = await fetch('audio/nl/manifest.json', { cache: 'no-cache' });
-      if (res.ok) {
-        const data = (await res.json()) as { clips?: string[] };
-        this.clips = new Set(data.clips ?? []);
-      }
+      if (res.ok) this.clips = parseManifest(await res.json());
     } catch {
       /* geen opnames: alleen computerstem */
     }
+  }
+
+  /** Hoeveel zinnen als opname klaarstaan (voor het ouderdeel). */
+  get clipCount(): number {
+    return this.clips.size;
   }
 
   /**
    * Moet aangeroepen worden *binnen* een tik (iPadOS staat geluid pas toe na een aanraking).
    */
   unlock(): void {
+    // Opnames ook laten klinken als de iPad op stil staat, net als de computerstem.
+    const session = (navigator as { audioSession?: { type: string } }).audioSession;
+    if (session) session.type = 'playback';
+    try {
+      const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      this.ctx ??= new Ctor();
+      void this.ctx.resume();
+    } catch {
+      this.ctx = null;
+    }
     if (this.synth) {
       const u = new SpeechSynthesisUtterance(' ');
       u.volume = 0;
@@ -68,20 +95,22 @@ export class Speech {
     this.halt();
     this.emit(true);
     try {
-      // Groepeer: opeenvolgende segmenten zonder opname worden één vloeiende zin.
+      const parts = chunk(segs.map(segId), (id) => this.clips.has(id));
+      // Alle opnames van deze zin alvast ophalen en decoderen.
+      for (const p of parts) if (p.clip) void this.buffer(p.id);
+      // Groepeer: opeenvolgende stukken zonder opname worden één vloeiende zin.
       let ttsRun: string[] = [];
       const flush = async () => {
         if (ttsRun.length && my === this.token) await this.speakTts(ttsRun.join(' '), my);
         ttsRun = [];
       };
-      for (const seg of segs) {
+      for (const p of parts) {
         if (my !== this.token) return;
-        const id = toId(seg);
-        if (this.clips.has(id)) {
+        if (p.clip) {
           await flush();
-          if (my === this.token) await this.playClip(id, my);
+          if (my === this.token) await this.playClip(p.id, my);
         } else {
-          const text = lineText(id, this.childName);
+          const text = this.text(p.id);
           if (text) ttsRun.push(text);
         }
       }
@@ -104,6 +133,17 @@ export class Speech {
   private halt(): void {
     this.synth?.cancel();
     if (this.audio && !this.audio.paused) this.audio.pause();
+    try {
+      this.source?.stop();
+    } catch {
+      /* al gestopt */
+    }
+    this.source = null;
+  }
+
+  /** Tekst voor de computerstem; een hele zin ('a+getal.4+b') wordt weer losse stukjes. */
+  private text(id: string): string {
+    return id.split('+').map((part) => lineText(part as LineId, this.childName)).filter(Boolean).join(' ');
   }
 
   private pickVoice(): SpeechSynthesisVoice | null {
@@ -150,7 +190,60 @@ export class Speech {
     });
   }
 
-  private playClip(id: string, my: number): Promise<void> {
+  private url(id: string): string {
+    return `audio/nl/${this.clips.get(id)}`;
+  }
+
+  private buffer(id: string): Promise<AudioBuffer | null> {
+    const ctx = this.ctx;
+    if (!ctx) return Promise.resolve(null);
+    let p = this.buffers.get(id);
+    if (p) {
+      // Opnieuw achteraan zetten: wat vaak terugkomt, blijft bewaard.
+      this.buffers.delete(id);
+    } else {
+      p = fetch(this.url(id))
+        .then((res) => (res.ok ? res.arrayBuffer() : Promise.reject(new Error(res.statusText))))
+        .then((data) => ctx.decodeAudioData(data))
+        .catch(() => null);
+    }
+    this.buffers.set(id, p);
+    while (this.buffers.size > BUFFER_CACHE) this.buffers.delete(this.buffers.keys().next().value!);
+    return p;
+  }
+
+  private async playClip(id: string, my: number): Promise<void> {
+    const ctx = this.ctx;
+    if (!ctx) return this.playElement(id, my);
+    const buf = await this.buffer(id);
+    if (my !== this.token) return;
+    // Opname kapot of onvindbaar: dan toch de computerstem.
+    if (!buf) return this.speakTts(this.text(id), my);
+    if (ctx.state !== 'running') await ctx.resume().catch(() => undefined);
+    await new Promise<void>((resolve) => {
+      const src = ctx.createBufferSource();
+      const gain = ctx.createGain();
+      gain.gain.value = this.volume;
+      src.buffer = buf;
+      src.connect(gain).connect(ctx.destination);
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        clearTimeout(fallback);
+        if (this.source === src) this.source = null;
+        resolve();
+      };
+      // Vangnet als 'ended' uitblijft (bv. als de context even stilstaat).
+      const fallback = setTimeout(finish, buf.duration * 1000 + 1500);
+      src.onended = finish;
+      this.source = src;
+      src.start();
+    });
+  }
+
+  /** Terugval zonder Web Audio: één audio-element, dat binnen een tik ontgrendeld is. */
+  private playElement(id: string, my: number): Promise<void> {
     const audio = this.audio ?? (this.audio = new Audio());
     return new Promise<void>((resolve) => {
       const finish = () => {
@@ -160,7 +253,7 @@ export class Speech {
       audio.onended = finish;
       audio.onerror = finish;
       audio.volume = this.volume;
-      audio.src = `audio/nl/${id}.m4a`;
+      audio.src = this.url(id);
       audio.play().catch(finish);
       if (my !== this.token) finish();
     });

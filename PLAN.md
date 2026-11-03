@@ -74,7 +74,7 @@ src/
     lezen/              (later; zelfde interfaces)
   content/
     spraak.nl.ts        ALLE gesproken zinnen met id's  ← hier eigen opnames aan koppelen
-public/audio/nl/        opnames: <id>.m4a (optioneel; ontbreekt er één → TTS)
+public/audio/nl/        opnames (ElevenLabs via `npm run stem`, of eigen); ontbreekt er één → TTS
 ```
 
 **Domeinmodule-interface**: een module levert `skills` (knopen in de graaf met voorwaarden),
@@ -87,6 +87,8 @@ met dezelfde vorm: geen herbouw nodig.
 Met TTS worden de teksten aan elkaar geplakt. Met opnames worden de clips na elkaar afgespeeld.
 Zo heb je niet voor elk getal een aparte opname van de hele zin nodig.
 Klanken voor lezen worden gewone segmenten (`klank.m` = "mmm").
+Een opname kan ook een hele zin dekken (id's met `+` ertussen). De app zoekt per zin de langste
+opname die past, zodat "Kun je vier appels in het mandje leggen?" als één vloeiende zin klinkt.
 
 ---
 

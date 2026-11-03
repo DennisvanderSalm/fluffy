@@ -1,7 +1,23 @@
-Eigen opnames
-=============
+Opnames voor Fluffy
+===================
+
+Deze map bevat de opnames waarmee Fluffy praat. manifest.json koppelt een id aan een bestand:
+
+  { "clips": { "begroeting.terug.b": "begroeting.terug.b.m4a", "getal.4": "getal.4.m4a" } }
+
+Ontbreekt een opname, dan zegt de computerstem dat stukje.
+
+ElevenLabs (automatisch)
+  "npm run stem" vult deze map en manifest.json. Zie de README. Die opnames staan ook onder
+  "generated" in manifest.json; dat deel beheert het script zelf.
+
+Eigen opnames (met de hand)
 1. Neem een zinnetje op (bijv. met Spraakmemo's op de iPhone) en exporteer als .m4a.
-2. Geef het bestand de id uit src/content/spraak.nl.ts als naam, bijv. begroeting.terug.b.m4a
-   Getallen heten getal.1.m4a ... getal.20.m4a, de naam van je kind naam.m4a.
-3. Zet de id in manifest.json onder "clips", bijv.: { "clips": ["begroeting.terug.b", "getal.4"] }
-Ontbreekt een opname, dan gebruikt de app voor dat zinnetje de computerstem.
+2. Zoek de id op in src/content/spraak.nl.ts, bijv. begroeting.terug.b.
+   Getallen heten getal.1 ... getal.20, de naam van je kind naam.
+   Een hele zin kan ook: zet de id's met een + aan elkaar, bijv. tellen.zijnhet+getal.5
+   ("Ja, het zijn er vijf").
+3. Zet het bestand in deze map en voeg het toe onder "clips" in manifest.json.
+   Eigen opnames gaan voor: het ElevenLabs-script laat ze met rust.
+
+Let op: de repository is openbaar. Een opname van de naam van je kind staat dan ook online.

@@ -275,4 +275,12 @@ export const foutje: Activity<FoutjeItem> = {
   summary: ['einde.foutje'],
   icon: ICON,
   choice: ['keuze.foutje'],
+  phrases() {
+    const out: Seg[][] = [];
+    for (let n = 1; n <= 10; n++) {
+      out.push(['foutje.dus', n], ['foutje.kijk.eind.a', n], ['foutje.kijk.eind.b', n, 'foutje.kijk.eind.c'], ['tellen.zijnhet', n]);
+      if (n < 10) out.push(['foutje.kijk.getal.a', n, 'foutje.kijk.getal.b', n + 1]);
+    }
+    return out;
+  },
 };

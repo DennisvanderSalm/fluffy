@@ -39,10 +39,50 @@ Snel testen op de iPad zonder te publiceren: `npm run dev`, dan op de iPad (zelf
 Rechtsboven staat een vaag tandwieltje. **Houd het 2 seconden vast** en tik dan de drie getallen aan
 die er in woorden staan. Daar vind je de voortgang per vaardigheid, spelletjes zonder scherm en de instellingen.
 
+## Stem van Fluffy (ElevenLabs)
+
+Zonder opnames praat Fluffy met de computerstem van de iPad. Met het script `npm run stem`
+laat je alle zinnen **één keer** inspreken door ElevenLabs. De mp3's komen in `public/audio/nl/`
+en worden met de app meegeleverd. Tijdens het spelen gaat er niets naar ElevenLabs: de app blijft offline,
+en de API-sleutel staat alleen op je pc.
+
+1. Maak een account op elevenlabs.io. Kies in de **Voice Library** een warme, rustige Nederlandse stem
+   en voeg die toe aan **My Voices**. Maak bij je profiel een **API key** aan.
+2. Maak in deze map een bestand `.env.local` (staat in `.gitignore`, gaat dus nooit naar GitHub):
+   ```
+   ELEVENLABS_API_KEY=jouw-sleutel
+   ELEVENLABS_VOICE_ID=id-van-de-stem
+   ```
+   Het id vind je met `npm run stem -- --stemmen`.
+3. Kijk eerst wat het kost (er wordt niets verstuurd):
+   ```bash
+   npm run stem -- --proef
+   ```
+   Nu zijn dat zo'n 300 opnames en ruim 8.000 tekens.
+4. Beluister de stem eerst met een paar zinnen, dan de rest:
+   ```bash
+   npm run stem -- --max 10
+   npm run dev
+   npm run stem
+   ```
+5. Tevreden? Commit en push `public/audio/nl`. Na de deploy praat Fluffy op de iPad met de nieuwe stem.
+
+Goed om te weten:
+- **Hele zinnen**: "Kun je vier appels in het mandje leggen?" is één opname, geen geplakte stukjes.
+  Elke activiteit geeft zelf op welke zinnen dat zijn (`phrases()`).
+- **Getallen** worden ingesproken met de buurgetallen als context, zodat "drie" klinkt als tellen.
+- **Alleen wat verandert** wordt opnieuw ingesproken. Een andere stem of gewijzigde tekst? Draai het script opnieuw.
+  Met `--opnieuw` spreek je alles opnieuw in.
+- **De naam van je kind gaat niet naar ElevenLabs.** Die zegt de computerstem. Wil je ook de naam
+  met een opname, neem die dan zelf op (zie hieronder).
+- Controleer zelf de actuele prijzen en de gebruiksvoorwaarden van je ElevenLabs-abonnement.
+- Optioneel in `.env.local`: `ELEVENLABS_MODEL` (standaard `eleven_multilingual_v2`) en `ELEVENLABS_SPEED` (standaard `0.95`).
+
 ## Eigen stem opnemen
 
 Alle zinnen staan met een id in [src/content/spraak.nl.ts](src/content/spraak.nl.ts).
 Zie [public/audio/nl/LEESMIJ.txt](public/audio/nl/LEESMIJ.txt) om ze te vervangen door eigen opnames.
+Eigen opnames gaan voor op die van ElevenLabs.
 
 ## Structuur
 

@@ -241,4 +241,11 @@ export const tellen: Activity<TellenItem> = {
   summary: ['einde.tellen'],
   icon: ICON,
   choice: ['keuze.tellen'],
+  phrases() {
+    const out: Seg[][] = ANIMALS.map((a) => ['tellen.vraag.a', ANIMAL_PLURAL[a], 'tellen.vraag.b']);
+    for (let n = 1; n <= 10; n++) {
+      out.push(['tellen.zijnhet', n], ['tellen.dushet', n], ['tellen.tik.a', n, 'tellen.tik.b'], ['voordoen.laatste.a', n]);
+    }
+    return out;
+  },
 };

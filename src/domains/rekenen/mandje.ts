@@ -454,4 +454,15 @@ export const mandje: Activity<MandjeItem> = {
   summary: ['einde.mandje'],
   icon: ICON,
   choice: ['keuze.mandje'],
+  phrases() {
+    const out: Seg[][] = FRUITS.map((f) => ['mandje.cijfer.a', PLURAL[f], 'mandje.cijfer.b']);
+    for (let n = 1; n <= 10; n++) {
+      for (const f of FRUITS) out.push(['mandje.vraag.a', n, n === 1 ? SINGULAR[f] : PLURAL[f], 'mandje.vraag.b']);
+      out.push(
+        ['mandje.zijnhet', n], ['hint.zijn', n], ['hint.wilden', n], ['hint.cijferis', n],
+        ['voordoen.laatste.a', n], ['voordoen.laatste.b', n, 'voordoen.laatste.c'], ['voordoen.kijk', n],
+      );
+    }
+    return out;
+  },
 };

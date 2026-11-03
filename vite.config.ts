@@ -1,3 +1,4 @@
+import { readdirSync } from 'node:fs';
 import type { Plugin } from 'vite';
 import { defineConfig } from 'vitest/config';
 
@@ -27,6 +28,17 @@ const PUBLIC_FILES = [
   'audio/nl/manifest.json',
 ];
 
+/** Alle opnames (ElevenLabs of eigen), zodat Fluffy ook offline met de goede stem praat. */
+function audioFiles(): string[] {
+  try {
+    return readdirSync('public/audio/nl')
+      .filter((f) => /\.(mp3|m4a|wav)$/.test(f))
+      .map((f) => `audio/nl/${f}`);
+  } catch {
+    return [];
+  }
+}
+
 function hash(s: string): string {
   let h = 5381;
   for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
@@ -45,7 +57,7 @@ function offlinePlugin(): Plugin {
       );
     },
     generateBundle(_options, bundle) {
-      const files = ['./', ...Object.keys(bundle), ...PUBLIC_FILES];
+      const files = ['./', ...Object.keys(bundle), ...PUBLIC_FILES, ...audioFiles()];
       const cacheName = 'fluffy-' + hash(files.join('|'));
       const source = `// Gegenereerd bij de build. Cachet alleen eigen bestanden; niets gaat naar buiten.
 const CACHE = ${JSON.stringify(cacheName)};

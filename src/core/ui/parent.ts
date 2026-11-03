@@ -232,7 +232,10 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       row('Rustpauze na een sessie', rest, 'Zolang blijft Fluffy slapen.'),
       row('Maximaal per dag', maxPerDay),
       row('Volume', volume),
-      row('Stem', voice, voices.length ? 'Tip: download een "verbeterde" Nederlandse stem in Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen.' : 'Geen Nederlandse stem gevonden op dit apparaat.'),
+      row('Stem', voice, [
+        deps.speech.clipCount ? `Fluffy praat met opnames (${deps.speech.clipCount} zinnen). Deze computerstem is alleen voor wat geen opname heeft, zoals de naam.` : '',
+        voices.length ? 'Tip: download een "verbeterde" Nederlandse stem in Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen.' : 'Geen Nederlandse stem gevonden op dit apparaat.',
+      ].join(' ').trim()),
       row('Stem testen', test),
       row('Startniveau', startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.'),
       row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over.'),
