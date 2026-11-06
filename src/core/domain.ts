@@ -5,7 +5,7 @@ import type { Sounds } from './audio/sounds';
 import type { Rng } from './util';
 
 /**
- * Contract tussen de kern en een domeinmodule (rekenen nu, lezen later).
+ * Contract tussen de kern en een domeinmodule (rekenen, lezen).
  * De kern weet niets van getallen of letters; een domein levert vaardigheden en activiteiten.
  */
 
@@ -33,6 +33,11 @@ export interface DomainModule {
   skills: SkillInfo[];
   activities: Activity<any>[];
   startLevels: StartLevel[];
+  /** Plaatje (SVG) en gesproken naam voor de keuze aan het begin. */
+  icon: string;
+  choice: Seg[];
+  /** Lof aan het einde van een sessie zonder hulp ("Je hebt heel precies geteld"). */
+  endPraise: Seg[];
 }
 
 export interface ItemResult {

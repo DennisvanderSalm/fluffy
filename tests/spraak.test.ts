@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { chunk, clipJobs, phraseId } from '../src/core/audio/phrases';
 import { parseManifest } from '../src/core/audio/speech';
 import { lineText, SPRAAK } from '../src/content/spraak.nl';
-import { rekenen } from '../src/domains/rekenen';
+import { ALL_ACTIVITIES } from '../src/domains';
 
-const jobs = clipJobs(rekenen.activities.flatMap((a) => a.phrases()));
+const jobs = clipJobs(ALL_ACTIVITIES.flatMap((a) => a.phrases()));
 const ids = new Set(jobs.map((j) => j.id));
 const has = (id: string) => ids.has(id);
 
@@ -64,6 +64,8 @@ describe('wat er ingesproken wordt', () => {
     expect(text('getal.5+splits.is+getal.2+splits.en+getal.3')).toBe('Vijf is twee en drie.');
     expect(text('rek.schuif.a+getal.7+rek.schuif.b')).toBe('Schuif zeven kralen naar mij toe.');
     expect(text('splits.wonen.a+getal.6+splits.wonen.b')).toBe('In dit huisje wonen zes vlinders.');
+    expect(text('rijm.vraag+w.huis')).toBe('Wat rijmt op huis?');
+    expect(text('w.maan+rijm.en+w.muis+klank.zelfde')).toBe('Maan en muis, die beginnen hetzelfde.');
   });
 
   it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {

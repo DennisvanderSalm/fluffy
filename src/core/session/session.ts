@@ -12,6 +12,8 @@ export interface Settings {
   volume: number;
   voiceURI: string | null;
   startLevel: string;
+  /** 'kiezen' = het kind kiest aan het begin; anders altijd dit vak (domein-id). */
+  subject: string;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -22,6 +24,7 @@ export const DEFAULT_SETTINGS: Settings = {
   volume: 0.8,
   voiceURI: null,
   startLevel: 'tellen10',
+  subject: 'kiezen',
 };
 
 export interface SessionRecord {
@@ -36,6 +39,8 @@ export interface SessionRecord {
   helped: number;
   activities: string[];
   skills: string[];
+  /** Welk vak (domein) er gespeeld is. */
+  domain?: string;
 }
 
 /** Sessies korter dan dit tellen niet mee voor het dagmaximum (bv. per ongeluk geopend). */

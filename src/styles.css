@@ -139,7 +139,24 @@ body.is-night { background: var(--bg-night); }
 }
 .gear svg { width: 100%; height: 100%; }
 .gear .ring { fill: none; stroke: var(--ink); stroke-width: 4; stroke-dasharray: 151; stroke-dashoffset: 151; }
+.gear { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .gear.is-holding { opacity: 0.6; }
+.gear-hint {
+  position: absolute;
+  z-index: 40;
+  top: calc(max(10px, env(safe-area-inset-top)) + 60px);
+  right: max(10px, env(safe-area-inset-right));
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid var(--panel-edge);
+  color: var(--ink);
+  font: 600 15px / 1.3 var(--font);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.gear-hint.is-on { opacity: 1; }
 .gear.is-holding .ring { transition: stroke-dashoffset 2s linear; stroke-dashoffset: 0; }
 body.is-night .gear { filter: invert(1); }
 
@@ -443,6 +460,23 @@ body.is-night .gear { filter: invert(1); }
   border: 5px solid var(--glow);
 }
 
+/* ── Klanken (rijmen, beginklank) ── */
+.klanken { position: absolute; inset: 0; pointer-events: none; }
+.klanken.is-open .lz-kaart { pointer-events: auto; }
+.lz-doel, .lz-kaart {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+}
+.lz-doel { background: var(--fl); border: 4px solid var(--fl-edge); }
+.lz-kaart { background: #fff; border: 4px solid var(--panel-edge); }
+.lz-doel svg, .lz-kaart svg { width: 78%; height: 78%; pointer-events: none; }
+.lz-doel.is-named, .lz-kaart.is-named { box-shadow: 0 0 0 10px var(--glow); }
+.lz-doel.is-counted, .lz-kaart.is-counted { box-shadow: 0 0 0 10px var(--ok); }
+.lz-kaart.is-picked { transform: scale(0.96); border-color: var(--ink-soft); }
+
 /* ── Keuzemoment ── */
 .keuze {
   position: absolute;
@@ -518,10 +552,13 @@ body.is-night .gear { filter: invert(1); }
 .chip.is-busy { background: #fde9b9; }
 .chip.is-done { background: var(--ok); }
 .skill p { margin: 6px 0 0; }
+.parent h3 { font-size: 18px; margin: 22px 0 6px; }
+.skill-level { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.skill-level label { font-weight: 600; }
 .tip { color: var(--ink-soft); }
 .form-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--panel-edge); flex-wrap: wrap; }
 .form-row label { font-weight: 600; }
-.form-row select, .form-row input[type='text'] { font: inherit; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--panel-edge); background: #fff; color: var(--ink); min-width: 220px; }
+.form-row select, .form-row input[type='text'], .skill-level select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--panel-edge); background: #fff; color: var(--ink); min-width: 220px; }
 .form-row input[type='range'] { width: 240px; }
 .sessions { padding-left: 18px; }
 

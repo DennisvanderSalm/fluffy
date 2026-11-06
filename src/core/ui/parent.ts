@@ -1,18 +1,20 @@
 import { numberWord } from '../../content/spraak.nl';
 import type { Speech } from '../audio/speech';
 import type { DomainModule, SkillInfo } from '../domain';
-import { initialState } from '../engine/mastery';
-import { prerequisitesMet } from '../engine/planner';
+import { initialState, manualLevelOf, type ManualLevel } from '../engine/mastery';
+import { PLAN_RULES, prerequisitesMet } from '../engine/planner';
 import type { SaveData } from '../storage/store';
 import { el, shuffle } from '../util';
 
 export interface ParentDeps {
-  domain: DomainModule;
+  domains: DomainModule[];
   data: SaveData;
   speech: Speech;
   playable: Set<string>;
   onChange(): void;
   onStartLevel(id: string): void;
+  /** De ouder zet een vaardigheid zelf op een niveau. */
+  onSkillLevel(id: string, level: ManualLevel): void;
   onReset(): void;
   onAllowSession(): void;
   onClose(): void;
@@ -77,7 +79,19 @@ export function openParentArea(root: HTMLElement, deps: ParentDeps): void {
   showLock();
 }
 
-function statusOf(deps: ParentDeps, skill: SkillInfo): { text: string; cls: string } {
+function select(options: [string, string][], value: string, onChange: (v: string) => void): HTMLSelectElement {
+  const sel = el('select');
+  for (const [v, label] of options) {
+    const o = el('option', '', label);
+    o.value = v;
+    o.selected = v === value;
+    sel.append(o);
+  }
+  sel.addEventListener('change', () => onChange(sel.value));
+  return sel;
+}
+
+function statusOf(deps: ParentDeps, domain: DomainModule, skill: SkillInfo): { text: string; cls: string } {
   const st = deps.data.skills[skill.id] ?? initialState();
   if (!deps.playable.has(skill.id)) {
     return st.assumed
@@ -92,32 +106,64 @@ function statusOf(deps: ParentDeps, skill: SkillInfo): { text: string; cls: stri
   if (st.status === 'practicing') {
     return { text: `Hier oefent ze nu mee (stap ${st.level + 1} van ${skill.levels})`, cls: 'is-busy' };
   }
-  const input = { skills: deps.domain.skills, playable: deps.playable, states: deps.data.skills, today: '', played: [], retries: [] };
+  const input = { skills: domain.skills, playable: deps.playable, states: deps.data.skills, today: '', played: [], retries: [] };
   return prerequisitesMet(input, skill)
     ? { text: 'Komt binnenkort aan bod', cls: '' }
     : { text: 'Nog niet aan begonnen', cls: '' };
 }
 
 function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): void {
-  const { data, domain } = deps;
+  const { data, domains } = deps;
   const s = data.settings;
   const name = s.childName || 'je kind';
 
   const closeBtn = el('button', 'btn primary', 'Terug naar Fluffy');
   closeBtn.addEventListener('click', close);
 
-  // Voortgang per vaardigheid, in gewone taal. Geen scores.
-  const skills = [...domain.skills].sort((a, b) => a.stage - b.stage).map((sk) => {
-    const st = statusOf(deps, sk);
-    return el('div', `skill${deps.playable.has(sk.id) ? '' : ' is-off'}`,
-      el('div', 'skill-top', el('span', 'skill-name', sk.name), el('span', `chip ${st.cls}`, st.text)),
+  // Voortgang per vak en per vaardigheid, in gewone taal. Geen scores.
+  const skillCard = (domain: DomainModule, sk: SkillInfo) => {
+    const st = statusOf(deps, domain, sk);
+    const chip = el('span', `chip ${st.cls}`, st.text);
+    const card = el('div', `skill${deps.playable.has(sk.id) ? '' : ' is-off'}`,
+      el('div', 'skill-top', el('span', 'skill-name', sk.name), chip),
       el('p', '', sk.about),
       el('p', 'tip', `Zonder scherm: ${sk.offScreen}`),
     );
-  });
+    if (deps.playable.has(sk.id)) {
+      // Niveau zelf kiezen: makkelijker of moeilijker dan wat de app nu denkt.
+      const levels: [string, string][] = [
+        ['new', 'Nog niet aan begonnen'],
+        ...Array.from({ length: sk.levels }, (_, i): [string, string] => [String(i), `Oefenen, stap ${i + 1} van ${sk.levels}`]),
+        ['mastered', 'Kan ze al'],
+      ];
+      const current = String(manualLevelOf(data.skills[sk.id] ?? initialState()));
+      const sel = select(levels, current, (v) => {
+        deps.onSkillLevel(sk.id, v === 'new' || v === 'mastered' ? v : Number(v));
+        const now = statusOf(deps, domain, sk);
+        chip.className = `chip ${now.cls}`;
+        chip.textContent = now.text;
+        updateBusyNote();
+      });
+      card.append(el('div', 'skill-level', el('label', '', 'Niveau'), sel));
+    }
+    return card;
+  };
+  const busyNote = el('p', 'muted');
+  const updateBusyNote = () => {
+    const busy = domains.map((dm) => dm.skills.filter((sk) => deps.playable.has(sk.id) && data.skills[sk.id]?.status === 'practicing'));
+    const tooMany = busy.find((b) => b.length > PLAN_RULES.frontierSize);
+    busyNote.textContent = tooMany
+      ? `Let op: Fluffy oefent per vak met hooguit ${PLAN_RULES.frontierSize} dingen tegelijk. Nu staan er ${tooMany.length} op "oefenen"; ze komen op volgorde van de lijst aan bod.`
+      : '';
+  };
+  updateBusyNote();
+  const skills = domains.flatMap((dm) => [
+    el('h3', '', dm.name),
+    ...[...dm.skills].sort((a, b) => a.stage - b.stage).map((sk) => skillCard(dm, sk)),
+  ]);
 
   const fmt = new Intl.DateTimeFormat('nl-NL', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-  const actName = (id: string) => domain.activities.find((a) => a.id === id)?.name ?? id;
+  const actName = (id: string) => domains.flatMap((dm) => dm.activities).find((a) => a.id === id)?.name ?? id;
   const sessions = data.sessions.filter((r) => r.items > 0).slice(-10).reverse().map((r) =>
     el('li', '', `${fmt.format(r.start)}: ${Math.max(1, Math.round(r.activeMs / 60000))} min, ${r.activities.map(actName).join(', ')}`),
   );
@@ -126,17 +172,6 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
   const row = (label: string, control: HTMLElement, hint = '') =>
     el('div', 'form-row', el('div', '', el('label', '', label), hint ? el('div', 'muted', hint) : ''), control);
 
-  const select = (options: [string, string][], value: string, onChange: (v: string) => void) => {
-    const sel = el('select');
-    for (const [v, label] of options) {
-      const o = el('option', '', label);
-      o.value = v;
-      o.selected = v === value;
-      sel.append(o);
-    }
-    sel.addEventListener('change', () => onChange(sel.value));
-    return sel;
-  };
 
   const nameInput = el('input');
   nameInput.type = 'text';
@@ -185,11 +220,22 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     void deps.speech.say(['ouder.test', 'naam']);
   });
 
-  const startLevel = select(domain.startLevels.map((l) => [l.id, l.label]), s.startLevel, (v) => {
+  // Startniveau bestaat alleen bij een vak waar iets te kiezen valt (rekenen).
+  const startDomain = domains.find((dm) => dm.startLevels.length > 1);
+  const startLevel = startDomain && select(startDomain.startLevels.map((l) => [l.id, l.label]), s.startLevel, (v) => {
     s.startLevel = v;
     deps.onStartLevel(v);
     deps.onChange();
   });
+
+  const subject = select(
+    [['kiezen', 'Laat haar kiezen'], ...domains.map((dm): [string, string] => [dm.id, `Altijd ${dm.name.toLowerCase()}`])],
+    s.subject,
+    (v) => {
+      s.subject = v;
+      deps.onChange();
+    },
+  );
 
   const allow = el('button', 'btn', 'Nu een nieuwe sessie toestaan');
   allow.addEventListener('click', () => {
@@ -220,7 +266,8 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
 
       el('h2', '', `Waar ${name} mee bezig is`),
-      el('p', 'muted', 'De app gaat pas verder als iets een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug.'),
+      el('p', 'muted', 'De app gaat pas verder als iets een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
+      busyNote,
       ...skills,
 
       el('h2', '', 'Laatste keren'),
@@ -237,7 +284,8 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
         voices.length ? 'Tip: download een "verbeterde" Nederlandse stem in Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen.' : 'Geen Nederlandse stem gevonden op dit apparaat.',
       ].join(' ').trim()),
       row('Stem testen', test),
-      row('Startniveau', startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.'),
+      row('Rekenen of lezen', subject, 'Bij "laat haar kiezen" vraagt Fluffy het aan het begin, met twee plaatjes.'),
+      startLevel ? row(`Startniveau ${startDomain!.name.toLowerCase()}`, startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.') : '',
       row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over.'),
       row('Voortgang', reset, 'Begint helemaal opnieuw. Instellingen blijven bewaard.'),
 

@@ -20,7 +20,7 @@ export const SPRAAK = {
 
   // ── Begroeting ──
   'begroeting.eerste.a': 'Hoi',
-  'begroeting.eerste.b': 'Ik ben Fluffy. Ik ben een wolkje, en ik tel heel graag. Wij gaan samen spelen.',
+  'begroeting.eerste.b': 'Ik ben Fluffy. Ik ben een wolkje, en ik speel heel graag met getallen en woordjes. Wij gaan samen spelen.',
   'begroeting.uitleg.fluffy': 'Als je mij aantikt, zeg ik het nog een keer.',
   'begroeting.terug.a': 'Hoi',
   'begroeting.terug.b': 'Daar ben je. Kom, we gaan samen spelen.',
@@ -182,6 +182,43 @@ export const SPRAAK = {
   'splits.is': 'is',
   'splits.en': 'en',
 
+  // ── Woordjes (lezen) ──
+  'w.huis': 'huis',
+  'w.muis': 'muis',
+  'w.beer': 'beer',
+  'w.veer': 'veer',
+  'w.hoed': 'hoed',
+  'w.voet': 'voet',
+  'w.roos': 'roos',
+  'w.doos': 'doos',
+  'w.zon': 'zon',
+  'w.ton': 'ton',
+  'w.kip': 'kip',
+  'w.schip': 'schip',
+  'w.taart': 'taart',
+  'w.paard': 'paard',
+  'w.pet': 'pet',
+  'w.bed': 'bed',
+  'w.pop': 'pop',
+  'w.kop': 'kop',
+  'w.jas': 'jas',
+  'w.tas': 'tas',
+  'w.maan': 'maan',
+  'w.kraan': 'kraan',
+  'w.vis': 'vis',
+
+  // ── Rijmen en beginklank ──
+  'rijm.uitleg': 'Woorden die rijmen, klinken aan het eind hetzelfde. Zoals boom en droom.',
+  'rijm.vraag': 'Wat rijmt op',
+  'rijm.hint': 'Luister goed naar het eind van het woord.',
+  'rijm.en': 'en',
+  'rijm.rijmen': ', die rijmen',
+  'klank.uitleg': 'We luisteren naar het begin van een woord. Boot en bal beginnen hetzelfde.',
+  'klank.vraag': 'Welke begint net zo als',
+  'klank.hint': 'Luister goed naar het begin van het woord.',
+  'klank.zelfde': ', die beginnen hetzelfde',
+  'voordoen.luister': 'Ik doe het even voor. Luister maar.',
+
   // ── Keuzemoment ──
   'keuze.vraag': 'Wat wil je doen?',
   'keuze.of': 'Of',
@@ -197,6 +234,10 @@ export const SPRAAK = {
   'keuze.rekenrek': 'Kralen schuiven op het rekenrek.',
   'keuze.splitshuis': 'Vlinders zoeken bij het huisje.',
   'keuze.goed': 'Goed, dat gaan we doen.',
+  'keuze.vak.rekenen': 'Spelen met getallen.',
+  'keuze.vak.lezen': 'Spelen met woordjes en klanken.',
+  'keuze.rijmen': 'Woordjes die rijmen.',
+  'keuze.beginklank': 'Luisteren naar het begin van een woord.',
 
   // ── Feedbackladder ──
   // Stap 1: hint (samen natellen)
@@ -237,6 +278,10 @@ export const SPRAAK = {
   'lof.plek': 'Je wist precies waar het hoort.',
   'lof.eenkeerschuiven': 'Je schoof ze in één keer goed. Je zag de volle vijf.',
   'lof.tien': 'Je zag hoe de tien kralen verdeeld waren.',
+  'lof.rijm': 'Je luisterde goed naar het eind van het woord.',
+  'lof.begin': 'Je luisterde goed naar het begin van het woord.',
+  'lof.luisteren': 'Je bleef goed luisteren, ook toen het lastig was.',
+  'lof.samen.kort': 'Samen is het gelukt.',
   'lof.verstopt': 'Je bedacht hoeveel er binnen zaten.',
 
   // ── Einde ──
@@ -252,6 +297,9 @@ export const SPRAAK = {
   'einde.rekenrek': 'We hebben kralen geschoven op het rekenrek.',
   'einde.splitshuis': 'We hebben vlinders gezocht bij het huisje.',
   'einde.lof.precies': 'Je hebt heel precies geteld.',
+  'einde.lof.luisteren': 'Je hebt heel goed geluisterd.',
+  'einde.rijmen': 'We hebben woordjes gezocht die rijmen.',
+  'einde.beginklank': 'We hebben geluisterd naar het begin van woordjes.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
   'einde.dag': 'Dag',

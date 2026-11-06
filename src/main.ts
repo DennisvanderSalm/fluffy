@@ -1,8 +1,8 @@
 import './styles.css';
 import { App } from './core/ui/app';
-import { rekenen } from './domains/rekenen';
+import { DOMAINS } from './domains';
 
-const app = new App(document.getElementById('app')!, rekenen);
+const app = new App(document.getElementById('app')!, DOMAINS);
 app.start();
 
 // Offline: alleen in de gebouwde versie (de dev-server heeft geen sw.js).

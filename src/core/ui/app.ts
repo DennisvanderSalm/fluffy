@@ -1,5 +1,5 @@
 import type { Activity, ActivityContext, DomainModule } from '../domain';
-import { assumeMastered, initialState, recordAttempt } from '../engine/mastery';
+import { assumeMastered, initialState, manualState, recordAttempt, type ManualLevel } from '../engine/mastery';
 import {
   choiceOptions, isChoiceMoment, pickNext, scheduleRetry, type PlannerInput, type PlayedRef, type RetryEntry,
 } from '../engine/planner';
@@ -23,7 +23,8 @@ const GEAR_SVG = `<svg viewBox="0 0 60 60"><circle class="ring" cx="30" cy="30" 
   M27 12h6l1 5h-8zM27 48h6l-1-5h-4zM12 27v6l5-1v-4zM48 27v6l-5-1v-4z"/></svg>`;
 
 /**
- * De app: startscherm → begroeting → items (planner kiest) → rustig einde → slaapscherm.
+ * De app: startscherm → begroeting → vak kiezen (rekenen of lezen) → items (planner kiest)
+ * → rustig einde → slaapscherm.
  * Zonder menu's: het kind kan nergens anders terechtkomen. Het ouderdeel zit achter een slot.
  */
 export class App {
@@ -34,6 +35,7 @@ export class App {
   private stage = el('div', 'stage');
   private slot = el('div', 'fluffy-slot is-center');
   private gear = el('div', 'gear');
+  private gearHint = el('div', 'gear-hint', 'Houd 2 tellen vast voor het ouderdeel');
   private repeatFn: (() => void) | null = null;
   /** Wat een tik op het scherm doet (start- en slaapscherm). */
   private screenTap: (() => void) | null = null;
@@ -46,19 +48,22 @@ export class App {
   private rng = Math.random;
   private skillsById: Map<string, DomainModule['skills'][number]>;
   private playable: Set<string>;
+  /** Het vak van de lopende sessie. */
+  private domain: DomainModule;
 
-  constructor(private root: HTMLElement, private domain: DomainModule) {
+  constructor(private root: HTMLElement, private domains: DomainModule[]) {
     this.data = load();
     this.data.sessions = closeDangling(this.data.sessions);
-    this.skillsById = new Map(domain.skills.map((s) => [s.id, s]));
-    this.playable = new Set(domain.activities.flatMap((a) => a.skills));
+    this.domain = domains[0];
+    this.skillsById = new Map(domains.flatMap((d) => d.skills).map((s) => [s.id, s]));
+    this.playable = new Set(domains.flatMap((d) => d.activities).flatMap((a) => a.skills));
     this.applySettings();
     if (this.data.startLevelApplied === null) this.applyStartLevel(this.data.settings.startLevel);
     save(this.data);
 
     this.slot.append(this.fluffy.el);
     this.gear.append(svgEl(GEAR_SVG));
-    root.append(this.stage, this.slot, this.gear);
+    root.append(this.stage, this.slot, this.gear, this.gearHint);
 
     this.speech.onSpeaking((on) => this.fluffy.setTalking(on));
     onTap(this.slot, () => this.repeatFn?.());
@@ -167,11 +172,25 @@ export class App {
     }
     this.slot.className = 'fluffy-slot';
     await sleep(1300);
+    this.domain = await this.chooseDomain();
+    this.record.domain = this.domain.id;
+    save(this.data);
 
     const played: PlayedRef[] = [];
     const retries: RetryEntry[] = [];
     await playUntilTimeUp(this.clock, () => this.playOne(played, retries));
     await this.endSession();
+  }
+
+  /** Rekenen of lezen: vastgezet door de ouder, of ze kiest zelf met twee plaatjes. */
+  private async chooseDomain(): Promise<DomainModule> {
+    const options = this.domains.filter((d) => d.activities.length > 0);
+    const fixed = options.find((d) => d.id === this.data.settings.subject);
+    if (fixed || options.length < 2) return fixed ?? options[0];
+    const order = shuffle(this.rng, options);
+    const i = await askChoice(this.context(null), order.map((d) => ({ icon: d.icon, label: d.choice })));
+    await this.whenResumed();
+    return order[i];
   }
 
   private async playOne(played: PlayedRef[], retries: RetryEntry[]): Promise<boolean> {
@@ -258,7 +277,7 @@ export class App {
 
     const summary: Seg[] = ['einde.start'];
     for (const id of r.activities) summary.push(...this.activity(id).summary);
-    summary.push(r.helped > 0 ? 'einde.lof.doorzetten' : 'einde.lof.precies');
+    summary.push(...(r.helped > 0 ? ['einde.lof.doorzetten' as const] : this.domain.endPraise));
     await this.say(summary);
     this.fluffy.set('slaperig');
     await this.say(['einde.slapen', 'einde.dag', 'naam']);
@@ -273,7 +292,7 @@ export class App {
   }
 
   private activity(id: string): Activity<unknown> {
-    return this.domain.activities.find((a) => a.id === id)!;
+    return this.domains.flatMap((d) => d.activities).find((a) => a.id === id)!;
   }
 
   private activitiesFor(skill: string): Activity<unknown>[] {
@@ -334,7 +353,7 @@ export class App {
   }
 
   private applyStartLevel(levelId: string): void {
-    const level = this.domain.startLevels.find((l) => l.id === levelId);
+    const level = this.domains.flatMap((d) => d.startLevels).find((l) => l.id === levelId);
     if (!level) return;
     const today = isoDate(Date.now());
     for (const id of level.assumed) {
@@ -348,9 +367,19 @@ export class App {
 
   private setupGear(): void {
     let timer = 0;
+    let hintTimer = 0;
     const cancel = () => {
       clearTimeout(timer);
       this.gear.classList.remove('is-holding');
+    };
+    // Gewoon tikken opent niets (dan komt een kind er niet per ongeluk in), maar de ouder ziet hoe het wel moet.
+    const release = () => {
+      const short = this.gear.classList.contains('is-holding');
+      cancel();
+      if (!short) return;
+      clearTimeout(hintTimer);
+      this.gearHint.classList.add('is-on');
+      hintTimer = window.setTimeout(() => this.gearHint.classList.remove('is-on'), 2500);
     };
     this.gear.addEventListener('pointerdown', (e) => {
       e.preventDefault();
@@ -359,10 +388,11 @@ export class App {
       // Twee seconden vasthouden; gewoon tikken doet niets.
       timer = window.setTimeout(() => {
         cancel();
+        this.gearHint.classList.remove('is-on');
         this.openParent();
       }, 2000);
     });
-    this.gear.addEventListener('pointerup', cancel);
+    this.gear.addEventListener('pointerup', release);
     this.gear.addEventListener('pointerleave', cancel);
     this.gear.addEventListener('pointercancel', cancel);
   }
@@ -370,7 +400,7 @@ export class App {
   private openParent(): void {
     this.pause();
     openParentArea(this.root, {
-      domain: this.domain,
+      domains: this.domains,
       data: this.data,
       speech: this.speech,
       playable: this.playable,
@@ -380,6 +410,10 @@ export class App {
       },
       onStartLevel: (id) => {
         this.applyStartLevel(id);
+        save(this.data);
+      },
+      onSkillLevel: (id: string, choice: ManualLevel) => {
+        this.data.skills[id] = manualState(this.skillsById.get(id)!, this.stateOf(id), choice, isoDate(Date.now()));
         save(this.data);
       },
       onReset: () => {

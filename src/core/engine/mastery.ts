@@ -38,6 +38,23 @@ export function assumeMastered(def: SkillDef, today: string): SkillState {
   };
 }
 
+/** Wat de ouder handmatig kan kiezen: nog niet, oefenen op een niveau, of beheerst. */
+export type ManualLevel = 'new' | 'mastered' | number;
+
+/** De ouder zet een vaardigheid zelf op een niveau. De geschiedenis blijft bewaard. */
+export function manualState(def: SkillDef, prev: SkillState, choice: ManualLevel, today: string): SkillState {
+  const keep = { history: prev.history, lastPracticed: prev.lastPracticed };
+  if (choice === 'new') return { ...initialState(), ...keep };
+  if (choice === 'mastered') return { ...assumeMastered(def, today), ...keep };
+  const level = Math.max(0, Math.min(def.levels - 1, choice));
+  return { ...initialState(), ...keep, status: 'practicing', level };
+}
+
+/** Het huidige niveau als handmatige keuze (voor het keuzelijstje van de ouder). */
+export function manualLevelOf(s: SkillState): ManualLevel {
+  return s.status === 'practicing' ? s.level : s.status;
+}
+
 export interface AttemptInput {
   credit: Credit;
   session: string;

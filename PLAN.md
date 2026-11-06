@@ -253,6 +253,32 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 
 ---
 
+## 10b. Lezen (voorbereidend)
+
+Bij een vierjarige begint lezen met **klanken horen** (fonologisch bewustzijn), nog zonder letters. Dat is
+de sterkste voorspeller van later leren lezen die je op deze leeftijd kunt oefenen (National Early Literacy
+Panel, 2008; Lonigan, 2006). Van grote stukken naar kleine: rijm → beginklank → losse klanken
+(hakken en plakken) → letter-klankkoppeling → eerste woordjes (Ehri, 2005).
+
+| Vaardigheid (id) | Voorwaarden | Activiteit |
+|---|---|---|
+| Rijmen horen (`rijmen`) | geen | **Rijmen**: "Wat rijmt op huis?" Plaatjes kiezen; Fluffy noemt elk plaatje. |
+| Beginklank horen (`beginklank`) | geen | **Beginklank**: "Welke begint net zo als maan?" |
+| Woorden klappen (`klappen`) | rijmen | (later) |
+| Hakken en plakken (`hakken`) | beginklank | (later) |
+| Letters en klanken (`letters`) | beginklank | (later) |
+| Eerste woordjes (`woordjes`) | hakken, letters | (later) |
+
+Rijmen en beginklank: twee plaatjes → drie → drie met een lastige afleider (bij rijmen een woord met dezelfde
+beginklank, bij beginklank een woord dat rijmt). Hint: Fluffy zet het doelwoord naast elk plaatje ("huis… hoed,
+huis… muis"). Voordoen: "Huis en muis, die rijmen." Fluffy zegt een klank nooit los ("mmm"), alleen hele
+woorden, want losse klanken klinken met een computerstem niet goed. Woorden met twee beginklanken (kraan,
+schip) tellen niet als "hetzelfde begin".
+
+Aan het begin van een sessie kiest het kind met twee plaatjes (cijferblokjes / boekje met a en b), of de
+ouder zet het vak vast in het ouderdeel. In het ouderdeel kan de ouder per vaardigheid het niveau zelf
+zetten (nog niet / oefenen stap n / kan ze al); daarna past de app het weer aan op hoe het gaat.
+
 ## 11. Stappen
 
 | Stap | Inhoud |
@@ -263,6 +289,7 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 | **4 (klaar)** | Koekjes vergelijken + Cijfers zoeken |
 | **5 (klaar)** | Getallenpad (ervoor/erna) + Waar woont…? |
 | **6 (klaar)** | Rekenrek + splitshuisje |
+| **6b (klaar)** | Vakkeuze aan het begin (rekenen of lezen, met plaatjes; ouder kan het vastzetten), eerste leesspellen **Rijmen** en **Beginklank**, niveau per vaardigheid handmatig instellen in het ouderdeel, uitleg bij het tandwiel |
 | 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |
 | 8 | Kralenketting (patronen); eigen opnames inspreken; afronding v1 |
 | later | Leesmodule |
