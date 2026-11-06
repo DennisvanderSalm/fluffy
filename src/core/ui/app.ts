@@ -399,6 +399,7 @@ export class App {
 
   private openParent(): void {
     this.pause();
+    let wake = false;
     openParentArea(this.root, {
       domains: this.domains,
       data: this.data,
@@ -429,8 +430,24 @@ export class App {
         this.data.parentAllowedAt = Date.now();
         save(this.data);
       },
+      awake: this.mode === 'session',
+      onWake: () => {
+        // Binnen de tik: geluid ontgrendelen (iPadOS), dan meteen beginnen.
+        this.speech.unlock();
+        this.sounds.unlock();
+        this.data.parentAllowedAt = Date.now();
+        save(this.data);
+        wake = true;
+      },
       onClose: () => {
         this.resume();
+        if (wake && this.mode !== 'session') {
+          this.screenTap = null;
+          this.stage.replaceChildren();
+          document.body.classList.remove('is-night');
+          void this.runSession();
+          return;
+        }
         if (this.mode === 'night' && this.data.parentAllowedAt !== null) this.showRestingScreen();
       },
     });

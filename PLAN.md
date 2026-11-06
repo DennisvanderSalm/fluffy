@@ -296,6 +296,7 @@ zetten (nog niet / oefenen stap n / kan ze al); daarna past de app het weer aan 
 | **6 (klaar)** | Rekenrek + splitshuisje |
 | **6b (klaar)** | Vakkeuze aan het begin (rekenen of lezen, met plaatjes; ouder kan het vastzetten), eerste leesspellen **Rijmen** en **Beginklank**, niveau per vaardigheid handmatig instellen in het ouderdeel, uitleg bij het tandwiel |
 | **6c (klaar)** | Leerlijn lezen bijgewerkt naar het onderzoek: beginklank eerst, rijmen als opwarmer, klappen eruit, **Letters zoeken**, letter bij de beginklank, uitgerekte klanken, voorleestip |
+| **6d (klaar)** | Knop "Fluffy wakker maken" in het ouderdeel: slaat rustpauze en dagmaximum één keer over en start meteen een sessie |
 | 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |
 | 8 | Kralenketting (patronen); eigen opnames inspreken; afronding v1 |
 | later | Leesmodule |

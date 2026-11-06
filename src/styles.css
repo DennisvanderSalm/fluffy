@@ -555,7 +555,8 @@ body.is-night .gear { filter: invert(1); }
 .lock .btn { margin-top: 22px; }
 
 .parent { max-width: 920px; margin: 0 auto; padding: 24px 24px 80px; }
-.parent header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.parent header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.header-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 .parent h1 { font-size: 28px; margin: 0; }
 .parent h2 { font-size: 21px; margin: 32px 0 10px; }
 .parent .muted { color: var(--ink-soft); }

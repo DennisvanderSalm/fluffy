@@ -17,6 +17,10 @@ export interface ParentDeps {
   onSkillLevel(id: string, level: ManualLevel): void;
   onReset(): void;
   onAllowSession(): void;
+  /** Is er nu een sessie bezig? Dan is Fluffy al wakker. */
+  awake: boolean;
+  /** Fluffy meteen wakker maken (sessie start zodra het ouderdeel dicht is). */
+  onWake(): void;
   onClose(): void;
 }
 
@@ -117,8 +121,15 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
   const s = data.settings;
   const name = s.childName || 'je kind';
 
-  const closeBtn = el('button', 'btn primary', 'Terug naar Fluffy');
+  const closeBtn = el('button', `btn${deps.awake ? ' primary' : ''}`, 'Terug naar Fluffy');
   closeBtn.addEventListener('click', close);
+  // Fluffy meteen wakker maken: slaat rustpauze en dagmaximum één keer over. De tik op de knop
+  // telt als tik op het scherm, dus het geluid mag meteen aan (iPadOS).
+  const wakeBtn = el('button', 'btn primary', 'Fluffy wakker maken');
+  wakeBtn.addEventListener('click', () => {
+    deps.onWake();
+    close();
+  });
 
   // Voortgang per vak en per vaardigheid, in gewone taal. Geen scores.
   const skillCard = (domain: DomainModule, sk: SkillInfo) => {
@@ -237,10 +248,10 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     },
   );
 
-  const allow = el('button', 'btn', 'Nu een nieuwe sessie toestaan');
+  const allow = el('button', 'btn', 'Nieuwe sessie toestaan');
   allow.addEventListener('click', () => {
     deps.onAllowSession();
-    allow.textContent = 'Toegestaan. Fluffy wordt wakker als je teruggaat.';
+    allow.textContent = 'Toegestaan. Ze kan Fluffy nu zelf wakker tikken.';
   });
 
   const reset = el('button', 'btn danger', 'Voortgang wissen');
@@ -262,7 +273,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
 
   overlay.replaceChildren(
     el('div', 'parent',
-      el('header', '', el('h1', '', 'Ouderdeel'), closeBtn),
+      el('header', '', el('h1', '', 'Ouderdeel'), el('div', 'header-buttons', deps.awake ? '' : wakeBtn, closeBtn)),
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
 
       el('h2', '', `Waar ${name} mee bezig is`),
@@ -286,7 +297,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       row('Stem testen', test),
       row('Rekenen of lezen', subject, 'Bij "laat haar kiezen" vraagt Fluffy het aan het begin, met twee plaatjes.'),
       startLevel ? row(`Startniveau ${startDomain!.name.toLowerCase()}`, startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.') : '',
-      row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over.'),
+      row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over; Fluffy blijft slapen tot ze op het scherm tikt. Wil je meteen beginnen, gebruik dan "Fluffy wakker maken" bovenaan.'),
       row('Voortgang', reset, 'Begint helemaal opnieuw. Instellingen blijven bewaard.'),
 
       el('h2', '', 'Tips'),
