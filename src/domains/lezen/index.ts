@@ -1,5 +1,6 @@
 import type { DomainModule } from '../../core/domain';
 import { beginklank, rijmen } from './klanken';
+import { letters } from './letters';
 import { LEES_SKILLS, LEES_START_LEVELS } from './skills';
 
 /** Plaatje voor de keuze aan het begin: een open boekje met een a en een b. */
@@ -15,7 +16,7 @@ export const lezen: DomainModule = {
   id: 'lezen',
   name: 'Lezen',
   skills: LEES_SKILLS,
-  activities: [rijmen, beginklank],
+  activities: [beginklank, rijmen, letters],
   startLevels: LEES_START_LEVELS,
   icon: ICON,
   choice: ['keuze.vak.lezen'],

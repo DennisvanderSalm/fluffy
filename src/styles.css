@@ -476,6 +476,21 @@ body.is-night .gear { filter: invert(1); }
 .lz-doel.is-named, .lz-kaart.is-named { box-shadow: 0 0 0 10px var(--glow); }
 .lz-doel.is-counted, .lz-kaart.is-counted { box-shadow: 0 0 0 10px var(--ok); }
 .lz-kaart.is-picked { transform: scale(0.96); border-color: var(--ink-soft); }
+.lz-kaart.is-letter { font-family: var(--font); font-weight: 800; color: var(--ink); line-height: 1; padding-bottom: 0.08em; }
+.lz-letter {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: #fff;
+  border: 4px solid var(--panel-edge);
+  font: 800 clamp(48px, 13vh, 120px) / 1 var(--font);
+  color: var(--ink);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.lz-letter.is-on { opacity: 1; transform: none; }
 
 /* ── Keuzemoment ── */
 .keuze {

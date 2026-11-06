@@ -66,6 +66,8 @@ describe('wat er ingesproken wordt', () => {
     expect(text('splits.wonen.a+getal.6+splits.wonen.b')).toBe('In dit huisje wonen zes vlinders.');
     expect(text('rijm.vraag+w.huis')).toBe('Wat rijmt op huis?');
     expect(text('w.maan+rijm.en+w.muis+klank.zelfde')).toBe('Maan en muis, die beginnen hetzelfde.');
+    expect(text('klank.schrijf+w.maan')).toBe('Kijk, zo schrijf je het begin van maan.');
+    expect(text('letter.vraag+w.vis')).toBe('Welke letter hoort bij het begin van vis?');
   });
 
   it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {

@@ -294,6 +294,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
         el('li', '', 'Zet de app op het beginscherm (Deel → Zet op beginscherm). Dan werkt hij offline en blijft de voortgang bewaard.'),
         el('li', '', 'Zet Begeleide toegang aan (Instellingen → Toegankelijkheid). Dan blijft je kind in de app.'),
         el('li', '', 'Het mooiste is samen spelen met echte dingen. De tips "Zonder scherm" hierboven helpen daarbij.'),
+        el('li', '', 'Lees elke dag samen voor en praat over het verhaal: wat gebeurt er, waarom, wat zou jij doen? Lezen is klanken én begrijpen. De app oefent alleen de klanken; woordenschat en begrip groeien vooral door samen voorlezen (Mol, Bus & de Jong, 2009).'),
       ),
     ),
   );

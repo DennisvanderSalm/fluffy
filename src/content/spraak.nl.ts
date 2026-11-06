@@ -207,6 +207,17 @@ export const SPRAAK = {
   'w.kraan': 'kraan',
   'w.vis': 'vis',
 
+  // Uitgerekt: eerst de klank aangehouden, dan het woord ("mmm… maan"), zoals een juf het voordoet.
+  'rekt.maan': 'Mmmm… maan',
+  'rekt.muis': 'Mmmm… muis',
+  'rekt.vis': 'Vvvv… vis',
+  'rekt.voet': 'Vvvv… voet',
+  'rekt.veer': 'Vvvv… veer',
+  'rekt.huis': 'Hhhh… huis',
+  'rekt.hoed': 'Hhhh… hoed',
+  'rekt.zon': 'Zzzz… zon',
+  'rekt.roos': 'Rrrr… roos',
+
   // ── Rijmen en beginklank ──
   'rijm.uitleg': 'Woorden die rijmen, klinken aan het eind hetzelfde. Zoals boom en droom.',
   'rijm.vraag': 'Wat rijmt op',
@@ -217,6 +228,10 @@ export const SPRAAK = {
   'klank.vraag': 'Welke begint net zo als',
   'klank.hint': 'Luister goed naar het begin van het woord.',
   'klank.zelfde': ', die beginnen hetzelfde',
+  'klank.schrijf': 'Kijk, zo schrijf je het begin van',
+  'letter.uitleg': 'Elke klank heeft een letter. Zo kun je hem opschrijven.',
+  'letter.vraag': 'Welke letter hoort bij het begin van',
+  'letter.hint': 'Luister nog eens goed naar het begin.',
   'voordoen.luister': 'Ik doe het even voor. Luister maar.',
 
   // ── Keuzemoment ──
@@ -238,6 +253,7 @@ export const SPRAAK = {
   'keuze.vak.lezen': 'Spelen met woordjes en klanken.',
   'keuze.rijmen': 'Woordjes die rijmen.',
   'keuze.beginklank': 'Luisteren naar het begin van een woord.',
+  'keuze.letters': 'Letters zoeken.',
 
   // ── Feedbackladder ──
   // Stap 1: hint (samen natellen)
@@ -280,6 +296,7 @@ export const SPRAAK = {
   'lof.tien': 'Je zag hoe de tien kralen verdeeld waren.',
   'lof.rijm': 'Je luisterde goed naar het eind van het woord.',
   'lof.begin': 'Je luisterde goed naar het begin van het woord.',
+  'lof.letter': 'Je luisterde naar het begin, en je wist welke letter erbij hoort.',
   'lof.luisteren': 'Je bleef goed luisteren, ook toen het lastig was.',
   'lof.samen.kort': 'Samen is het gelukt.',
   'lof.verstopt': 'Je bedacht hoeveel er binnen zaten.',
@@ -300,6 +317,7 @@ export const SPRAAK = {
   'einde.lof.luisteren': 'Je hebt heel goed geluisterd.',
   'einde.rijmen': 'We hebben woordjes gezocht die rijmen.',
   'einde.beginklank': 'We hebben geluisterd naar het begin van woordjes.',
+  'einde.letters': 'En we hebben letters gezocht.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
   'einde.dag': 'Dag',

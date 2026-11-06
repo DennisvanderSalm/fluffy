@@ -3,13 +3,17 @@ import type { Seg } from '../../core/audio/speech';
 import type { LineId } from '../../content/spraak.nl';
 import { onTap } from '../../core/ui/drag';
 import { el, pick, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
-import { PICTURE, RHYMES, rhymes, sameOnset, wordLine, WORDS, type Word } from './plaatjes';
+import {
+  letterOf, ONSET_WORDS, PICTURE, RHYMES, rhymes, sameOnset, stretchLine, wordLine, WORDS, type Word,
+} from './plaatjes';
 
 /**
- * KLANKEN HOREN — fonologisch bewustzijn, de sterkste voorspeller van leren lezen die je bij
- * vierjarigen al kunt oefenen (National Early Literacy Panel, 2008; Lonigan, 2006).
- * Eerst rijmen (het eind van een woord), dan de beginklank. Alles is gesproken en met plaatjes:
- * ze hoeft geen letter te kennen. Fluffy zegt de klank nooit los ("mmm"), alleen hele woorden.
+ * KLANKEN HOREN — fonologisch bewustzijn, samen met letterkennis de sterkste voorspeller van
+ * leren lezen die je bij vierjarigen al kunt oefenen (National Early Literacy Panel, 2008).
+ * De beginklank is het belangrijkste: klanken los horen voorspelt lezen veel beter dan rijmen
+ * (Hulme e.a., 2002; Muter e.a., 2004). Rijmen is een opwarmer. Alles is gesproken en met plaatjes.
+ * Bij de beginklank rekt Fluffy de klank uit ("mmmaan") en laat ze daarna de letter zien: klanken
+ * oefenen werkt beter samen met letters (Bus & van IJzendoorn, 1999).
  * Niveaus: twee plaatjes → drie plaatjes → drie met een lastige afleider (bij rijmen een woord
  * met dezelfde beginklank, bij beginklank een woord dat rijmt).
  */
@@ -27,9 +31,6 @@ export interface KlankItem {
 const fits = (kind: KlankKind, a: Word, b: Word) => (kind === 'rijm' ? rhymes(a, b) : sameOnset(a, b));
 /** De lastige afleider: lijkt op een andere manier op het doelwoord. */
 const tricky = (kind: KlankKind, a: Word, b: Word) => (kind === 'rijm' ? sameOnset(a, b) : rhymes(a, b));
-
-/** Woorden met een beginklank die ook nog bij een ander woord hoort. */
-const ONSET_WORDS = WORDS.filter((w) => WORDS.some((v) => sameOnset(w, v)));
 
 let lastTarget: Word | null = null;
 
@@ -52,6 +53,8 @@ export function makeKlankItem(kind: KlankKind, level: number, rng: Rng): KlankIt
 class Round {
   private root: HTMLElement;
   private model: HTMLElement;
+  /** De letter van de beginklank, die na het antwoord naast het plaatje verschijnt. */
+  private letter: HTMLElement;
   private cards: HTMLElement[];
   private answer: ((i: number) => void) | null = null;
 
@@ -60,7 +63,8 @@ class Round {
     this.root.dataset.answer = item.answer; // voor tests
     this.model = el('div', 'lz-doel');
     this.model.append(svgEl(PICTURE[item.target]));
-    this.root.append(this.model);
+    this.letter = el('div', 'lz-letter', letterOf(item.target) ?? '');
+    this.root.append(this.model, this.letter);
     this.cards = item.options.map((w, i) => {
       const c = el('div', 'lz-kaart');
       c.dataset.word = w;
@@ -84,6 +88,7 @@ class Round {
     const H = this.ctx.stage.clientHeight;
     const m = Math.min(0.3 * H, 0.2 * W, 220);
     place(this.model, { x: 0.59 * W - m / 2, y: 0.05 * H, w: m, h: m });
+    place(this.letter, { x: 0.59 * W + m / 2 + 0.03 * W, y: 0.05 * H + m * 0.1, w: m * 0.8, h: m * 0.8 });
     const c = Math.min(0.27 * H, 0.19 * W, 210);
     const gap = c * 1.3;
     this.cards.forEach((card, i) => {
@@ -166,12 +171,13 @@ class Round {
     // Ladder 1: het doelwoord naast elk plaatje zetten, zodat ze het verschil hoort.
     ctx.fluffy.set('nadenken');
     await ctx.say([item.kind === 'rijm' ? 'rijm.hint' : 'klank.hint']);
+    const say = item.kind === 'begin' ? stretchLine : wordLine;
     for (let i = 0; i < this.cards.length; i++) {
       this.glow(this.model);
-      await ctx.say([wordLine(item.target)]);
+      await ctx.say([say(item.target)]);
       await sleep(150);
       this.glow(this.cards[i]);
-      await ctx.say([wordLine(item.options[i])]);
+      await ctx.say([say(item.options[i])]);
       await sleep(350);
     }
     this.glow(null);
@@ -182,12 +188,13 @@ class Round {
     ctx.fluffy.set('nadenken');
     await ctx.say(['voordoen.luister']);
     this.glow(this.model);
-    await ctx.say([wordLine(item.target)]);
+    await ctx.say([item.kind === 'begin' ? stretchLine(item.target) : wordLine(item.target)]);
     await sleep(300);
     this.glow(this.cards[item.options.indexOf(item.answer)]);
-    await ctx.say([wordLine(item.answer)]);
+    await ctx.say([item.kind === 'begin' ? stretchLine(item.answer) : wordLine(item.answer)]);
     await sleep(300);
     await ctx.say(this.statement());
+    await this.showLetter();
     this.glow(null);
     w = await this.ask(['cijfer.tikjij'], item.answer);
     if (w === item.answer) {
@@ -201,6 +208,14 @@ class Round {
     return { credit: 0, modeled: true };
   }
 
+  /** Bij de beginklank: "Kijk, zo schrijf je het begin van maan." met de letter erbij. */
+  private async showLetter(): Promise<void> {
+    if (this.item.kind !== 'begin' || !letterOf(this.item.target)) return;
+    this.letter.classList.add('is-on');
+    await sleep(300);
+    await this.ctx.say(['klank.schrijf', wordLine(this.item.target)]);
+  }
+
   private async celebrate(attempt: 1 | 2): Promise<ItemResult> {
     const { ctx, item } = this;
     ctx.fluffy.set('blij');
@@ -209,7 +224,9 @@ class Round {
     this.model.classList.add('is-counted');
     this.cards[item.options.indexOf(item.answer)].classList.add('is-counted');
     const praise: LineId = attempt === 2 ? 'lof.luisteren' : item.kind === 'rijm' ? 'lof.rijm' : 'lof.begin';
-    await ctx.say([...this.statement(), praise]);
+    await ctx.say(this.statement());
+    await this.showLetter();
+    await ctx.say([praise]);
     await sleep(400);
     return attempt === 1 ? { credit: 1, modeled: false } : { credit: 0.5, modeled: false };
   }
@@ -231,6 +248,7 @@ function phrasesFor(kind: KlankKind): Seg[][] {
   const targets = kind === 'rijm' ? RHYMES.flat() : ONSET_WORDS;
   for (const t of targets) {
     out.push([kind === 'rijm' ? 'rijm.vraag' : 'klank.vraag', wordLine(t)]);
+    if (kind === 'begin') out.push(['klank.schrijf', wordLine(t)]);
     for (const a of WORDS) {
       if (fits(kind, t, a)) out.push([wordLine(t), 'rijm.en', wordLine(a), kind === 'rijm' ? 'rijm.rijmen' : 'klank.zelfde']);
     }

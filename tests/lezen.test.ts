@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { seededRng } from '../src/core/util';
 import { makeKlankItem, type KlankKind } from '../src/domains/lezen/klanken';
-import { ONSET, PICTURE, rhymes, RHYMES, sameOnset, WORDS } from '../src/domains/lezen/plaatjes';
+import { LETTER_WORDS, makeLetterItem } from '../src/domains/lezen/letters';
+import { letterOf, ONSET, PICTURE, rhymes, RHYMES, sameOnset, STRETCHED, WORDS } from '../src/domains/lezen/plaatjes';
 import { DOMAINS } from '../src/domains';
 import { initialState, manualLevelOf, manualState } from '../src/core/engine/mastery';
 
@@ -43,6 +44,42 @@ describe('Rijmen en beginklank', () => {
     expect(Object.keys(ONSET)).toHaveLength(WORDS.length);
     const inPairs = RHYMES.flat();
     expect(new Set(inPairs).size).toBe(inPairs.length);
+  });
+});
+
+describe('Letters zoeken', () => {
+  it('één goede letter; op het hoogste niveau soms een letter die erop lijkt', () => {
+    const rng = seededRng(5);
+    let lookalike = 0;
+    for (const level of [0, 1, 2]) {
+      for (let i = 0; i < 200; i++) {
+        const it = makeLetterItem('letters', level, rng);
+        expect(it.letter).toBe(letterOf(it.word));
+        expect(it.options).toHaveLength(level === 0 ? 2 : 3);
+        expect(it.options.filter((l) => l === it.letter)).toHaveLength(1);
+        expect(new Set(it.options).size).toBe(it.options.length);
+        if (it.options.some((l) => ['m:n', 'n:m', 'b:d', 'd:b', 'p:b', 'h:n', 'v:w', 'k:h', 't:f'].includes(`${it.letter}:${l}`))) {
+          expect(level).toBe(2);
+          lookalike++;
+        }
+      }
+    }
+    expect(lookalike).toBeGreaterThan(100);
+  });
+
+  it('alleen woorden met één beginletter, en uitgerekt alleen klanken die je kunt aanhouden', () => {
+    expect(LETTER_WORDS).not.toContain('kraan');
+    expect(LETTER_WORDS).not.toContain('schip');
+    for (const w of Object.keys(STRETCHED)) expect(['m', 'v', 'h', 'z', 'r']).toContain(ONSET[w as keyof typeof ONSET]);
+  });
+});
+
+describe('leerlijn lezen', () => {
+  it('beginklank komt eerst, rijmen is geen voorwaarde, letters na beginklank', () => {
+    const lezen = DOMAINS.find((d) => d.id === 'lezen')!;
+    expect(lezen.skills[0].id).toBe('beginklank');
+    for (const s of lezen.skills) expect(s.requires).not.toContain('rijmen');
+    expect(lezen.skills.find((s) => s.id === 'letters')!.requires).toEqual(['beginklank']);
   });
 });
 

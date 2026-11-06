@@ -255,25 +255,30 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
 
 ## 10b. Lezen (voorbereidend)
 
-Bij een vierjarige begint lezen met **klanken horen** (fonologisch bewustzijn), nog zonder letters. Dat is
-de sterkste voorspeller van later leren lezen die je op deze leeftijd kunt oefenen (National Early Literacy
-Panel, 2008; Lonigan, 2006). Van grote stukken naar kleine: rijm → beginklank → losse klanken
-(hakken en plakken) → letter-klankkoppeling → eerste woordjes (Ehri, 2005).
+Wat leren lezen het sterkst voorspelt en wat je bij een vierjarige al kunt oefenen: **klanken los horen**
+(vooral de beginklank) en **weten welke letter bij een klank hoort** (National Early Literacy Panel, 2008).
+Die twee werken het best samen: klanktraining met letters erbij heeft meer effect dan zonder
+(Bus & van IJzendoorn, 1999; National Reading Panel, 2000). Rijmen voorspelt lezen nauwelijks als je de
+klanken al meetelt (Hulme e.a., 2002; Muter e.a., 2004), en lettergrepen klappen voegt weinig toe.
+Daarom: beginklank eerst, letters er direct achteraan, rijmen als opwarmer.
 
 | Vaardigheid (id) | Voorwaarden | Activiteit |
 |---|---|---|
-| Rijmen horen (`rijmen`) | geen | **Rijmen**: "Wat rijmt op huis?" Plaatjes kiezen; Fluffy noemt elk plaatje. |
-| Beginklank horen (`beginklank`) | geen | **Beginklank**: "Welke begint net zo als maan?" |
-| Woorden klappen (`klappen`) | rijmen | (later) |
+| Beginklank horen (`beginklank`) | geen | **Beginklank**: "Welke begint net zo als maan?" Na het antwoord verschijnt de letter: "Kijk, zo schrijf je het begin van maan." |
+| Rijmen horen (`rijmen`) | geen | **Rijmen** (opwarmer): "Wat rijmt op huis?" |
+| Letters en klanken (`letters`) | beginklank | **Letters zoeken**: "Mmm… maan. Welke letter hoort bij het begin van maan?" |
 | Hakken en plakken (`hakken`) | beginklank | (later) |
-| Letters en klanken (`letters`) | beginklank | (later) |
 | Eerste woordjes (`woordjes`) | hakken, letters | (later) |
 
-Rijmen en beginklank: twee plaatjes → drie → drie met een lastige afleider (bij rijmen een woord met dezelfde
-beginklank, bij beginklank een woord dat rijmt). Hint: Fluffy zet het doelwoord naast elk plaatje ("huis… hoed,
-huis… muis"). Voordoen: "Huis en muis, die rijmen." Fluffy zegt een klank nooit los ("mmm"), alleen hele
-woorden, want losse klanken klinken met een computerstem niet goed. Woorden met twee beginklanken (kraan,
-schip) tellen niet als "hetzelfde begin".
+Niveaus: twee plaatjes/letters → drie → drie met een lastige afleider (bij rijmen een woord met dezelfde
+beginklank, bij beginklank een woord dat rijmt, bij letters een letter die erop lijkt: m/n, b/d).
+Fluffy gebruikt altijd de klank, nooit de letternaam ("mmm", niet "em"). Klanken die je kunt aanhouden
+(m, v, h, z, r) zegt ze eerst los en dan in het woord: "mmm… maan" (Byrne & Fielding-Barnsley, 1991).
+Bij b, p, k en t kan dat niet. Woorden met twee beginklanken (kraan, schip) tellen niet als "hetzelfde begin".
+
+Lezen is klanken omzetten in woorden **én** begrijpen wat er staat (Gough & Tunmer, 1986). De app oefent
+alleen het eerste. Woordenschat en begrip groeien vooral door samen voorlezen en erover praten
+(Mol, Bus & de Jong, 2009); dat staat als tip in het ouderdeel.
 
 Aan het begin van een sessie kiest het kind met twee plaatjes (cijferblokjes / boekje met a en b), of de
 ouder zet het vak vast in het ouderdeel. In het ouderdeel kan de ouder per vaardigheid het niveau zelf
@@ -290,6 +295,7 @@ zetten (nog niet / oefenen stap n / kan ze al); daarna past de app het weer aan 
 | **5 (klaar)** | Getallenpad (ervoor/erna) + Waar woont…? |
 | **6 (klaar)** | Rekenrek + splitshuisje |
 | **6b (klaar)** | Vakkeuze aan het begin (rekenen of lezen, met plaatjes; ouder kan het vastzetten), eerste leesspellen **Rijmen** en **Beginklank**, niveau per vaardigheid handmatig instellen in het ouderdeel, uitleg bij het tandwiel |
+| **6c (klaar)** | Leerlijn lezen bijgewerkt naar het onderzoek: beginklank eerst, rijmen als opwarmer, klappen eruit, **Letters zoeken**, letter bij de beginklank, uitgerekte klanken, voorleestip |
 | 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |
 | 8 | Kralenketting (patronen); eigen opnames inspreken; afronding v1 |
 | later | Leesmodule |

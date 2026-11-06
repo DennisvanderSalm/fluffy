@@ -72,7 +72,7 @@ export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
     const id = phraseId(segs);
     const raw = joinText(segs.map((s) => lineText(segId(s), '')));
     const text = raw.charAt(0).toUpperCase() + raw.slice(1);
-    const end = /^(Welk|Waar|Wat|Wie|Hoeveel|Kun|Zullen)\b/.test(text) ? '?' : '.';
+    const end = /^(Welke?|Waar|Wat|Wie|Hoeveel|Kun|Zullen)\b/.test(text) ? '?' : '.';
     jobs.set(id, { id, text: /[.?!]$/.test(text) ? text : `${text}${end}` });
   }
   return [...jobs.values()];

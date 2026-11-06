@@ -29,6 +29,25 @@ export const rhymes = (a: Word, b: Word) => a !== b && RHYMES.some(([x, y]) => (
 export const sameOnset = (a: Word, b: Word) => a !== b && ONSET[a] === ONSET[b];
 export const wordLine = (w: Word) => `w.${w}` as LineId;
 
+/** Woorden met een beginklank die ook nog bij een ander woord hoort. */
+export const ONSET_WORDS = WORDS.filter((w) => WORDS.some((v) => sameOnset(w, v)));
+
+/**
+ * Woorden waarvan je de eerste klank kunt aanhouden (m, v, h, z, r). Die zegt Fluffy eerst los en
+ * dan in het woord ("mmm… maan"), zoals een juf het voordoet. Zo hoort ze de klank zelf
+ * (Byrne & Fielding-Barnsley, 1991). Bij b, p, k en t kan dat niet: daar zegt ze het gewone woord.
+ */
+export const STRETCHED: Partial<Record<Word, string>> = {
+  maan: 'Mmmm… maan', muis: 'Mmmm… muis', vis: 'Vvvv… vis', voet: 'Vvvv… voet', veer: 'Vvvv… veer',
+  huis: 'Hhhh… huis', hoed: 'Hhhh… hoed', zon: 'Zzzz… zon', roos: 'Rrrr… roos',
+};
+
+/** Uitgerekt als dat kan, anders gewoon het woord. */
+export const stretchLine = (w: Word) => (STRETCHED[w] ? (`rekt.${w}` as LineId) : wordLine(w));
+
+/** De letter waarmee een woord begint, als de beginklank één letter is (kraan en schip niet). */
+export const letterOf = (w: Word): string | null => (ONSET[w].length === 1 ? ONSET[w] : null);
+
 const S = (inner: string) => `<svg viewBox="0 0 100 100">${inner}</svg>`;
 const INK = '#3b4a6b';
 

@@ -1,31 +1,32 @@
 import type { SkillInfo, StartLevel } from '../../core/domain';
 
 /**
- * Leerlijn voorbereidend lezen. Bij een vierjarige gaat het eerst om klanken horen
- * (fonologisch bewustzijn), nog niet om letters: van grote stukken (rijm) naar kleine
- * (beginklank, losse klanken), en pas daarna letters koppelen aan klanken
- * (National Early Literacy Panel, 2008; Ehri, 2005).
+ * Leerlijn voorbereidend lezen. De beginklank horen en letters koppelen aan klanken voorspellen
+ * leren lezen het sterkst (National Early Literacy Panel, 2008; Hulme e.a., 2002), en werken het
+ * best samen (Bus & van IJzendoorn, 1999). Rijmen voorspelt weinig en is daarom een opwarmer,
+ * geen voorwaarde. Woorden in lettergrepen klappen is weggelaten: dat voegt weinig toe.
+ * De volgorde in deze lijst is ook de voorrang: de beginklank komt eerst aan bod.
  */
 const d = 'lezen';
 
 export const LEES_SKILLS: SkillInfo[] = [
   {
-    id: 'rijmen', domain: d, requires: [], levels: 3, stage: 1,
-    name: 'Rijmen horen',
-    about: 'Horen dat woorden aan het eind hetzelfde klinken: huis en muis, beer en veer.',
-    offScreen: 'Rijmspelletjes in de auto of bij het eten: "Wat rijmt op boom?" Onzinwoorden mogen ook: boom, toom, loom!',
-  },
-  {
     id: 'beginklank', domain: d, requires: [], levels: 3, stage: 1,
     name: 'Beginklank horen',
-    about: 'Horen dat woorden hetzelfde beginnen: maan en muis, vis en voet.',
+    about: 'Horen dat woorden hetzelfde beginnen: maan en muis, vis en voet. Na het antwoord ziet ze de letter erbij.',
     offScreen: '"Ik zie, ik zie wat jij niet ziet, en het begint als… mmmelk." Rek de eerste klank lekker uit.',
   },
   {
-    id: 'klappen', domain: d, requires: ['rijmen'], levels: 3, stage: 2,
-    name: 'Woorden in stukjes klappen',
-    about: 'Een woord in klankgroepen verdelen: o-li-fant, drie klappen.',
-    offScreen: 'Klap samen de namen van iedereen in het gezin. Wie heeft de langste naam?',
+    id: 'rijmen', domain: d, requires: [], levels: 3, stage: 1,
+    name: 'Rijmen horen',
+    about: 'Horen dat woorden aan het eind hetzelfde klinken: huis en muis. Een leuke opwarmer; voor leren lezen telt de beginklank zwaarder.',
+    offScreen: 'Rijmspelletjes in de auto of bij het eten: "Wat rijmt op boom?" Onzinwoorden mogen ook: boom, toom, loom!',
+  },
+  {
+    id: 'letters', domain: d, requires: ['beginklank'], levels: 3, stage: 2,
+    name: 'Letters en klanken',
+    about: 'Weten welke letter bij een klank hoort: maan begint met de m. Fluffy zegt de klank, niet de letternaam ("mmm", niet "em").',
+    offScreen: 'Zoek de letters van haar naam op pakken in de supermarkt, en zeg de klank: "Kijk, de mmm van melk!"',
   },
   {
     id: 'hakken', domain: d, requires: ['beginklank'], levels: 3, stage: 3,
@@ -34,13 +35,7 @@ export const LEES_SKILLS: SkillInfo[] = [
     offScreen: '"Ik zie een v-i-s." Kan zij raden welk woord je bedoelt?',
   },
   {
-    id: 'letters', domain: d, requires: ['beginklank'], levels: 3, stage: 4,
-    name: 'Letters en klanken',
-    about: 'Weten welke klank bij een letter hoort: de m zegt mmm.',
-    offScreen: 'Zoek de eerste letter van haar naam op pakken in de supermarkt.',
-  },
-  {
-    id: 'woordjes', domain: d, requires: ['hakken', 'letters'], levels: 3, stage: 5,
+    id: 'woordjes', domain: d, requires: ['hakken', 'letters'], levels: 3, stage: 4,
     name: 'Eerste woordjes lezen',
     about: 'Korte woordjes lezen door de klanken achter elkaar te zeggen: m-aa-n, maan.',
     offScreen: 'Schrijf korte woordjes (vis, maan, roos) op briefjes en leg ze bij het echte ding.',
