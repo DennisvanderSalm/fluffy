@@ -320,7 +320,7 @@ export const SPRAAK = {
   'einde.letters': 'En we hebben letters gezocht.',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
-  'einde.dag': 'Dag',
+  'einde.dag': 'Doei doei',
   'slaap.tik': 'Sst. Fluffy slaapt. Een andere keer spelen we weer.',
 
   // ── Ouderdeel ──
