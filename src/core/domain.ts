@@ -1,3 +1,4 @@
+import type { LineId } from '../content/spraak.nl';
 import type { Credit, SkillDef, SkillId } from './engine/types';
 import type { Fluffy } from './fluffy/fluffy';
 import type { Seg } from './audio/speech';
@@ -18,6 +19,8 @@ export interface SkillInfo extends SkillDef {
   offScreen: string;
   /** Volgorde/groep in het ouderoverzicht. */
   stage: number;
+  /** Korte opdrachten in het echt die Fluffy kan geven ("Pak eens drie knuffels."). */
+  realTasks?: LineId[];
 }
 
 export interface StartLevel {
@@ -44,6 +47,8 @@ export interface ItemResult {
   credit: Credit;
   /** Heeft Fluffy het moeten voordoen? Dan komt het item later terug. */
   modeled: boolean;
+  /** Wat de ouder kan weten, in gewone taal ("Verwisselt b en d"). Alleen bij een fout. */
+  note?: string;
 }
 
 /** Wat een activiteit van de kern krijgt. */

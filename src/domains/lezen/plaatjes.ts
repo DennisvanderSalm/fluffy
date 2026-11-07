@@ -8,7 +8,8 @@ import type { LineId } from '../../content/spraak.nl';
 
 export type Word =
   | 'huis' | 'muis' | 'beer' | 'veer' | 'hoed' | 'voet' | 'roos' | 'doos' | 'zon' | 'ton' | 'kip' | 'schip'
-  | 'taart' | 'paard' | 'pet' | 'bed' | 'pop' | 'kop' | 'jas' | 'tas' | 'maan' | 'kraan' | 'vis';
+  | 'taart' | 'paard' | 'pet' | 'bed' | 'pop' | 'kop' | 'jas' | 'tas' | 'maan' | 'kraan' | 'vis'
+  | 'boom' | 'poes' | 'boot' | 'kaas' | 'boek' | 'deur' | 'vuur';
 
 /** Woorden die op elkaar rijmen. */
 export const RHYMES: [Word, Word][] = [
@@ -21,6 +22,7 @@ export const ONSET: Record<Word, string> = {
   huis: 'h', muis: 'm', beer: 'b', veer: 'v', hoed: 'h', voet: 'v', roos: 'r', doos: 'd', zon: 'z', ton: 't',
   kip: 'k', schip: 'sch', taart: 't', paard: 'p', pet: 'p', bed: 'b', pop: 'p', kop: 'k', jas: 'j', tas: 't',
   maan: 'm', kraan: 'kr', vis: 'v',
+  boom: 'b', poes: 'p', boot: 'b', kaas: 'k', boek: 'b', deur: 'd', vuur: 'v',
 };
 
 export const WORDS = Object.keys(ONSET) as Word[];
@@ -39,8 +41,25 @@ export const ONSET_WORDS = WORDS.filter((w) => WORDS.some((v) => sameOnset(w, v)
  */
 export const STRETCHED: Partial<Record<Word, string>> = {
   maan: 'Mmmm… maan', muis: 'Mmmm… muis', vis: 'Vvvv… vis', voet: 'Vvvv… voet', veer: 'Vvvv… veer',
-  huis: 'Hhhh… huis', hoed: 'Hhhh… hoed', zon: 'Zzzz… zon', roos: 'Rrrr… roos',
+  huis: 'Hhhh… huis', hoed: 'Hhhh… hoed', zon: 'Zzzz… zon', roos: 'Rrrr… roos', vuur: 'Vvvv… vuur',
 };
+
+/**
+ * Woorden in losse klanken, voor hakken en plakken en de eerste woordjes. Alleen woorden die je
+ * schrijft zoals je ze zegt, met een lange klinker of tweeklank (aa, oo, ee, ui, oe, eu, uu):
+ * die kun je los aanhouden. Korte klinkers (vis, zon) en een d die als t klinkt (hoed, bed)
+ * zijn voor later. Elke klank is meteen ook de letter(combinatie) die ze ziet.
+ */
+export const SOUNDS: Partial<Record<Word, string[]>> = {
+  maan: ['m', 'aa', 'n'], muis: ['m', 'ui', 's'], voet: ['v', 'oe', 't'], veer: ['v', 'ee', 'r'],
+  huis: ['h', 'ui', 's'], roos: ['r', 'oo', 's'], doos: ['d', 'oo', 's'], beer: ['b', 'ee', 'r'],
+  boom: ['b', 'oo', 'm'], poes: ['p', 'oe', 's'], boot: ['b', 'oo', 't'], kaas: ['k', 'aa', 's'],
+  boek: ['b', 'oe', 'k'], deur: ['d', 'eu', 'r'], vuur: ['v', 'uu', 'r'],
+};
+export const SOUND_WORDS = Object.keys(SOUNDS) as Word[];
+/** Alle losse klanken die Fluffy moet kunnen zeggen. */
+export const ALL_SOUNDS = [...new Set(SOUND_WORDS.flatMap((w) => SOUNDS[w]!))];
+export const soundLine = (s: string) => `kl.${s}` as LineId;
 
 /** Uitgerekt als dat kan, anders gewoon het woord. */
 export const stretchLine = (w: Word) => (STRETCHED[w] ? (`rekt.${w}` as LineId) : wordLine(w));
@@ -140,6 +159,33 @@ export const PICTURE: Record<Word, string> = {
     <path d="M20 41 H58 C70 41 74 47 74 57 V62" stroke="#9e97b3" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     <rect x="47" y="25" width="7" height="12" fill="#9e97b3"/><rect x="38" y="18" width="25" height="9" rx="4" fill="#f19a8c"/>
     <path d="M74 72 C80 80 80 89 74 89 C68 89 68 80 74 72 Z" fill="#a3cdea" stroke="#73a9cf" stroke-width="2"/>`),
+  boom: S(`<rect x="42" y="56" width="16" height="36" rx="4" fill="#c8996a" stroke="#a2764c" stroke-width="4"/>
+    <circle cx="50" cy="38" r="30" fill="#a5cf93" stroke="#7fae6c" stroke-width="4"/>
+    <circle cx="38" cy="32" r="4" fill="#f19a8c"/><circle cx="60" cy="44" r="4" fill="#f19a8c"/><circle cx="56" cy="24" r="4" fill="#f19a8c"/>`),
+  poes: S(`<path d="M76 80 C94 76 94 54 84 48" stroke="#e0a458" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <ellipse cx="54" cy="74" rx="26" ry="18" fill="#f2c27e" stroke="#e0a458" stroke-width="4"/>
+    <path d="M24 30 L28 10 L42 24 Z M60 30 L56 10 L44 24 Z" fill="#f2c27e" stroke="#e0a458" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="42" cy="42" r="20" fill="#f2c27e" stroke="#e0a458" stroke-width="4"/>
+    <circle cx="35" cy="40" r="3" fill="${INK}"/><circle cx="49" cy="40" r="3" fill="${INK}"/>
+    <path d="M42 46 L39 49 H45 Z" fill="#f19a8c"/>
+    <path d="M30 50 H16 M30 53 L18 58 M54 50 H68 M54 53 L66 58" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>`),
+  boot: S(`<rect x="38" y="34" width="30" height="24" rx="4" fill="#fbf4e6" stroke="#d6ba8c" stroke-width="4"/>
+    <rect x="45" y="40" width="9" height="9" rx="2" fill="#a3cdea"/>
+    <rect x="58" y="22" width="8" height="14" fill="#f19a8c" stroke="#d27769" stroke-width="2.5"/>
+    <path d="M10 58 H92 L80 80 H24 Z" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M6 90 C16 84 26 96 36 90 C46 84 56 96 66 90 C76 84 86 96 94 90" stroke="#73a9cf" stroke-width="4" fill="none" stroke-linecap="round"/>`),
+  kaas: S(`<path d="M10 72 L74 30 L92 52 V80 H10 Z" fill="#f8de7e" stroke="#ddbb52" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M10 72 H92" stroke="#ddbb52" stroke-width="4"/>
+    <circle cx="36" cy="64" r="5" fill="#ddbb52"/><circle cx="62" cy="52" r="6" fill="#ddbb52"/><circle cx="74" cy="76" r="3" fill="#ddbb52"/><circle cx="30" cy="77" r="2.5" fill="#ddbb52"/>`),
+  boek: S(`<path d="M50 24 C38 16 22 16 10 20 V82 C22 78 38 78 50 86 Z" fill="#fbf4e6" stroke="#d98670" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M50 24 C62 16 78 16 90 20 V82 C78 78 62 78 50 86 Z" fill="#fbf4e6" stroke="#d98670" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M20 34 H40 M20 44 H40 M20 54 H36 M60 34 H80 M60 44 H80 M60 54 H76" stroke="#c9c3d6" stroke-width="3" stroke-linecap="round"/>`),
+  deur: S(`<rect x="22" y="8" width="56" height="86" rx="5" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4"/>
+    <rect x="31" y="18" width="38" height="28" rx="3" fill="#a9d4ef" stroke="#5a8fc4" stroke-width="3"/>
+    <rect x="31" y="54" width="38" height="30" rx="3" fill="none" stroke="#5a8fc4" stroke-width="3"/>
+    <circle cx="68" cy="52" r="4.5" fill="#f8de7e" stroke="#ddbb52" stroke-width="2"/>`),
+  vuur: S(`<path d="M50 8 C62 26 80 36 78 62 C76 82 64 90 50 90 C36 90 24 82 22 62 C21 46 32 40 36 26 C42 34 44 40 44 46 C50 36 52 22 50 8 Z" fill="#f4a690" stroke="#d98670" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M50 44 C58 54 64 62 62 74 C60 84 40 84 38 74 C37 64 44 60 46 52 C48 56 49 50 50 44 Z" fill="#f8de7e" stroke="#ddbb52" stroke-width="3" stroke-linejoin="round"/>`),
   vis: S(`<path d="M78 50 L96 34 L96 66 Z" fill="#9fcbe8" stroke="#73a9cf" stroke-width="4" stroke-linejoin="round"/>
     <ellipse cx="46" cy="50" rx="36" ry="24" fill="#9fcbe8" stroke="#73a9cf" stroke-width="4"/>
     <circle cx="26" cy="44" r="4" fill="${INK}"/>

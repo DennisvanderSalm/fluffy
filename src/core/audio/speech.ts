@@ -1,5 +1,6 @@
 import { lineText, type LineId } from '../../content/spraak.nl';
 import { sleep } from '../util';
+import { loadOwnClips, type OwnClip } from './own';
 import { chunk, joinText, segId } from './phrases';
 
 /** Een segment: een zin-id uit het script, of een getal (→ 'getal.<n>'). */
@@ -30,6 +31,8 @@ export class Speech {
   voiceURI: string | null = null;
 
   private clips = new Map<string, string>();
+  /** Eigen opnames van de ouder; die gaan voor. */
+  private own = new Map<string, OwnClip>();
   private listeners = new Set<SpeakingListener>();
   private token = 0;
   private audio: HTMLAudioElement | null = null;
@@ -45,6 +48,23 @@ export class Speech {
     } catch {
       /* geen opnames: alleen computerstem */
     }
+    this.own = await loadOwnClips();
+  }
+
+  /** Is er een eigen opname van dit zinnetje? */
+  hasOwn(id: string): boolean {
+    return this.own.has(id);
+  }
+
+  /** Eigen opname zetten of (met null) weghalen. */
+  setOwn(id: string, clip: OwnClip | null): void {
+    if (clip) this.own.set(id, clip);
+    else this.own.delete(id);
+    this.buffers.delete(id);
+  }
+
+  private hasClip(id: string): boolean {
+    return this.own.has(id) || this.clips.has(id);
   }
 
   /** Hoeveel zinnen als opname klaarstaan (voor het ouderdeel). */
@@ -95,7 +115,7 @@ export class Speech {
     this.halt();
     this.emit(true);
     try {
-      const parts = chunk(segs.map(segId), (id) => this.clips.has(id));
+      const parts = chunk(segs.map(segId), (id) => this.hasClip(id));
       // Alle opnames van deze zin alvast ophalen en decoderen.
       for (const p of parts) if (p.clip) void this.buffer(p.id);
       // Groepeer: opeenvolgende stukken zonder opname worden één vloeiende zin.
@@ -191,6 +211,8 @@ export class Speech {
   }
 
   private url(id: string): string {
+    const own = this.own.get(id);
+    if (own) return URL.createObjectURL(new Blob([own.data], { type: own.type }));
     return `audio/nl/${this.clips.get(id)}`;
   }
 
@@ -202,10 +224,12 @@ export class Speech {
       // Opnieuw achteraan zetten: wat vaak terugkomt, blijft bewaard.
       this.buffers.delete(id);
     } else {
-      p = fetch(this.url(id))
-        .then((res) => (res.ok ? res.arrayBuffer() : Promise.reject(new Error(res.statusText))))
-        .then((data) => ctx.decodeAudioData(data))
-        .catch(() => null);
+      const own = this.own.get(id);
+      // decodeAudioData neemt de buffer over; daarom een kopie van de eigen opname.
+      const data = own
+        ? Promise.resolve(own.data.slice(0))
+        : fetch(this.url(id)).then((res) => (res.ok ? res.arrayBuffer() : Promise.reject(new Error(res.statusText))));
+      p = data.then((d) => ctx.decodeAudioData(d)).catch(() => null);
     }
     this.buffers.set(id, p);
     while (this.buffers.size > BUFFER_CACHE) this.buffers.delete(this.buffers.keys().next().value!);

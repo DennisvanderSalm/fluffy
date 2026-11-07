@@ -1,3 +1,4 @@
+import type { LineId } from '../../content/spraak.nl';
 import type { SkillInfo, StartLevel } from '../../core/domain';
 
 /**
@@ -110,7 +111,43 @@ export const REKEN_SKILLS: SkillInfo[] = [
     about: 'Patronen als A-B-B of A-B-C voortzetten en zelf verzinnen.',
     offScreen: 'Klap-stamp-stamp, klap-stamp-stamp… kan zij het voortzetten? En zelf een patroon verzinnen?',
   },
+  {
+    id: 'ruimte', domain: d, requires: [], levels: 3, stage: 10,
+    name: 'Waar is het? (op, onder, naast)',
+    about: 'Woorden voor de plek van iets: op, onder, naast, in, voor en achter. Ruimtelijk denken hangt samen met later rekenen.',
+    offScreen: 'Verstoppertje met een knuffel: "Hij zit ónder de bank!" Laat haar ook zelf zeggen waar hij zit, en verstop hem om de beurt.',
+  },
+  {
+    id: 'vormen', domain: d, requires: [], levels: 3, stage: 10,
+    name: 'Vormen',
+    about: 'Rondje, vierkant, driehoek en rechthoek herkennen, ook als ze schuin staan. Waar zie je het aan? Aan de kanten en de punten.',
+    offScreen: 'Zoek vormen in huis en buiten: een rond bord, een rechthoekige deur, een driehoekig verkeersbord. Tel samen de punten.',
+  },
 ];
+
+/** Opdrachten in het echt per vaardigheid (zie core/ui/samen.ts). */
+const TASKS: Record<string, LineId[]> = {
+  'tellen-5': ['echt.tellen-5'],
+  'tellen-10': ['echt.tellen-10'],
+  telbegrip: ['echt.telbegrip'],
+  'hoeveel-5': ['echt.hoeveel-5', 'echt.hoeveel-5.b'],
+  'hoeveel-10': ['echt.hoeveel-10'],
+  'zien-5': ['echt.zien-5'],
+  'zien-10': ['echt.zien-10'],
+  vergelijken: ['echt.vergelijken'],
+  'cijfers-10': ['echt.cijfers-10'],
+  'buren-10': ['echt.buren-10'],
+  'plaats-10': ['echt.plaats-10'],
+  'splitsen-5': ['echt.splitsen-5'],
+  'splitsen-10': ['echt.splitsen-10'],
+  'verhaal-5': ['echt.verhaal-5'],
+  'verhaal-10': ['echt.verhaal-10'],
+  'patroon-ab': ['echt.patroon-ab'],
+  'patroon-abc': ['echt.patroon-abc'],
+  ruimte: ['echt.ruimte'],
+  vormen: ['echt.vormen', 'echt.vormen.b'],
+};
+for (const s of REKEN_SKILLS) s.realTasks = TASKS[s.id];
 
 export const REKEN_START_LEVELS: StartLevel[] = [
   { id: 'begin', label: 'Begint met tellen', assumed: [] },

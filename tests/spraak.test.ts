@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { chunk, clipJobs, phraseId } from '../src/core/audio/phrases';
 import { parseManifest } from '../src/core/audio/speech';
 import { lineText, SPRAAK } from '../src/content/spraak.nl';
-import { ALL_ACTIVITIES } from '../src/domains';
+import { ALL_PHRASES } from '../src/domains';
 
-const jobs = clipJobs(ALL_ACTIVITIES.flatMap((a) => a.phrases()));
+const jobs = clipJobs(ALL_PHRASES());
 const ids = new Set(jobs.map((j) => j.id));
 const has = (id: string) => ids.has(id);
 
@@ -44,7 +44,8 @@ describe('hele zinnen opzoeken', () => {
 
 describe('wat er ingesproken wordt', () => {
   it('bevat elke zin uit het script en de getallen, maar nooit de naam', () => {
-    for (const id of Object.keys(SPRAAK)) if (id !== 'naam') expect(ids.has(id)).toBe(true);
+    // Zinnen zonder tekst (naam, eigen opnames van de ouder) worden nooit ingesproken.
+    for (const [id, text] of Object.entries(SPRAAK)) expect(ids.has(id)).toBe(text !== '');
     for (let n = 1; n <= 20; n++) expect(ids.has(`getal.${n}`)).toBe(true);
     expect([...ids].some((id) => id.split('+').includes('naam'))).toBe(false);
   });
@@ -68,6 +69,17 @@ describe('wat er ingesproken wordt', () => {
     expect(text('w.maan+rijm.en+w.muis+klank.zelfde')).toBe('Maan en muis, die beginnen hetzelfde.');
     expect(text('klank.schrijf+w.maan')).toBe('Kijk, zo schrijf je het begin van maan.');
     expect(text('letter.vraag+w.vis')).toBe('Welke letter hoort bij het begin van vis?');
+    expect(text('verhaal.start.a+getal.3+verhaal.start.b')).toBe('Er zwemmen drie eendjes in de vijver.');
+    expect(text('verhaal.bij.a+getal.2+verhaal.bij.b')).toBe('Kijk, er komen er twee bij.');
+    expect(text('getal.3+verhaal.en+getal.1+verhaal.erbij+getal.4')).toBe('Drie en één erbij is vier.');
+    expect(text('verhaal.eerst+getal.5')).toBe('Eerst waren er vijf.');
+    expect(text('ruimte.vraag+ruimte.onder.tafel')).toBe('Welk muisje zit onder de tafel?');
+    expect(text('ruimte.hier+ruimte.in.doos')).toBe('Hier zit het muisje in de doos.');
+    expect(text('vorm.vraag+vorm.driehoek')).toBe('Waar is de driehoek?');
+    expect(text('vorm.ja+vorm.rondje')).toBe('Ja, dat is het rondje.');
+    expect(text('echt.samen+wie.mama')).toBe('Doe het maar samen met mama.');
+    expect(text('samen.hoi+wie.papaofmama')).toBe('Fijn, je speelt samen met papa of mama.');
+    expect(text('einde.vertel.a+wie.opa+einde.vertel.b')).toBe('Vertel maar aan opa wat we gedaan hebben.');
   });
 
   it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {

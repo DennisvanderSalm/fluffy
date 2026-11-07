@@ -137,6 +137,7 @@ class Round {
     this.glow(null);
     let l = await this.ask(this.question());
     if (l === item.letter) return this.celebrate(1);
+    const note = `Verwisselt de ${[l, item.letter].sort().join(' en de ')} nog (bij letters zoeken).`;
 
     // Ladder 1: nog eens goed naar het begin luisteren (uitgerekt, twee keer).
     ctx.fluffy.set('nadenken');
@@ -147,7 +148,7 @@ class Round {
     await ctx.say([stretchLine(item.word)]);
     this.glow(null);
     l = await this.ask(this.question());
-    if (l === item.letter) return this.celebrate(2);
+    if (l === item.letter) return { ...(await this.celebrate(2)), note };
 
     // Ladder 2: Fluffy wijst de letter aan, en dan tikt zij hem aan.
     ctx.fluffy.set('nadenken');
@@ -166,7 +167,7 @@ class Round {
       await ctx.say(['klank.schrijf', wordLine(item.word)]);
     }
     if (!retry) await ctx.say(['later.nog']);
-    return { credit: 0, modeled: true };
+    return { credit: 0, modeled: true, note };
   }
 
   private async celebrate(attempt: 1 | 2): Promise<ItemResult> {

@@ -4,7 +4,9 @@ import type { DomainModule, SkillInfo } from '../domain';
 import { initialState, manualLevelOf, type ManualLevel } from '../engine/mastery';
 import { PLAN_RULES, prerequisitesMet } from '../engine/planner';
 import type { SaveData } from '../storage/store';
+import type { OwnClip } from '../audio/own';
 import { el, shuffle } from '../util';
+import { backupSection, ownVoiceSection, strugglesSection, todaySection } from './parent-extra';
 
 export interface ParentDeps {
   domains: DomainModule[];
@@ -17,6 +19,10 @@ export interface ParentDeps {
   onSkillLevel(id: string, level: ManualLevel): void;
   onReset(): void;
   onAllowSession(): void;
+  /** Een eigen opname is gemaakt (of gewist, dan null). */
+  onOwnClip(id: string, clip: OwnClip | null): void;
+  /** Een back-up terugzetten (de app start daarna opnieuw). */
+  onRestore(data: SaveData): void;
   /** Is er nu een sessie bezig? Dan is Fluffy al wakker. */
   awake: boolean;
   /** Fluffy meteen wakker maken (sessie start zodra het ouderdeel dicht is). */
@@ -248,6 +254,21 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     },
   );
 
+  const together = select([
+    ['echt', 'Af en toe een opdracht in het echt'],
+    ['samen', 'We spelen samen (vaker, en Fluffy praat ook tegen jou)'],
+    ['uit', 'Uit'],
+  ], s.together, (v) => {
+    s.together = v as typeof s.together;
+    deps.onChange();
+  });
+  const grownUp = select([
+    ['wie.papaofmama', 'papa of mama'], ['wie.mama', 'mama'], ['wie.papa', 'papa'], ['wie.oma', 'oma'], ['wie.opa', 'opa'],
+  ], s.grownUp, (v) => {
+    s.grownUp = v;
+    deps.onChange();
+  });
+
   const allow = el('button', 'btn', 'Nieuwe sessie toestaan');
   allow.addEventListener('click', () => {
     deps.onAllowSession();
@@ -275,11 +296,14 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     el('div', 'parent',
       el('header', '', el('h1', '', 'Ouderdeel'), el('div', 'header-buttons', deps.awake ? '' : wakeBtn, closeBtn)),
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
+      ...todaySection(data, domains, name),
 
       el('h2', '', `Waar ${name} mee bezig is`),
       el('p', 'muted', 'De app gaat pas verder als iets een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
       busyNote,
       ...skills,
+
+      ...strugglesSection(data, domains, name, Date.now()),
 
       el('h2', '', 'Laatste keren'),
       sessions.length ? el('ul', 'sessions', ...sessions) : el('p', 'muted', 'Nog niet gespeeld.'),
@@ -295,16 +319,23 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
         voices.length ? 'Tip: download een "verbeterde" Nederlandse stem in Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen.' : 'Geen Nederlandse stem gevonden op dit apparaat.',
       ].join(' ').trim()),
       row('Stem testen', test),
+      row('Samen spelen', together, 'Fluffy vraagt dan af en toe iets in het echt te doen ("Pak eens drie knuffels") en het aan jou te laten zien. Aan het eind zegt ze: "Vertel maar wat we gedaan hebben." Die tijd telt niet als schermtijd.'),
+      row('Hoe noemt ze jou?', grownUp, 'Zo noemt Fluffy jou bij de samen-momenten.'),
       row('Rekenen of lezen', subject, 'Bij "laat haar kiezen" vraagt Fluffy het aan het begin, met twee plaatjes.'),
       startLevel ? row(`Startniveau ${startDomain!.name.toLowerCase()}`, startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.') : '',
       row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over; Fluffy blijft slapen tot ze op het scherm tikt. Wil je meteen beginnen, gebruik dan "Fluffy wakker maken" bovenaan.'),
       row('Voortgang', reset, 'Begint helemaal opnieuw. Instellingen blijven bewaard.'),
+
+      ...ownVoiceSection(deps.speech, deps.onOwnClip),
+      ...backupSection(data, deps.onRestore),
 
       el('h2', '', 'Tips'),
       el('ul', 'sessions',
         el('li', '', 'Zet de app op het beginscherm (Deel → Zet op beginscherm). Dan werkt hij offline en blijft de voortgang bewaard.'),
         el('li', '', 'Zet Begeleide toegang aan (Instellingen → Toegankelijkheid). Dan blijft je kind in de app.'),
         el('li', '', 'Het mooiste is samen spelen met echte dingen. De tips "Zonder scherm" hierboven helpen daarbij.'),
+        el('li', '', 'Zit er zo nu en dan bij. Praat over wat ze doet ("Hoe wist je dat?"), maar geef het antwoord niet voor. Kinderen leren het meest van een scherm als er iemand meekijkt en meepraat.'),
+        el('li', '', 'Speel bordspellen met getallen, zoals ganzenbord of slangen en ladders. Zeg bij elke stap het getal hardop: dat helpt haar getalbegrip aantoonbaar (Ramani & Siegler, 2008).'),
         el('li', '', 'Lees elke dag samen voor en praat over het verhaal: wat gebeurt er, waarom, wat zou jij doen? Lezen is klanken én begrijpen. De app oefent alleen de klanken; woordenschat en begrip groeien vooral door samen voorlezen (Mol, Bus & de Jong, 2009).'),
       ),
     ),

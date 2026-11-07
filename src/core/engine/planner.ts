@@ -99,6 +99,25 @@ export function pickNext(input: PlannerInput): Pick | null {
   return mastered.length ? { kind: 'review', skill: mastered[0].id } : null;
 }
 
+/**
+ * Loopt het even niet? Twee keer achter elkaar voorgedaan, of drie van de laatste vier niet in
+ * één keer goed. Dan volgt eerst iets wat ze al kan: zo eindigt een lastig stukje met een succesje
+ * in plaats van met gedoe. Kijkt naar hulp, nooit naar tijd.
+ */
+export function isStruggling(recent: readonly { credit: number; modeled: boolean }[]): boolean {
+  const last = recent.slice(-4);
+  if (last.length >= 2 && last.slice(-2).every((r) => r.modeled)) return true;
+  return last.length === 4 && last.filter((r) => r.credit < 1).length >= 3;
+}
+
+/** Iets wat ze al stevig kan: de beheerste vaardigheid in het hoogste herhaalvak. */
+export function easyPick(input: PlannerInput): SkillId | null {
+  const solid = input.skills
+    .filter((d) => input.playable.has(d.id) && stateOf(input, d.id).status === 'mastered')
+    .sort((a, b) => (stateOf(input, b.id).review?.box ?? 0) - (stateOf(input, a.id).review?.box ?? 0));
+  return solid.length ? solid[0].id : null;
+}
+
 /** Plant een voorgedaan item terug, met een paar andere items ertussen. */
 export function scheduleRetry<P>(
   entry: Omit<RetryEntry<P>, 'after'>,

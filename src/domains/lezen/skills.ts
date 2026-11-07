@@ -1,3 +1,4 @@
+import type { LineId } from '../../content/spraak.nl';
 import type { SkillInfo, StartLevel } from '../../core/domain';
 
 /**
@@ -31,16 +32,26 @@ export const LEES_SKILLS: SkillInfo[] = [
   {
     id: 'hakken', domain: d, requires: ['beginklank'], levels: 3, stage: 3,
     name: 'Hakken en plakken',
-    about: 'Losse klanken samenvoegen tot een woord (m-aa-n wordt maan) en een woord in klanken hakken.',
-    offScreen: '"Ik zie een v-i-s." Kan zij raden welk woord je bedoelt?',
+    about: 'Losse klanken samenvoegen tot een woord: m-aa-n wordt maan. Eerst alleen luisteren, later met de letters erbij.',
+    offScreen: '"Ik zie een p-oe-s." Kan zij raden welk woord je bedoelt? Zeg de klanken, niet de letternamen.',
   },
   {
     id: 'woordjes', domain: d, requires: ['hakken', 'letters'], levels: 3, stage: 4,
     name: 'Eerste woordjes lezen',
-    about: 'Korte woordjes lezen door de klanken achter elkaar te zeggen: m-aa-n, maan.',
+    about: 'Korte woordjes zelf lezen: ze tikt op de letters, hoort de klanken en plakt ze aan elkaar (m-aa-n, maan).',
     offScreen: 'Schrijf korte woordjes (vis, maan, roos) op briefjes en leg ze bij het echte ding.',
   },
 ];
+
+/** Opdrachten in het echt per vaardigheid (zie core/ui/samen.ts). */
+const TASKS: Record<string, LineId[]> = {
+  beginklank: ['echt.beginklank'],
+  rijmen: ['echt.rijmen'],
+  letters: ['echt.letters'],
+  hakken: ['echt.hakken'],
+  woordjes: ['echt.woordjes'],
+};
+for (const s of LEES_SKILLS) s.realTasks = TASKS[s.id];
 
 /** Bij lezen begint iedereen bij het begin; er valt nog niets aan te nemen. */
 export const LEES_START_LEVELS: StartLevel[] = [{ id: 'lezen-begin', label: 'Begint met klanken', assumed: [] }];

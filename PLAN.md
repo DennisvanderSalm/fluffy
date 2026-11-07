@@ -142,10 +142,12 @@ Zo hoeft de startinschatting niet perfect te zijn.
 | 10 | Getallenlijn: plaats van een getal (`plaats-10`) | buren-10 | Waar woont…? |
 | 11 | Splitsen tot 5 (`splitsen-5`) | zien-5 | Splitshuisje |
 | 12 | Splitsen tot 10 (`splitsen-10`) | splitsen-5, zien-10 | Splitshuisje (rijtjes van vijf), Rekenrek (tien splitsen) |
-| 13 | Erbij/eraf tot 5 met materiaal (`verhaal-5`) | splitsen-5 | Verhaaltjes |
-| 14 | Erbij/eraf tot 10 (`verhaal-10`) | verhaal-5, splitsen-10 | Verhaaltjes |
+| 13 | Erbij/eraf tot 5 met materiaal (`verhaal-5`) | splitsen-5 | Eendjes in de vijver |
+| 14 | Erbij/eraf tot 10 (`verhaal-10`) | verhaal-5, splitsen-10 | Eendjes in de vijver (op het hoogste niveau achter het riet) |
 | 15 | Patronen AB (`patroon-ab`) | geen | Kralenketting |
 | 16 | Patronen ABB/ABC (`patroon-abc`) | patroon-ab | Kralenketting |
+| 17 | Ruimtelijke woorden: op, onder, naast, in, voor, achter (`ruimte`) | geen | Waar zit het muisje? |
+| 18 | Vormen, ook gedraaid en met bijna-vormen (`vormen`) | geen | Vormen zoeken |
 
 Binnen elke vaardigheid lopen de niveaus van **concreet → beeld → symbool** en van **veel hulp → weinig hulp**.
 
@@ -267,8 +269,8 @@ Daarom: beginklank eerst, letters er direct achteraan, rijmen als opwarmer.
 | Beginklank horen (`beginklank`) | geen | **Beginklank**: "Welke begint net zo als maan?" Na het antwoord verschijnt de letter: "Kijk, zo schrijf je het begin van maan." |
 | Rijmen horen (`rijmen`) | geen | **Rijmen** (opwarmer): "Wat rijmt op huis?" |
 | Letters en klanken (`letters`) | beginklank | **Letters zoeken**: "Mmm… maan. Welke letter hoort bij het begin van maan?" |
-| Hakken en plakken (`hakken`) | beginklank | (later) |
-| Eerste woordjes (`woordjes`) | hakken, letters | (later) |
+| Hakken en plakken (`hakken`) | beginklank | **Hakken en plakken**: Fluffy zegt "b… oo… t", de blokjes lichten op, zij kiest het plaatje. Niveau 2 met een woord dat net zo begint, niveau 3 met de letters op de blokjes |
+| Eerste woordjes (`woordjes`) | hakken, letters | **Eerste woordjes**: de letters staan er (m · aa · n), zij tikt ze aan om de klanken te horen en kiest het plaatje |
 
 Niveaus: twee plaatjes/letters → drie → drie met een lastige afleider (bij rijmen een woord met dezelfde
 beginklank, bij beginklank een woord dat rijmt, bij letters een letter die erop lijkt: m/n, b/d).
@@ -284,6 +286,27 @@ Aan het begin van een sessie kiest het kind met twee plaatjes (cijferblokjes / b
 ouder zet het vak vast in het ouderdeel. In het ouderdeel kan de ouder per vaardigheid het niveau zelf
 zetten (nog niet / oefenen stap n / kan ze al); daarna past de app het weer aan op hoe het gaat.
 
+## 10c. Ouder en kind samen
+
+Een vierjarige leert van een scherm het meest als er iemand meekijkt en meepraat (Hirsh-Pasek e.a., 2015:
+actief, betrokken, betekenisvol en *sociaal*). Dat laatste missen de meeste apps. Wat de app daarom doet:
+
+- **Opdrachten in het echt** ("Pak eens drie knuffels. Doe het maar samen met mama."), passend bij wat ze net
+  oefende. Niets te winnen of te verliezen: een duimpje als ze klaar is. De speelklok staat zolang stil.
+  Instelling "Samen spelen": uit, af en toe (één per sessie), of "we spelen samen" (om de vier items, en Fluffy
+  begroet jullie allebei). De ouder kiest hoe Fluffy hem of haar noemt (papa, mama, oma, opa).
+- **Navertellen**: aan het eind zegt Fluffy "Vertel maar aan papa wat we gedaan hebben." Zelf navertellen
+  helpt onthouden en geeft de ouder een ingang voor een gesprek.
+- **Spelletje voor vandaag** bovenaan het ouderdeel: één of twee spelletjes zonder scherm die aansluiten bij de
+  laatste sessie. Thuis spelen met getallen (bordspellen, Ramani & Siegler, 2008) en samen voorlezen
+  (Mol, Bus & de Jong, 2009) doen meer dan welke app ook.
+- **Waar ze tegenaan loopt**: vaardigheden waar ze de laatste drie weken vaak hulp bij nodig had, en wat bij fouten
+  vaker opviel ("haalt voor en achter nog door elkaar", "luistert vooral naar de eerste klank"). Geen scores.
+- **Eigen stem**: de ouder spreekt de naam in (dan niet meer de computerstem) en een welterusten na "doei doei".
+  Blijft op het apparaat (IndexedDB), zit niet in de back-up.
+
+Bewust níet: beloningen, reeksen, een Fluffy die verdrietig is als je niet speelt, meldingen, "nog één keer".
+
 ## 11. Stappen
 
 | Stap | Inhoud |
@@ -297,6 +320,7 @@ zetten (nog niet / oefenen stap n / kan ze al); daarna past de app het weer aan 
 | **6b (klaar)** | Vakkeuze aan het begin (rekenen of lezen, met plaatjes; ouder kan het vastzetten), eerste leesspellen **Rijmen** en **Beginklank**, niveau per vaardigheid handmatig instellen in het ouderdeel, uitleg bij het tandwiel |
 | **6c (klaar)** | Leerlijn lezen bijgewerkt naar het onderzoek: beginklank eerst, rijmen als opwarmer, klappen eruit, **Letters zoeken**, letter bij de beginklank, uitgerekte klanken, voorleestip |
 | **6d (klaar)** | Knop "Fluffy wakker maken" in het ouderdeel: slaat rustpauze en dagmaximum één keer over en start meteen een sessie |
-| 7 | Verhaaltjes erbij/eraf + opdrachten in het echt |
-| 8 | Kralenketting (patronen); eigen opnames inspreken; afronding v1 |
+| **7 (klaar)** | **Hakken en plakken** en **Eerste woordjes** (lezen); **Eendjes in de vijver** (erbij/eraf), **Kralenketting** (patronen), **Waar zit het muisje?** (ruimte) en **Vormen zoeken** (rekenen) |
+| **7b (klaar)** | Ouder en kind samen: opdrachten in het echt (de klok staat dan stil), "speel je samen met mama?", "vertel maar wat we gedaan hebben", spelletje voor vandaag en "waar ze tegenaan loopt" in het ouderdeel, eigen stem (naam en welterusten), back-up. Een lastig stukje eindigt met iets wat ze al kan; een opwarmer uit het andere vak houdt oude stof vers |
+| 8 | Afronding v1: met haar testen en bijstellen |
 | later | Leesmodule |

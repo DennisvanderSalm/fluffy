@@ -1,4 +1,5 @@
 import type { DomainModule } from '../../core/domain';
+import { hakken, woordjes } from './hakken';
 import { beginklank, rijmen } from './klanken';
 import { letters } from './letters';
 import { LEES_SKILLS, LEES_START_LEVELS } from './skills';
@@ -11,12 +12,12 @@ const ICON = `<svg viewBox="0 0 200 160">
   <text x="142" y="100" text-anchor="middle" font-size="54" font-weight="800" fill="#5a8fc4" font-family="ui-rounded, system-ui, sans-serif">b</text>
 </svg>`;
 
-/** Domeinmodule lezen (voorbereidend: klanken horen). */
+/** Domeinmodule lezen (voorbereidend: klanken horen, letters, klanken plakken, eerste woordjes). */
 export const lezen: DomainModule = {
   id: 'lezen',
   name: 'Lezen',
   skills: LEES_SKILLS,
-  activities: [beginklank, rijmen, letters],
+  activities: [beginklank, rijmen, letters, hakken, woordjes],
   startLevels: LEES_START_LEVELS,
   icon: ICON,
   choice: ['keuze.vak.lezen'],

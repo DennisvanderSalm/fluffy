@@ -1,7 +1,9 @@
-import type { Activity, ActivityContext, DomainModule } from '../domain';
+import type { LineId } from '../../content/spraak.nl';
+import type { Activity, ActivityContext, DomainModule, ItemResult } from '../domain';
 import { assumeMastered, initialState, manualState, recordAttempt, type ManualLevel } from '../engine/mastery';
 import {
-  choiceOptions, isChoiceMoment, pickNext, scheduleRetry, type PlannerInput, type PlayedRef, type RetryEntry,
+  choiceOptions, dueReviews, easyPick, isChoiceMoment, isStruggling, pickNext, scheduleRetry,
+  type PlannerInput, type PlayedRef, type RetryEntry,
 } from '../engine/planner';
 import type { SkillState } from '../engine/types';
 import { Fluffy } from '../fluffy/fluffy';
@@ -11,10 +13,24 @@ import {
   canStartSession, closeDangling, playUntilTimeUp, SessionClock, type SessionRecord,
 } from '../session/session';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
+import type { OwnClip } from '../audio/own';
 import { el, isoDate, pick, shuffle, sleep, svgEl } from '../util';
 import { askChoice } from './choice';
 import { onTap } from './drag';
 import { openParentArea } from './parent';
+import { realTask } from './samen';
+
+/** Eén item dat gespeeld gaat worden. */
+interface Plan {
+  skill: string;
+  activity: Activity<unknown>;
+  params: unknown;
+  retry: boolean;
+  /** Niveau waarop het item gemaakt is. */
+  level: number;
+  /** Telt het mee voor de voortgang? (Niet bij een makkelijker succesje na een lastig stukje.) */
+  record: boolean;
+}
 
 const HAND_SVG = `<svg viewBox="0 0 100 100"><path d="M38 12 C38 6 48 6 48 12 V46 L52 30 C53 24 62 25 61 31 L60 48 L64 36 C66 30 74 32 72 38 L70 52 L73 44 C75 39 82 41 80 47 L74 74 C71 86 62 94 50 94 C38 94 28 86 26 74 L22 58 C20 52 28 48 31 54 L38 64 Z"
   fill="#fff" stroke="#3b4a6b" stroke-width="4" stroke-linejoin="round"/></svg>`;
@@ -170,6 +186,7 @@ export class App {
     } else {
       await this.say(['begroeting.terug.a', 'naam', 'begroeting.terug.b']);
     }
+    if (this.data.settings.together === 'samen') await this.say(['samen.hoi', this.grownUp()]);
     this.slot.className = 'fluffy-slot';
     await sleep(1300);
     this.domain = await this.chooseDomain();
@@ -178,8 +195,38 @@ export class App {
 
     const played: PlayedRef[] = [];
     const retries: RetryEntry[] = [];
-    await playUntilTimeUp(this.clock, () => this.playOne(played, retries));
+    const recent: ItemResult[] = [];
+    await this.warmUp(played, retries);
+    await playUntilTimeUp(this.clock, () => this.playOne(played, retries, recent));
     await this.endSession();
+  }
+
+  /** Hoe ze de ouder noemt ("papa of mama"). */
+  private grownUp(): LineId {
+    return this.data.settings.grownUp as LineId;
+  }
+
+  private plannerInput(domain: DomainModule, played: PlayedRef[], retries: RetryEntry[], today: string): PlannerInput {
+    return { skills: domain.skills, playable: this.playable, states: this.data.skills, today, played, retries };
+  }
+
+  /**
+   * Opwarmer: één herhaling uit het andere vak, als daar iets aan de beurt is. Zo blijft wat ze al
+   * kan ook terugkomen als ze een tijdje alleen het ene vak kiest (gespreid herhalen).
+   * Niet als de ouder het vak heeft vastgezet.
+   */
+  private async warmUp(played: PlayedRef[], retries: RetryEntry[]): Promise<void> {
+    if (this.data.settings.subject !== 'kiezen') return;
+    const today = isoDate(Date.now());
+    for (const d of this.domains) {
+      if (d === this.domain || !d.activities.length) continue;
+      const skill = dueReviews(this.plannerInput(d, [], [], today))[0];
+      if (!skill) continue;
+      const activity = pick(this.rng, this.activitiesFor(skill));
+      const level = this.stateOf(skill).level;
+      await this.playItem({ skill, activity, params: activity.makeItem(skill, level, this.rng), retry: false, level, record: true }, played, retries);
+      return;
+    }
   }
 
   /** Rekenen of lezen: vastgezet door de ouder, of ze kiest zelf met twee plaatjes. */
@@ -193,18 +240,39 @@ export class App {
     return order[i];
   }
 
-  private async playOne(played: PlayedRef[], retries: RetryEntry[]): Promise<boolean> {
-    const today = isoDate(Date.now());
-    const input: PlannerInput = {
-      skills: this.domain.skills,
-      playable: this.playable,
-      states: this.data.skills,
-      today,
-      played,
-      retries,
-    };
+  private async playOne(played: PlayedRef[], retries: RetryEntry[], recent: ItemResult[]): Promise<boolean> {
+    const input = this.plannerInput(this.domain, played, retries, isoDate(Date.now()));
+    // Liep het net een paar keer stroef? Dan eerst iets wat ze al kan.
+    let plan = isStruggling(recent) ? this.easyWin(input, played) : null;
+    if (plan) recent.length = 0;
+    plan ??= await this.planNext(input, played, retries);
+    if (!plan) return false;
+    recent.push(await this.playItem(plan, played, retries));
+    await this.maybeTogether(plan.skill, played.length);
+    this.fluffy.set('rust');
+    await sleep(700);
+    return true;
+  }
+
+  /** Een succesje: een beheerste vaardigheid, of anders hetzelfde één stap makkelijker (telt niet mee). */
+  private easyWin(input: PlannerInput, played: PlayedRef[]): Plan | null {
+    const solid = easyPick(input);
+    if (solid) {
+      const activity = pick(this.rng, this.activitiesFor(solid));
+      const level = this.stateOf(solid).level;
+      return { skill: solid, activity, params: activity.makeItem(solid, level, this.rng), retry: false, level, record: true };
+    }
+    const skill = played[played.length - 1]?.skill;
+    const level = skill ? this.stateOf(skill).level - 1 : -1;
+    if (!skill || level < 0) return null;
+    const activity = pick(this.rng, this.activitiesFor(skill));
+    return { skill, activity, params: activity.makeItem(skill, level, this.rng), retry: false, level, record: false };
+  }
+
+  /** Wat de planner kiest: een item dat terugkomt, of iets nieuws (soms mag ze kiezen). */
+  private async planNext(input: PlannerInput, played: PlayedRef[], retries: RetryEntry[]): Promise<Plan | null> {
     const choice = pickNext(input);
-    if (!choice) return false;
+    if (!choice) return null;
 
     let activity: Activity<unknown>;
     let skill: string;
@@ -235,36 +303,57 @@ export class App {
       }
       params = activity.makeItem(skill, this.stateOf(skill).level, this.rng);
     }
-    const before = this.stateOf(skill);
-    const levelPlayed = isRetry ? (choice as { entry: RetryEntry }).entry.level : before.level;
+    const level = isRetry ? (choice as { entry: RetryEntry }).entry.level : this.stateOf(skill).level;
+    return { skill, activity, params, retry: isRetry, level, record: true };
+  }
 
-    const result = await activity.run(this.context(activity.id), params, isRetry);
+  /** Speelt één item en houdt alles bij: voortgang, terugkomen, wat opviel, de sessie. */
+  private async playItem(p: Plan, played: PlayedRef[], retries: RetryEntry[]): Promise<ItemResult> {
+    const today = isoDate(Date.now());
+    const before = this.stateOf(p.skill);
+    const result = await p.activity.run(this.context(p.activity.id), p.params, p.retry);
     await this.whenResumed();
-    this.data.seen[activity.id] = (this.data.seen[activity.id] ?? 0) + 1;
+    this.data.seen[p.activity.id] = (this.data.seen[p.activity.id] ?? 0) + 1;
 
-    const def = this.skillsById.get(skill)!;
-    this.data.skills[skill] = recordAttempt(def, before, {
-      credit: result.credit,
-      session: this.record!.id,
-      today,
-    });
-    played.push({ skill, review: before.status === 'mastered' });
-    if (result.modeled && !isRetry) {
-      retries.push(scheduleRetry({ skill, activity: activity.id, level: levelPlayed, params }, played.length));
+    if (p.record) {
+      this.data.skills[p.skill] = recordAttempt(this.skillsById.get(p.skill)!, before, {
+        credit: result.credit,
+        session: this.record!.id,
+        today,
+      });
     }
+    played.push({ skill: p.skill, review: before.status === 'mastered' });
+    if (result.modeled && !p.retry) {
+      retries.push(scheduleRetry({ skill: p.skill, activity: p.activity.id, level: p.level, params: p.params }, played.length));
+    }
+    if (result.note) this.data.notes.push({ skill: p.skill, text: result.note, date: today });
 
     const r = this.record!;
     r.items++;
     if (result.credit === 1) r.firstTry++;
     else r.helped++;
-    if (!r.activities.includes(activity.id)) r.activities.push(activity.id);
-    if (!r.skills.includes(skill)) r.skills.push(skill);
+    if (!r.activities.includes(p.activity.id)) r.activities.push(p.activity.id);
+    if (!r.skills.includes(p.skill)) r.skills.push(p.skill);
     r.activeMs = this.clock!.elapsed();
     save(this.data);
+    return result;
+  }
 
+  /**
+   * Samen-moment: een opdracht in het echt die past bij wat ze net deed. Bij 'echt' één keer per
+   * sessie, bij 'samen' om de vier items. De speelklok staat zolang stil: het is geen schermtijd.
+   */
+  private async maybeTogether(skill: string, count: number): Promise<void> {
+    const mode = this.data.settings.together;
+    const due = mode === 'samen' ? count % 4 === 0 : mode === 'echt' && count === 5;
+    const tasks = this.skillsById.get(skill)?.realTasks;
+    if (!due || !tasks?.length || this.clock!.isTimeUp()) return;
     this.fluffy.set('rust');
-    await sleep(700);
-    return true;
+    await sleep(500);
+    this.clock!.pause();
+    await realTask(this.context(null), pick(this.rng, tasks), this.grownUp());
+    await this.whenResumed();
+    if (!this.paused) this.clock?.start();
   }
 
   private async endSession(): Promise<void> {
@@ -279,8 +368,14 @@ export class App {
     for (const id of r.activities) summary.push(...this.activity(id).summary);
     summary.push(...(r.helped > 0 ? ['einde.lof.doorzetten' as const] : this.domain.endPraise));
     await this.say(summary);
+    // Een gesprek op gang helpen: ze vertelt het zelf na aan papa of mama.
+    if (this.data.settings.together !== 'uit') await this.say(['einde.vertel.a', this.grownUp(), 'einde.vertel.b']);
     this.fluffy.set('slaperig');
     await this.say(['einde.slapen', 'einde.dag', 'naam']);
+    if (this.speech.hasOwn('eigen.welterusten')) {
+      await sleep(700);
+      await this.say(['eigen.welterusten']);
+    }
 
     this.clock!.pause();
     r.activeMs = this.clock!.elapsed();
@@ -296,7 +391,7 @@ export class App {
   }
 
   private activitiesFor(skill: string): Activity<unknown>[] {
-    return this.domain.activities.filter((a) => a.skills.includes(skill));
+    return this.domains.flatMap((d) => d.activities).filter((a) => a.skills.includes(skill));
   }
 
   private context(activityId: string | null): ActivityContext {
@@ -423,12 +518,18 @@ export class App {
         this.data.sessions = this.record ? [this.record] : [];
         this.data.introduced = false;
         this.data.seen = {};
+        this.data.notes = [];
         this.applyStartLevel(settings.startLevel);
         save(this.data);
       },
       onAllowSession: () => {
         this.data.parentAllowedAt = Date.now();
         save(this.data);
+      },
+      onOwnClip: (id: string, clip: OwnClip | null) => this.speech.setOwn(id, clip),
+      onRestore: (data: SaveData) => {
+        save(data);
+        location.reload();
       },
       awake: this.mode === 'session',
       onWake: () => {

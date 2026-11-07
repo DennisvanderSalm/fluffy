@@ -5,10 +5,14 @@ import { kiekeboe } from './kiekeboe';
 import { mandje } from './mandje';
 import { meer } from './meer';
 import { pad } from './pad';
+import { patroon } from './patroon';
+import { ruimte } from './ruimte';
 import { rekenrek } from './rekenrek';
 import { splitshuis } from './splitshuis';
 import { REKEN_SKILLS, REKEN_START_LEVELS } from './skills';
 import { tellen } from './tellen';
+import { verhaal } from './verhaal';
+import { vormen } from './vormen';
 import { woont } from './woont';
 
 /** Plaatje voor de keuze aan het begin: blokken met 1, 2, 3 en stippen. */
@@ -23,7 +27,7 @@ export const rekenen: DomainModule = {
   id: 'rekenen',
   name: 'Rekenen',
   skills: REKEN_SKILLS,
-  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont, rekenrek, splitshuis],
+  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont, rekenrek, splitshuis, verhaal, patroon, ruimte, vormen],
   startLevels: REKEN_START_LEVELS,
   icon: ICON,
   choice: ['keuze.vak.rekenen'],

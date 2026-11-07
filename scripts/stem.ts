@@ -23,7 +23,7 @@ import { existsSync } from 'node:fs';
 import { readFile, unlink, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { clipJobs, type ClipJob } from '../src/core/audio/phrases';
-import { ALL_ACTIVITIES } from '../src/domains';
+import { ALL_PHRASES } from '../src/domains';
 
 const DIR = join(process.cwd(), 'public', 'audio', 'nl');
 const MANIFEST = join(DIR, 'manifest.json');
@@ -137,7 +137,7 @@ async function main(): Promise<void> {
   const e = env();
   if (flag('--stemmen')) return listVoices(e);
 
-  const jobs = clipJobs(ALL_ACTIVITIES.flatMap((a) => a.phrases()));
+  const jobs = clipJobs(ALL_PHRASES());
   const m = await readManifest();
   const own = new Set(Object.keys(m.clips).filter((id) => !(id in m.generated)));
   const wanted = jobs.filter((j) => !own.has(j.id));

@@ -492,6 +492,57 @@ body.is-night .gear { filter: invert(1); }
 }
 .lz-letter.is-on { opacity: 1; transform: none; }
 
+/* ── Hakken en plakken, eerste woordjes ── */
+.hk-blok {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: #fff;
+  border: 4px solid var(--panel-edge);
+  font-family: var(--font);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  transition: box-shadow 0.25s ease, transform 0.15s ease;
+}
+.hk-blok:not(.has-letter)::after { content: ''; width: 22%; height: 22%; border-radius: 50%; background: var(--glow); }
+.hk-blok.is-named { box-shadow: 0 0 0 10px var(--glow); transform: translateY(-4px); }
+.hk-blok.is-counted { box-shadow: 0 0 0 8px var(--ok); }
+.klanken.is-open .hk-blok { pointer-events: auto; }
+
+/* ── Kaartjes met een plaatje (muisje, vormen) ── */
+.pc-kaart svg { width: 88%; height: 88%; }
+
+/* ── Kralenketting ── */
+.pt-draad { position: absolute; background: #c9a26e; border-radius: 3px; }
+.pt-kraal { position: absolute; display: grid; place-items: center; border-radius: 50%; transition: box-shadow 0.25s ease; }
+.pt-kraal svg { width: 100%; height: 100%; display: block; }
+.pt-kraal.is-leeg { border: 4px dashed var(--ink-soft); background: var(--bg); }
+.pt-kraal.is-named { box-shadow: 0 0 0 8px var(--glow); }
+.pt-kraal.is-counted { box-shadow: 0 0 0 8px var(--ok); }
+.patroon .lz-kaart svg { width: 62%; height: 62%; }
+
+/* ── Eendjes in de vijver ── */
+.verhaal { position: absolute; inset: 0; }
+.vh-vijver { position: absolute; background: #bfe0f2; border: 6px solid #8fc1e0; border-radius: 50%; }
+.vh-eend { position: absolute; z-index: 5; pointer-events: none; transition: left 0.85s ease, top 0.85s ease, opacity 0.6s ease; }
+.vh-eend svg { width: 100%; height: 100%; display: block; }
+.vh-eend.is-out { opacity: 0; }
+.vh-eend.is-side { z-index: 9; }
+.vh-eend.is-counted::after { content: ''; position: absolute; inset: -8%; border-radius: 50%; border: 5px solid var(--glow); }
+.vh-riet { position: absolute; z-index: 7; pointer-events: none; opacity: 0; transform: translateY(30%); transition: opacity 0.6s ease, transform 0.6s ease; }
+.vh-riet svg { width: 100%; height: 100%; display: block; }
+.vh-riet.is-on { opacity: 1; transform: none; }
+
+/* ── Samen in het echt ── */
+.echt { position: absolute; inset: 0; }
+.echt-plaat { position: absolute; left: 34%; top: 8%; width: 50%; height: 58%; }
+.echt-plaat svg { width: 100%; height: 100%; display: block; }
+.echt-duim { width: min(18vh, 150px); height: min(18vh, 150px); right: 4%; bottom: 5%; opacity: 0.45; }
+.echt-duim.is-ready { opacity: 1; }
+.echt-duim.is-picked { transform: scale(0.94); }
+
 /* ── Keuzemoment ── */
 .keuze {
   position: absolute;
@@ -581,3 +632,7 @@ body.is-night .gear { filter: invert(1); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: 0.01s !important; }
 }
+.today { background: #fff; border: 1px solid var(--panel-edge); border-radius: 14px; padding: 4px 18px 10px; margin-top: 18px; }
+.today h2 { margin-top: 14px; }
+.struggles li { margin: 8px 0; }
+.form-row .header-buttons .btn:disabled { opacity: 0.45; }

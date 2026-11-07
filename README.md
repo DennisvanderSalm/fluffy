@@ -37,7 +37,8 @@ Snel testen op de iPad zonder te publiceren: `npm run dev`, dan op de iPad (zelf
 ## Ouderdeel
 
 Rechtsboven staat een vaag tandwieltje. **Houd het 2 seconden vast** en tik dan de drie getallen aan
-die er in woorden staan. Daar vind je de voortgang per vaardigheid, spelletjes zonder scherm en de instellingen.
+die er in woorden staan. Daar vind je het spelletje voor vandaag, de voortgang per vaardigheid, waar ze
+tegenaan loopt, de instellingen (ook "Samen spelen"), je eigen stem en de back-up.
 
 ## Stem van Fluffy (ElevenLabs)
 
