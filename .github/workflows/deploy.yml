@@ -27,6 +27,9 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      # Proef in WebKit, de motor van Safari op de iPad: sessie, ouderdeel, offline en updates.
+      - run: npx playwright install --with-deps webkit
+      - run: npx playwright test
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

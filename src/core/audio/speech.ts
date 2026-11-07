@@ -67,6 +67,11 @@ export class Speech {
     return this.own.has(id) || this.clips.has(id);
   }
 
+  /** Alle zinnen met een opname (voor "opnames beluisteren" in het ouderdeel). */
+  clipIds(): string[] {
+    return [...this.clips.keys()];
+  }
+
   /** Hoeveel zinnen als opname klaarstaan (voor het ouderdeel). */
   get clipCount(): number {
     return this.clips.size;
@@ -86,10 +91,14 @@ export class Speech {
     } catch {
       this.ctx = null;
     }
-    if (this.synth) {
-      const u = new SpeechSynthesisUtterance(' ');
-      u.volume = 0;
-      this.synth.speak(u);
+    try {
+      if (this.synth) {
+        const u = new SpeechSynthesisUtterance(' ');
+        u.volume = 0;
+        this.synth.speak(u);
+      }
+    } catch {
+      this.synth = null;
     }
     if (!this.audio) {
       this.audio = new Audio();
@@ -266,20 +275,38 @@ export class Speech {
     });
   }
 
-  /** Terugval zonder Web Audio: één audio-element, dat binnen een tik ontgrendeld is. */
+  /**
+   * Terugval zonder Web Audio: één audio-element, dat binnen een tik ontgrendeld is.
+   * Met vangnetten: start de opname niet, dan de computerstem; komt er geen 'ended' (bv. na
+   * stop()), dan gaat het na de duur van de opname toch verder. Anders kan Fluffy blijven hangen.
+   */
   private playElement(id: string, my: number): Promise<void> {
     const audio = this.audio ?? (this.audio = new Audio());
     return new Promise<void>((resolve) => {
-      const finish = () => {
-        audio.onended = audio.onerror = null;
-        resolve();
+      let started = false;
+      let done = false;
+      let timer = 0;
+      const finish = (failed: boolean) => {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        audio.onended = audio.onerror = audio.onloadedmetadata = null;
+        if (failed && !started && my === this.token) resolve(this.speakTts(this.text(id), my));
+        else resolve();
       };
-      audio.onended = finish;
-      audio.onerror = finish;
+      timer = window.setTimeout(() => finish(true), 4000);
+      audio.onloadedmetadata = () => {
+        started = true;
+        clearTimeout(timer);
+        const ms = Number.isFinite(audio.duration) ? audio.duration * 1000 : 10_000;
+        timer = window.setTimeout(() => finish(false), ms + 1500);
+      };
+      audio.onended = () => finish(false);
+      audio.onerror = () => finish(true);
       audio.volume = this.volume;
       audio.src = this.url(id);
-      audio.play().catch(finish);
-      if (my !== this.token) finish();
+      audio.play().catch(() => finish(true));
+      if (my !== this.token) finish(false);
     });
   }
 }

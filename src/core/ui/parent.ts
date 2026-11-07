@@ -3,10 +3,12 @@ import type { Speech } from '../audio/speech';
 import type { DomainModule, SkillInfo } from '../domain';
 import { initialState, manualLevelOf, type ManualLevel } from '../engine/mastery';
 import { PLAN_RULES, prerequisitesMet } from '../engine/planner';
-import type { SaveData } from '../storage/store';
+import { storageInfo, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
 import { el, shuffle } from '../util';
-import { backupSection, ownVoiceSection, strugglesSection, todaySection } from './parent-extra';
+import {
+  backupReminder, backupSection, listenSection, ownVoiceSection, safetySection, strugglesSection, todaySection,
+} from './parent-extra';
 
 export interface ParentDeps {
   domains: DomainModule[];
@@ -23,6 +25,8 @@ export interface ParentDeps {
   onOwnClip(id: string, clip: OwnClip | null): void;
   /** Een back-up terugzetten (de app start daarna opnieuw). */
   onRestore(data: SaveData): void;
+  /** Wanneer deze versie gebouwd is, en of er een nieuwe klaarstaat. */
+  version: { builtAt: string; updateReady: boolean };
   /** Is er nu een sessie bezig? Dan is Fluffy al wakker. */
   awake: boolean;
   /** Fluffy meteen wakker maken (sessie start zodra het ouderdeel dicht is). */
@@ -269,6 +273,10 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     deps.onChange();
   });
 
+  // Opslagstatus komt asynchroon binnen.
+  const safety = el('div');
+  void storageInfo().then((info) => safety.replaceChildren(...safetySection(info, deps.version.builtAt, deps.version.updateReady)));
+
   const allow = el('button', 'btn', 'Nieuwe sessie toestaan');
   allow.addEventListener('click', () => {
     deps.onAllowSession();
@@ -296,6 +304,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     el('div', 'parent',
       el('header', '', el('h1', '', 'Ouderdeel'), el('div', 'header-buttons', deps.awake ? '' : wakeBtn, closeBtn)),
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
+      ...backupReminder(data, Date.now()),
       ...todaySection(data, domains, name),
 
       el('h2', '', `Waar ${name} mee bezig is`),
@@ -327,7 +336,9 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       row('Voortgang', reset, 'Begint helemaal opnieuw. Instellingen blijven bewaard.'),
 
       ...ownVoiceSection(deps.speech, deps.onOwnClip),
-      ...backupSection(data, deps.onRestore),
+      ...listenSection(deps.speech, deps.onOwnClip),
+      ...backupSection(data, deps.onRestore, deps.onChange),
+      safety,
 
       el('h2', '', 'Tips'),
       el('ul', 'sessions',

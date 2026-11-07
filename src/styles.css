@@ -636,3 +636,12 @@ body.is-night .gear { filter: invert(1); }
 .today h2 { margin-top: 14px; }
 .struggles li { margin: 8px 0; }
 .form-row .header-buttons .btn:disabled { opacity: 0.45; }
+
+/* Ouderdeel: herinnering, opnames beluisteren */
+.reminder { background: var(--glow); border-radius: 12px; padding: 10px 16px; margin: 14px 0 0; }
+.listen { border-bottom: 1px solid var(--panel-edge); }
+.listen summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+.listen-all { padding: 0 0 8px; }
+.listen-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px dashed var(--panel-edge); flex-wrap: wrap; }
+.listen-row .btn { padding: 6px 12px; font-size: 15px; }
+.listen-row .btn[hidden] { display: none; }

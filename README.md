@@ -15,6 +15,7 @@ npm install
 npm run dev      # http://localhost:5173 (ook bereikbaar vanaf de iPad via het IP-adres van je pc)
 npm test         # tests van de adaptieve engine en de sessielogica
 npm run build    # productieversie in dist/ (met offline service worker)
+npm run e2e      # bouwt, en speelt de app na in WebKit (de motor van Safari): sessie, ouderdeel, offline, updates
 ```
 
 Snel testen op de iPad zonder te publiceren: `npm run dev`, dan op de iPad (zelfde wifi)
@@ -28,6 +29,11 @@ Snel testen op de iPad zonder te publiceren: `npm run dev`, dan op de iPad (zelf
 4. Open die link op de iPad in **Safari** → Deel-knop → **Zet op beginscherm**.
 5. Open de app één keer met wifi; daarna werkt hij ook offline.
 
+**Nieuwe versies.** Na elke push draaien eerst alle tests (ook in WebKit); pas daarna komt de nieuwe
+versie online. De iPad haalt hem op de achtergrond binnen: alleen de app zelf en nieuwe opnames, niet
+opnieuw alle opnames. Overschakelen gebeurt pas als Fluffy slaapt of op het startscherm staat, nooit
+midden in een sessie.
+
 **Aanraders op de iPad**
 - Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen → Nederlands: download een
   *verbeterde* stem (bv. Claire of Xander). Klinkt veel natuurlijker.
@@ -38,7 +44,9 @@ Snel testen op de iPad zonder te publiceren: `npm run dev`, dan op de iPad (zelf
 
 Rechtsboven staat een vaag tandwieltje. **Houd het 2 seconden vast** en tik dan de drie getallen aan
 die er in woorden staan. Daar vind je het spelletje voor vandaag, de voortgang per vaardigheid, waar ze
-tegenaan loopt, de instellingen (ook "Samen spelen"), je eigen stem en de back-up.
+tegenaan loopt, de instellingen (ook "Samen spelen"), je eigen stem, alle opnames om te beluisteren
+(en zelf opnieuw in te spreken als er een niet goed klinkt), de back-up (met een herinnering als die
+lang niet gemaakt is) en hoe veilig de voortgang op de iPad staat.
 
 ## Stem van Fluffy (ElevenLabs)
 

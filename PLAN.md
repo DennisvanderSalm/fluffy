@@ -322,5 +322,6 @@ Bewust níet: beloningen, reeksen, een Fluffy die verdrietig is als je niet spee
 | **6d (klaar)** | Knop "Fluffy wakker maken" in het ouderdeel: slaat rustpauze en dagmaximum één keer over en start meteen een sessie |
 | **7 (klaar)** | **Hakken en plakken** en **Eerste woordjes** (lezen); **Eendjes in de vijver** (erbij/eraf), **Kralenketting** (patronen), **Waar zit het muisje?** (ruimte) en **Vormen zoeken** (rekenen) |
 | **7b (klaar)** | Ouder en kind samen: opdrachten in het echt (de klok staat dan stil), "speel je samen met mama?", "vertel maar wat we gedaan hebben", spelletje voor vandaag en "waar ze tegenaan loopt" in het ouderdeel, eigen stem (naam en welterusten), back-up. Een lastig stukje eindigt met iets wat ze al kan; een opwarmer uit het andere vak houdt oude stof vers |
+| **7c (klaar)** | Techniek: offline-opslag gesplitst (app per versie, opnames blijven staan; een update haalt alleen nieuwe opnames op en schakelt pas over buiten een sessie), opnames beluisteren en zelf opnieuw inspreken in het ouderdeel, back-upherinnering en opslagstatus, sessieregels los testbaar, vangnet als een opname niet start, proef in WebKit (Safari) bij elke publicatie |
 | 8 | Afronding v1: met haar testen en bijstellen |
 | later | Leesmodule |

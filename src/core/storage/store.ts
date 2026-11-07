@@ -16,6 +16,8 @@ export interface SaveData {
   startLevelApplied: string | null;
   /** Wat opviel bij fouten, voor "waar ze tegenaan loopt" in het ouderdeel. */
   notes: Note[];
+  /** Wanneer de laatste back-up gemaakt is (tijdstip), of null. */
+  lastBackup: number | null;
 }
 
 export interface Note {
@@ -39,6 +41,7 @@ export function emptyData(): SaveData {
     parentAllowedAt: null,
     startLevelApplied: null,
     notes: [],
+    lastBackup: null,
   };
 }
 
@@ -85,14 +88,55 @@ export function readBackup(text: string): SaveData | null {
   }
 }
 
+let saveFailed = false;
+
 export function save(data: SaveData): void {
   if (data.sessions.length > SESSION_CAP) data.sessions.splice(0, data.sessions.length - SESSION_CAP);
   if (data.notes.length > NOTE_CAP) data.notes.splice(0, data.notes.length - NOTE_CAP);
   try {
     localStorage.setItem(KEY, JSON.stringify(data));
+    saveFailed = false;
   } catch {
     // Opslag vol of geblokkeerd: de app blijft gewoon werken, alleen zonder geheugen.
+    // Het ouderdeel laat het zien.
+    saveFailed = true;
   }
+}
+
+export interface StorageInfo {
+  /** Lukte het laatste bewaren niet? */
+  saveFailed: boolean;
+  /** Heeft de browser beloofd de gegevens niet zelf op te ruimen? (null = onbekend) */
+  persisted: boolean | null;
+  /** Gestart vanaf het beginscherm (als app), niet als gewone website in Safari? */
+  standalone: boolean;
+}
+
+/** Hoe veilig de voortgang staat, voor het ouderdeel. */
+export async function storageInfo(): Promise<StorageInfo> {
+  let persisted: boolean | null = null;
+  try {
+    persisted = (await navigator.storage?.persisted?.()) ?? null;
+  } catch {
+    /* onbekend */
+  }
+  const standalone =
+    (navigator as Navigator & { standalone?: boolean }).standalone === true ||
+    (typeof matchMedia === 'function' && matchMedia('(display-mode: standalone)').matches);
+  return { saveFailed, persisted, standalone };
+}
+
+const DAY = 86_400_000;
+
+/**
+ * Herinnering voor het ouderdeel: na een paar keer spelen zonder back-up, of als de laatste
+ * meer dan een maand oud is. Geeft null als er niets te herinneren valt.
+ */
+export function backupDue(data: SaveData, now: number): 'nooit' | 'oud' | null {
+  const played = data.sessions.filter((r) => r.items > 0).length;
+  if (data.lastBackup === null) return played >= 3 ? 'nooit' : null;
+  const newer = data.sessions.some((r) => r.items > 0 && r.start > data.lastBackup!);
+  return newer && now - data.lastBackup > 30 * DAY ? 'oud' : null;
 }
 
 /** Vraag de browser de gegevens niet op te ruimen (vooral relevant op iPad). */

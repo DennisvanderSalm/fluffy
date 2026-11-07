@@ -4,3 +4,7 @@ oud
 .env
 .env.local
 stem-proef
+
+# Playwright
+test-results/
+playwright-report/

@@ -2,7 +2,7 @@ import type { LineId } from '../../content/spraak.nl';
 import type { Activity, ActivityContext, DomainModule, ItemResult } from '../domain';
 import { assumeMastered, initialState, manualState, recordAttempt, type ManualLevel } from '../engine/mastery';
 import {
-  choiceOptions, dueReviews, easyPick, isChoiceMoment, isStruggling, pickNext, scheduleRetry,
+  choiceOptions, isChoiceMoment, isStruggling, pickNext, scheduleRetry,
   type PlannerInput, type PlayedRef, type RetryEntry,
 } from '../engine/planner';
 import type { SkillState } from '../engine/types';
@@ -12,6 +12,7 @@ import { Sounds } from '../audio/sounds';
 import {
   canStartSession, closeDangling, playUntilTimeUp, SessionClock, type SessionRecord,
 } from '../session/session';
+import { easyWin, togetherDue, warmUpSkill } from '../session/flow';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
 import { el, isoDate, pick, shuffle, sleep, svgEl } from '../util';
@@ -19,6 +20,7 @@ import { askChoice } from './choice';
 import { onTap } from './drag';
 import { openParentArea } from './parent';
 import { realTask } from './samen';
+import type { Updates } from '../update';
 
 /** Eén item dat gespeeld gaat worden. */
 interface Plan {
@@ -67,7 +69,7 @@ export class App {
   /** Het vak van de lopende sessie. */
   private domain: DomainModule;
 
-  constructor(private root: HTMLElement, private domains: DomainModule[]) {
+  constructor(private root: HTMLElement, private domains: DomainModule[], private updates?: Updates) {
     this.data = load();
     this.data.sessions = closeDangling(this.data.sessions);
     this.domain = domains[0];
@@ -91,6 +93,12 @@ export class App {
     this.setupGlobalGuards();
     requestPersistence();
     void this.speech.init();
+    this.updates?.onReady(() => this.maybeUpdate());
+  }
+
+  /** Nieuwe versie laden, maar alleen als er niet gespeeld wordt en het ouderdeel dicht is. */
+  private maybeUpdate(): void {
+    if (this.updates?.ready && this.mode !== 'session' && !this.paused) this.updates.apply();
   }
 
   start(): void {
@@ -126,6 +134,7 @@ export class App {
       hint.remove();
       void this.runSession();
     };
+    this.maybeUpdate();
   }
 
   /** Eindscherm: rustig, donker, Fluffy slaapt. Geen knop om door te spelen. */
@@ -155,6 +164,7 @@ export class App {
         void this.say(['slaap.tik']);
       }
     };
+    this.maybeUpdate();
   }
 
   // ── Sessie ──
@@ -216,17 +226,15 @@ export class App {
    * Niet als de ouder het vak heeft vastgezet.
    */
   private async warmUp(played: PlayedRef[], retries: RetryEntry[]): Promise<void> {
-    if (this.data.settings.subject !== 'kiezen') return;
     const today = isoDate(Date.now());
-    for (const d of this.domains) {
-      if (d === this.domain || !d.activities.length) continue;
-      const skill = dueReviews(this.plannerInput(d, [], [], today))[0];
-      if (!skill) continue;
-      const activity = pick(this.rng, this.activitiesFor(skill));
-      const level = this.stateOf(skill).level;
-      await this.playItem({ skill, activity, params: activity.makeItem(skill, level, this.rng), retry: false, level, record: true }, played, retries);
-      return;
-    }
+    const skill = warmUpSkill(this.data.settings.subject, this.domains, this.domain, (d) => this.plannerInput(d, [], [], today));
+    if (skill) await this.playItem(this.planFor(skill, this.stateOf(skill).level, true), played, retries);
+  }
+
+  /** Een nieuw item voor deze vaardigheid op dit niveau, met een passende activiteit. */
+  private planFor(skill: string, level: number, record: boolean): Plan {
+    const activity = pick(this.rng, this.activitiesFor(skill));
+    return { skill, activity, params: activity.makeItem(skill, level, this.rng), retry: false, level, record };
   }
 
   /** Rekenen of lezen: vastgezet door de ouder, of ze kiest zelf met twee plaatjes. */
@@ -243,7 +251,8 @@ export class App {
   private async playOne(played: PlayedRef[], retries: RetryEntry[], recent: ItemResult[]): Promise<boolean> {
     const input = this.plannerInput(this.domain, played, retries, isoDate(Date.now()));
     // Liep het net een paar keer stroef? Dan eerst iets wat ze al kan.
-    let plan = isStruggling(recent) ? this.easyWin(input, played) : null;
+    const easy = isStruggling(recent) ? easyWin(input, played[played.length - 1]?.skill) : null;
+    let plan = easy && this.planFor(easy.skill, easy.level, easy.record);
     if (plan) recent.length = 0;
     plan ??= await this.planNext(input, played, retries);
     if (!plan) return false;
@@ -252,21 +261,6 @@ export class App {
     this.fluffy.set('rust');
     await sleep(700);
     return true;
-  }
-
-  /** Een succesje: een beheerste vaardigheid, of anders hetzelfde één stap makkelijker (telt niet mee). */
-  private easyWin(input: PlannerInput, played: PlayedRef[]): Plan | null {
-    const solid = easyPick(input);
-    if (solid) {
-      const activity = pick(this.rng, this.activitiesFor(solid));
-      const level = this.stateOf(solid).level;
-      return { skill: solid, activity, params: activity.makeItem(solid, level, this.rng), retry: false, level, record: true };
-    }
-    const skill = played[played.length - 1]?.skill;
-    const level = skill ? this.stateOf(skill).level - 1 : -1;
-    if (!skill || level < 0) return null;
-    const activity = pick(this.rng, this.activitiesFor(skill));
-    return { skill, activity, params: activity.makeItem(skill, level, this.rng), retry: false, level, record: false };
   }
 
   /** Wat de planner kiest: een item dat terugkomt, of iets nieuws (soms mag ze kiezen). */
@@ -344,8 +338,7 @@ export class App {
    * sessie, bij 'samen' om de vier items. De speelklok staat zolang stil: het is geen schermtijd.
    */
   private async maybeTogether(skill: string, count: number): Promise<void> {
-    const mode = this.data.settings.together;
-    const due = mode === 'samen' ? count % 4 === 0 : mode === 'echt' && count === 5;
+    const due = togetherDue(this.data.settings.together, count);
     const tasks = this.skillsById.get(skill)?.realTasks;
     if (!due || !tasks?.length || this.clock!.isTimeUp()) return;
     this.fluffy.set('rust');
@@ -531,6 +524,7 @@ export class App {
         save(data);
         location.reload();
       },
+      version: { builtAt: __BUILD_TIME__, updateReady: !!this.updates?.ready },
       awake: this.mode === 'session',
       onWake: () => {
         // Binnen de tik: geluid ontgrendelen (iPadOS), dan meteen beginnen.
@@ -550,6 +544,7 @@ export class App {
           return;
         }
         if (this.mode === 'night' && this.data.parentAllowedAt !== null) this.showRestingScreen();
+        else this.maybeUpdate();
       },
     });
   }
@@ -565,6 +560,7 @@ export class App {
         this.clock?.pause();
         this.speech.stop();
       } else if (!this.paused) {
+        this.updates?.check();
         if (this.mode === 'session') this.clock?.start();
         else if (this.mode === 'night') this.showRestingScreenIfAllowed();
       }
