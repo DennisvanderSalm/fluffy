@@ -6,14 +6,22 @@
 export class Updates {
   private reg: ServiceWorkerRegistration | null = null;
   private listeners = new Set<() => void>();
+  /**
+   * Draaide deze pagina al op een eerdere versie? Bij het allereerste bezoek is er nog geen
+   * versie: dan is de eerste installatie geen update, en hoeft er niets herladen te worden.
+   */
+  private hadVersion = false;
 
   async register(url: string): Promise<void> {
     const sw = navigator.serviceWorker;
+    this.hadVersion = !!sw.controller;
+    // Na de eerste installatie draait deze pagina op die versie; wat daarna komt is een update.
+    sw.addEventListener('controllerchange', () => (this.hadVersion = true));
     this.reg = await sw.register(url);
     const watch = (w: ServiceWorker | null) => {
       if (!w) return;
       const check = () => {
-        if (w.state === 'installed' && sw.controller) this.listeners.forEach((fn) => fn());
+        if (w.state === 'installed' && this.ready) this.listeners.forEach((fn) => fn());
       };
       check();
       w.addEventListener('statechange', check);
@@ -25,7 +33,7 @@ export class Updates {
 
   /** Staat er een nieuwe versie klaar? */
   get ready(): boolean {
-    return !!this.reg?.waiting && !!navigator.serviceWorker?.controller;
+    return this.hadVersion && !!this.reg?.waiting && !!navigator.serviceWorker?.controller;
   }
 
   onReady(fn: () => void): void {

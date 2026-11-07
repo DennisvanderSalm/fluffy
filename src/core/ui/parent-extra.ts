@@ -307,3 +307,18 @@ export function backupSection(data: SaveData, onRestore: (d: SaveData) => void, 
       el('div', 'header-buttons', save, restore, input)),
   ];
 }
+
+/** Privacy in gewone taal: wat waar staat, en wat er wel en niet naar buiten gaat. */
+export function privacySection(name: string): HTMLElement[] {
+  return [
+    el('h2', '', 'Privacy'),
+    el('ul', 'sessions',
+      el('li', '', `Alles wat Fluffy over ${name} weet (naam, voortgang, wat opviel, instellingen en je eigen opnames) staat alleen op dit apparaat. Niemand anders kan het zien, ook niet wie dezelfde link opent: elk apparaat heeft zijn eigen, lege Fluffy.`),
+      el('li', '', 'De app verstuurt niets: geen account, geen reclame, geen statistieken, geen tracking. Dat is ook technisch afgedwongen: de app mag alleen met zijn eigen website praten.'),
+      el('li', '', 'De app zelf staat openbaar op GitHub, en iedereen mag hem gebruiken. Als je de app opent, kijkt de iPad bij GitHub of er een nieuwe versie is. GitHub ziet dan, zoals bij elke website, het internetadres en het tijdstip. Niet wat er gespeeld wordt of hoe het gaat.'),
+      el('li', '', 'De stem van Fluffy is vooraf opgenomen. Tijdens het spelen gaat er niets naar een stemdienst. De naam wordt nooit opgenomen of verstuurd: die zegt de computerstem van de iPad, of jouw eigen opname.'),
+      el('li', '', 'Een back-up bevat de naam en de voortgang. Hij gaat nergens vanzelf heen; jij kiest waar je hem bewaart.'),
+      el('li', '', 'Het slot van het ouderdeel is een kinderslot, geen wachtwoord: een kleuter komt er niet in, een volwassene wel.'),
+    ),
+  ];
+}

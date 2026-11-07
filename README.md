@@ -5,6 +5,8 @@ Versie 1 gaat over beginnende gecijferdheid; een leesmodule komt later.
 Het volledige plan en de onderbouwing staan in **[PLAN.md](PLAN.md)**.
 
 - Volledig offline, geen accounts, geen tracking. Alle voortgang blijft op de iPad.
+- Iedereen mag Fluffy gratis gebruiken: open de link en zet hem op het beginscherm. Elk apparaat heeft
+  zijn eigen Fluffy; wie dezelfde link opent, ziet niets van een ander. Zie ook "Privacy" in het ouderdeel.
 - Geen punten, sterren, streaks, timers of "kom terug"-meldingen.
 - De sessie eindigt vanzelf rustig (standaard na 10 minuten).
 

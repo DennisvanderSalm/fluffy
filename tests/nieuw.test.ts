@@ -167,6 +167,35 @@ describe('samen en back-up', () => {
     expect(readBackup('geen json')).toBe(null);
   });
 
+  it('een kapot of vreemd back-upbestand kan de app niet laten vastlopen', () => {
+    const good = emptyData();
+    good.sessions.push({ id: 's1', date: '2026-11-07', start: 1, activeMs: 0, items: 2, firstTry: 2, helped: 0, activities: ['tellen'], skills: ['tellen-5'] });
+    const evil = {
+      ...good,
+      settings: { childName: 'x'.repeat(500), volume: 9, together: 'altijd', grownUp: '<img src=x>', sessionMinutes: -5, voiceURI: 3 },
+      skills: { a: { status: 'mastered', level: 0, atLevel: [], history: [] }, b: 'kapot', c: { ...initialState(), level: 2, status: 'practicing' } },
+      sessions: [...good.sessions, null, { id: 5 }, 'tekst'],
+      notes: [{ skill: 'x', text: 'ok', date: '2026-11-07' }, { text: 7 }],
+      seen: { tellen: 3, rijmen: 'veel' },
+      introduced: 'ja',
+      lastBackup: 'gisteren',
+    };
+    const d = readBackup(JSON.stringify(makeBackup(evil as never, 0)))!;
+    expect(d.settings.childName).toHaveLength(40);
+    expect(d.settings.volume).toBe(1);
+    expect(d.settings.together).toBe('echt');
+    expect(d.settings.grownUp).toBe('wie.papaofmama');
+    expect(d.settings.sessionMinutes).toBe(10);
+    expect(d.settings.voiceURI).toBe(null);
+    expect(Object.keys(d.skills)).toEqual(['c']);
+    expect(d.sessions).toHaveLength(1);
+    expect(d.notes).toHaveLength(1);
+    expect(d.seen).toEqual({ tellen: 3 });
+    expect(d.introduced).toBe(false);
+    expect(d.lastBackup).toBe(null);
+    expect(readBackup(JSON.stringify({ app: 'fluffy', format: 1, profiles: [{ id: 'p1', data: [] }] }))).toBe(null);
+  });
+
   it('oude opslag zonder notities wordt aangevuld', () => {
     const old = { ...emptyData() } as Partial<ReturnType<typeof emptyData>>;
     delete old.notes;

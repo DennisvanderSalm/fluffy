@@ -54,12 +54,96 @@ export function load(): SaveData {
   }
 }
 
-/** Opgeslagen gegevens aanvullen met wat in een oudere versie nog niet bestond. */
+const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
+const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
+const isStr = (v: unknown): v is string => typeof v === 'string';
+const numOrNull = (v: unknown) => (isNum(v) ? v : null);
+
+const GROWN_UP = ['wie.papaofmama', 'wie.papa', 'wie.mama', 'wie.oma', 'wie.opa'];
+const TOGETHER = ['uit', 'echt', 'samen'];
+const STATUS = ['new', 'practicing', 'mastered'];
+
+/** Instellingen: alleen velden van het goede soort, binnen redelijke grenzen. */
+function cleanSettings(raw: unknown): Settings {
+  const s: Settings = { ...DEFAULT_SETTINGS };
+  if (!isObj(raw)) return s;
+  if (isStr(raw.childName)) s.childName = raw.childName.slice(0, 40);
+  for (const k of ['sessionMinutes', 'maxSessionsPerDay', 'restMinutes'] as const) {
+    const v = raw[k];
+    if (isNum(v) && v >= 0 && v <= 24 * 60) s[k] = v;
+  }
+  if (isNum(raw.volume)) s.volume = Math.min(1, Math.max(0, raw.volume));
+  if (isStr(raw.voiceURI) || raw.voiceURI === null) s.voiceURI = raw.voiceURI;
+  if (isStr(raw.startLevel)) s.startLevel = raw.startLevel;
+  if (isStr(raw.subject)) s.subject = raw.subject;
+  if (TOGETHER.includes(raw.together as string)) s.together = raw.together as Settings['together'];
+  if (GROWN_UP.includes(raw.grownUp as string)) s.grownUp = raw.grownUp as string;
+  return s;
+}
+
+function cleanSkill(raw: unknown): SkillState | null {
+  if (!isObj(raw) || !STATUS.includes(raw.status as string) || !isNum(raw.level) || raw.level < 0) return null;
+  if (!Array.isArray(raw.atLevel) || !Array.isArray(raw.history)) return null;
+  const okAttempt = (a: unknown) => isObj(a) && isNum(a.credit);
+  const review = isObj(raw.review) && isNum(raw.review.box) && isStr(raw.review.due) ? { box: raw.review.box, due: raw.review.due } : undefined;
+  if (raw.status === 'mastered' && !review) return null;
+  return {
+    status: raw.status as SkillState['status'],
+    level: Math.floor(raw.level),
+    atLevel: raw.atLevel.filter(okAttempt) as SkillState['atLevel'],
+    history: raw.history.filter((a) => okAttempt(a) && isStr((a as Record<string, unknown>).date)) as SkillState['history'],
+    assumed: raw.assumed === true,
+    ...(review ? { review } : {}),
+    lapses: isNum(raw.lapses) ? raw.lapses : 0,
+    ...(isStr(raw.lastPracticed) ? { lastPracticed: raw.lastPracticed } : {}),
+  };
+}
+
+function cleanSession(raw: unknown): SessionRecord | null {
+  if (!isObj(raw) || !isStr(raw.id) || !isStr(raw.date) || !isNum(raw.start)) return null;
+  const strings = (v: unknown) => (Array.isArray(v) ? v.filter(isStr) : []);
+  const n = (v: unknown) => (isNum(v) && v >= 0 ? v : 0);
+  return {
+    id: raw.id, date: raw.date, start: raw.start,
+    ...(isNum(raw.end) ? { end: raw.end } : {}),
+    activeMs: n(raw.activeMs), items: n(raw.items), firstTry: n(raw.firstTry), helped: n(raw.helped),
+    activities: strings(raw.activities), skills: strings(raw.skills),
+    ...(isStr(raw.domain) ? { domain: raw.domain } : {}),
+  };
+}
+
+/**
+ * Opgeslagen gegevens (of een back-upbestand) controleren en aanvullen met wat in een oudere
+ * versie nog niet bestond. Alles van het verkeerde soort wordt weggelaten, zodat een kapot of
+ * vreemd bestand de app nooit kan laten vastlopen. Geeft null als het helemaal niet klopt.
+ */
 export function normalize(raw: unknown): SaveData | null {
-  const data = raw as Partial<SaveData> | null;
-  if (!data || typeof data !== 'object' || data.version !== 1) return null;
+  if (!isObj(raw) || raw.version !== 1) return null;
   const base = emptyData();
-  return { ...base, ...data, settings: { ...base.settings, ...data.settings } };
+  const skills: Record<string, SkillState> = {};
+  if (isObj(raw.skills)) {
+    for (const [id, st] of Object.entries(raw.skills)) {
+      const clean = cleanSkill(st);
+      if (clean) skills[id] = clean;
+    }
+  }
+  const seen: Record<string, number> = {};
+  if (isObj(raw.seen)) for (const [id, v] of Object.entries(raw.seen)) if (isNum(v)) seen[id] = v;
+  return {
+    ...base,
+    settings: cleanSettings(raw.settings),
+    skills,
+    sessions: Array.isArray(raw.sessions) ? raw.sessions.map(cleanSession).filter((s): s is SessionRecord => !!s) : [],
+    introduced: raw.introduced === true,
+    seen,
+    parentAllowedAt: numOrNull(raw.parentAllowedAt),
+    startLevelApplied: isStr(raw.startLevelApplied) ? raw.startLevelApplied : null,
+    notes: Array.isArray(raw.notes)
+      ? raw.notes.filter((x): x is Note => isObj(x) && isStr(x.skill) && isStr(x.text) && isStr(x.date))
+        .map((x) => ({ skill: x.skill, text: x.text.slice(0, 200), date: x.date }))
+      : [],
+    lastBackup: numOrNull(raw.lastBackup),
+  };
 }
 
 /**

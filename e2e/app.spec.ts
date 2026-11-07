@@ -86,6 +86,7 @@ test.describe('zonder service worker', () => {
     await page.locator('details.listen summary', { hasText: 'Losse klanken' }).click();
     await expect(page.locator('details.listen[open] .listen-row').first()).toBeVisible();
     await expect(page.getByText(/Deze versie is van/)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Privacy' })).toBeVisible();
     await page.getByRole('button', { name: 'Terug naar Fluffy' }).click();
     await expect(page.locator('.overlay')).toHaveCount(0);
     expect(errors).toEqual([]);
@@ -146,13 +147,13 @@ test('offline: na het eerste bezoek werkt alles zonder internet, met alle opname
       const m = await (await fetch('audio/nl/manifest.json')).json();
       return new Set(Object.values(m.clips as Record<string, string>)).size;
     });
-    // (Kan even herladen als er nog een oudere versie van een vorige proef klaarstond.)
+    // (WebKit op Windows laadt de pagina soms één keer opnieuw als de service worker hem overneemt.)
     await expect.poll(() => page.evaluate(async () => {
       await navigator.serviceWorker.ready;
       const keys = await caches.keys();
       const audio = (await (await caches.open('fluffy-audio')).keys()).length;
       return keys.some((k) => k.startsWith('fluffy-app-')) && audio;
-    }), { timeout: 60_000 }).toBe(expected);
+    }).catch(() => null), { timeout: 60_000 }).toBe(expected);
   } finally {
     await server.stop();
   }

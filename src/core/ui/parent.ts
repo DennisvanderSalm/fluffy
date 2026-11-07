@@ -7,7 +7,7 @@ import { storageInfo, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
 import { el, shuffle } from '../util';
 import {
-  backupReminder, backupSection, listenSection, ownVoiceSection, safetySection, strugglesSection, todaySection,
+  backupReminder, backupSection, listenSection, ownVoiceSection, privacySection, safetySection, strugglesSection, todaySection,
 } from './parent-extra';
 
 export interface ParentDeps {
@@ -339,6 +339,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       ...listenSection(deps.speech, deps.onOwnClip),
       ...backupSection(data, deps.onRestore, deps.onChange),
       safety,
+      ...privacySection(name),
 
       el('h2', '', 'Tips'),
       el('ul', 'sessions',
