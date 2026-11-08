@@ -253,7 +253,7 @@ bestanden. Geen analytics, geen externe scripts of fonts. Alles staat in `localS
   (herhaalitems, interleaving, voorwaarden), sessielogica (einde na lopend item, rustpauze, max per dag,
   klok staat stil in het ouderdeel).
 - **Tabletformaat**: in de browser op 1180×820 (iPad Air liggend) en 1024×768 (iPad 9e generatie).
-- **Met je kind**: na elke stap een korte testlijst (zie README).
+- **Met je kind**: na elke stap een korte testlijst.
 
 ---
 

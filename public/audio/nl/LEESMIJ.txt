@@ -8,7 +8,7 @@ Deze map bevat de opnames waarmee Fluffy praat. manifest.json koppelt een id aan
 Ontbreekt een opname, dan zegt de computerstem dat stukje.
 
 ElevenLabs (automatisch)
-  "npm run stem" vult deze map en manifest.json. Zie de README. Die opnames staan ook onder
+  "npm run stem" vult deze map en manifest.json. Zie ONTWIKKELAARS.md. Die opnames staan ook onder
   "generated" in manifest.json; dat deel beheert het script zelf.
 
 Eigen opnames (met de hand)

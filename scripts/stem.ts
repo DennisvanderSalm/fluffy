@@ -245,7 +245,7 @@ async function check(ids: string[], jobs: Map<string, ClipJob>, e: Env, m: Manif
   }
   const todo = ids.filter((id) => m.clips[id] && results[id]?.file !== m.clips[id]);
   if (!todo.length) return writeResults(results);
-  if (!e.key) fail('Zet ELEVENLABS_API_KEY in .env.local (zie README).');
+  if (!e.key) fail('Zet ELEVENLABS_API_KEY in .env.local (zie ONTWIKKELAARS.md).');
   let done = 0;
   await runPool(todo, STT_CONCURRENCY, async (id) => {
     const file = m.clips[id];
@@ -320,7 +320,7 @@ async function main(): Promise<void> {
     console.log('\nProefrun: er is niets naar ElevenLabs gestuurd.\n');
     return;
   }
-  if (!e.key || !e.voice) fail('Zet ELEVENLABS_API_KEY en ELEVENLABS_VOICE_ID in .env.local (zie README).');
+  if (!e.key || !e.voice) fail('Zet ELEVENLABS_API_KEY en ELEVENLABS_VOICE_ID in .env.local (zie ONTWIKKELAARS.md).');
 
   const generatedIds = () => [...jobs.keys()].filter((id) => m.generated[id]);
   if (flag('--controle')) {
