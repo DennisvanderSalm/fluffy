@@ -4,7 +4,7 @@ import type { ActivityContext } from '../domain';
 import { el, sleep, svgEl } from '../util';
 import { onTap } from './drag';
 
-const THUMB = `<svg viewBox="0 0 100 100"><path d="M24 48 h12 v40 h-12 z M42 48 L54 20 C57 12 69 15 67 26 L63 42 H80 C87 42 90 49 88 56 L82 80 C80 87 75 89 69 89 H42 Z"
+export const THUMB = `<svg viewBox="0 0 100 100"><path d="M24 48 h12 v40 h-12 z M42 48 L54 20 C57 12 69 15 67 26 L63 42 H80 C87 42 90 49 88 56 L82 80 C80 87 75 89 69 89 H42 Z"
   fill="#fff" stroke="#3b4a6b" stroke-width="5" stroke-linejoin="round"/></svg>`;
 
 /** Een groot en een klein handje: samen in het echt. */

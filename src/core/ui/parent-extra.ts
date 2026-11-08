@@ -3,6 +3,8 @@ import { deleteOwnClip, Recorder, saveOwnClip, type OwnClip } from '../audio/own
 import type { Speech } from '../audio/speech';
 import { addDays, el, isoDate } from '../util';
 import { lineText, type LineId } from '../../content/spraak.nl';
+import { byPractice } from '../session/flow';
+import { MOMENT_LABEL } from './moments';
 import { joinText } from '../audio/phrases';
 import { flaggedCommand, loadFlagged, saveFlagged, stillFlagged } from '../audio/flagged';
 import { backupDue, makeBackup, readBackup, type SaveData, type StorageInfo } from '../storage/store';
@@ -15,28 +17,86 @@ import { backupDue, makeBackup, readBackup, type SaveData, type StorageInfo } fr
 const skillMap = (domains: DomainModule[]) => new Map(domains.flatMap((d) => d.skills).map((s) => [s.id, s]));
 
 /** "Na de laatste keer": één of twee spelletjes zonder scherm die aansluiten bij wat ze net deed. */
-export function todaySection(data: SaveData, domains: DomainModule[], name: string): HTMLElement[] {
-  const last = [...data.sessions].reverse().find((r) => r.items > 0 && r.end !== undefined);
-  if (!last) return [];
-  const skills = skillMap(domains);
-  // Eerst wat ze nog oefent: daar helpt samen spelen het meest.
-  const order = [...last.skills].sort((a, b) => rank(data, a) - rank(data, b));
-  const picks = order.map((id) => skills.get(id)).filter((s): s is SkillInfo => !!s).slice(0, 2);
-  if (!picks.length) return [];
-  const when = last.date === isoDate(Date.now()) ? 'vandaag' : 'de laatste keer';
+export function todaySection(data: SaveData, domains: DomainModule[], name: string, childName: string): HTMLElement[] {
+  const card = dayCard(data, domains, isoDate(Date.now()));
+  if (!card) return [];
+  const who = childName || 'je kind';
+  const block = (title: string, items: string[]) =>
+    items.length ? [el('p', 'muted', title), el('ul', 'sessions', ...items.map((t) => el('li', '', t)))] : [];
+
+  const share = el('button', 'btn', 'Delen');
+  share.addEventListener('click', () => {
+    const text = dayCardText(card, childName);
+    void (async () => {
+      try {
+        if (navigator.share) await navigator.share({ title: 'Vandaag samen', text });
+        else {
+          await navigator.clipboard.writeText(text);
+          share.textContent = 'Gekopieerd. Plak het in een berichtje.';
+        }
+      } catch {
+        /* geannuleerd of niet toegestaan */
+      }
+    })();
+  });
+
   return [
     el('div', 'today',
-      el('h2', '', 'Spelletje voor vandaag'),
-      el('p', 'muted', `${name} oefende ${when} met ${picks.map((s) => s.name.toLowerCase()).join(' en ')}. Dit kun je vandaag samen doen, zonder scherm:`),
-      el('ul', 'sessions', ...picks.map((s) => el('li', '', s.offScreen))),
-      el('p', 'muted', 'Vraag haar ook eens wat ze met Fluffy gedaan heeft. Zelf navertellen helpt om het te onthouden.'),
+      el('h2', '', 'Vandaag samen'),
+      card.mission
+        ? el('p', '', `Fluffy gaf ${who} deze opdracht voor de rest van de dag: “${card.mission}” Vraag er eens naar! De volgende keer vraagt Fluffy het ook.`)
+        : '',
+      card.practiced.length
+        ? el('p', 'muted', `${name.charAt(0).toUpperCase() + name.slice(1)} oefende ${card.when} met ${card.practiced.join(' en ')}. Zo kun je er vandaag samen mee verder, zonder scherm:`)
+        : '',
+      ...block('Tussendoor, bij gewone momenten:', card.moments),
+      ...block('Een spelletje:', card.games),
+      el('div', 'share-row', share, el('span', 'muted', 'Stuur dit naar wie er vandaag voor haar zorgt. De app verstuurt zelf niets; alleen als jij op Delen tikt.')),
     ),
   ];
 }
 
-function rank(data: SaveData, id: string): number {
-  const st = data.skills[id];
-  return st?.status === 'practicing' ? 0 : st?.status === 'mastered' ? 2 : 1;
+export interface DayCard {
+  when: 'vandaag' | 'de laatste keer';
+  /** Wat Fluffy haar als opdracht gaf (alleen vandaag). */
+  mission: string | null;
+  /** Namen van de vaardigheden waar ze mee oefende. */
+  practiced: string[];
+  /** Ideeën bij gewone momenten van de dag ("Aan tafel: …"). */
+  moments: string[];
+  /** Spelletjes zonder scherm. */
+  games: string[];
+}
+
+/** De dagkaart voor de ouder: wat ze deed, de opdracht van Fluffy, en ideeën voor de rest van de dag. */
+export function dayCard(data: SaveData, domains: DomainModule[], today: string): DayCard | null {
+  const last = [...data.sessions].reverse().find((r) => r.items > 0 && r.end !== undefined);
+  const mission = data.mission && data.mission.date === today ? data.mission.line : null;
+  if (!last && !mission) return null;
+  const skills = skillMap(domains);
+  // Eerst wat ze nog oefent: daar helpt samen spelen het meest.
+  const picks = (last ? byPractice(last.skills, data.skills) : [])
+    .map((id) => skills.get(id)).filter((s): s is SkillInfo => !!s).slice(0, 2);
+  const text = (id: string) => lineText(id as LineId, '');
+  return {
+    when: last?.date === today ? 'vandaag' : 'de laatste keer',
+    mission: mission ? text(mission) || null : null,
+    practiced: picks.map((s) => s.name.toLowerCase()),
+    moments: picks.flatMap((s) => s.missions ?? []).filter((m) => m.line !== mission)
+      .map((m) => `${MOMENT_LABEL[m.moment]}: ${text(m.line).replace(/^Als [^:]*: /, '')}`).slice(0, 4),
+    games: picks.map((s) => s.offScreen),
+  };
+}
+
+/** De dagkaart als tekst, om te delen (bijvoorbeeld via WhatsApp). */
+export function dayCardText(card: DayCard, childName: string): string {
+  const who = childName || 'haar';
+  const lines = [`Vandaag samen met ${who}`];
+  if (card.mission) lines.push('', `Fluffy gaf ${who} deze opdracht: “${card.mission}” Vraag er eens naar!`);
+  if (card.practiced.length) lines.push('', `Ze oefende ${card.when} met ${card.practiced.join(' en ')}.`);
+  if (card.moments.length) lines.push('', 'Tussendoor:', ...card.moments.map((t) => `- ${t}`));
+  if (card.games.length) lines.push('', 'Een spelletje:', ...card.games.map((t) => `- ${t}`));
+  return lines.join('\n');
 }
 
 /**

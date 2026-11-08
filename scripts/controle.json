@@ -3995,6 +3995,336 @@
   "abrupt": false,
   "heard": "Op welk bordje liggen er minder koekjes?"
  },
+ "missie.beginklank.a": {
+  "file": "missie.beginklank.a.9a046ae396.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, met welke klank begint wat je eet? Zeg de eerste klank maar"
+ },
+ "missie.beginklank.b": {
+  "file": "missie.beginklank.b.fa94ce0679.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten bent, zoek iets dat begint met B, zoals een boom of een bal"
+ },
+ "missie.buren-10.a": {
+  "file": "missie.buren-10.a.d69cf8ff35.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je de trap af gaat, tel terug net als een raket. Tien, negen, acht"
+ },
+ "missie.buren-10.b": {
+  "file": "missie.buren-10.b.ea5345a960.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in bad zit, tel tot tien en dan weer terug naar nul"
+ },
+ "missie.cijfers-10.a": {
+  "file": "missie.cijfers-10.a.8dfb638f46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten loopt, zoek cijfers op de huizen. Welke cijfers ken je?"
+ },
+ "missie.cijfers-10.b": {
+  "file": "missie.cijfers-10.b.7e17c5939c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in de keuken bent. Zoek een cijfer op een pak, een klok of de oven"
+ },
+ "missie.hakken.a": {
+  "file": "missie.hakken.a.81c82aef75.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, zeg in stukjes wat je eet. Bo-ter-ham"
+ },
+ "missie.hakken.b": {
+  "file": "missie.hakken.b.302711ee81.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je naar bed gaat, zeg de namen van je knuffels in stukjes"
+ },
+ "missie.hoeveel-10.a": {
+  "file": "missie.hoeveel-10.a.930042d100.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je helpt met de boodschappen, pak zeven dingen en zet ze op een rij"
+ },
+ "missie.hoeveel-10.b": {
+  "file": "missie.hoeveel-10.b.5da43e006d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten bent, zoek acht steentjes of acht blaadjes"
+ },
+ "missie.hoeveel-5.a": {
+  "file": "missie.hoeveel-5.a.a090c72a17.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je helpt in de keuken, pak vier lepels. Niet meer en niet minder"
+ },
+ "missie.hoeveel-5.b": {
+  "file": "missie.hoeveel-5.b.052efb2e5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je naar bed gaat, kies drie knuffels die mee mogen in bed"
+ },
+ "missie.letters.a": {
+  "file": "missie.letters.a.25a3f952a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten loopt, zoek de eerste letter van je naam op een bord of een winkel"
+ },
+ "missie.letters.b": {
+  "file": "missie.letters.b.24a0fbcaec.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in de keuken bent, zoek letters op een pak of een doos. Welke letters ken je?"
+ },
+ "missie.nogeens": {
+  "file": "missie.nogeens.574452ecff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is je opdracht"
+ },
+ "missie.patroon-ab.a": {
+  "file": "missie.patroon-ab.a.afa72ae0a6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten loopt, zoek een patroon zoals de tegels op de stoep of strepen op de weg"
+ },
+ "missie.patroon-ab.b": {
+  "file": "missie.patroon-ab.b.e738200924.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je speelt, maak een rij met twee kleuren: rood, blauw, rood, blauw"
+ },
+ "missie.patroon-abc.a": {
+  "file": "missie.patroon-abc.a.0a48009f8b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je je aankleedt, zoek een patroon op je kleren, zoals strepen of stippen"
+ },
+ "missie.patroon-abc.b": {
+  "file": "missie.patroon-abc.b.cb8176b9cb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten loopt, maak een patroon met je voeten. Stap, stap, sprong, stap, stap, sprong"
+ },
+ "missie.plaatje": {
+  "file": "missie.plaatje.207773fbef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het plaatje helpt je om het te onthouden. Tik erop, dan zeg ik het nog een keer"
+ },
+ "missie.plaats-10.a": {
+  "file": "missie.plaats-10.a.9c76efe829.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in een rij staat, ben jij de eerste, de tweede of de laatste?"
+ },
+ "missie.plaats-10.b": {
+  "file": "missie.plaats-10.b.1e98398a67.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je speelt, zet je knuffels op een rij. Welke staat er vooraan en welke achteraan?"
+ },
+ "missie.rijmen.a": {
+  "file": "missie.rijmen.a.a68a79430d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je naar bed gaat, verzin een woordje dat rijmt op bed"
+ },
+ "missie.rijmen.b": {
+  "file": "missie.rijmen.b.eb456dc4b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in bad zit, verzin een woordje dat rijmt op bad. Gekke woordjes mogen ook"
+ },
+ "missie.ruimte.a": {
+  "file": "missie.ruimte.a.6abe5d3dcc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je opruimt, leg een knuffel op de kast en een knuffel onder het bed"
+ },
+ "missie.ruimte.b": {
+  "file": "missie.ruimte.b.731d97e845.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, wat staat er naast je bord en wat staat er achter je bord?"
+ },
+ "missie.splitsen-10.a": {
+  "file": "missie.splitsen-10.a.1568db13bb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je opruimt, doe tien dingen in twee bakken. Hoeveel zitten er in elke bak?"
+ },
+ "missie.splitsen-10.b": {
+  "file": "missie.splitsen-10.b.1243d0e9ee.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je de tafel dekt, leg tien lepels en vorken neer. Hoeveel lepels zijn het en hoeveel vorken?"
+ },
+ "missie.splitsen-5.a": {
+  "file": "missie.splitsen-5.a.632cd290ff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je fruit eet, verdeel vijf stukjes over twee bordjes. Kan het ook op een andere manier?"
+ },
+ "missie.splitsen-5.b": {
+  "file": "missie.splitsen-5.b.80da02cfed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in bad zit, pak vijf speeltjes en verdeel ze over je twee handen"
+ },
+ "missie.start": {
+  "file": "missie.start.32702824c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik heb nog een opdracht voor jou voor de rest van de dag"
+ },
+ "missie.telbegrip.a": {
+  "file": "missie.telbegrip.a.ab485b7391.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je opruimt, tel je knuffels. Tel ze daarna nog een keer, maar begin bij een andere knuffel"
+ },
+ "missie.telbegrip.b": {
+  "file": "missie.telbegrip.b.03b17acf47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, tel de mensen aan tafel. Begin eens bij jezelf en daarna bij iemand anders"
+ },
+ "missie.tellen-10.a": {
+  "file": "missie.tellen-10.a.c31c1922f0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je de trap op gaat, tel hoeveel treden het zijn"
+ },
+ "missie.tellen-10.b": {
+  "file": "missie.tellen-10.b.eef7052d49.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je naar buiten gaat, doe tien stappen en kijk waar je dan bent"
+ },
+ "missie.tellen-5.a": {
+  "file": "missie.tellen-5.a.f985ec9a8e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, tel hoeveel borden er op tafel staan"
+ },
+ "missie.tellen-5.b": {
+  "file": "missie.tellen-5.b.518d72abfb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in bad gaat, tel hoeveel speeltjes er in het water drijven"
+ },
+ "missie.terug.a": {
+  "file": "missie.terug.a.775f8f9fdc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Weet je nog wat je opdracht was?"
+ },
+ "missie.terug.b": {
+  "file": "missie.terug.b.36f5cc9cfe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel het maar aan mij. Is het gelukt? Of was het lastig? Tik daarna op het duimpje"
+ },
+ "missie.terug.c": {
+  "file": "missie.terug.c.14c4fb34b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dank je wel dat je het me vertelt"
+ },
+ "missie.vergeet": {
+  "file": "missie.vergeet.c21582725a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vergeet je opdracht niet"
+ },
+ "missie.vergelijken.a": {
+  "file": "missie.vergelijken.a.4d6877658e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, kijk of er evenveel vorken als borden op tafel liggen"
+ },
+ "missie.vergelijken.b": {
+  "file": "missie.vergelijken.b.f476b197b3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je speelt, bouw twee torens. Welke toren heeft meer blokjes?"
+ },
+ "missie.verhaal-10.a": {
+  "file": "missie.verhaal-10.a.5fce51855f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je de tafel dekt, hoeveel borden heb je nodig? En als er nog iemand komt eten"
+ },
+ "missie.verhaal-10.b": {
+  "file": "missie.verhaal-10.b.cb92ed9f87.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je helpt met de boodschappen. Pak zes appels. Doe er nog twee bij. Hoeveel heb je er nu?"
+ },
+ "missie.verhaal-5.a": {
+  "file": "missie.verhaal-5.a.4cb756351b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je eet, tel hoeveel stukjes je nog hebt. Eet er één op. Hoeveel zijn het er nu?"
+ },
+ "missie.verhaal-5.b": {
+  "file": "missie.verhaal-5.b.b1c8543d58.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je speelt, zet vier knuffels neer. Er komt er nog één bij. Hoeveel zijn het er nu?"
+ },
+ "missie.vormen.a": {
+  "file": "missie.vormen.a.728bfc3732.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten bent, zoek drie dingen die rond zijn"
+ },
+ "missie.vormen.b": {
+  "file": "missie.vormen.b.576a158d7d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in de keuken bent, zoek iets met de vorm van een rechthoek"
+ },
+ "missie.woordjes.a": {
+  "file": "missie.woordjes.a.333f820b48.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in de keuken bent, zoek een kort woordje op een pak en probeer het te lezen"
+ },
+ "missie.woordjes.b": {
+  "file": "missie.woordjes.b.c5aff55452.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je samen een boekje leest. Zoek een woordje dat je zelf kunt lezen"
+ },
+ "missie.zien-10.a": {
+  "file": "missie.zien-10.a.1d7813f739.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je speelt, laat met je vingers zeven zien zonder te tellen. Een hele hand en nog twee"
+ },
+ "missie.zien-10.b": {
+  "file": "missie.zien-10.b.49f3283081.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je ergens op moet wachten, laat met je vingers acht zien. Een hele hand en nog drie"
+ },
+ "missie.zien-5.a": {
+  "file": "missie.zien-5.a.e425897571.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, kijk naar je bord. Hoeveel stukjes zie je zonder te tellen?"
+ },
+ "missie.zien-5.b": {
+  "file": "missie.zien-5.b.4f1057b66d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je naar bed gaat, laat met je vingers zien hoeveel verhaaltjes je wilt horen"
+ },
  "obj.appel": {
   "file": "obj.appel.a743615af3.mp3",
   "ok": true,

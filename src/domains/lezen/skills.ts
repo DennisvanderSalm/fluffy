@@ -1,5 +1,5 @@
 import type { LineId } from '../../content/spraak.nl';
-import type { SkillInfo, StartLevel } from '../../core/domain';
+import type { Mission, SkillInfo, StartLevel } from '../../core/domain';
 
 /**
  * Leerlijn voorbereidend lezen. De beginklank horen en letters koppelen aan klanken voorspellen
@@ -52,6 +52,16 @@ const TASKS: Record<string, LineId[]> = {
   woordjes: ['echt.woordjes', 'echt.woordjes.b'],
 };
 for (const s of LEES_SKILLS) s.realTasks = TASKS[s.id];
+
+/** Opdracht voor de rest van de dag, bij een moment van de dag (zie core/ui/missie.ts). */
+const MISSIONS: Record<string, Mission[]> = {
+  beginklank: [{ line: 'missie.beginklank.a', moment: 'tafel' }, { line: 'missie.beginklank.b', moment: 'buiten' }],
+  rijmen: [{ line: 'missie.rijmen.a', moment: 'bed' }, { line: 'missie.rijmen.b', moment: 'bad' }],
+  letters: [{ line: 'missie.letters.a', moment: 'onderweg' }, { line: 'missie.letters.b', moment: 'keuken' }],
+  hakken: [{ line: 'missie.hakken.a', moment: 'tafel' }, { line: 'missie.hakken.b', moment: 'bed' }],
+  woordjes: [{ line: 'missie.woordjes.a', moment: 'keuken' }, { line: 'missie.woordjes.b', moment: 'bed' }],
+};
+for (const s of LEES_SKILLS) s.missions = MISSIONS[s.id];
 
 /** Bij lezen begint iedereen bij het begin; er valt nog niets aan te nemen. */
 export const LEES_START_LEVELS: StartLevel[] = [{ id: 'lezen-begin', label: 'Begint met klanken', assumed: [] }];

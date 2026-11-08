@@ -1,5 +1,6 @@
 import type { SkillState } from '../engine/types';
 import { DEFAULT_SETTINGS, type SessionRecord, type Settings } from '../session/session';
+import { MOMENTS, type Moment } from '../ui/moments';
 
 /** Alles wat de app bewaart, lokaal op het apparaat. Er gaat niets naar buiten. */
 export interface SaveData {
@@ -18,6 +19,19 @@ export interface SaveData {
   notes: Note[];
   /** Wanneer de laatste back-up gemaakt is (tijdstip), of null. */
   lastBackup: number | null;
+  /** De laatste opdracht voor de rest van de dag, of null. */
+  mission: DayMission | null;
+}
+
+export interface DayMission {
+  /** Zinnetje-id ('missie.…'). */
+  line: string;
+  skill: string;
+  moment: Moment;
+  /** Dag waarop Fluffy de opdracht gaf. */
+  date: string;
+  /** Heeft Fluffy er een volgende keer al naar gevraagd? */
+  asked: boolean;
 }
 
 export interface Note {
@@ -42,6 +56,7 @@ export function emptyData(): SaveData {
     startLevelApplied: null,
     notes: [],
     lastBackup: null,
+    mission: null,
   };
 }
 
@@ -79,6 +94,7 @@ function cleanSettings(raw: unknown): Settings {
   if (TOGETHER.includes(raw.together as string)) s.together = raw.together as Settings['together'];
   if (GROWN_UP.includes(raw.grownUp as string)) s.grownUp = raw.grownUp as string;
   if (typeof raw.probe === 'boolean') s.probe = raw.probe;
+  if (typeof raw.mission === 'boolean') s.mission = raw.mission;
   return s;
 }
 
@@ -101,6 +117,12 @@ function cleanSkill(raw: unknown): SkillState | null {
     ...(probe !== undefined ? { probe } : {}),
     ...(raw.probed === true ? { probed: true } : {}),
   };
+}
+
+function cleanMission(raw: unknown): DayMission | null {
+  if (!isObj(raw) || !isStr(raw.line) || !/^missie\.[\w.-]{1,60}$/.test(raw.line) || !isStr(raw.skill) || !isStr(raw.date)) return null;
+  if (!MOMENTS.includes(raw.moment as Moment)) return null;
+  return { line: raw.line, skill: raw.skill.slice(0, 60), moment: raw.moment as Moment, date: raw.date.slice(0, 10), asked: raw.asked === true };
 }
 
 function cleanSession(raw: unknown): SessionRecord | null {
@@ -147,6 +169,7 @@ export function normalize(raw: unknown): SaveData | null {
         .map((x) => ({ skill: x.skill, text: x.text.slice(0, 200), date: x.date }))
       : [],
     lastBackup: numOrNull(raw.lastBackup),
+    mission: cleanMission(raw.mission),
   };
 }
 

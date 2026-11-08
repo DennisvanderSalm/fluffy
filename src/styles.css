@@ -537,6 +537,18 @@ body.is-night .gear { filter: invert(1); }
 
 /* ── Samen in het echt ── */
 .echt { position: absolute; inset: 0; }
+.missie { position: absolute; inset: 0; }
+.missie-kaart {
+  position: absolute; right: 6%; top: 50%; transform: translateY(-50%);
+  width: min(32vh, 240px); height: min(26vh, 192px); padding: 12px; box-sizing: border-box;
+  background: #fff; border-radius: 22px; box-shadow: 0 6px 22px rgba(59, 74, 107, 0.15);
+  transition: transform 0.15s ease;
+}
+.missie-kaart svg { width: 100%; height: 100%; display: block; }
+.missie-kaart.is-tappable { cursor: pointer; }
+.missie-kaart.is-tappable:active { transform: translateY(-50%) scale(0.95); }
+.missie .missie-kaart { top: 10%; transform: none; }
+body.is-night .missie-kaart { background: #f4efe6; box-shadow: none; }
 .echt-plaat { position: absolute; left: 34%; top: 8%; width: 50%; height: 58%; }
 .echt-plaat svg { width: 100%; height: 100%; display: block; }
 .echt-duim { width: min(18vh, 150px); height: min(18vh, 150px); right: 4%; bottom: 5%; opacity: 0.45; }
@@ -634,6 +646,8 @@ body.is-night .gear { filter: invert(1); }
 }
 .today { background: #fff; border: 1px solid var(--panel-edge); border-radius: 14px; padding: 4px 18px 10px; margin-top: 18px; }
 .today h2 { margin-top: 14px; }
+.share-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 8px 0 6px; }
+.share-row .muted { flex: 1 1 220px; }
 .struggles li { margin: 8px 0; }
 .form-row .header-buttons .btn:disabled { opacity: 0.45; }
 

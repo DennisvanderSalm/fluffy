@@ -12,7 +12,9 @@ import { Sounds } from '../audio/sounds';
 import {
   canStartSession, closeDangling, playUntilTimeUp, SessionClock, type SessionRecord,
 } from '../session/session';
-import { easyWin, pickRealTask, togetherDue, warmUpSkill } from '../session/flow';
+import {
+  byPractice, chooseMission, easyWin, missionAtEnd, missionFollowUpDue, pickRealTask, togetherDue, warmUpSkill,
+} from '../session/flow';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
 import { COUNT_BEAT, el, isoDate, makeBeat, pick, shuffle, sleep, svgEl } from '../util';
@@ -20,6 +22,8 @@ import { askChoice } from './choice';
 import { onTap } from './drag';
 import { openParentArea } from './parent';
 import { realTask } from './samen';
+import { missionCard, missionCheck } from './missie';
+import type { Moment } from './moments';
 import type { Updates } from '../update';
 
 /** Eén item dat gespeeld gaat worden. */
@@ -123,6 +127,7 @@ export class App {
     const hint = el('div', 'tap-hint');
     hint.append(svgEl(HAND_SVG));
     this.stage.append(hint);
+    this.showMissionCard();
     const t = setTimeout(() => hint.classList.add('is-on'), 2500);
 
     this.screenTap = () => {
@@ -147,6 +152,7 @@ export class App {
     this.fluffy.still(false);
     this.repeatFn = null;
     if (afterSession) this.lastSleepTalk = Date.now();
+    this.showMissionCard();
 
     this.screenTap = () => {
       this.speech.unlock();
@@ -197,6 +203,7 @@ export class App {
       await this.say(['begroeting.terug.a', 'naam', 'begroeting.terug.b']);
     }
     if (this.data.settings.together === 'samen') await this.say(['samen.hoi', this.grownUp()]);
+    await this.askMission();
     this.slot.className = 'fluffy-slot';
     await sleep(1300);
     this.domain = await this.chooseDomain();
@@ -366,6 +373,7 @@ export class App {
     await this.say(summary);
     // Een gesprek op gang helpen: ze vertelt het zelf na aan papa of mama.
     if (this.data.settings.together !== 'uit') await this.say(['einde.vertel.a', this.grownUp(), 'einde.vertel.b']);
+    await this.giveMission();
     this.fluffy.set('slaperig');
     await this.say(['einde.slapen', 'einde.dag', 'naam']);
     if (this.speech.hasOwn('eigen.welterusten')) {
@@ -380,6 +388,59 @@ export class App {
     this.record = null;
     save(this.data);
     this.showNight(true);
+  }
+
+  // ── Opdracht voor de rest van de dag ──
+
+  /** De opgeslagen opdracht, alleen als die nog in de app bestaat. */
+  private currentMission(): { line: LineId; moment: Moment; date: string } | null {
+    const m = this.data.mission;
+    const known = m && this.skillsById.get(m.skill)?.missions?.find((x) => x.line === m.line);
+    return m && known ? { line: known.line, moment: known.moment, date: m.date } : null;
+  }
+
+  /** Aan het eind van de sessie: een opdracht voor de rest van de dag (of die van vandaag nog eens). */
+  private async giveMission(): Promise<void> {
+    if (!this.data.settings.mission) return;
+    const today = isoDate(Date.now());
+    const current = this.currentMission();
+    if (current && missionAtEnd(this.data.mission, today) === 'herinner') {
+      this.stage.append(missionCard(current.moment));
+      await this.say(['missie.vergeet', current.line]);
+      return;
+    }
+    const skills = byPractice(this.record!.skills, this.data.skills);
+    const choice = chooseMission(skills, (id) => this.skillsById.get(id)?.missions, this.data.seen, this.rng);
+    if (!choice) return;
+    const { line, moment } = choice.mission;
+    this.data.seen[line] = (this.data.seen[line] ?? 0) + 1;
+    this.data.mission = { line, skill: choice.skill, moment, date: today, asked: false };
+    save(this.data);
+    this.stage.append(missionCard(moment));
+    await this.say(['missie.start', line, 'missie.plaatje']);
+  }
+
+  /** Op het slaap- en startscherm: het plaatje van de opdracht van vandaag. Tik = nog een keer horen. */
+  private showMissionCard(): void {
+    const m = this.currentMission();
+    if (!m || !this.data.settings.mission || m.date !== isoDate(Date.now())) return;
+    this.stage.append(missionCard(m.moment, () => {
+      this.speech.unlock();
+      this.speech.stop();
+      void this.say(['missie.nogeens', m.line]);
+    }));
+  }
+
+  /** Aan het begin: weet je nog wat je opdracht was? Telt niet als speeltijd. */
+  private async askMission(): Promise<void> {
+    const m = this.currentMission();
+    if (!m || !this.data.settings.mission || !missionFollowUpDue(this.data.mission, isoDate(Date.now()))) return;
+    this.clock?.pause();
+    await missionCheck(this.context(null), m.line, m.moment);
+    await this.whenResumed();
+    this.data.mission = { ...this.data.mission!, asked: true };
+    save(this.data);
+    if (!this.paused) this.clock?.start();
   }
 
   private activity(id: string): Activity<unknown> {

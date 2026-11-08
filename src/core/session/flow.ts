@@ -2,6 +2,7 @@ import type { DomainModule } from '../domain';
 import { initialState } from '../engine/mastery';
 import { dueReviews, easyPick, type PlannerInput } from '../engine/planner';
 import type { SkillState } from '../engine/types';
+import type { DayMission } from '../storage/store';
 import type { Settings } from './session';
 
 /**
@@ -16,6 +17,42 @@ import type { Settings } from './session';
 export function togetherDue(mode: Settings['together'], count: number): boolean {
   if (mode === 'samen') return count > 0 && count % 4 === 0;
   return mode === 'echt' && (count === 4 || count === 10);
+}
+
+/** Wat ze oefende, op volgorde van aandacht: eerst wat ze nog oefent, dan nieuw, dan beheerst. */
+export function byPractice(ids: readonly string[], states: Readonly<Record<string, SkillState | undefined>>): string[] {
+  const rank = (id: string) => {
+    const st = states[id]?.status;
+    return st === 'practicing' ? 0 : st === 'mastered' ? 2 : 1;
+  };
+  return [...ids].sort((a, b) => rank(a) - rank(b));
+}
+
+/** Vraagt Fluffy deze keer naar de opdracht van een eerdere dag? */
+export function missionFollowUpDue(m: DayMission | null, today: string): boolean {
+  return !!m && !m.asked && m.date < today;
+}
+
+/** Aan het eind: een nieuwe opdracht, of (als ze vandaag al een opdracht kreeg) die nog eens noemen. */
+export function missionAtEnd(m: DayMission | null, today: string): 'nieuw' | 'herinner' {
+  return m && m.date === today ? 'herinner' : 'nieuw';
+}
+
+/**
+ * Kiest de opdracht voor de rest van de dag: bij de eerste vaardigheid (in volgorde van aandacht)
+ * die opdrachten heeft, de opdracht die ze het minst vaak kreeg.
+ */
+export function chooseMission<M extends { line: string }>(
+  skills: readonly string[], missionsOf: (id: string) => readonly M[] | undefined,
+  seen: Readonly<Record<string, number>>, rng: () => number,
+): { skill: string; mission: M } | null {
+  for (const skill of skills) {
+    const list = missionsOf(skill);
+    if (!list?.length) continue;
+    const line = pickRealTask(list.map((m) => m.line), seen, rng);
+    return { skill, mission: list.find((m) => m.line === line)! };
+  }
+  return null;
 }
 
 /** Welke opdracht in het echt: een die ze het minst vaak gehad heeft, zodat het afwisselt. */

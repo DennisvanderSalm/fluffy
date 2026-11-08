@@ -1,5 +1,5 @@
 import type { LineId } from '../../content/spraak.nl';
-import type { SkillInfo, StartLevel } from '../../core/domain';
+import type { Mission, SkillInfo, StartLevel } from '../../core/domain';
 
 /**
  * Leerlijn rekenen als graaf met voorwaarden (Clements & Sarama: kleine stappen in de
@@ -148,6 +148,30 @@ const TASKS: Record<string, LineId[]> = {
   vormen: ['echt.vormen', 'echt.vormen.b', 'echt.vormen.c'],
 };
 for (const s of REKEN_SKILLS) s.realTasks = TASKS[s.id];
+
+/** Opdracht voor de rest van de dag, bij een moment van de dag (zie core/ui/missie.ts). */
+const MISSIONS: Record<string, Mission[]> = {
+  'tellen-5': [{ line: 'missie.tellen-5.a', moment: 'tafel' }, { line: 'missie.tellen-5.b', moment: 'bad' }],
+  'tellen-10': [{ line: 'missie.tellen-10.a', moment: 'trap' }, { line: 'missie.tellen-10.b', moment: 'onderweg' }],
+  telbegrip: [{ line: 'missie.telbegrip.a', moment: 'spelen' }, { line: 'missie.telbegrip.b', moment: 'tafel' }],
+  'hoeveel-5': [{ line: 'missie.hoeveel-5.a', moment: 'keuken' }, { line: 'missie.hoeveel-5.b', moment: 'bed' }],
+  'hoeveel-10': [{ line: 'missie.hoeveel-10.a', moment: 'keuken' }, { line: 'missie.hoeveel-10.b', moment: 'buiten' }],
+  'zien-5': [{ line: 'missie.zien-5.a', moment: 'tafel' }, { line: 'missie.zien-5.b', moment: 'bed' }],
+  'zien-10': [{ line: 'missie.zien-10.a', moment: 'spelen' }, { line: 'missie.zien-10.b', moment: 'onderweg' }],
+  vergelijken: [{ line: 'missie.vergelijken.a', moment: 'tafel' }, { line: 'missie.vergelijken.b', moment: 'spelen' }],
+  'cijfers-10': [{ line: 'missie.cijfers-10.a', moment: 'onderweg' }, { line: 'missie.cijfers-10.b', moment: 'keuken' }],
+  'buren-10': [{ line: 'missie.buren-10.a', moment: 'trap' }, { line: 'missie.buren-10.b', moment: 'bad' }],
+  'plaats-10': [{ line: 'missie.plaats-10.a', moment: 'onderweg' }, { line: 'missie.plaats-10.b', moment: 'spelen' }],
+  'splitsen-5': [{ line: 'missie.splitsen-5.a', moment: 'tafel' }, { line: 'missie.splitsen-5.b', moment: 'bad' }],
+  'splitsen-10': [{ line: 'missie.splitsen-10.a', moment: 'spelen' }, { line: 'missie.splitsen-10.b', moment: 'keuken' }],
+  'verhaal-5': [{ line: 'missie.verhaal-5.a', moment: 'tafel' }, { line: 'missie.verhaal-5.b', moment: 'spelen' }],
+  'verhaal-10': [{ line: 'missie.verhaal-10.a', moment: 'tafel' }, { line: 'missie.verhaal-10.b', moment: 'keuken' }],
+  'patroon-ab': [{ line: 'missie.patroon-ab.a', moment: 'onderweg' }, { line: 'missie.patroon-ab.b', moment: 'spelen' }],
+  'patroon-abc': [{ line: 'missie.patroon-abc.a', moment: 'kleren' }, { line: 'missie.patroon-abc.b', moment: 'onderweg' }],
+  ruimte: [{ line: 'missie.ruimte.a', moment: 'spelen' }, { line: 'missie.ruimte.b', moment: 'tafel' }],
+  vormen: [{ line: 'missie.vormen.a', moment: 'buiten' }, { line: 'missie.vormen.b', moment: 'keuken' }],
+};
+for (const s of REKEN_SKILLS) s.missions = MISSIONS[s.id];
 
 export const REKEN_START_LEVELS: StartLevel[] = [
   { id: 'begin', label: 'Begint met tellen', assumed: [] },

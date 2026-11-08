@@ -4,6 +4,7 @@ import type { Fluffy } from './fluffy/fluffy';
 import type { Seg } from './audio/speech';
 import type { Sounds } from './audio/sounds';
 import type { Rng } from './util';
+import type { Moment } from './ui/moments';
 
 /**
  * Contract tussen de kern en een domeinmodule (rekenen, lezen).
@@ -21,6 +22,14 @@ export interface SkillInfo extends SkillDef {
   stage: number;
   /** Korte opdrachten in het echt die Fluffy kan geven ("Pak eens drie knuffels."). */
   realTasks?: LineId[];
+  /** Opdrachten voor de rest van de dag, bij een moment van de dag (zie core/ui/missie.ts). */
+  missions?: Mission[];
+}
+
+/** Opdracht voor de rest van de dag: wat Fluffy zegt, en bij welk moment (voor het plaatje). */
+export interface Mission {
+  line: LineId;
+  moment: Moment;
 }
 
 export interface StartLevel {

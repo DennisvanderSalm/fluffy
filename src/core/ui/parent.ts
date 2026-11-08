@@ -264,6 +264,13 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     s.probe = v === 'aan';
     deps.onChange();
   });
+  const mission = select([
+    ['aan', 'Ja, Fluffy geeft een opdracht mee'],
+    ['uit', 'Nee'],
+  ], s.mission ? 'aan' : 'uit', (v) => {
+    s.mission = v === 'aan';
+    deps.onChange();
+  });
   const probeAgain = el('button', 'btn', 'Opnieuw laten kijken');
   probeAgain.addEventListener('click', () => {
     deps.onProbeAgain();
@@ -327,7 +334,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       el('header', '', el('h1', '', 'Ouderdeel'), el('div', 'header-buttons', deps.awake ? '' : wakeBtn, closeBtn)),
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
       ...backupReminder(data, Date.now()),
-      ...todaySection(data, domains, name),
+      ...todaySection(data, domains, name, s.childName),
 
       el('h2', '', `Waar ${name} mee bezig is`),
       el('p', 'muted', 'Iets nieuws begint met een proefje: drie moeilijke opdrachten. Lukken die meteen, dan gaat Fluffy door naar het volgende. Anders oefent ze, en gaat de app pas verder als het een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
@@ -351,6 +358,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       ].join(' ').trim()),
       row('Stem testen', test),
       row('Samen spelen', together, 'Fluffy vraagt dan af en toe iets in het echt te doen ("Pak eens drie knuffels") en het aan jou te laten zien. Aan het eind zegt ze: "Vertel maar wat we gedaan hebben." Die tijd telt niet als schermtijd.'),
+      row('Opdracht voor de rest van de dag', mission, 'Aan het eind geeft Fluffy één opdracht bij een gewoon moment van de dag ("Als je de trap op gaat: tel de treden"), met een plaatje als geheugensteun. Tikt ze op het plaatje, dan hoort ze de opdracht nog een keer. De volgende dag vraagt Fluffy ernaar. Niet gedaan is ook goed.'),
       row('Hoe noemt ze jou?', grownUp, 'Zo noemt Fluffy jou bij de samen-momenten.'),
       row('Rekenen of lezen', subject, 'Bij "laat haar kiezen" vraagt Fluffy het aan het begin, met twee plaatjes.'),
       startLevel ? row(`Startniveau ${startDomain!.name.toLowerCase()}`, startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.') : '',

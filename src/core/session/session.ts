@@ -23,6 +23,8 @@ export interface Settings {
   grownUp: string;
   /** Proefjes: een nieuwe vaardigheid begint met een paar moeilijke opdrachten (zie mastery.ts). */
   probe: boolean;
+  /** Aan het eind een opdracht voor de rest van de dag (zie core/ui/missie.ts). */
+  mission: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -37,6 +39,7 @@ export const DEFAULT_SETTINGS: Settings = {
   together: 'echt',
   grownUp: 'wie.papaofmama',
   probe: true,
+  mission: true,
 };
 
 export interface SessionRecord {
