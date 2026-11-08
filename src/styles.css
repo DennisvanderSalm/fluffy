@@ -671,6 +671,7 @@ body.is-night .missie-kaart { background: #f4efe6; box-shadow: none; }
 .today h2 { margin-top: 14px; }
 .share-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 8px 0 6px; }
 .share-row .muted { flex: 1 1 220px; }
+.about-link { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .struggles li { margin: 8px 0; }
 .form-row .header-buttons .btn:disabled { opacity: 0.45; }
 

@@ -417,10 +417,19 @@ export function backupSection(data: SaveData, onRestore: (d: SaveData) => void, 
   ];
 }
 
+/** De uitleg over Fluffy voor ouders: de README van de openbare repository. */
+export const ABOUT_URL = 'https://github.com/DennisvanderSalm/fluffy#readme';
+
 /** Privacy in gewone taal: wat waar staat, en wat er wel en niet naar buiten gaat. */
 export function privacySection(name: string): HTMLElement[] {
+  // Uitleg voor ouders: hoe Fluffy werkt, privacy en het onderzoek erachter (de README op GitHub).
+  const about = el('a', 'about-link', 'Lees hier hoe Fluffy werkt, wat er met gegevens gebeurt en waar het op gebaseerd is');
+  about.href = ABOUT_URL;
+  about.target = '_blank';
+  about.rel = 'noopener noreferrer';
   return [
     el('h2', '', 'Privacy'),
+    el('p', '', about, el('span', 'muted', ' (opent GitHub in de browser).')),
     el('ul', 'sessions',
       el('li', '', `Fluffy vraagt geen naam, leeftijd of andere gegevens over ${name}. Wat de app bijhoudt (voortgang, wat opviel, instellingen en je eigen opname) staat alleen op dit apparaat. Niemand anders kan het zien, ook niet wie dezelfde link opent: elk apparaat heeft zijn eigen, lege Fluffy.`),
       el('li', '', 'De app verstuurt niets: geen account, geen reclame, geen statistieken, geen tracking. Dat is ook technisch afgedwongen: de app mag alleen met zijn eigen website praten.'),

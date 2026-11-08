@@ -4,7 +4,7 @@ import type { Seg } from '../src/core/audio/speech';
 import { initialState } from '../src/core/engine/mastery';
 import { byPractice, chooseMission, missionAtEnd, missionFollowUpDue } from '../src/core/session/flow';
 import { emptyData, normalize, type DayMission } from '../src/core/storage/store';
-import { dayCard, dayCardText } from '../src/core/ui/parent-extra';
+import { ABOUT_URL, dayCard, dayCardText } from '../src/core/ui/parent-extra';
 import { MOMENTS } from '../src/core/ui/moments';
 import { SPRAAK } from '../src/content/spraak.nl';
 import { ALL_PHRASES, DOMAINS } from '../src/domains';
@@ -99,5 +99,11 @@ describe('dagkaart voor de ouder', () => {
     expect(text.split('\n')[0]).toBe('Vandaag samen');
     expect(text).toContain('Vraag er eens naar!');
     expect(text).toContain('- Onderweg:');
+  });
+});
+
+describe('uitleg voor ouders', () => {
+  it('het ouderdeel linkt naar de openbare README', () => {
+    expect(ABOUT_URL).toBe('https://github.com/DennisvanderSalm/fluffy#readme');
   });
 });
