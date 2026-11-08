@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { assumeMastered, initialState, isReviewDue, recordAttempt, RULES } from '../src/core/engine/mastery';
+import { assumeMastered, initialState, isReviewDue, recordAttempt, RULES, startProbe } from '../src/core/engine/mastery';
 import type { Credit, SkillDef, SkillState } from '../src/core/engine/types';
 
 const def: SkillDef = { id: 'hoeveel-10', domain: 'rekenen', requires: [], levels: 3 };
@@ -10,10 +10,11 @@ function run(credits: Credit[], start: SkillState = initialState(), session = 's
 }
 
 describe('niveau-trap', () => {
-  it('gaat een niveau omhoog na 4 keer op eigen kracht goed', () => {
-    const s = run([1, 1, 1]);
-    expect(s.level).toBe(0);
-    expect(run([1, 1, 1, 1]).level).toBe(1);
+  it('gaat een niveau omhoog na 3 keer achter elkaar op eigen kracht goed', () => {
+    expect(run([1, 1]).level).toBe(0);
+    expect(run([1, 1, 1]).level).toBe(1);
+    // Niet achter elkaar: dan geldt de 85%-regel, en die vraagt minstens vier pogingen.
+    expect(run([1, 0.5, 1]).level).toBe(0);
   });
 
   it('gaat niet omhoog rond 80% (dat is precies het doelgebied)', () => {
@@ -44,13 +45,13 @@ describe('niveau-trap', () => {
   });
 
   it('begint de teller opnieuw na een niveauwissel', () => {
-    const up = run([1, 1, 1, 1]);
+    const up = run([1, 1, 1]);
     expect(up.atLevel).toHaveLength(0);
   });
 });
 
 describe('mastery = stabiel, over meerdere sessies', () => {
-  const top = () => run([1, 1, 1, 1, 1, 1, 1, 1]); // twee keer omhoog → hoogste niveau
+  const top = () => run([1, 1, 1, 1, 1, 1]); // twee keer omhoog → hoogste niveau
 
   it('is na veel succes in één sessie nog niet beheerst', () => {
     const s = run([1, 1, 1, 1, 1, 1, 1, 1], top());
@@ -59,8 +60,9 @@ describe('mastery = stabiel, over meerdere sessies', () => {
   });
 
   it('is beheerst als het succes over twee sessies verdeeld is', () => {
-    const s1 = run([1, 1, 1], top(), 's1');
-    const s2 = run([1, 1, 1], s1, 's2', '2026-11-02');
+    const s1 = run([1, 1, 1, 1, 1], top(), 's1');
+    expect(s1.status).toBe('practicing');
+    const s2 = run([1], s1, 's2', '2026-11-02');
     expect(s2.status).toBe('mastered');
     expect(s2.review).toEqual({ box: 0, due: '2026-11-03' });
   });
@@ -133,6 +135,46 @@ describe('startniveau (aangenomen beheerst)', () => {
     const s = run([1], assumeMastered(def, today));
     expect(s.status).toBe('mastered');
     expect(s.assumed).toBe(false);
+  });
+});
+
+describe('proefje: kan ze het al?', () => {
+  const probe = () => startProbe(def, initialState());
+
+  it('begint op het hoogste niveau', () => {
+    expect(probe()).toMatchObject({ status: 'practicing', level: def.levels - 1, probe: 0 });
+  });
+
+  it('drie keer meteen zelf goed: overgeslagen, en over drie dagen ter controle terug', () => {
+    expect(run([1, 1], probe())).toMatchObject({ status: 'practicing', probe: 2 });
+    const s = run([1, 1, 1], probe());
+    expect(s).toMatchObject({ status: 'mastered', assumed: true, probed: true, review: { box: 1, due: '2026-11-04' } });
+    expect(s.probe).toBeUndefined();
+    expect(isReviewDue(s, today)).toBe(false);
+    expect(isReviewDue(s, '2026-11-04')).toBe(true);
+  });
+
+  it('lukt er één niet (ook met hint), dan oefenen vanaf het middelste niveau', () => {
+    for (const miss of [0, 0.5] as Credit[]) {
+      const s = run([1, miss], probe());
+      expect(s).toMatchObject({ status: 'practicing', level: def.levels - 2, atLevel: [] });
+      expect(s.probe).toBeUndefined();
+    }
+  });
+
+  it('bij twee niveaus: oefenen vanaf het begin', () => {
+    const two: SkillDef = { ...def, levels: 2 };
+    expect(recordAttempt(two, startProbe(two, initialState()), { credit: 0, session: 's', today }).level).toBe(0);
+  });
+
+  it('gaat de controle later mis, dan gewoon weer oefenen', () => {
+    const s = run([0], run([1, 1, 1], probe()), 's2', '2026-11-04');
+    expect(s).toMatchObject({ status: 'practicing', assumed: false, probed: false, level: def.levels - 2 });
+  });
+
+  it('bewaart de geschiedenis bij opnieuw kijken', () => {
+    const busy = run([1, 0, 1]);
+    expect(startProbe(def, busy).history).toHaveLength(3);
   });
 });
 

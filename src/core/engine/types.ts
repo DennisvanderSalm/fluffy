@@ -43,5 +43,9 @@ export interface SkillState {
   review?: { box: number; due: string };
   /** Opeenvolgende mislukte herhalingen. */
   lapses: number;
+  /** Proefje bezig: zoveel opdrachten op het hoogste niveau al meteen zelf goed. */
+  probe?: number;
+  /** Overgeslagen omdat het proefje meteen lukte (voor het ouderdeel). */
+  probed?: boolean;
   lastPracticed?: string;
 }

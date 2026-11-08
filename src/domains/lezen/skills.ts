@@ -45,11 +45,11 @@ export const LEES_SKILLS: SkillInfo[] = [
 
 /** Opdrachten in het echt per vaardigheid (zie core/ui/samen.ts). */
 const TASKS: Record<string, LineId[]> = {
-  beginklank: ['echt.beginklank'],
-  rijmen: ['echt.rijmen'],
-  letters: ['echt.letters'],
-  hakken: ['echt.hakken'],
-  woordjes: ['echt.woordjes'],
+  beginklank: ['echt.beginklank', 'echt.beginklank.b', 'echt.beginklank.c'],
+  rijmen: ['echt.rijmen', 'echt.rijmen.b', 'echt.rijmen.c'],
+  letters: ['echt.letters', 'echt.letters.b', 'echt.letters.c'],
+  hakken: ['echt.hakken', 'echt.hakken.b', 'echt.hakken.c'],
+  woordjes: ['echt.woordjes', 'echt.woordjes.b'],
 };
 for (const s of LEES_SKILLS) s.realTasks = TASKS[s.id];
 

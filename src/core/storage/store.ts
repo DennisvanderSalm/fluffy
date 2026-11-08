@@ -78,6 +78,7 @@ function cleanSettings(raw: unknown): Settings {
   if (isStr(raw.subject)) s.subject = raw.subject;
   if (TOGETHER.includes(raw.together as string)) s.together = raw.together as Settings['together'];
   if (GROWN_UP.includes(raw.grownUp as string)) s.grownUp = raw.grownUp as string;
+  if (typeof raw.probe === 'boolean') s.probe = raw.probe;
   return s;
 }
 
@@ -87,6 +88,7 @@ function cleanSkill(raw: unknown): SkillState | null {
   const okAttempt = (a: unknown) => isObj(a) && isNum(a.credit);
   const review = isObj(raw.review) && isNum(raw.review.box) && isStr(raw.review.due) ? { box: raw.review.box, due: raw.review.due } : undefined;
   if (raw.status === 'mastered' && !review) return null;
+  const probe = raw.status === 'practicing' && isNum(raw.probe) && raw.probe >= 0 ? Math.floor(raw.probe) : undefined;
   return {
     status: raw.status as SkillState['status'],
     level: Math.floor(raw.level),
@@ -96,6 +98,8 @@ function cleanSkill(raw: unknown): SkillState | null {
     ...(review ? { review } : {}),
     lapses: isNum(raw.lapses) ? raw.lapses : 0,
     ...(isStr(raw.lastPracticed) ? { lastPracticed: raw.lastPracticed } : {}),
+    ...(probe !== undefined ? { probe } : {}),
+    ...(raw.probed === true ? { probed: true } : {}),
   };
 }
 

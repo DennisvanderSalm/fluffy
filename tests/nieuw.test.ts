@@ -201,5 +201,8 @@ describe('samen en back-up', () => {
     delete old.notes;
     expect(normalize(old)!.notes).toEqual([]);
     expect(normalize({ ...old, settings: { childName: 'A' } })!.settings.together).toBe('echt');
+    // Proefjes staan standaard aan, ook bij gegevens van vóór de proefjes.
+    expect(normalize(old)!.settings.probe).toBe(true);
+    expect(normalize({ ...old, settings: { probe: false } })!.settings.probe).toBe(false);
   });
 });

@@ -251,17 +251,53 @@
   "abrupt": false,
   "heard": "Zoek eens iets in de kamer dat begint met m of met sss"
  },
+ "echt.beginklank.b": {
+  "file": "echt.beginklank.b.eca50a4b6f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Laat iemand woordjes zeggen. Spring omhoog als een woordje begint met B, zoals bal of beer"
+ },
+ "echt.beginklank.c": {
+  "file": "echt.beginklank.c.4af4bb45d5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens iets in de kamer dat met dezelfde klank begint als jouw naam"
+ },
  "echt.buren-10": {
   "file": "echt.buren-10.c2dbd2f506.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Spring eens als een kikker en tel bij elke sprong tot tien"
  },
+ "echt.buren-10.b": {
+  "file": "echt.buren-10.b.463d552fa0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tel eens terug van tien naar nul. Net als een raket. Bij nul spring je zo hoog als je kunt"
+ },
+ "echt.buren-10.c": {
+  "file": "echt.buren-10.c.43f25b14f5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe bij elk getal een stap en tel hardop. Bij welk getal ben je na zes?"
+ },
  "echt.cijfers-10": {
   "file": "echt.cijfers-10.3dbbd43196.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Zoek eens een cijfer in de kamer op een klok, een boek of een doos"
+ },
+ "echt.cijfers-10.b": {
+  "file": "echt.cijfers-10.b.5f5e4f78f4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens het cijfer vijf op een klok, een deur of een afstandsbediening"
+ },
+ "echt.cijfers-10.c": {
+  "file": "echt.cijfers-10.c.e0baa5675f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schrijf eens een cijfer heel groot in de lucht met je vinger. Kan de ander raden welk cijfer het is?"
  },
  "echt.duim": {
   "file": "echt.duim.81a9fce991.mp3",
@@ -281,11 +317,35 @@
   "abrupt": false,
   "heard": "Zeg eens een woordje in stukjes. Heel langzaam. Kan iemand raden welk woordje het is?"
  },
+ "echt.hakken.b": {
+  "file": "echt.hakken.b.af3daaa738.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spring eens bij elk stukje van een woord: o-lie-fant. Hoe vaak sprong je?"
+ },
+ "echt.hakken.c": {
+  "file": "echt.hakken.c.7b6b9388fd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Klap eens de stukjes van je eigen naam. Hoeveel klappen zijn het?"
+ },
  "echt.hoeveel-10": {
   "file": "echt.hoeveel-10.f7d6b66d8c.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Pak eens zeven dingen en leg ze op een rijtje"
+ },
+ "echt.hoeveel-10.b": {
+  "file": "echt.hoeveel-10.b.4acd9d2763.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens zes grote reuzenstappen. Stop precies bij zes"
+ },
+ "echt.hoeveel-10.c": {
+  "file": "echt.hoeveel-10.c.673ee4c2c8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens acht dingen uit de keuken, zoals lepels of bekers"
  },
  "echt.hoeveel-5": {
   "file": "echt.hoeveel-5.2f5ea8f806.mp3",
@@ -299,11 +359,29 @@
   "abrupt": false,
   "heard": "Pak eens vier lepels of vier sokken"
  },
+ "echt.hoeveel-5.c": {
+  "file": "echt.hoeveel-5.c.149c3e59ff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spring eens drie keer als een kikker. Niet meer en niet minder"
+ },
  "echt.letters": {
   "file": "echt.letters.efd2647023.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Zoek eens de eerste letter van je naam op een boek of een doos"
+ },
+ "echt.letters.b": {
+  "file": "echt.letters.b.8afb12eb03.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens een letter met je lijf. Een I maak je door heel recht te staan"
+ },
+ "echt.letters.c": {
+  "file": "echt.letters.c.453deb6fd1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Teken eens met je vinger een letter op iemands rug. Kan die raden welke letter het is?"
  },
  "echt.patroon-ab": {
   "file": "echt.patroon-ab.edacf83a3d.mp3",
@@ -311,11 +389,35 @@
   "abrupt": false,
   "heard": "Maak eens een patroon met je lijf. Klap, stamp, klap, stamp. Wat komt er nu?"
  },
+ "echt.patroon-ab.b": {
+  "file": "echt.patroon-ab.b.5cf6d854f3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Loop eens als een reus en dan als een muis. Reus. Muis. Reus. Muis. Wat komt er nu?"
+ },
+ "echt.patroon-ab.c": {
+  "file": "echt.patroon-ab.c.e9fd1952ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens een patroon met lepels en vorken. Lepel, vork, lepel, vork. Kun jij verder?"
+ },
  "echt.patroon-abc": {
   "file": "echt.patroon-abc.0ba7112331.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Maak eens een patroon. Klap, klap, stamp. Klap, klap, stamp. Kun jij verder?"
+ },
+ "echt.patroon-abc.b": {
+  "file": "echt.patroon-abc.b.e5d12d1050.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens springen, hurken, zwaaien, springen, hurken, zwaaien. Kun jij verder?"
+ },
+ "echt.patroon-abc.c": {
+  "file": "echt.patroon-abc.c.d104024175.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens een rij met drie soorten speelgoed. Doe het daarna nog een keer in dezelfde volgorde"
  },
  "echt.plaats-10": {
   "file": "echt.plaats-10.8841cd4ec0.mp3",
@@ -323,17 +425,59 @@
   "abrupt": false,
   "heard": "Leg eens vijf dingen op een rij. Welke ligt er in het midden?"
  },
+ "echt.plaats-10.b": {
+  "file": "echt.plaats-10.b.e65fe8fa30.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zet eens vijf knuffels op een rij. Welke knuffel staat vooraan en welke achteraan?"
+ },
+ "echt.plaats-10.c": {
+  "file": "echt.plaats-10.c.4994bd61b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ga eens met alle mensen in huis op een rij staan. Wie staat er vooraan en wie achteraan?"
+ },
  "echt.rijmen": {
   "file": "echt.rijmen.60df2e79fe.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Verzin eens een woordje dat rijmt op huis. Gekke woordjes mogen ook"
  },
+ "echt.rijmen.b": {
+  "file": "echt.rijmen.b.cdb736e075.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Klap eens in je handen als twee woordjes rijmen. Huis en muis, boom en bal"
+ },
+ "echt.rijmen.c": {
+  "file": "echt.rijmen.c.76f09793a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens samen een rijmpje af. De kat zit op de mat, de vis zwemt in de"
+ },
  "echt.ruimte": {
   "file": "echt.ruimte.e12488f8e4.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Leg eens een knuffel onder de tafel en nu op de tafel"
+ },
+ "echt.ruimte.b": {
+  "file": "echt.ruimte.b.37261c2541.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ga eens naast de tafel staan. En nu achter de stoel"
+ },
+ "echt.ruimte.c": {
+  "file": "echt.ruimte.c.fd92a93c50.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kruip eens onder de tafel door. Ga daarna op de bank zitten"
+ },
+ "echt.ruimte.d": {
+  "file": "echt.ruimte.d.02b81d85fc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Verstop eens een knuffel. Geef een tip: hij zit onder, op of naast iets. Kan de ander hem vinden?"
  },
  "echt.samen": {
   "file": "echt.samen.17b3ae47ac.mp3",
@@ -377,11 +521,35 @@
   "abrupt": false,
   "heard": "Pak eens tien dingen en maak er twee hoopjes van"
  },
+ "echt.splitsen-10.b": {
+  "file": "echt.splitsen-10.b.9aafa49ea8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens tien blokjes neer. De ander verstopt er een paar onder een doek. Kun jij raden hoeveel er verstopt zijn?"
+ },
+ "echt.splitsen-10.c": {
+  "file": "echt.splitsen-10.c.2906263a49.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens tien vingers op. Doe er drie naar beneden. Hoeveel staan er nog?"
+ },
  "echt.splitsen-5": {
   "file": "echt.splitsen-5.d0238cbb0c.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Pak eens vijf dingen en verdeel ze over je twee handen"
+ },
+ "echt.splitsen-5.b": {
+  "file": "echt.splitsen-5.b.a24852f663.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Verstop eens vijf blokjes onder twee bekers. Hoeveel liggen er onder elke beker?"
+ },
+ "echt.splitsen-5.c": {
+  "file": "echt.splitsen-5.c.8900b0326b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens vijf vingers op met allebei je handen. Kan het ook op een andere manier?"
  },
  "echt.start": {
   "file": "echt.start.60b0810d54.mp3",
@@ -395,11 +563,41 @@
   "abrupt": false,
   "heard": "Tel je vingers. Tel ze daarna nog een keer, maar begin aan de andere kant. Zijn het er nog evenveel?"
  },
+ "echt.telbegrip.b": {
+  "file": "echt.telbegrip.b.25a2e2e86b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens vijf blokjes neer en tel ze. Schuif ze door elkaar. Hoeveel zijn het er nu?"
+ },
+ "echt.telbegrip.c": {
+  "file": "echt.telbegrip.c.46dd972776.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zet eens vier knuffels in een kring en tel ze. Begin nu bij een andere knuffel. Zijn het er nog steeds vier?"
+ },
  "echt.tellen-10": {
   "file": "echt.tellen-10.e462b53352.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Doe eens tien grote stappen en tel ze hardop"
+ },
+ "echt.tellen-10.b": {
+  "file": "echt.tellen-10.b.cbdec57ea0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens tien kleine muizenstapjes en tel ze heel zachtjes"
+ },
+ "echt.tellen-10.c": {
+  "file": "echt.tellen-10.c.ded6eb604a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Stamp eens tien keer als een olifant en tel hardop mee"
+ },
+ "echt.tellen-10.d": {
+  "file": "echt.tellen-10.d.c4b5821207.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ga eens op één been staan en tel tot tien. Lukt het om te blijven staan?"
  },
  "echt.tellen-5": {
   "file": "echt.tellen-5.62791ac645.mp3",
@@ -407,11 +605,35 @@
   "abrupt": false,
   "heard": "Tel eens hoeveel knuffels of blokjes je kunt vinden. Tel ze hardop"
  },
+ "echt.tellen-5.b": {
+  "file": "echt.tellen-5.b.4aa42e8e35.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spring eens vijf keer zo hoog als je kunt. Tel elke sprong hardop"
+ },
+ "echt.tellen-5.c": {
+  "file": "echt.tellen-5.c.3f84c76880.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Klap eens vijf keer in je handen en tel mee"
+ },
  "echt.vergelijken": {
   "file": "echt.vergelijken.c6bdbe3c9a.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Zijn er hier meer stoelen of meer kussens? Ga maar kijken"
+ },
+ "echt.vergelijken.b": {
+  "file": "echt.vergelijken.b.0a3c50103c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens een handje blokjes en laat de ander ook een handje pakken. Wie heeft er meer?"
+ },
+ "echt.vergelijken.c": {
+  "file": "echt.vergelijken.c.e00fc685be.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens bij elk bord een lepel. Zijn er evenveel lepels als borden?"
  },
  "echt.verhaal-10": {
   "file": "echt.verhaal-10.916c13b64d.mp3",
@@ -419,11 +641,35 @@
   "abrupt": false,
   "heard": "Pak eens zes blokjes. Doe er twee bij. Hoeveel heb je er nu?"
  },
+ "echt.verhaal-10.b": {
+  "file": "echt.verhaal-10.b.300dfbbdd0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens vijf grote stappen en dan nog drie kleine. Hoeveel stappen zijn het samen?"
+ },
+ "echt.verhaal-10.c": {
+  "file": "echt.verhaal-10.c.f241e8fd52.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bouw eens een toren van zes blokjes. Haal er twee af. Hoe hoog is de toren nu?"
+ },
  "echt.verhaal-5": {
   "file": "echt.verhaal-5.03fdfc0b76.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Zet eens drie knuffels op een rij. Er gaat er één slapen. Hoeveel zijn er nog wakker?"
+ },
+ "echt.verhaal-5.b": {
+  "file": "echt.verhaal-5.b.b6f67206a2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens twee sprongen en daarna nog twee. Hoeveel sprongen heb je gedaan?"
+ },
+ "echt.verhaal-5.c": {
+  "file": "echt.verhaal-5.c.8ad1f64b83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zitten vier vogeltjes op een tak. Doe ze maar na met je vingers. Er vliegt er één weg. Hoeveel zitten er nog?"
  },
  "echt.vormen": {
   "file": "echt.vormen.5f118fa5a3.mp3",
@@ -437,11 +683,23 @@
   "abrupt": false,
   "heard": "Zoek eens iets met de vorm van een rechthoek, zoals een deur of een boek"
  },
+ "echt.vormen.c": {
+  "file": "echt.vormen.c.32fbc1c929.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens een rondje met je armen, zo groot als je kunt. Kun je ook een driehoek maken?"
+ },
  "echt.woordjes": {
   "file": "echt.woordjes.defba40aa9.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Zoek eens een woordje dat je kunt lezen op een doos of in een boek"
+ },
+ "echt.woordjes.b": {
+  "file": "echt.woordjes.b.00e5b2b228.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schrijf eens samen een woordje op een briefje, zoals vis of maan. Leg het bij het echte ding"
  },
  "echt.zien-10": {
   "file": "echt.zien-10.ebff8a1320.mp3",
@@ -449,11 +707,29 @@
   "abrupt": false,
   "heard": "Steek eens zeven vingers op. Een hele hand en nog twee"
  },
+ "echt.zien-10.b": {
+  "file": "echt.zien-10.b.0984af5313.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens tien vingers op. Doe er nu twee naar beneden. Hoeveel zie je nog?"
+ },
  "echt.zien-5": {
   "file": "echt.zien-5.119f43467e.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Steek eens drie vingers op. En nu vier. En nu vijf"
+ },
+ "echt.zien-5.b": {
+  "file": "echt.zien-5.b.67da698c32.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens vier vingers op zonder te tellen. Tel daarna of het klopt"
+ },
+ "echt.zien-5.c": {
+  "file": "echt.zien-5.c.50669f090b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens drie blokjes neer. Zie je hoeveel het er zijn zonder te tellen?"
  },
  "einde.beginklank": {
   "file": "einde.beginklank.bc26576c58.mp3",

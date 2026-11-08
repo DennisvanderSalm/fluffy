@@ -4,7 +4,7 @@ import { clipJobs } from '../src/core/audio/phrases';
 import type { DomainModule } from '../src/core/domain';
 import { initialState } from '../src/core/engine/mastery';
 import type { PlannerInput } from '../src/core/engine/planner';
-import { easyWin, togetherDue, warmUpSkill } from '../src/core/session/flow';
+import { easyWin, pickRealTask, togetherDue, warmUpSkill } from '../src/core/session/flow';
 import { backupDue, emptyData } from '../src/core/storage/store';
 import { ALL_PHRASES } from '../src/domains';
 
@@ -15,9 +15,17 @@ const input = (states: PlannerInput['states'], ids = ['a', 'b']): PlannerInput =
 });
 
 describe('samen-momenten', () => {
-  it('bij "af en toe" precies één keer, na het vijfde item', () => {
+  it('bij "af en toe" twee keer, na het vierde en het tiende item', () => {
     const hits = Array.from({ length: 30 }, (_, i) => i + 1).filter((n) => togetherDue('echt', n));
-    expect(hits).toEqual([5]);
+    expect(hits).toEqual([4, 10]);
+  });
+  it('kiest een opdracht die ze het minst vaak gehad heeft', () => {
+    const tasks = ['a', 'b', 'c'];
+    expect(pickRealTask(tasks, { a: 2, b: 1, c: 2 }, () => 0.99)).toBe('b');
+    expect(pickRealTask(tasks, { a: 1 }, () => 0)).toBe('b');
+    expect(pickRealTask(tasks, { a: 1 }, () => 0.99)).toBe('c');
+    // Alles even vaak: dan maakt het niet uit.
+    expect(tasks).toContain(pickRealTask(tasks, {}, Math.random));
   });
   it('bij "samen" om de vier items, en nooit als het uit staat', () => {
     expect(Array.from({ length: 13 }, (_, i) => i).filter((n) => togetherDue('samen', n))).toEqual([4, 8, 12]);

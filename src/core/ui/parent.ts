@@ -19,6 +19,8 @@ export interface ParentDeps {
   onStartLevel(id: string): void;
   /** De ouder zet een vaardigheid zelf op een niveau. */
   onSkillLevel(id: string, level: ManualLevel): void;
+  /** Wat ze nu oefent opnieuw met een proefje laten beginnen. */
+  onProbeAgain(): void;
   onReset(): void;
   onAllowSession(): void;
   /** Een eigen opname is gemaakt (of gewist, dan null). */
@@ -112,10 +114,16 @@ function statusOf(deps: ParentDeps, domain: DomainModule, skill: SkillInfo): { t
       ? { text: 'Kan ze volgens het startniveau al (oefenen komt in een volgende versie)', cls: 'is-done' }
       : { text: 'Komt in een volgende versie', cls: '' };
   }
+  if (st.status === 'mastered' && st.assumed && st.probed) {
+    return { text: 'Kon ze meteen (proefje). Komt over een paar dagen terug ter controle', cls: 'is-done' };
+  }
   if (st.status === 'mastered') {
     return st.assumed
       ? { text: 'Kan ze waarschijnlijk al (wordt even gecontroleerd)', cls: 'is-done' }
       : { text: 'Gaat goed. Komt af en toe terug om het vast te houden', cls: 'is-done' };
+  }
+  if (st.status === 'practicing' && st.probe !== undefined) {
+    return { text: 'Fluffy kijkt eerst of ze dit al kan (proefje)', cls: 'is-busy' };
   }
   if (st.status === 'practicing') {
     return { text: `Hier oefent ze nu mee (stap ${st.level + 1} van ${skill.levels})`, cls: 'is-busy' };
@@ -249,6 +257,20 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     deps.onChange();
   });
 
+  const probe = select([
+    ['aan', 'Ja, eerst een proefje'],
+    ['uit', 'Nee, altijd bij het begin beginnen'],
+  ], s.probe ? 'aan' : 'uit', (v) => {
+    s.probe = v === 'aan';
+    deps.onChange();
+  });
+  const probeAgain = el('button', 'btn', 'Opnieuw laten kijken');
+  probeAgain.addEventListener('click', () => {
+    deps.onProbeAgain();
+    probeAgain.textContent = 'Gedaan. Bij de volgende keer spelen begint alles wat ze oefent met een proefje.';
+    probeAgain.disabled = true;
+  });
+
   const subject = select(
     [['kiezen', 'Laat haar kiezen'], ...domains.map((dm): [string, string] => [dm.id, `Altijd ${dm.name.toLowerCase()}`])],
     s.subject,
@@ -308,7 +330,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       ...todaySection(data, domains, name),
 
       el('h2', '', `Waar ${name} mee bezig is`),
-      el('p', 'muted', 'De app gaat pas verder als iets een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
+      el('p', 'muted', 'Iets nieuws begint met een proefje: drie moeilijke opdrachten. Lukken die meteen, dan gaat Fluffy door naar het volgende. Anders oefent ze, en gaat de app pas verder als het een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
       busyNote,
       ...skills,
 
@@ -332,6 +354,8 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       row('Hoe noemt ze jou?', grownUp, 'Zo noemt Fluffy jou bij de samen-momenten.'),
       row('Rekenen of lezen', subject, 'Bij "laat haar kiezen" vraagt Fluffy het aan het begin, met twee plaatjes.'),
       startLevel ? row(`Startniveau ${startDomain!.name.toLowerCase()}`, startLevel, 'Wat hier "al gekund" wordt, controleert Fluffy nog even. Gaat dat mis, dan oefent ze het gewoon weer.') : '',
+      row('Eerst kijken wat ze al kan', probe, 'Een nieuwe vaardigheid begint met drie moeilijke opdrachten. Doet ze die alle drie meteen zelf goed, dan slaat Fluffy die vaardigheid over; over een paar dagen komt hij terug ter controle. Gaat er één mis, dan doet Fluffy het voor en oefent ze vanaf het middelste niveau.'),
+      row('Kan ze meer dan Fluffy denkt?', probeAgain, 'Alles waar ze nu mee oefent, begint opnieuw met een proefje. Wat ze al kan, blijft staan.'),
       row('Nieuwe sessie', allow, 'Slaat de rustpauze en het dagmaximum één keer over; Fluffy blijft slapen tot ze op het scherm tikt. Wil je meteen beginnen, gebruik dan "Fluffy wakker maken" bovenaan.'),
       row('Voortgang', reset, 'Begint helemaal opnieuw. Instellingen blijven bewaard.'),
 

@@ -1,6 +1,6 @@
 import type { LineId } from '../../content/spraak.nl';
 import type { Activity, ActivityContext, DomainModule, ItemResult } from '../domain';
-import { assumeMastered, initialState, manualState, recordAttempt, type ManualLevel } from '../engine/mastery';
+import { assumeMastered, initialState, manualState, recordAttempt, startProbe, type ManualLevel } from '../engine/mastery';
 import {
   choiceOptions, isChoiceMoment, isStruggling, pickNext, scheduleRetry,
   type PlannerInput, type PlayedRef, type RetryEntry,
@@ -12,7 +12,7 @@ import { Sounds } from '../audio/sounds';
 import {
   canStartSession, closeDangling, playUntilTimeUp, SessionClock, type SessionRecord,
 } from '../session/session';
-import { easyWin, togetherDue, warmUpSkill } from '../session/flow';
+import { easyWin, pickRealTask, togetherDue, warmUpSkill } from '../session/flow';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
 import { COUNT_BEAT, el, isoDate, makeBeat, pick, shuffle, sleep, svgEl } from '../util';
@@ -295,6 +295,7 @@ export class App {
         skill = order[i].skill;
         activity = this.activity(order[i].activity);
       }
+      this.maybeProbe(skill);
       params = activity.makeItem(skill, this.stateOf(skill).level, this.rng);
     }
     const level = isRetry ? (choice as { entry: RetryEntry }).entry.level : this.stateOf(skill).level;
@@ -344,7 +345,9 @@ export class App {
     this.fluffy.set('rust');
     await sleep(500);
     this.clock!.pause();
-    await realTask(this.context(null), pick(this.rng, tasks), this.grownUp());
+    const task = pickRealTask(tasks, this.data.seen, this.rng);
+    this.data.seen[task] = (this.data.seen[task] ?? 0) + 1;
+    await realTask(this.context(null), task, this.grownUp());
     await this.whenResumed();
     if (!this.paused) this.clock?.start();
   }
@@ -434,6 +437,13 @@ export class App {
     return this.data.skills[id] ?? initialState();
   }
 
+  /** Iets nieuws? Dan eerst een proefje: kan ze het misschien al? */
+  private maybeProbe(skill: string): void {
+    if (this.data.settings.probe && this.stateOf(skill).status === 'new') {
+      this.data.skills[skill] = startProbe(this.skillsById.get(skill)!, this.stateOf(skill));
+    }
+  }
+
   private applySettings(): void {
     const s = this.data.settings;
     this.speech.volume = s.volume;
@@ -505,6 +515,14 @@ export class App {
       },
       onSkillLevel: (id: string, choice: ManualLevel) => {
         this.data.skills[id] = manualState(this.skillsById.get(id)!, this.stateOf(id), choice, isoDate(Date.now()));
+        save(this.data);
+      },
+      onProbeAgain: () => {
+        // Wat ze nu oefent: opnieuw kijken of ze het al kan. Wat beheerst is, blijft staan.
+        for (const [id, st] of Object.entries(this.data.skills)) {
+          const def = this.skillsById.get(id);
+          if (def && st.status === 'practicing' && st.probe === undefined) this.data.skills[id] = startProbe(def, st);
+        }
         save(this.data);
       },
       onReset: () => {

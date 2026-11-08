@@ -11,11 +11,18 @@ import type { Settings } from './session';
 
 /**
  * Is het nu tijd voor een opdracht in het echt? `count` = aantal gespeelde items.
- * Bij 'echt' één keer per sessie (na het vijfde item), bij 'samen' om de vier items.
+ * Bij 'echt' twee keer per sessie (na het vierde en het tiende item), bij 'samen' om de vier items.
  */
 export function togetherDue(mode: Settings['together'], count: number): boolean {
   if (mode === 'samen') return count > 0 && count % 4 === 0;
-  return mode === 'echt' && count === 5;
+  return mode === 'echt' && (count === 4 || count === 10);
+}
+
+/** Welke opdracht in het echt: een die ze het minst vaak gehad heeft, zodat het afwisselt. */
+export function pickRealTask<T extends string>(tasks: readonly T[], seen: Readonly<Record<string, number>>, rng: () => number): T {
+  const least = Math.min(...tasks.map((t) => seen[t] ?? 0));
+  const fresh = tasks.filter((t) => (seen[t] ?? 0) === least);
+  return fresh[Math.floor(rng() * fresh.length)];
 }
 
 /**

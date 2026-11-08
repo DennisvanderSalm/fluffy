@@ -15,12 +15,14 @@ export interface Settings {
   /** 'kiezen' = het kind kiest aan het begin; anders altijd dit vak (domein-id). */
   subject: string;
   /**
-   * Samen-momenten: 'uit', 'echt' (één opdracht in het echt per sessie) of 'samen' (de ouder
+   * Samen-momenten: 'uit', 'echt' (twee opdrachten in het echt per sessie) of 'samen' (de ouder
    * speelt mee: vaker een opdracht in het echt, en Fluffy spreekt jullie allebei aan).
    */
   together: 'uit' | 'echt' | 'samen';
   /** Hoe het kind de ouder noemt (id van een zinnetje 'wie.*'). */
   grownUp: string;
+  /** Proefjes: een nieuwe vaardigheid begint met een paar moeilijke opdrachten (zie mastery.ts). */
+  probe: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -34,6 +36,7 @@ export const DEFAULT_SETTINGS: Settings = {
   subject: 'kiezen',
   together: 'echt',
   grownUp: 'wie.papaofmama',
+  probe: true,
 };
 
 export interface SessionRecord {
