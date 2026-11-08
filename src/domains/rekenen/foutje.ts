@@ -126,14 +126,14 @@ class Round {
     const { ctx, field, item } = this;
     field.clearMarks();
     ctx.fluffy.set('rust');
+    const beat = ctx.countBeat(slow);
     for (const step of countScript(item)) {
       const i = this.obj(step.obj);
       field.pointAt(i);
-      await sleep(slow ? 600 : 350);
+      await beat();
       if (field.isMarked(i)) field.bounce(i);
       field.mark(i);
       await ctx.say([step.word]);
-      await sleep(slow ? 500 : 150);
     }
     await sleep(300);
     field.hidePointer();

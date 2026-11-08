@@ -96,12 +96,13 @@ class Round {
 
   private async hop(to: number, count: boolean): Promise<void> {
     const dir = Math.sign(to - this.at);
+    const beat = count ? this.ctx.countBeat() : () => sleep(350);
     while (this.at !== to) {
       this.at += dir;
       this.placeBunny();
       this.ctx.sounds.plop();
       this.lijn.showNumber(this.at);
-      await sleep(350);
+      await beat();
       if (count) await this.ctx.say([this.at]);
     }
   }
@@ -172,12 +173,14 @@ class Round {
     ctx.fluffy.set('nadenken');
     this.cards?.show(false);
     await ctx.say(['voordoen.start']);
+    const beat = ctx.countBeat();
     for (let n = item.k; n !== goal + Math.sign(item.step); n += Math.sign(item.step)) {
       this.lijn.pointAt(n);
       this.lijn.showNumber(n);
+      await beat();
       await ctx.say([n]);
-      await sleep(250);
     }
+    await sleep(250);
     this.lijn.hidePointer();
     await ctx.say(this.rule());
     v = await this.ask(item.mode === 'kaart' ? ['tellen.tik.a', goal, 'tellen.tik.b'] : ['cijfer.tikjij'], goal);

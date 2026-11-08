@@ -164,9 +164,10 @@ class Round {
       await this.ctx.say(['kiekeboe.rij']);
       from = 5;
     }
+    const beat = this.ctx.countBeat();
     for (let i = from; i < n; i++) {
       this.pointAt(b, points[i]);
-      await sleep(250);
+      await beat();
       await this.ctx.say([i + 1]);
     }
     this.pointer.classList.remove('is-on');

@@ -63,6 +63,11 @@ export interface ActivityContext {
   setRepeat(fn: (() => void) | null): void;
   /** De eerste keren met deze activiteit: iets meer uitleg. */
   beginner: boolean;
+  /**
+   * Telritme voor Fluffy's tellen: `const tel = ctx.countBeat(); … await tel(); await ctx.say([k]);`.
+   * Zo klinken de getallen rustig en even ver uit elkaar (zie makeBeat).
+   */
+  countBeat(slow?: boolean): () => Promise<void>;
   rng: Rng;
 }
 

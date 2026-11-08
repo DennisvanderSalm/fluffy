@@ -49,6 +49,27 @@ export function mean(values: readonly number[]): number {
 
 export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
+/** Een volwassene telt voor een kleuter ongeveer één getal per seconde. */
+export const COUNT_BEAT = { normal: 900, beginner: 1100 } as const;
+
+/**
+ * Telritme: elke aanroep wacht tot de volgende tel. Zo begint elk getal op een vaste afstand
+ * van het vorige, of het woord nu kort ("zes") of lang ("zeventien") is. De eerste tel komt na
+ * `lead` (tijd om eerst aan te wijzen); na een lange pauze komt er altijd minstens `gap` stilte.
+ */
+export function makeBeat(
+  interval: number,
+  { lead = 300, gap = 250, now = () => performance.now(), wait = sleep } = {},
+): () => Promise<void> {
+  let next: number | null = null;
+  return async () => {
+    const t = now();
+    const due = next === null ? t + lead : Math.max(next, t + gap);
+    if (due > t) await wait(due - t);
+    next = due + interval;
+  };
+}
+
 /** Maakt een element met klassen en optionele kinderen. */
 export function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,

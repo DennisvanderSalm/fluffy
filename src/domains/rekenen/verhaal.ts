@@ -252,10 +252,11 @@ class Round {
     this.hideReed(false);
     await ctx.say(['voordoen.start']);
     const swimming = this.ducks.filter((_, i) => this.inPond[i]);
+    const beat = ctx.countBeat();
     for (const [k, d] of swimming.entries()) {
       d.classList.add('is-counted');
       this.pointAt(d);
-      await sleep(300);
+      await beat();
       await ctx.say([k + 1]);
     }
     this.pointer.classList.remove('is-on');

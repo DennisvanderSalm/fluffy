@@ -84,9 +84,10 @@ class Round {
   /** Fluffy telt van een zichtbaar nummer naar het gezochte huisje, en wijst elk huisje aan. */
   private async countFrom(from: number, to: number): Promise<void> {
     const dir = Math.sign(to - from) || 1;
+    const beat = this.ctx.countBeat();
     for (let n = from; n !== to + dir; n += dir) {
       this.lijn.pointAt(n);
-      await sleep(250);
+      await beat();
       await this.ctx.say([n]);
     }
     this.lijn.hidePointer();

@@ -223,10 +223,11 @@ class Round {
     await this.door(true);
     await ctx.say(['voordoen.start']);
     const inside = this.flies.filter((_, i) => this.isIn[i]);
+    const beat = ctx.countBeat();
     for (const [k, f] of inside.entries()) {
       f.classList.add('is-counted');
       this.pointAt(f);
-      await sleep(300);
+      await beat();
       await ctx.say([k + 1]);
     }
     this.pointer.classList.remove('is-on');

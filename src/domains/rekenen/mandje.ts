@@ -293,7 +293,9 @@ class Round {
 
   /** Fluffy telt wat er in het mandje ligt, en wijst elk ding één keer aan. */
   private async countBasket(): Promise<void> {
+    const beat = this.ctx.countBeat();
     for (let i = 0; i < this.basket.length; i++) {
+      await beat();
       this.basket[i].el.classList.add('is-counted');
       await this.ctx.say([i + 1]);
     }
@@ -399,10 +401,11 @@ class Round {
     await this.emptyBasket();
     await ctx.say(['voordoen.denk']);
     const free = this.objs.filter((o) => !o.inBasket);
+    const beat = ctx.countBeat();
     for (let i = 0; i < item.n; i++) {
       this.toBasket(free[i], true);
       ctx.sounds.plop();
-      await sleep(350);
+      await beat();
       free[i].el.classList.add('is-counted');
       await ctx.say([i + 1]);
     }

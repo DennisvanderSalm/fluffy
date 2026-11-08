@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { chunk, clipJobs, phraseId } from '../src/core/audio/phrases';
+import { COUNT_BEAT, makeBeat } from '../src/core/util';
+import { chunk, clipJobs, phraseId, segIds } from '../src/core/audio/phrases';
 import { parseManifest } from '../src/core/audio/speech';
 import { lineText, SPRAAK } from '../src/content/spraak.nl';
 import { ALL_PHRASES } from '../src/domains';
@@ -34,9 +35,9 @@ describe('hele zinnen opzoeken', () => {
   it('dekt de zinnen met getallen die de activiteiten zeggen', () => {
     for (let n = 1; n <= 10; n++) {
       // Hint in Mandje: "Dat zijn er 3. We wilden er 5." + "Er mogen er nog wat bij."
-      expect(chunk(['hint.zijn', 'getal.3', 'hint.wilden', `getal.${n}`, 'hint.teweinig'], has).every((c) => c.clip)).toBe(true);
+      expect(chunk(segIds(['hint.zijn', 3, 'hint.wilden', n, 'hint.teweinig']), has).every((c) => c.clip)).toBe(true);
       // Voordoen bij Samen tellen
-      expect(chunk(['voordoen.laatste.a', `getal.${n}`, 'tellen.dushet', `getal.${n}`], has)).toHaveLength(2);
+      expect(chunk(segIds(['voordoen.laatste.a', n, 'tellen.dushet', n]), has)).toHaveLength(2);
     }
     expect(chunk(['foutje.kijk.getal.a', 'getal.3', 'foutje.kijk.getal.b', 'getal.4', 'foutje.kijk.getal.c'], has)).toHaveLength(2);
   });
@@ -82,9 +83,12 @@ describe('wat er ingesproken wordt', () => {
     expect(text('einde.vertel.a+wie.opa+einde.vertel.b')).toBe('Vertel maar aan opa wat we gedaan hebben.');
   });
 
-  it('getallen krijgen de buren mee, zodat ze als tellen klinken', () => {
+  it('getallen klinken als tellen, maar worden helemaal uitgesproken', () => {
     const drie = jobs.find((j) => j.id === 'getal.3')!;
-    expect(drie).toMatchObject({ text: 'drie', before: 'één, twee', after: 'vier, vijf' });
+    expect(drie).toMatchObject({ text: 'drie.', before: 'één, twee,' });
+    // Geen tekst erna: dan kapt de stem het woord af ("ach" in plaats van "acht").
+    for (const j of jobs.filter((x) => x.id.startsWith('getal.') && !x.id.includes('+'))) expect(j.after).toBeUndefined();
+    expect(jobs.find((j) => j.id === 'getal.1')).toMatchObject({ text: 'één.', before: undefined });
   });
 
   it('phraseId maakt van getallen getal-id\'s', () => {
@@ -97,5 +101,47 @@ describe('manifest', () => {
     expect([...parseManifest({ clips: ['getal.1'] })]).toEqual([['getal.1', 'getal.1.m4a']]);
     expect([...parseManifest({ clips: { 'getal.1': 'getal.1.abc.mp3' } })]).toEqual([['getal.1', 'getal.1.abc.mp3']]);
     expect(parseManifest(null).size).toBe(0);
+  });
+});
+
+describe('telritme', () => {
+  /** Nep-klok: wachten schuift de tijd op; `speak` doet alsof een woord zo lang duurt. */
+  function clock() {
+    let t = 0;
+    const starts: number[] = [];
+    return {
+      now: () => t,
+      wait: async (ms: number) => void (t += ms),
+      speak: (ms: number) => {
+        starts.push(t);
+        t += ms;
+      },
+      starts,
+    };
+  }
+
+  it('elk getal begint op een vaste tel, of het woord nu kort of lang is', async () => {
+    const c = clock();
+    const beat = makeBeat(900, { lead: 300, now: c.now, wait: c.wait });
+    for (const ms of [250, 300, 560, 230, 420]) {
+      await beat();
+      c.speak(ms);
+    }
+    expect(c.starts).toEqual([300, 1200, 2100, 3000, 3900]);
+  });
+
+  it('na een lang woord of een pauze komt er toch even stilte', async () => {
+    const c = clock();
+    const beat = makeBeat(900, { lead: 0, gap: 250, now: c.now, wait: c.wait });
+    await beat();
+    c.speak(2000); // bv. het ouderdeel was even open
+    await beat();
+    expect(c.starts).toEqual([0]);
+    expect(c.now()).toBe(2250);
+  });
+
+  it('rustig genoeg voor een kleuter', () => {
+    expect(COUNT_BEAT.normal).toBeGreaterThanOrEqual(800);
+    expect(COUNT_BEAT.beginner).toBeGreaterThan(COUNT_BEAT.normal);
   });
 });

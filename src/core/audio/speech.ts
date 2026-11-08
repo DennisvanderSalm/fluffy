@@ -1,7 +1,7 @@
 import { lineText, type LineId } from '../../content/spraak.nl';
 import { sleep } from '../util';
 import { loadOwnClips, type OwnClip } from './own';
-import { chunk, joinText, segId } from './phrases';
+import { chunk, gluedJoins, joinText, segIds } from './phrases';
 
 /** Een segment: een zin-id uit het script, of een getal (→ 'getal.<n>'). */
 export type Seg = LineId | number;
@@ -72,6 +72,11 @@ export class Speech {
     return [...this.clips.keys()];
   }
 
+  /** Bestandsnaam van de (ingesproken) opname, om te zien of hij veranderd is. */
+  clipFile(id: string): string | undefined {
+    return this.clips.get(id);
+  }
+
   /** Hoeveel zinnen als opname klaarstaan (voor het ouderdeel). */
   get clipCount(): number {
     return this.clips.size;
@@ -124,7 +129,12 @@ export class Speech {
     this.halt();
     this.emit(true);
     try {
-      const parts = chunk(segs.map(segId), (id) => this.hasClip(id));
+      const ids = segIds(segs);
+      const parts = chunk(ids, (id) => this.hasClip(id));
+      if (import.meta.env.DEV && this.clips.size) {
+        const glued = gluedJoins(ids, (id) => this.hasClip(id));
+        if (glued.length) console.warn('Geplakte zin (neem hem op als geheel, zie phrases()):', glued.join(', '));
+      }
       // Alle opnames van deze zin alvast ophalen en decoderen.
       for (const p of parts) if (p.clip) void this.buffer(p.id);
       // Groepeer: opeenvolgende stukken zonder opname worden één vloeiende zin.
@@ -256,7 +266,14 @@ export class Speech {
     await new Promise<void>((resolve) => {
       const src = ctx.createBufferSource();
       const gain = ctx.createGain();
-      gain.gain.value = this.volume;
+      // Heel kort in- en uitfaden: geen tikje als een opname abrupt begint of eindigt.
+      const t0 = ctx.currentTime;
+      const end = t0 + buf.duration;
+      const fade = Math.min(0.02, buf.duration / 4);
+      gain.gain.setValueAtTime(0, t0);
+      gain.gain.linearRampToValueAtTime(this.volume, t0 + 0.005);
+      gain.gain.setValueAtTime(this.volume, end - fade);
+      gain.gain.linearRampToValueAtTime(0, end);
       src.buffer = buf;
       src.connect(gain).connect(ctx.destination);
       let done = false;
@@ -271,7 +288,7 @@ export class Speech {
       const fallback = setTimeout(finish, buf.duration * 1000 + 1500);
       src.onended = finish;
       this.source = src;
-      src.start();
+      src.start(t0);
     });
   }
 

@@ -1,4 +1,4 @@
-import { lineText, SPRAAK, type LineId } from '../../content/spraak.nl';
+import { lineText, singular, SPRAAK, type LineId } from '../../content/spraak.nl';
 import type { Seg } from './speech';
 
 /**
@@ -8,7 +8,9 @@ import type { Seg } from './speech';
  */
 
 export const segId = (s: Seg): LineId => (typeof s === 'number' ? `getal.${s}` : s);
-export const phraseId = (segs: readonly Seg[]): string => segs.map(segId).join('+');
+/** De id's van een zin, met het goede enkelvoud bij één ("Dus het is er één"). */
+export const segIds = (segs: readonly Seg[]): string[] => singular(segs.map(segId));
+export const phraseId = (segs: readonly Seg[]): string => segIds(segs).join('+');
 
 export interface Chunk {
   id: string;
@@ -30,6 +32,26 @@ export function chunk(ids: readonly string[], hasClip: (id: string) => boolean):
   return out;
 }
 
+/**
+ * Waar wordt een zin uit losse opnames aan elkaar geplakt, midden in de zin? Dat klinkt
+ * hakkelig ("Het laatste getal dat ik zei was" + "vier" op teltoon). Een grens na een
+ * hele zin mag, net als een rij losse getallen of kleuren (tellen, patronen) en de naam.
+ */
+export function gluedJoins(ids: readonly string[], hasClip: (id: string) => boolean): string[] {
+  const parts = chunk(ids, hasClip);
+  const list = (id: string) => id.startsWith('getal.') || id.startsWith('kleur.');
+  const out: string[] = [];
+  for (let k = 0; k + 1 < parts.length; k++) {
+    const last = parts[k].id.split('+').at(-1)!;
+    const first = parts[k + 1].id.split('+')[0];
+    if (last === 'naam' || first === 'naam') continue;
+    if (/[.?!]$/.test(lineText(last as LineId, ''))) continue;
+    if (list(last) && (list(first) || /^[A-Z]/.test(lineText(first as LineId, '')))) continue;
+    out.push(`${parts[k].id} | ${parts[k + 1].id}`);
+  }
+  return out;
+}
+
 /** Stukjes tekst aan elkaar, zonder spatie voor leestekens. */
 export function joinText(parts: readonly string[]): string {
   return parts.filter(Boolean).join(' ').replace(/\s+([,.?!])/g, '$1').trim();
@@ -38,10 +60,18 @@ export function joinText(parts: readonly string[]): string {
 export interface ClipJob {
   id: string;
   text: string;
-  /** Tekst ervoor en erna, alleen voor de klank (bij tellen klinkt "drie" dan als tellen). */
+  /**
+   * Tekst ervoor en erna, alleen voor de klank (bij tellen klinkt "drie" dan als tellen).
+   * Getallen krijgen bewust geen tekst erna: dan kapt de stem het woord af, alsof het volgende
+   * getal er meteen achteraan komt ("ach" in plaats van "acht").
+   */
   before?: string;
   after?: string;
 }
+
+/** Losse woordjes die de app ook los zegt (lezen, kleuren). */
+const SINGLE_WORD = /^(w|kleur|rekt)\./;
+const WORD_CONTEXT = 'Luister maar goed, ik zeg een Nederlands woordje:';
 
 /** Hoogste getal dat als losse opname gemaakt wordt. */
 export const MAX_NUMBER = 20;
@@ -54,23 +84,27 @@ export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
   const jobs = new Map<string, ClipJob>();
   for (const id of Object.keys(SPRAAK) as (keyof typeof SPRAAK)[]) {
     const text = lineText(id, '');
-    if (text) jobs.set(id, { id, text });
+    // Een los woordje zonder context spreekt de stem soms Engels uit ("jas" als "yes"). Met een
+    // Nederlandse zin ervoor (die niet in de opname komt) klinkt het Nederlands.
+    if (text) jobs.set(id, { id, text, ...(SINGLE_WORD.test(id) ? { before: WORD_CONTEXT } : {}) });
   }
   for (let n = 1; n <= MAX_NUMBER; n++) {
     const word = (k: number) => lineText(`getal.${k}`, '');
-    const around = (from: number, to: number) =>
-      Array.from({ length: to - from + 1 }, (_, i) => from + i).filter((k) => k >= 1 && k <= MAX_NUMBER).map(word);
+    const before = [n - 2, n - 1].filter((k) => k >= 1).map(word);
     jobs.set(`getal.${n}`, {
       id: `getal.${n}`,
-      text: word(n),
-      before: around(n - 2, n - 1).join(', ') || undefined,
-      after: around(n + 1, n + 2).join(', ') || undefined,
+      // Met een punt: rustig uitgesproken, helemaal af.
+      text: `${word(n)}.`,
+      before: before.length ? `${before.join(', ')},` : undefined,
     });
   }
   for (const segs of phrases) {
     if (segs.length < 2 || segs.includes('naam')) continue;
-    const id = phraseId(segs);
-    const raw = joinText(segs.map((s) => lineText(segId(s), '')));
+    const ids = segIds(segs);
+    const id = ids.join('+');
+    // Begint er midden in een zin een nieuwe zin ("… één en één" + "Dat is evenveel."), dan een punt.
+    const pieces = ids.map((p) => lineText(p as LineId, ''));
+    const raw = joinText(pieces.map((t, i) => (/^[A-Z]/.test(pieces[i + 1] ?? '') && !/[.?!,:]$/.test(t) ? `${t}.` : t)));
     const text = raw.charAt(0).toUpperCase() + raw.slice(1);
     const end = /^(Welke?|Waar|Wat|Wie|Hoeveel|Kun|Zullen)\b/.test(text) ? '?' : '.';
     jobs.set(id, { id, text: /[.?!]$/.test(text) ? text : `${text}${end}` });

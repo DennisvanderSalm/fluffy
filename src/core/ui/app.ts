@@ -15,7 +15,7 @@ import {
 import { easyWin, togetherDue, warmUpSkill } from '../session/flow';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
-import { el, isoDate, pick, shuffle, sleep, svgEl } from '../util';
+import { COUNT_BEAT, el, isoDate, makeBeat, pick, shuffle, sleep, svgEl } from '../util';
 import { askChoice } from './choice';
 import { onTap } from './drag';
 import { openParentArea } from './parent';
@@ -396,6 +396,8 @@ export class App {
       sounds: this.sounds,
       setRepeat: (fn) => (this.repeatFn = fn),
       beginner: activityId !== null && (this.data.seen[activityId] ?? 0) < 2,
+      countBeat: (slow = false) =>
+        makeBeat(slow || (activityId !== null && (this.data.seen[activityId] ?? 0) < 2) ? COUNT_BEAT.beginner : COUNT_BEAT.normal),
       rng: this.rng,
     };
   }

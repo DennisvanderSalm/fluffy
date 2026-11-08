@@ -35,6 +35,7 @@ export const SPRAAK = {
   'mandje.leeg': 'Het mandje is nog leeg.',
   'mandje.kijken': 'Eens kijken.',
   'mandje.zijnhet': 'Het zijn er',
+  'mandje.zijnhet.een': 'Het is er',
   'mandje.precies': 'Precies goed.',
 
   // Objecten (enkelvoud en meervoud)
@@ -58,8 +59,10 @@ export const SPRAAK = {
   'tellen.hoeveel': 'Hoeveel zijn het er?',
   'tellen.hoeveel.tik': 'Tik op het goede getal.',
   'tellen.zijnhet': 'Ja, het zijn er',
+  'tellen.zijnhet.een': 'Ja, het is er',
   'tellen.hint': 'Hmm. Laten we nog een keer samen tellen.',
   'tellen.dushet': 'Dus het zijn er',
+  'tellen.dushet.een': 'Dus het is er',
   'tellen.tik.a': 'Kun jij de',
   'tellen.tik.b': 'aantikken?',
   'tellen.kijkdeze': 'Kijk, deze is het.',
@@ -67,6 +70,7 @@ export const SPRAAK = {
   // ── Fluffy telt fout ──
   'foutje.intro': 'Ik ga tellen. Let jij goed op of ik het goed doe?',
   'foutje.dus': 'Dus het zijn er',
+  'foutje.dus.een': 'Dus het is er',
   'foutje.vraag': 'Heb ik het goed geteld?',
   'foutje.uitleg': 'Klopt het? Tik dan op duim omhoog. Klopt het niet? Tik dan op duim omlaag.',
   'foutje.hint': 'Hmm. Kijk nog eens goed. Ik tel het nog een keer, langzaam.',
@@ -84,6 +88,7 @@ export const SPRAAK = {
   'foutje.kijk.eind.a': 'Het laatste getal dat ik zei was',
   'foutje.kijk.eind.b': 'Maar ik zei dat het er',
   'foutje.kijk.eind.c': 'waren. Dat klopt niet.',
+  'foutje.kijk.eind.c.een': 'was. Dat klopt niet.',
   'foutje.kijk.klopt': 'Ik heb ze allemaal één keer aangewezen, en de getallen goed gezegd. Dus het klopte.',
   'foutje.kijk.volgorde': 'Ik begon aan de andere kant. Dat mag! Ik heb ze allemaal één keer geteld, dus het klopte.',
   'foutje.samen': 'Wil jij ze aantikken? Dan tellen we samen goed.',
@@ -118,6 +123,7 @@ export const SPRAAK = {
   'meer.evenveelklaar': 'Dat is evenveel.',
   'meer.tikjij': 'Tik jij maar op dat bordje.',
   'hier.zijn': 'Hier zijn er',
+  'hier.zijn.een': 'Hier is er',
 
   // ── Cijfers zoeken ──
   'cijfer.zoek': 'Zoek het kaartje met',
@@ -406,6 +412,7 @@ export const SPRAAK = {
   // Stap 1: hint (samen natellen)
   'hint.samen': 'Hmm. Laten we samen tellen wat er in het mandje ligt.',
   'hint.zijn': 'Dat zijn er',
+  'hint.zijn.een': 'Dat is er',
   'hint.wilden': 'We wilden er',
   'hint.cijferis': 'Dit cijfer is',
   'hint.teveel': 'Dat zijn er een paar te veel. Kun je er een paar terugleggen?',
@@ -415,9 +422,11 @@ export const SPRAAK = {
   'voordoen.denk': 'Ik leg ze er één voor één in, en ik tel mee.',
   'voordoen.laatste.a': 'Het laatste getal dat ik zei was',
   'voordoen.laatste.b': 'Dus er liggen er',
+  'voordoen.laatste.b.een': 'Dus er ligt er',
   'voordoen.laatste.c': 'in het mandje.',
   'voordoen.samen': 'Nu doen we het samen. Jij legt ze erin, en ik tel mee.',
   'voordoen.kijk': 'Kijk, zo zijn het er',
+  'voordoen.kijk.een': 'Kijk, zo is het er',
   // Stap 3: later terug
   'later.nog': 'Die doen we straks nog een keer.',
 
@@ -502,6 +511,33 @@ export function lineText(id: LineId, childName: string): string {
   if (id === 'naam') return childName;
   if (id.startsWith('getal.')) return GETALLEN[Number(id.slice(6))] ?? id.slice(6);
   return SPRAAK[id as keyof typeof SPRAAK] ?? '';
+}
+
+/**
+ * Enkelvoud bij het getal één: "Dus het is er één", niet "Dus het zijn er één".
+ * VOOR_EEN: het zinnetje vóór het getal; NA_EEN: het zinnetje erna.
+ */
+const VOOR_EEN: Partial<Record<LineId, LineId>> = {
+  'mandje.zijnhet': 'mandje.zijnhet.een',
+  'tellen.zijnhet': 'tellen.zijnhet.een',
+  'tellen.dushet': 'tellen.dushet.een',
+  'foutje.dus': 'foutje.dus.een',
+  'hier.zijn': 'hier.zijn.een',
+  'hint.zijn': 'hint.zijn.een',
+  'voordoen.laatste.b': 'voordoen.laatste.b.een',
+  'voordoen.kijk': 'voordoen.kijk.een',
+};
+const NA_EEN: Partial<Record<LineId, LineId>> = {
+  'foutje.kijk.eind.c': 'foutje.kijk.eind.c.een',
+};
+
+/** Past de zinnetjes rond het getal één aan (zie VOOR_EEN). Werkt op id's ('getal.1'). */
+export function singular(ids: readonly string[]): string[] {
+  return ids.map((id, i) => {
+    if (ids[i + 1] === 'getal.1' && VOOR_EEN[id as LineId]) return VOOR_EEN[id as LineId]!;
+    if (ids[i - 1] === 'getal.1' && NA_EEN[id as LineId]) return NA_EEN[id as LineId]!;
+    return id;
+  });
 }
 
 export function numberWord(n: number): string {

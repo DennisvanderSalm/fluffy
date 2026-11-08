@@ -4,6 +4,7 @@ import type { Speech } from '../audio/speech';
 import { addDays, el, isoDate } from '../util';
 import { lineText, type LineId } from '../../content/spraak.nl';
 import { joinText } from '../audio/phrases';
+import { flaggedCommand, loadFlagged, saveFlagged, stillFlagged } from '../audio/flagged';
 import { backupDue, makeBackup, readBackup, type SaveData, type StorageInfo } from '../storage/store';
 
 /**
@@ -180,6 +181,54 @@ export function listenSection(speech: Speech, onClip: (id: string, clip: OwnClip
     ...[...byGroup.keys()].filter((g) => !known.has(g)).sort(),
   ];
 
+  // "Klinkt niet goed": markeringen van opnames die inmiddels vervangen zijn, vallen weg.
+  const flagged = stillFlagged(loadFlagged(), (id) => speech.clipFile(id));
+  saveFlagged(flagged);
+  const flagInfo = el('p', 'muted', '');
+  const flagText = el('textarea', 'flag-list');
+  flagText.readOnly = true;
+  flagText.rows = 3;
+  const copy = el('button', 'btn', 'Lijst kopiëren');
+  const clear = el('button', 'btn', 'Lijst wissen');
+  const flagBox = el('div', 'flag-box', flagInfo, flagText, el('div', 'header-buttons', copy, clear));
+  const flagButtons = new Map<string, HTMLButtonElement>();
+  const syncFlags = () => {
+    flagBox.hidden = !flagged.size;
+    flagInfo.textContent = `${flagged.size === 1 ? 'Eén opname klinkt' : `${flagged.size} opnames klinken`} niet goed. Geef deze regel door, dan worden ze opnieuw ingesproken en gecontroleerd:`;
+    flagText.value = flaggedCommand(flagged);
+    for (const [id, b] of flagButtons) {
+      b.textContent = flagged.has(id) ? 'Gemarkeerd' : 'Klinkt niet goed';
+      b.classList.toggle('is-on', flagged.has(id));
+    }
+  };
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(flagText.value);
+      copy.textContent = 'Gekopieerd';
+    } catch {
+      flagText.select();
+    }
+    setTimeout(() => (copy.textContent = 'Lijst kopiëren'), 2000);
+  });
+  clear.addEventListener('click', () => {
+    flagged.clear();
+    saveFlagged(flagged);
+    syncFlags();
+  });
+  const flagButton = (id: string) => {
+    const b = el('button', 'btn flag', 'Klinkt niet goed');
+    b.addEventListener('click', () => {
+      const file = speech.clipFile(id);
+      if (flagged.has(id)) flagged.delete(id);
+      else if (file) flagged.set(id, file);
+      saveFlagged(flagged);
+      syncFlags();
+    });
+    flagButtons.set(id, b);
+    return b;
+  };
+  syncFlags();
+
   // Eén "alles afspelen" tegelijk.
   let run = 0;
   const playAll = async (list: string[], btn: HTMLButtonElement) => {
@@ -212,15 +261,18 @@ export function listenSection(speech: Speech, onClip: (id: string, clip: OwnClip
       if (!details.open || details.childElementCount > 1) return;
       details.append(el('div', 'listen-all', all), ...list.map((id) => {
         const c = recordControls(speech, id, onClip, 6000, true);
+        c.buttons.append(flagButton(id));
         return el('div', 'listen-row', el('div', '', el('div', '', clipText(id)), c.status), c.buttons);
       }));
+      syncFlags();
     });
     return details;
   });
 
   return [
     el('h2', '', 'Opnames beluisteren'),
-    el('p', 'muted', 'Hier hoor je alles wat Fluffy kan zeggen. Klinkt iets niet goed, spreek het dan zelf in: jouw opname gaat voor. Let vooral op de losse klanken: b moet klinken als de klank, niet als "bee".'),
+    el('p', 'muted', 'Hier hoor je alles wat Fluffy kan zeggen. Alles is automatisch nagekeken met spraakherkenning, behalve de losse klanken: luister daar zelf naar (b moet klinken als de klank, niet als "bee"). Klinkt iets niet goed? Tik op "Klinkt niet goed", of spreek het zelf in: jouw opname gaat voor.'),
+    flagBox,
     ...groups,
   ];
 }

@@ -645,3 +645,7 @@ body.is-night .gear { filter: invert(1); }
 .listen-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px dashed var(--panel-edge); flex-wrap: wrap; }
 .listen-row .btn { padding: 6px 12px; font-size: 15px; }
 .listen-row .btn[hidden] { display: none; }
+.listen-row .btn.flag.is-on { background: #fde6c8; border-color: #e0a55a; }
+.flag-box { margin: 8px 0 12px; padding: 12px; border-radius: 12px; background: #fff6e8; border: 1px solid #f0d3a8; }
+.flag-box[hidden] { display: none; }
+.flag-list { width: 100%; box-sizing: border-box; font: 14px ui-monospace, monospace; padding: 8px; border-radius: 8px; border: 1px solid var(--panel-edge); resize: vertical; margin: 4px 0 8px; }

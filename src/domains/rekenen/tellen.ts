@@ -141,9 +141,10 @@ class Round {
     await ctx.say(['voordoen.start']);
     field.clearMarks();
     const order = readingOrder(field);
+    const beat = ctx.countBeat();
     for (let k = 0; k < order.length; k++) {
       field.pointAt(order[k]);
-      await sleep(350);
+      await beat();
       field.mark(order[k]);
       await ctx.say([k + 1]);
     }

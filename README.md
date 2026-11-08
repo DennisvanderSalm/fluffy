@@ -80,8 +80,24 @@ en de API-sleutel staat alleen op je pc.
 
 Goed om te weten:
 - **Hele zinnen**: "Kun je vier appels in het mandje leggen?" is één opname, geen geplakte stukjes.
-  Elke activiteit geeft zelf op welke zinnen dat zijn (`phrases()`).
-- **Getallen** worden ingesproken met de buurgetallen als context, zodat "drie" klinkt als tellen.
+  Elke activiteit geeft zelf op welke zinnen dat zijn (`phrases()`). Een test (`tests/geplakt.test.ts`)
+  controleert dat zinnen met getallen niet midden in de zin geplakt worden, en `npm run dev` waarschuwt
+  in de console als het toch gebeurt. Bij één past de app de zin aan: "Dus het is er één".
+- **Getallen** worden ingesproken met de getallen ervóór als context, zodat "drie" klinkt als tellen.
+  Niet met de getallen erna: dan kapt de stem het woord af ("ach" in plaats van "acht").
+- **Tellen gaat in een vast ritme**: elk getal begint ongeveer een seconde na het vorige (de eerste
+  keren met een spelletje iets rustiger), of het woord nu kort is of lang.
+- **Automatische controle.** Na het inspreken meet het script elke opname: stopt hij midden in een klank,
+  en hoort spraakherkenning (ElevenLabs Speech-to-Text) de goede woorden? Uitslagen staan in
+  `scripts/controle.json`.
+  ```bash
+  npm run stem -- --controle                 # alleen controleren
+  npm run stem -- --herstel                  # wat niet klopt opnieuw inspreken (tot 3 keer)
+  npm run stem -- --afgekeurd getal.8,w.vis  # deze opnieuw inspreken
+  ```
+  Losse klanken ("mmm", "b") kan spraakherkenning niet beoordelen: luister die zelf na in het ouderdeel.
+  Klinkt daar iets niet goed, tik dan op **Klinkt niet goed**; het ouderdeel geeft je dan de regel voor `--afgekeurd`.
+  De sleutel moet daarvoor ook Speech-to-Text mogen gebruiken.
 - **Alleen wat verandert** wordt opnieuw ingesproken. Een andere stem of gewijzigde tekst? Draai het script opnieuw.
   Met `--opnieuw` spreek je alles opnieuw in.
 - **De naam van je kind gaat niet naar ElevenLabs.** Die zegt de computerstem. Wil je ook de naam

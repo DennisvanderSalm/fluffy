@@ -271,9 +271,10 @@ class Round {
 
   private async countRow(row: 0 | 1): Promise<void> {
     const cookies = this.rows[row];
+    const beat = this.ctx.countBeat();
     for (let i = 0; i < cookies.length; i++) {
       this.pointAt(cookies[i]);
-      await sleep(300);
+      await beat();
       await this.ctx.say([i + 1]);
     }
     this.pointer.classList.remove('is-on');

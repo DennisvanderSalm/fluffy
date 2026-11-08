@@ -283,11 +283,12 @@ class Round {
       await this.ctx.say(['rek.vijf']);
       from = 5;
     }
+    const beat = this.ctx.countBeat();
     for (let i = from + 1; i <= n; i++) {
       this.setCount(i);
       this.ctx.sounds.plop();
       this.pointAt(i);
-      await sleep(350);
+      await beat();
       await this.ctx.say([i]);
     }
     this.hidePointer();
@@ -362,10 +363,11 @@ class Round {
     }
     // Van de witte vijf naar links verder tellen, of gewoon van links naar rechts.
     const order = other > 5 ? Array.from({ length: other - 5 }, (_, k) => 5 - k) : Array.from({ length: other }, (_, k) => item.n + 1 + k);
+    const beat = ctx.countBeat();
     for (const [k, i] of order.entries()) {
       this.glow(i, i);
       this.pointAt(i);
-      await sleep(300);
+      await beat();
       await ctx.say([from + k + 1]);
     }
     this.hidePointer();

@@ -1,0 +1,6954 @@
+{
+ "begroeting.eerste.a": {
+  "file": "begroeting.eerste.a.ec53d84d92.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoi"
+ },
+ "begroeting.eerste.b": {
+  "file": "begroeting.eerste.b.4facd755bb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik ben Fluffy. Ik ben een wolkje en ik speel heel graag met getallen en woordjes. Wij gaan samen spelen"
+ },
+ "begroeting.terug.a": {
+  "file": "begroeting.terug.a.ec53d84d92.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoi"
+ },
+ "begroeting.terug.b": {
+  "file": "begroeting.terug.b.1d6275068a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Daar ben je. Kom, we gaan samen spelen"
+ },
+ "begroeting.uitleg.fluffy": {
+  "file": "begroeting.uitleg.fluffy.08af551672.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je mij aantikt, zeg ik het nog een keer"
+ },
+ "cijfer.bijcijfer": {
+  "file": "cijfer.bijcijfer.bdb3c56934.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje dat bij dit cijfer hoort"
+ },
+ "cijfer.netals": {
+  "file": "cijfer.netals.38ae9e67cd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer"
+ },
+ "cijfer.netals+getal.1": {
+  "file": "cijfer.netals_getal.1.540122422d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer één"
+ },
+ "cijfer.netals+getal.10": {
+  "file": "cijfer.netals_getal.10.ab513e4452.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer tien"
+ },
+ "cijfer.netals+getal.2": {
+  "file": "cijfer.netals_getal.2.7415b1a92c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer twee"
+ },
+ "cijfer.netals+getal.3": {
+  "file": "cijfer.netals_getal.3.580cdb5668.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer drie"
+ },
+ "cijfer.netals+getal.4": {
+  "file": "cijfer.netals_getal.4.3f41ea6952.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer vier"
+ },
+ "cijfer.netals+getal.5": {
+  "file": "cijfer.netals_getal.5.5e662d6452.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer vijf"
+ },
+ "cijfer.netals+getal.6": {
+  "file": "cijfer.netals_getal.6.e0d534b116.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer zes"
+ },
+ "cijfer.netals+getal.7": {
+  "file": "cijfer.netals_getal.7.6d40a67a6c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer zeven"
+ },
+ "cijfer.netals+getal.8": {
+  "file": "cijfer.netals_getal.8.eeae2f9032.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer acht"
+ },
+ "cijfer.netals+getal.9": {
+  "file": "cijfer.netals_getal.9.9d273ed489.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Net als het cijfer negen"
+ },
+ "cijfer.tikjij": {
+  "file": "cijfer.tikjij.ed658a2314.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik jij er maar op"
+ },
+ "cijfer.welkgetal": {
+  "file": "cijfer.welkgetal.d88aa656ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal hoort bij dit plaatje?"
+ },
+ "cijfer.zoek": {
+  "file": "cijfer.zoek.e377a99baa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met"
+ },
+ "cijfer.zoek+getal.1": {
+  "file": "cijfer.zoek_getal.1.c2f53a99be.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met één"
+ },
+ "cijfer.zoek+getal.10": {
+  "file": "cijfer.zoek_getal.10.299fdb640d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met tien"
+ },
+ "cijfer.zoek+getal.2": {
+  "file": "cijfer.zoek_getal.2.4912bbb229.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met twee"
+ },
+ "cijfer.zoek+getal.3": {
+  "file": "cijfer.zoek_getal.3.3032600d41.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met drie"
+ },
+ "cijfer.zoek+getal.4": {
+  "file": "cijfer.zoek_getal.4.a299e8dbad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met vier"
+ },
+ "cijfer.zoek+getal.5": {
+  "file": "cijfer.zoek_getal.5.c39f785cc6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met vijf"
+ },
+ "cijfer.zoek+getal.6": {
+  "file": "cijfer.zoek_getal.6.640dd5e419.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met zes"
+ },
+ "cijfer.zoek+getal.7": {
+  "file": "cijfer.zoek_getal.7.eb26f37e4d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met zeven"
+ },
+ "cijfer.zoek+getal.8": {
+  "file": "cijfer.zoek_getal.8.5a892b9300.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met acht"
+ },
+ "cijfer.zoek+getal.9": {
+  "file": "cijfer.zoek_getal.9.92623bd48f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek het kaartje met negen"
+ },
+ "cijfer.zoeken": {
+  "file": "cijfer.zoeken.ddfc5328c4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bezoeken"
+ },
+ "cijfer.zoeken+getal.1": {
+  "file": "cijfer.zoeken_getal.1.70da45cf75.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken één"
+ },
+ "cijfer.zoeken+getal.10": {
+  "file": "cijfer.zoeken_getal.10.10eddad86c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken tien"
+ },
+ "cijfer.zoeken+getal.2": {
+  "file": "cijfer.zoeken_getal.2.638001159f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken twee"
+ },
+ "cijfer.zoeken+getal.3": {
+  "file": "cijfer.zoeken_getal.3.7278eeaa08.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken drie"
+ },
+ "cijfer.zoeken+getal.4": {
+  "file": "cijfer.zoeken_getal.4.44578cd8b6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken vier"
+ },
+ "cijfer.zoeken+getal.5": {
+  "file": "cijfer.zoeken_getal.5.53c4b6d67d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken vijf"
+ },
+ "cijfer.zoeken+getal.6": {
+  "file": "cijfer.zoeken_getal.6.3536021d04.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken zes"
+ },
+ "cijfer.zoeken+getal.7": {
+  "file": "cijfer.zoeken_getal.7.bfebb6495b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken zeven"
+ },
+ "cijfer.zoeken+getal.8": {
+  "file": "cijfer.zoeken_getal.8.e6e30e3fc1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken acht"
+ },
+ "cijfer.zoeken+getal.9": {
+  "file": "cijfer.zoeken_getal.9.9b55fcef92.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We zoeken negen"
+ },
+ "echt.beginklank": {
+  "file": "echt.beginklank.39e06a371b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens iets in de kamer dat begint met m of met sss"
+ },
+ "echt.buren-10": {
+  "file": "echt.buren-10.c2dbd2f506.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spring eens als een kikker en tel bij elke sprong tot tien"
+ },
+ "echt.cijfers-10": {
+  "file": "echt.cijfers-10.3dbbd43196.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens een cijfer in de kamer op een klok, een boek of een doos"
+ },
+ "echt.duim": {
+  "file": "echt.duim.81a9fce991.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik op het duimpje als je klaar bent"
+ },
+ "echt.goed": {
+  "file": "echt.goed.c93c26aa5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn dat je het echt gedaan hebt"
+ },
+ "echt.hakken": {
+  "file": "echt.hakken.e477bff37a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeg eens een woordje in stukjes. Heel langzaam. Kan iemand raden welk woordje het is?"
+ },
+ "echt.hoeveel-10": {
+  "file": "echt.hoeveel-10.f7d6b66d8c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens zeven dingen en leg ze op een rijtje"
+ },
+ "echt.hoeveel-5": {
+  "file": "echt.hoeveel-5.2f5ea8f806.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens drie knuffels of drie blokjes"
+ },
+ "echt.hoeveel-5.b": {
+  "file": "echt.hoeveel-5.b.de4d72a58f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens vier lepels of vier sokken"
+ },
+ "echt.letters": {
+  "file": "echt.letters.efd2647023.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens de eerste letter van je naam op een boek of een doos"
+ },
+ "echt.patroon-ab": {
+  "file": "echt.patroon-ab.edacf83a3d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens een patroon met je lijf. Klap, stamp, klap, stamp. Wat komt er nu?"
+ },
+ "echt.patroon-abc": {
+  "file": "echt.patroon-abc.0ba7112331.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak eens een patroon. Klap, klap, stamp. Klap, klap, stamp. Kun jij verder?"
+ },
+ "echt.plaats-10": {
+  "file": "echt.plaats-10.8841cd4ec0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens vijf dingen op een rij. Welke ligt er in het midden?"
+ },
+ "echt.rijmen": {
+  "file": "echt.rijmen.60df2e79fe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Verzin eens een woordje dat rijmt op huis. Gekke woordjes mogen ook"
+ },
+ "echt.ruimte": {
+  "file": "echt.ruimte.e12488f8e4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens een knuffel onder de tafel en nu op de tafel"
+ },
+ "echt.samen": {
+  "file": "echt.samen.17b3ae47ac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met"
+ },
+ "echt.samen+wie.mama": {
+  "file": "echt.samen_wie.mama.12608547ea.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met mama"
+ },
+ "echt.samen+wie.oma": {
+  "file": "echt.samen_wie.oma.d3001a4e34.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met oma"
+ },
+ "echt.samen+wie.opa": {
+  "file": "echt.samen_wie.opa.6ddfa9814a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met opa"
+ },
+ "echt.samen+wie.papa": {
+  "file": "echt.samen_wie.papa.6e0800de9f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met papa"
+ },
+ "echt.samen+wie.papaofmama": {
+  "file": "echt.samen_wie.papaofmama.e03a5efaca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het maar samen met papa of mama"
+ },
+ "echt.splitsen-10": {
+  "file": "echt.splitsen-10.acdab6cdc0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens tien dingen en maak er twee hoopjes van"
+ },
+ "echt.splitsen-5": {
+  "file": "echt.splitsen-5.d0238cbb0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens vijf dingen en verdeel ze over je twee handen"
+ },
+ "echt.start": {
+  "file": "echt.start.60b0810d54.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu gaan we iets in het echt doen"
+ },
+ "echt.telbegrip": {
+  "file": "echt.telbegrip.208ee478f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tel je vingers. Tel ze daarna nog een keer, maar begin aan de andere kant. Zijn het er nog evenveel?"
+ },
+ "echt.tellen-10": {
+  "file": "echt.tellen-10.e462b53352.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe eens tien grote stappen en tel ze hardop"
+ },
+ "echt.tellen-5": {
+  "file": "echt.tellen-5.62791ac645.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tel eens hoeveel knuffels of blokjes je kunt vinden. Tel ze hardop"
+ },
+ "echt.vergelijken": {
+  "file": "echt.vergelijken.c6bdbe3c9a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zijn er hier meer stoelen of meer kussens? Ga maar kijken"
+ },
+ "echt.verhaal-10": {
+  "file": "echt.verhaal-10.916c13b64d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens zes blokjes. Doe er twee bij. Hoeveel heb je er nu?"
+ },
+ "echt.verhaal-5": {
+  "file": "echt.verhaal-5.03fdfc0b76.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zet eens drie knuffels op een rij. Er gaat er één slapen. Hoeveel zijn er nog wakker?"
+ },
+ "echt.vormen": {
+  "file": "echt.vormen.5f118fa5a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens iets in de kamer dat rond is, zoals een bord of een klok"
+ },
+ "echt.vormen.b": {
+  "file": "echt.vormen.b.617a22316d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens iets met de vorm van een rechthoek, zoals een deur of een boek"
+ },
+ "echt.woordjes": {
+  "file": "echt.woordjes.defba40aa9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek eens een woordje dat je kunt lezen op een doos of in een boek"
+ },
+ "echt.zien-10": {
+  "file": "echt.zien-10.ebff8a1320.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens zeven vingers op. Een hele hand en nog twee"
+ },
+ "echt.zien-5": {
+  "file": "echt.zien-5.119f43467e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens drie vingers op. En nu vier. En nu vijf"
+ },
+ "einde.beginklank": {
+  "file": "einde.beginklank.bc26576c58.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben geluisterd naar het begin van woordjes"
+ },
+ "einde.cijfer": {
+  "file": "einde.cijfer.3770a8e6b5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben cijfers gezocht"
+ },
+ "einde.dag": {
+  "file": "einde.dag.17f064e7c3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doei doei"
+ },
+ "einde.foutje": {
+  "file": "einde.foutje.09cd08d51a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En jij hebt mij geholpen met tellen"
+ },
+ "einde.hakken": {
+  "file": "einde.hakken.6e9281e82f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben klanken aan elkaar geplakt"
+ },
+ "einde.kiekeboe": {
+  "file": "einde.kiekeboe.9770b9186f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben kiekeboe gespeeld met Stippe"
+ },
+ "einde.letters": {
+  "file": "einde.letters.c5b1e093d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En we hebben letters gezocht"
+ },
+ "einde.lof.doorzetten": {
+  "file": "einde.lof.doorzetten.e537320647.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je bleef goed proberen, ook als het lastig was"
+ },
+ "einde.lof.luisteren": {
+  "file": "einde.lof.luisteren.77021b0214.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je hebt heel goed geluisterd"
+ },
+ "einde.lof.precies": {
+  "file": "einde.lof.precies.240eb810b6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je hebt heel precies geteld"
+ },
+ "einde.mandje": {
+  "file": "einde.mandje.ca70d21b55.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben samen fruit in het mandje gelegd"
+ },
+ "einde.meer": {
+  "file": "einde.meer.bcdba14f4d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben koekjes vergeleken"
+ },
+ "einde.pad": {
+  "file": "einde.pad.c5d8d9469f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben het konijntje naar huis gebracht"
+ },
+ "einde.patroon": {
+  "file": "einde.patroon.65b9a24c89.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben kralen kettingen gemaakt"
+ },
+ "einde.rekenrek": {
+  "file": "einde.rekenrek.07ef1df83b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben kralen geschoven op het rekenrek"
+ },
+ "einde.rijmen": {
+  "file": "einde.rijmen.2ec7139640.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben woordjes gezocht die rijmen"
+ },
+ "einde.ruimte": {
+  "file": "einde.ruimte.81b1f95226.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben het muisje gezocht"
+ },
+ "einde.slapen": {
+  "file": "einde.slapen.b71d629e87.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik word een beetje moe. Ik ga lekker slapen"
+ },
+ "einde.splitshuis": {
+  "file": "einde.splitshuis.e48d5b45bc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben vlinders gezocht bij het huisje"
+ },
+ "einde.start": {
+  "file": "einde.start.cd64051ceb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben fijn gespeeld"
+ },
+ "einde.tellen": {
+  "file": "einde.tellen.71c4d83290.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben samen beestjes geteld"
+ },
+ "einde.verhaal": {
+  "file": "einde.verhaal.66882c8e1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben eentjes zien zwemmen in de vijver"
+ },
+ "einde.vertel.a": {
+  "file": "einde.vertel.a.76b429d37b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan"
+ },
+ "einde.vertel.a+wie.mama+einde.vertel.b": {
+  "file": "einde.vertel.a_wie.mama_einde.vertel.b.1e2bdfcfa3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan mama wat we gedaan hebben"
+ },
+ "einde.vertel.a+wie.oma+einde.vertel.b": {
+  "file": "einde.vertel.a_wie.oma_einde.vertel.b.030c1ecbad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan oma wat we gedaan hebben"
+ },
+ "einde.vertel.a+wie.opa+einde.vertel.b": {
+  "file": "einde.vertel.a_wie.opa_einde.vertel.b.22b40db72e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan opa wat we gedaan hebben"
+ },
+ "einde.vertel.a+wie.papa+einde.vertel.b": {
+  "file": "einde.vertel.a_wie.papa_einde.vertel.b.9e3515934a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan papa wat we gedaan hebben"
+ },
+ "einde.vertel.a+wie.papaofmama+einde.vertel.b": {
+  "file": "einde.vertel.a_wie.papaofmama_einde.vertel.b.739379ae9f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vertel maar aan papa of mama wat we gedaan hebben"
+ },
+ "einde.vertel.b": {
+  "file": "einde.vertel.b.3f9bd889f4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat we gedaan hebben?"
+ },
+ "einde.vormen": {
+  "file": "einde.vormen.1a540b5d63.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben vormen gezocht"
+ },
+ "einde.woont": {
+  "file": "einde.woont.4b6cdfab13.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben huisjes gezocht in de straat"
+ },
+ "einde.woordjes": {
+  "file": "einde.woordjes.1974ebe519.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En we hebben woordjes gelezen"
+ },
+ "foutje.dus": {
+  "file": "foutje.dus.a203951157.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er"
+ },
+ "foutje.dus.een": {
+  "file": "foutje.dus.een.7ff8846bb0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het is er"
+ },
+ "foutje.dus.een+getal.1": {
+  "file": "foutje.dus.een_getal.1.a2e788838a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het is er één"
+ },
+ "foutje.dus+getal.10": {
+  "file": "foutje.dus_getal.10.1c5c55fa2b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er tien"
+ },
+ "foutje.dus+getal.2": {
+  "file": "foutje.dus_getal.2.e9802a4888.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er twee?"
+ },
+ "foutje.dus+getal.3": {
+  "file": "foutje.dus_getal.3.a783f303c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er drie?"
+ },
+ "foutje.dus+getal.4": {
+  "file": "foutje.dus_getal.4.67a057a86f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er vier"
+ },
+ "foutje.dus+getal.5": {
+  "file": "foutje.dus_getal.5.7608c79b3d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er vijf"
+ },
+ "foutje.dus+getal.6": {
+  "file": "foutje.dus_getal.6.fef09cf82d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er zes"
+ },
+ "foutje.dus+getal.7": {
+  "file": "foutje.dus_getal.7.b5666aa47c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er zeven"
+ },
+ "foutje.dus+getal.8": {
+  "file": "foutje.dus_getal.8.7c757febe7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er acht"
+ },
+ "foutje.dus+getal.9": {
+  "file": "foutje.dus_getal.9.e497cce3ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er negen"
+ },
+ "foutje.goed.ja": {
+  "file": "foutje.goed.ja.833c41f896.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, ik heb ze allemaal precies één keer geteld"
+ },
+ "foutje.goed.volgorde": {
+  "file": "foutje.goed.volgorde.c17c9492de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, ik begon aan de andere kant. Dat mag, want ik heb ze allemaal één keer geteld"
+ },
+ "foutje.hint": {
+  "file": "foutje.hint.7a4b8ca1fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hm. Kijk nog eens goed. Ik tel het nog een keer langzaam"
+ },
+ "foutje.intro": {
+  "file": "foutje.intro.4e7233a173.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik ga tellen. Let jij goed op of ik het goed doe?"
+ },
+ "foutje.kijk.dubbel": {
+  "file": "foutje.kijk.dubbel.77f918fe51.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, deze heb ik twee keer aangewezen"
+ },
+ "foutje.kijk.eind.a": {
+  "file": "foutje.kijk.eind.a.2eaef1798a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was"
+ },
+ "foutje.kijk.eind.a+getal.1": {
+  "file": "foutje.kijk.eind.a_getal.1.ee99a3aad9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was één"
+ },
+ "foutje.kijk.eind.a+getal.10": {
+  "file": "foutje.kijk.eind.a_getal.10.34fb02a6a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was tien"
+ },
+ "foutje.kijk.eind.a+getal.2": {
+  "file": "foutje.kijk.eind.a_getal.2.e48e4d5338.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was twee"
+ },
+ "foutje.kijk.eind.a+getal.3": {
+  "file": "foutje.kijk.eind.a_getal.3.43eb48adbf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was drie?"
+ },
+ "foutje.kijk.eind.a+getal.4": {
+  "file": "foutje.kijk.eind.a_getal.4.a435dd7562.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was vier"
+ },
+ "foutje.kijk.eind.a+getal.5": {
+  "file": "foutje.kijk.eind.a_getal.5.8de3f5de7a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was vijf"
+ },
+ "foutje.kijk.eind.a+getal.6": {
+  "file": "foutje.kijk.eind.a_getal.6.3cfd35a092.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was zes"
+ },
+ "foutje.kijk.eind.a+getal.7": {
+  "file": "foutje.kijk.eind.a_getal.7.8e4423c20d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was zeven"
+ },
+ "foutje.kijk.eind.a+getal.8": {
+  "file": "foutje.kijk.eind.a_getal.8.a7dfdc80fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was acht"
+ },
+ "foutje.kijk.eind.a+getal.9": {
+  "file": "foutje.kijk.eind.a_getal.9.4c8bf678cf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was negen"
+ },
+ "foutje.kijk.eind.b": {
+  "file": "foutje.kijk.eind.b.0247439fa1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er"
+ },
+ "foutje.kijk.eind.b+getal.1+foutje.kijk.eind.c.een": {
+  "file": "foutje.kijk.eind.b_getal.1_foutje.kijk.eind.c.een.e1f482dac8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er één was. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.10+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.10_foutje.kijk.eind.c.525d4113d9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er tien waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.2+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.2_foutje.kijk.eind.c.8f976349a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er twee waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.3+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.3_foutje.kijk.eind.c.6a7518cfaf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er drie waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.4+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.4_foutje.kijk.eind.c.efe2b2f5e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er vier waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.5+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.5_foutje.kijk.eind.c.4511a13879.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er vijf waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.6+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.6_foutje.kijk.eind.c.ed507aa12f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er zes waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.7+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.7_foutje.kijk.eind.c.ac5f6fde4e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er zeven waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.8+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.8_foutje.kijk.eind.c.f572af5904.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er acht waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.b+getal.9+foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.b_getal.9_foutje.kijk.eind.c.91e01575db.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maar ik zei dat het er negen waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.c": {
+  "file": "foutje.kijk.eind.c.81280e571d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waren. Dat klopt niet"
+ },
+ "foutje.kijk.eind.c.een": {
+  "file": "foutje.kijk.eind.c.een.f9c2d60780.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Was? Dat klopt niet"
+ },
+ "foutje.kijk.getal.a": {
+  "file": "foutje.kijk.getal.a.f2a4e1cce4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na"
+ },
+ "foutje.kijk.getal.a+getal.1+foutje.kijk.getal.b+getal.2": {
+  "file": "foutje.kijk.getal.a_getal.1_foutje.kijk.getal.b_getal.2.d287377ca7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na één komt twee"
+ },
+ "foutje.kijk.getal.a+getal.2+foutje.kijk.getal.b+getal.3": {
+  "file": "foutje.kijk.getal.a_getal.2_foutje.kijk.getal.b_getal.3.b252486224.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na twee komt drie"
+ },
+ "foutje.kijk.getal.a+getal.3+foutje.kijk.getal.b+getal.4": {
+  "file": "foutje.kijk.getal.a_getal.3_foutje.kijk.getal.b_getal.4.b074bdff98.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na drie komt vier"
+ },
+ "foutje.kijk.getal.a+getal.4+foutje.kijk.getal.b+getal.5": {
+  "file": "foutje.kijk.getal.a_getal.4_foutje.kijk.getal.b_getal.5.829e8ac77e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na vier komt vijf"
+ },
+ "foutje.kijk.getal.a+getal.5+foutje.kijk.getal.b+getal.6": {
+  "file": "foutje.kijk.getal.a_getal.5_foutje.kijk.getal.b_getal.6.e0a079fabe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na vijf komt zes"
+ },
+ "foutje.kijk.getal.a+getal.6+foutje.kijk.getal.b+getal.7": {
+  "file": "foutje.kijk.getal.a_getal.6_foutje.kijk.getal.b_getal.7.b145d1d258.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na zes komt zeven"
+ },
+ "foutje.kijk.getal.a+getal.7+foutje.kijk.getal.b+getal.8": {
+  "file": "foutje.kijk.getal.a_getal.7_foutje.kijk.getal.b_getal.8.b4764475ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na zeven komt acht"
+ },
+ "foutje.kijk.getal.a+getal.8+foutje.kijk.getal.b+getal.9": {
+  "file": "foutje.kijk.getal.a_getal.8_foutje.kijk.getal.b_getal.9.18940ffc68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na acht komt negen"
+ },
+ "foutje.kijk.getal.a+getal.9+foutje.kijk.getal.b+getal.10": {
+  "file": "foutje.kijk.getal.a_getal.9_foutje.kijk.getal.b_getal.10.e9d2441125.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na negen komt tien"
+ },
+ "foutje.kijk.getal.b": {
+  "file": "foutje.kijk.getal.b.f95679266f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Komt"
+ },
+ "foutje.kijk.getal.c": {
+  "file": "foutje.kijk.getal.c.202c1d91b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En dat heb ik niet gezegd"
+ },
+ "foutje.kijk.klopt": {
+  "file": "foutje.kijk.klopt.3983eb92ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik heb ze allemaal één keer aangewezen en de getallen goed gezegd, dus het klopte"
+ },
+ "foutje.kijk.overslaan": {
+  "file": "foutje.kijk.overslaan.81a23302db.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, deze heb ik niet aangewezen. Ik heb er eentje overgeslagen"
+ },
+ "foutje.kijk.volgorde": {
+  "file": "foutje.kijk.volgorde.399f4f8e02.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik begon aan de andere kant. Dat mag. Ik heb ze allemaal één keer geteld, dus het klopte"
+ },
+ "foutje.oeps.dubbel": {
+  "file": "foutje.oeps.dubbel.cdd5adeeef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oei, je hebt gelijk. Ik heb er eentje twee keer geteld"
+ },
+ "foutje.oeps.eind": {
+  "file": "foutje.oeps.eind.b34f138f10.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oei, je hebt gelijk. Ik zei aan het eind het verkeerde getal"
+ },
+ "foutje.oeps.getal": {
+  "file": "foutje.oeps.getal.a264efa999.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oei, je hebt gelijk. Ik heb een getal overgeslagen"
+ },
+ "foutje.oeps.overslaan": {
+  "file": "foutje.oeps.overslaan.3e17555be7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oei, je hebt gelijk. Ik heb er eentje overgeslagen"
+ },
+ "foutje.samen": {
+  "file": "foutje.samen.91ab1a25e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wil jij ze aantikken? Dan tellen we samen goed"
+ },
+ "foutje.uitleg": {
+  "file": "foutje.uitleg.52e560df01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Klopt het? Tik dan op duim omhoog. Klopt het niet? Tik dan op duim omlaag"
+ },
+ "foutje.vraag": {
+  "file": "foutje.vraag.b4ca199ba3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Heb ik het goed geteld?"
+ },
+ "getal.1": {
+  "file": "getal.1.5dd75a6fe3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Één"
+ },
+ "getal.1+meer.isminderdan+getal.2": {
+  "file": "getal.1_meer.isminderdan_getal.2.166633d595.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een is minder dan twee"
+ },
+ "getal.1+meer.isminderdan+getal.3": {
+  "file": "getal.1_meer.isminderdan_getal.3.13298e9d1c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een is minder dan drie"
+ },
+ "getal.1+meer.isminderdan+getal.4": {
+  "file": "getal.1_meer.isminderdan_getal.4.a04335d797.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een is minder dan vier"
+ },
+ "getal.1+meer.isminderdan+getal.5": {
+  "file": "getal.1_meer.isminderdan_getal.5.80719a8ba6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een is minder dan vijf"
+ },
+ "getal.1+meer.isminderdan+getal.6": {
+  "file": "getal.1_meer.isminderdan_getal.6.5409f3be2c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een is minder dan zes"
+ },
+ "getal.1+verhaal.en+getal.1+verhaal.erbij+getal.2": {
+  "file": "getal.1_verhaal.en_getal.1_verhaal.erbij_getal.2.7bef9470af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een en één erbij is twee"
+ },
+ "getal.1+verhaal.en+getal.2+verhaal.erbij+getal.3": {
+  "file": "getal.1_verhaal.en_getal.2_verhaal.erbij_getal.3.145d09ad13.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een en twee erbij is drie"
+ },
+ "getal.1+verhaal.en+getal.3+verhaal.erbij+getal.4": {
+  "file": "getal.1_verhaal.en_getal.3_verhaal.erbij_getal.4.93550c8e61.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een en drie erbij is vier"
+ },
+ "getal.10": {
+  "file": "getal.10.0d05527032.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien"
+ },
+ "getal.10+splits.is+getal.1+splits.en+getal.9": {
+  "file": "getal.10_splits.is_getal.1_splits.en_getal.9.ded22216a1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is één en negen"
+ },
+ "getal.10+splits.is+getal.2+splits.en+getal.8": {
+  "file": "getal.10_splits.is_getal.2_splits.en_getal.8.23dce3c4d8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is twee en acht"
+ },
+ "getal.10+splits.is+getal.3+splits.en+getal.7": {
+  "file": "getal.10_splits.is_getal.3_splits.en_getal.7.f7a5ed90d3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is drie en zeven"
+ },
+ "getal.10+splits.is+getal.4+splits.en+getal.6": {
+  "file": "getal.10_splits.is_getal.4_splits.en_getal.6.41f40cf25e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is vier en zes"
+ },
+ "getal.10+splits.is+getal.5+splits.en+getal.5": {
+  "file": "getal.10_splits.is_getal.5_splits.en_getal.5.b1a5cc5460.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is vijf en vijf"
+ },
+ "getal.10+splits.is+getal.6+splits.en+getal.4": {
+  "file": "getal.10_splits.is_getal.6_splits.en_getal.4.697ecb2272.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is zes en vier"
+ },
+ "getal.10+splits.is+getal.7+splits.en+getal.3": {
+  "file": "getal.10_splits.is_getal.7_splits.en_getal.3.716edb6e7f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is zeven en drie"
+ },
+ "getal.10+splits.is+getal.8+splits.en+getal.2": {
+  "file": "getal.10_splits.is_getal.8_splits.en_getal.2.596ae694be.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is acht en twee"
+ },
+ "getal.10+splits.is+getal.9+splits.en+getal.1": {
+  "file": "getal.10_splits.is_getal.9_splits.en_getal.1.ec262c04ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien is negen en één"
+ },
+ "getal.11": {
+  "file": "getal.11.59fd84025e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Elf"
+ },
+ "getal.12": {
+  "file": "getal.12.4fda8dbc5c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twaalf"
+ },
+ "getal.13": {
+  "file": "getal.13.6f979399b6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dertien"
+ },
+ "getal.14": {
+  "file": "getal.14.d726d20fa1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veertien"
+ },
+ "getal.15": {
+  "file": "getal.15.4d062afd27.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijftien"
+ },
+ "getal.16": {
+  "file": "getal.16.1ce44fae03.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zestien"
+ },
+ "getal.17": {
+  "file": "getal.17.a696813b87.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeventien"
+ },
+ "getal.18": {
+  "file": "getal.18.2f0e362742.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Achttien"
+ },
+ "getal.19": {
+  "file": "getal.19.52f05b171f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negentien"
+ },
+ "getal.2": {
+  "file": "getal.2.aa916ae32f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee"
+ },
+ "getal.2+meer.ismeerdan+getal.1": {
+  "file": "getal.2_meer.ismeerdan_getal.1.16c5f06bf2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is meer dan één"
+ },
+ "getal.2+meer.isminderdan+getal.3": {
+  "file": "getal.2_meer.isminderdan_getal.3.d69f987c79.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is minder dan drie"
+ },
+ "getal.2+meer.isminderdan+getal.4": {
+  "file": "getal.2_meer.isminderdan_getal.4.00673acc68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is minder dan vier"
+ },
+ "getal.2+meer.isminderdan+getal.5": {
+  "file": "getal.2_meer.isminderdan_getal.5.ce60d33fb2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is minder dan vijf"
+ },
+ "getal.2+meer.isminderdan+getal.6": {
+  "file": "getal.2_meer.isminderdan_getal.6.3267b4b656.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is minder dan zes"
+ },
+ "getal.2+splits.is+getal.1+splits.en+getal.1": {
+  "file": "getal.2_splits.is_getal.1_splits.en_getal.1.7bdcfad423.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee is één en één"
+ },
+ "getal.2+verhaal.en+getal.1+verhaal.eraf+getal.1": {
+  "file": "getal.2_verhaal.en_getal.1_verhaal.eraf_getal.1.2c3168dce8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee en één eraf is één"
+ },
+ "getal.2+verhaal.en+getal.1+verhaal.erbij+getal.3": {
+  "file": "getal.2_verhaal.en_getal.1_verhaal.erbij_getal.3.f3cad91a22.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee en één erbij is drie"
+ },
+ "getal.2+verhaal.en+getal.2+verhaal.erbij+getal.4": {
+  "file": "getal.2_verhaal.en_getal.2_verhaal.erbij_getal.4.4c2c847b9e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee en twee erbij is vier?"
+ },
+ "getal.2+verhaal.en+getal.3+verhaal.erbij+getal.5": {
+  "file": "getal.2_verhaal.en_getal.3_verhaal.erbij_getal.5.8ef67fd953.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee en drie erbij is vijf"
+ },
+ "getal.20": {
+  "file": "getal.20.89bd701b4a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twintig"
+ },
+ "getal.3": {
+  "file": "getal.3.f835581c76.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie"
+ },
+ "getal.3+meer.ismeerdan+getal.1": {
+  "file": "getal.3_meer.ismeerdan_getal.1.289bb6971c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is meer dan één"
+ },
+ "getal.3+meer.ismeerdan+getal.2": {
+  "file": "getal.3_meer.ismeerdan_getal.2.95dec64c13.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is meer dan twee"
+ },
+ "getal.3+meer.isminderdan+getal.4": {
+  "file": "getal.3_meer.isminderdan_getal.4.6526360fff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is minder dan vier"
+ },
+ "getal.3+meer.isminderdan+getal.5": {
+  "file": "getal.3_meer.isminderdan_getal.5.c7dc1c6372.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is minder dan vijf"
+ },
+ "getal.3+meer.isminderdan+getal.6": {
+  "file": "getal.3_meer.isminderdan_getal.6.c6f8fca4f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is minder dan zes"
+ },
+ "getal.3+splits.is+getal.1+splits.en+getal.2": {
+  "file": "getal.3_splits.is_getal.1_splits.en_getal.2.fc9204c8b3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is één en twee"
+ },
+ "getal.3+splits.is+getal.2+splits.en+getal.1": {
+  "file": "getal.3_splits.is_getal.2_splits.en_getal.1.80cdcf2768.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie is twee en één"
+ },
+ "getal.3+verhaal.en+getal.1+verhaal.eraf+getal.2": {
+  "file": "getal.3_verhaal.en_getal.1_verhaal.eraf_getal.2.4c53cc08bb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie en één eraf is twee"
+ },
+ "getal.3+verhaal.en+getal.1+verhaal.erbij+getal.4": {
+  "file": "getal.3_verhaal.en_getal.1_verhaal.erbij_getal.4.90504aceb5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie en één erbij is vier"
+ },
+ "getal.3+verhaal.en+getal.2+verhaal.eraf+getal.1": {
+  "file": "getal.3_verhaal.en_getal.2_verhaal.eraf_getal.1.b34fe3202d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie en twee eraf is één"
+ },
+ "getal.3+verhaal.en+getal.2+verhaal.erbij+getal.5": {
+  "file": "getal.3_verhaal.en_getal.2_verhaal.erbij_getal.5.b334349e9b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie en twee erbij is vijf"
+ },
+ "getal.3+verhaal.en+getal.3+verhaal.erbij+getal.6": {
+  "file": "getal.3_verhaal.en_getal.3_verhaal.erbij_getal.6.6025c48dcc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie en drie erbij is zes"
+ },
+ "getal.4": {
+  "file": "getal.4.0a897ee885.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier"
+ },
+ "getal.4+meer.ismeerdan+getal.1": {
+  "file": "getal.4_meer.ismeerdan_getal.1.23654b91f7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is meer dan één"
+ },
+ "getal.4+meer.ismeerdan+getal.2": {
+  "file": "getal.4_meer.ismeerdan_getal.2.d0a67794fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is meer dan twee"
+ },
+ "getal.4+meer.ismeerdan+getal.3": {
+  "file": "getal.4_meer.ismeerdan_getal.3.48522f5fba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is meer dan drie"
+ },
+ "getal.4+meer.isminderdan+getal.5": {
+  "file": "getal.4_meer.isminderdan_getal.5.98d39de7d5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is minder dan vijf"
+ },
+ "getal.4+meer.isminderdan+getal.6": {
+  "file": "getal.4_meer.isminderdan_getal.6.2f7bbb616d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is minder dan zes"
+ },
+ "getal.4+splits.is+getal.1+splits.en+getal.3": {
+  "file": "getal.4_splits.is_getal.1_splits.en_getal.3.468fd4b5b3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "vier is één en drie"
+ },
+ "getal.4+splits.is+getal.2+splits.en+getal.2": {
+  "file": "getal.4_splits.is_getal.2_splits.en_getal.2.8a6eeda64f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is twee en twee"
+ },
+ "getal.4+splits.is+getal.3+splits.en+getal.1": {
+  "file": "getal.4_splits.is_getal.3_splits.en_getal.1.b60a900bf9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier is drie en één"
+ },
+ "getal.4+verhaal.en+getal.1+verhaal.eraf+getal.3": {
+  "file": "getal.4_verhaal.en_getal.1_verhaal.eraf_getal.3.d8cfb5f7c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en één eraf is drie"
+ },
+ "getal.4+verhaal.en+getal.1+verhaal.erbij+getal.5": {
+  "file": "getal.4_verhaal.en_getal.1_verhaal.erbij_getal.5.99553aa572.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en één erbij is vijf"
+ },
+ "getal.4+verhaal.en+getal.2+verhaal.eraf+getal.2": {
+  "file": "getal.4_verhaal.en_getal.2_verhaal.eraf_getal.2.5962256487.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en twee eraf is twee"
+ },
+ "getal.4+verhaal.en+getal.2+verhaal.erbij+getal.6": {
+  "file": "getal.4_verhaal.en_getal.2_verhaal.erbij_getal.6.871043041b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en twee erbij is zes"
+ },
+ "getal.4+verhaal.en+getal.3+verhaal.eraf+getal.1": {
+  "file": "getal.4_verhaal.en_getal.3_verhaal.eraf_getal.1.dd09bfa0dd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en drie eraf is één"
+ },
+ "getal.4+verhaal.en+getal.3+verhaal.erbij+getal.7": {
+  "file": "getal.4_verhaal.en_getal.3_verhaal.erbij_getal.7.1f21e1ef16.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier en drie erbij is zeven"
+ },
+ "getal.5": {
+  "file": "getal.5.754c56075b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf"
+ },
+ "getal.5+meer.ismeerdan+getal.1": {
+  "file": "getal.5_meer.ismeerdan_getal.1.b68df0058d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is meer dan één"
+ },
+ "getal.5+meer.ismeerdan+getal.2": {
+  "file": "getal.5_meer.ismeerdan_getal.2.a5a87c2ede.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is meer dan twee"
+ },
+ "getal.5+meer.ismeerdan+getal.3": {
+  "file": "getal.5_meer.ismeerdan_getal.3.0433a1c7de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is meer dan drie"
+ },
+ "getal.5+meer.ismeerdan+getal.4": {
+  "file": "getal.5_meer.ismeerdan_getal.4.45d0ed606c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is meer dan vier"
+ },
+ "getal.5+meer.isminderdan+getal.6": {
+  "file": "getal.5_meer.isminderdan_getal.6.539f066826.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is minder dan zes"
+ },
+ "getal.5+splits.is+getal.1+splits.en+getal.4": {
+  "file": "getal.5_splits.is_getal.1_splits.en_getal.4.c842fe800e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is één en vier"
+ },
+ "getal.5+splits.is+getal.2+splits.en+getal.3": {
+  "file": "getal.5_splits.is_getal.2_splits.en_getal.3.5fd14291f8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is twee en drie"
+ },
+ "getal.5+splits.is+getal.3+splits.en+getal.2": {
+  "file": "getal.5_splits.is_getal.3_splits.en_getal.2.bd208c4046.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is drie en twee"
+ },
+ "getal.5+splits.is+getal.4+splits.en+getal.1": {
+  "file": "getal.5_splits.is_getal.4_splits.en_getal.1.650f297a25.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf is vier en één"
+ },
+ "getal.5+verhaal.en+getal.1+verhaal.eraf+getal.4": {
+  "file": "getal.5_verhaal.en_getal.1_verhaal.eraf_getal.4.6251fa271c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en één eraf is vier"
+ },
+ "getal.5+verhaal.en+getal.1+verhaal.erbij+getal.6": {
+  "file": "getal.5_verhaal.en_getal.1_verhaal.erbij_getal.6.1158bb7a17.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en één erbij is zes"
+ },
+ "getal.5+verhaal.en+getal.2+verhaal.eraf+getal.3": {
+  "file": "getal.5_verhaal.en_getal.2_verhaal.eraf_getal.3.44a861eb9c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en twee eraf is drie"
+ },
+ "getal.5+verhaal.en+getal.2+verhaal.erbij+getal.7": {
+  "file": "getal.5_verhaal.en_getal.2_verhaal.erbij_getal.7.d68840cf1a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en twee erbij is zeven"
+ },
+ "getal.5+verhaal.en+getal.3+verhaal.eraf+getal.2": {
+  "file": "getal.5_verhaal.en_getal.3_verhaal.eraf_getal.2.b21e801d4e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en drie eraf is twee"
+ },
+ "getal.5+verhaal.en+getal.3+verhaal.erbij+getal.8": {
+  "file": "getal.5_verhaal.en_getal.3_verhaal.erbij_getal.8.d9a059cc79.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en drie erbij is acht"
+ },
+ "getal.6": {
+  "file": "getal.6.ac89c36f6a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes"
+ },
+ "getal.6+meer.ismeerdan+getal.1": {
+  "file": "getal.6_meer.ismeerdan_getal.1.7dcf76d3ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is meer dan één"
+ },
+ "getal.6+meer.ismeerdan+getal.2": {
+  "file": "getal.6_meer.ismeerdan_getal.2.c97e7e8131.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is meer dan twee"
+ },
+ "getal.6+meer.ismeerdan+getal.3": {
+  "file": "getal.6_meer.ismeerdan_getal.3.2c30294150.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is meer dan drie"
+ },
+ "getal.6+meer.ismeerdan+getal.4": {
+  "file": "getal.6_meer.ismeerdan_getal.4.a76fe27118.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is meer dan vier"
+ },
+ "getal.6+meer.ismeerdan+getal.5": {
+  "file": "getal.6_meer.ismeerdan_getal.5.58bdea2c9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is meer dan vijf"
+ },
+ "getal.6+splits.is+getal.1+splits.en+getal.5": {
+  "file": "getal.6_splits.is_getal.1_splits.en_getal.5.9aed596ccd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is één en vijf?"
+ },
+ "getal.6+splits.is+getal.2+splits.en+getal.4": {
+  "file": "getal.6_splits.is_getal.2_splits.en_getal.4.cc8e8f17c5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is twee en vier"
+ },
+ "getal.6+splits.is+getal.3+splits.en+getal.3": {
+  "file": "getal.6_splits.is_getal.3_splits.en_getal.3.85e2b9adb1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is drie en drie"
+ },
+ "getal.6+splits.is+getal.4+splits.en+getal.2": {
+  "file": "getal.6_splits.is_getal.4_splits.en_getal.2.45333d54c8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is vier en twee"
+ },
+ "getal.6+splits.is+getal.5+splits.en+getal.1": {
+  "file": "getal.6_splits.is_getal.5_splits.en_getal.1.b184653f5a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes is vijf en één"
+ },
+ "getal.6+verhaal.en+getal.1+verhaal.eraf+getal.5": {
+  "file": "getal.6_verhaal.en_getal.1_verhaal.eraf_getal.5.46ea4fc0dd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en één eraf is vijf"
+ },
+ "getal.6+verhaal.en+getal.1+verhaal.erbij+getal.7": {
+  "file": "getal.6_verhaal.en_getal.1_verhaal.erbij_getal.7.4536bfc98a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en één erbij is zeven"
+ },
+ "getal.6+verhaal.en+getal.2+verhaal.eraf+getal.4": {
+  "file": "getal.6_verhaal.en_getal.2_verhaal.eraf_getal.4.1f5d185676.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en twee eraf is vier"
+ },
+ "getal.6+verhaal.en+getal.2+verhaal.erbij+getal.8": {
+  "file": "getal.6_verhaal.en_getal.2_verhaal.erbij_getal.8.e5da944e15.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en twee erbij is acht"
+ },
+ "getal.6+verhaal.en+getal.3+verhaal.eraf+getal.3": {
+  "file": "getal.6_verhaal.en_getal.3_verhaal.eraf_getal.3.9d17898b18.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en drie eraf is drie"
+ },
+ "getal.6+verhaal.en+getal.3+verhaal.erbij+getal.9": {
+  "file": "getal.6_verhaal.en_getal.3_verhaal.erbij_getal.9.2fbc935ff3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes en drie erbij is negen"
+ },
+ "getal.7": {
+  "file": "getal.7.4bbc137317.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven"
+ },
+ "getal.7+splits.is+getal.1+splits.en+getal.6": {
+  "file": "getal.7_splits.is_getal.1_splits.en_getal.6.8b01e5400d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is één en zes"
+ },
+ "getal.7+splits.is+getal.2+splits.en+getal.5": {
+  "file": "getal.7_splits.is_getal.2_splits.en_getal.5.dc1c086f95.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is twee en vijf"
+ },
+ "getal.7+splits.is+getal.3+splits.en+getal.4": {
+  "file": "getal.7_splits.is_getal.3_splits.en_getal.4.5808ca1ec2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is drie en vier"
+ },
+ "getal.7+splits.is+getal.4+splits.en+getal.3": {
+  "file": "getal.7_splits.is_getal.4_splits.en_getal.3.ba554b51dc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is vier en drie"
+ },
+ "getal.7+splits.is+getal.5+splits.en+getal.2": {
+  "file": "getal.7_splits.is_getal.5_splits.en_getal.2.dbe9296164.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is vijf en twee"
+ },
+ "getal.7+splits.is+getal.6+splits.en+getal.1": {
+  "file": "getal.7_splits.is_getal.6_splits.en_getal.1.5adf03b707.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven is zes en één"
+ },
+ "getal.7+verhaal.en+getal.1+verhaal.eraf+getal.6": {
+  "file": "getal.7_verhaal.en_getal.1_verhaal.eraf_getal.6.2554143409.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en één eraf is zes"
+ },
+ "getal.7+verhaal.en+getal.1+verhaal.erbij+getal.8": {
+  "file": "getal.7_verhaal.en_getal.1_verhaal.erbij_getal.8.818e1fa90b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en één erbij is acht"
+ },
+ "getal.7+verhaal.en+getal.2+verhaal.eraf+getal.5": {
+  "file": "getal.7_verhaal.en_getal.2_verhaal.eraf_getal.5.1e07b5ec02.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en twee eraf is vijf"
+ },
+ "getal.7+verhaal.en+getal.2+verhaal.erbij+getal.9": {
+  "file": "getal.7_verhaal.en_getal.2_verhaal.erbij_getal.9.65bd65fe58.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en twee erbij is negen"
+ },
+ "getal.7+verhaal.en+getal.3+verhaal.eraf+getal.4": {
+  "file": "getal.7_verhaal.en_getal.3_verhaal.eraf_getal.4.2e2ed986c3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en drie eraf is vier"
+ },
+ "getal.7+verhaal.en+getal.3+verhaal.erbij+getal.10": {
+  "file": "getal.7_verhaal.en_getal.3_verhaal.erbij_getal.10.1089db6935.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven en drie erbij is tien"
+ },
+ "getal.8": {
+  "file": "getal.8.1fd6bf060e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht"
+ },
+ "getal.8+splits.is+getal.1+splits.en+getal.7": {
+  "file": "getal.8_splits.is_getal.1_splits.en_getal.7.19a6ff2c91.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is één en zeven"
+ },
+ "getal.8+splits.is+getal.2+splits.en+getal.6": {
+  "file": "getal.8_splits.is_getal.2_splits.en_getal.6.62f7199e01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is twee en zes"
+ },
+ "getal.8+splits.is+getal.3+splits.en+getal.5": {
+  "file": "getal.8_splits.is_getal.3_splits.en_getal.5.c8025fa11c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is drie en vijf"
+ },
+ "getal.8+splits.is+getal.4+splits.en+getal.4": {
+  "file": "getal.8_splits.is_getal.4_splits.en_getal.4.b2c1cde980.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is vier en vier"
+ },
+ "getal.8+splits.is+getal.5+splits.en+getal.3": {
+  "file": "getal.8_splits.is_getal.5_splits.en_getal.3.1731a4c2ea.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is vijf en drie"
+ },
+ "getal.8+splits.is+getal.6+splits.en+getal.2": {
+  "file": "getal.8_splits.is_getal.6_splits.en_getal.2.f30485753f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is zes en twee"
+ },
+ "getal.8+splits.is+getal.7+splits.en+getal.1": {
+  "file": "getal.8_splits.is_getal.7_splits.en_getal.1.801a3c7c1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht is zeven en één"
+ },
+ "getal.8+verhaal.en+getal.1+verhaal.eraf+getal.7": {
+  "file": "getal.8_verhaal.en_getal.1_verhaal.eraf_getal.7.acc1d7ec84.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht en één eraf is zeven"
+ },
+ "getal.8+verhaal.en+getal.1+verhaal.erbij+getal.9": {
+  "file": "getal.8_verhaal.en_getal.1_verhaal.erbij_getal.9.dc58d0a887.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht en één erbij is negen"
+ },
+ "getal.8+verhaal.en+getal.2+verhaal.eraf+getal.6": {
+  "file": "getal.8_verhaal.en_getal.2_verhaal.eraf_getal.6.c179e855ee.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht en twee eraf is zes"
+ },
+ "getal.8+verhaal.en+getal.2+verhaal.erbij+getal.10": {
+  "file": "getal.8_verhaal.en_getal.2_verhaal.erbij_getal.10.65d5ac90ee.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht en twee erbij is tien"
+ },
+ "getal.8+verhaal.en+getal.3+verhaal.eraf+getal.5": {
+  "file": "getal.8_verhaal.en_getal.3_verhaal.eraf_getal.5.43c1cd76b5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht en drie eraf is vijf"
+ },
+ "getal.9": {
+  "file": "getal.9.3ba46f4170.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen"
+ },
+ "getal.9+splits.is+getal.1+splits.en+getal.8": {
+  "file": "getal.9_splits.is_getal.1_splits.en_getal.8.c692a827f0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is één en acht"
+ },
+ "getal.9+splits.is+getal.2+splits.en+getal.7": {
+  "file": "getal.9_splits.is_getal.2_splits.en_getal.7.b00e72ec3c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is twee en zeven"
+ },
+ "getal.9+splits.is+getal.3+splits.en+getal.6": {
+  "file": "getal.9_splits.is_getal.3_splits.en_getal.6.71e1edc210.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is drie en zes"
+ },
+ "getal.9+splits.is+getal.4+splits.en+getal.5": {
+  "file": "getal.9_splits.is_getal.4_splits.en_getal.5.22126d11de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is vier en vijf"
+ },
+ "getal.9+splits.is+getal.5+splits.en+getal.4": {
+  "file": "getal.9_splits.is_getal.5_splits.en_getal.4.d435c8b710.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is vijf en vier"
+ },
+ "getal.9+splits.is+getal.6+splits.en+getal.3": {
+  "file": "getal.9_splits.is_getal.6_splits.en_getal.3.c870b4e034.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is zes en drie"
+ },
+ "getal.9+splits.is+getal.7+splits.en+getal.2": {
+  "file": "getal.9_splits.is_getal.7_splits.en_getal.2.39e2874651.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is zeven en twee"
+ },
+ "getal.9+splits.is+getal.8+splits.en+getal.1": {
+  "file": "getal.9_splits.is_getal.8_splits.en_getal.1.4d4d5b063f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen is acht en één"
+ },
+ "getal.9+verhaal.en+getal.1+verhaal.eraf+getal.8": {
+  "file": "getal.9_verhaal.en_getal.1_verhaal.eraf_getal.8.09a1e3e98a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen en één eraf is acht"
+ },
+ "getal.9+verhaal.en+getal.1+verhaal.erbij+getal.10": {
+  "file": "getal.9_verhaal.en_getal.1_verhaal.erbij_getal.10.15c7e72c5f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen en één erbij is tien"
+ },
+ "getal.9+verhaal.en+getal.2+verhaal.eraf+getal.7": {
+  "file": "getal.9_verhaal.en_getal.2_verhaal.eraf_getal.7.f36680279d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen en twee eraf is zeven"
+ },
+ "getal.9+verhaal.en+getal.3+verhaal.eraf+getal.6": {
+  "file": "getal.9_verhaal.en_getal.3_verhaal.eraf_getal.6.7da0e2f952.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen en drie eraf is zes"
+ },
+ "hak.hint": {
+  "file": "hak.hint.98e0f13ec7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luister nog een keer. Ik zeg de stukjes dichter bij elkaar"
+ },
+ "hak.lees.hint": {
+  "file": "hak.lees.hint.2268e7f464.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik zeg de klanken voor je"
+ },
+ "hak.lees.uitleg": {
+  "file": "hak.lees.uitleg.0e4ac88dac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier staat een woordje. Tik op de letters, dan zeg ik de klank"
+ },
+ "hak.lees.vraag": {
+  "file": "hak.lees.vraag.70b164cbad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk woordje staat hier?"
+ },
+ "hak.uitleg": {
+  "file": "hak.uitleg.bb5ea487e2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik zeg een woordje in stukjes. Kun jij de stukjes aan elkaar plakken?"
+ },
+ "hak.voordoen": {
+  "file": "hak.voordoen.b28f515b5e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, ik plak de stukjes aan elkaar"
+ },
+ "hak.vraag": {
+  "file": "hak.vraag.5bff7938af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk woordje is het?"
+ },
+ "hier.zijn": {
+  "file": "hier.zijn.e1d7ae05c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er"
+ },
+ "hier.zijn.een": {
+  "file": "hier.zijn.een.dfb3fd3c43.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier is er"
+ },
+ "hier.zijn.een+getal.1": {
+  "file": "hier.zijn.een_getal.1.ef785c63c7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier is er één"
+ },
+ "hier.zijn+getal.10": {
+  "file": "hier.zijn_getal.10.52e031ecbe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er tien"
+ },
+ "hier.zijn+getal.2": {
+  "file": "hier.zijn_getal.2.df1dcd3645.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er twee"
+ },
+ "hier.zijn+getal.3": {
+  "file": "hier.zijn_getal.3.1b4af49a66.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er drie"
+ },
+ "hier.zijn+getal.4": {
+  "file": "hier.zijn_getal.4.67b0eb48b5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er vier"
+ },
+ "hier.zijn+getal.5": {
+  "file": "hier.zijn_getal.5.8771bf1f49.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er vijf"
+ },
+ "hier.zijn+getal.6": {
+  "file": "hier.zijn_getal.6.c6ae51e517.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er zes"
+ },
+ "hier.zijn+getal.7": {
+  "file": "hier.zijn_getal.7.12bab346cb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er zeven"
+ },
+ "hier.zijn+getal.8": {
+  "file": "hier.zijn_getal.8.dc7699be16.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er acht"
+ },
+ "hier.zijn+getal.9": {
+  "file": "hier.zijn_getal.9.755b3dbacb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zijn er negen"
+ },
+ "hint.cijferis": {
+  "file": "hint.cijferis.0766b1babf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is"
+ },
+ "hint.cijferis+getal.1": {
+  "file": "hint.cijferis_getal.1.986141f49c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is één"
+ },
+ "hint.cijferis+getal.10": {
+  "file": "hint.cijferis_getal.10.f13f7b418e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is tien"
+ },
+ "hint.cijferis+getal.2": {
+  "file": "hint.cijferis_getal.2.699f109693.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is twee"
+ },
+ "hint.cijferis+getal.3": {
+  "file": "hint.cijferis_getal.3.310c892c06.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is drie"
+ },
+ "hint.cijferis+getal.4": {
+  "file": "hint.cijferis_getal.4.69d22be0a6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is vier"
+ },
+ "hint.cijferis+getal.5": {
+  "file": "hint.cijferis_getal.5.e8d8b46064.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is vijf"
+ },
+ "hint.cijferis+getal.6": {
+  "file": "hint.cijferis_getal.6.390785ef51.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is zes"
+ },
+ "hint.cijferis+getal.7": {
+  "file": "hint.cijferis_getal.7.78791cecbb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is zeven"
+ },
+ "hint.cijferis+getal.8": {
+  "file": "hint.cijferis_getal.8.b4be2ff15b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is acht"
+ },
+ "hint.cijferis+getal.9": {
+  "file": "hint.cijferis_getal.9.86803fdd13.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit cijfer is negen"
+ },
+ "hint.samen": {
+  "file": "hint.samen.b13de9e22a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hm. Laten we samen tellen wat er in het mandje ligt"
+ },
+ "hint.teveel": {
+  "file": "hint.teveel.4bb6570bdc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er een paar te veel. Kun je er een paar terugleggen?"
+ },
+ "hint.teweinig": {
+  "file": "hint.teweinig.0dd307e96d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er mogen er nog wat bij. Kun je er nog wat bij leggen?"
+ },
+ "hint.wilden": {
+  "file": "hint.wilden.5616629b5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er"
+ },
+ "hint.wilden+getal.1": {
+  "file": "hint.wilden_getal.1.b4f09f1226.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er één"
+ },
+ "hint.wilden+getal.10": {
+  "file": "hint.wilden_getal.10.f50521f5c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er tien"
+ },
+ "hint.wilden+getal.2": {
+  "file": "hint.wilden_getal.2.5ad85fa926.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er twee"
+ },
+ "hint.wilden+getal.3": {
+  "file": "hint.wilden_getal.3.8aead2c70c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er drie"
+ },
+ "hint.wilden+getal.4": {
+  "file": "hint.wilden_getal.4.fdf9af5ee3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er vier"
+ },
+ "hint.wilden+getal.5": {
+  "file": "hint.wilden_getal.5.6b34812cbb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er vijf"
+ },
+ "hint.wilden+getal.6": {
+  "file": "hint.wilden_getal.6.0fa9a504ac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er zes"
+ },
+ "hint.wilden+getal.7": {
+  "file": "hint.wilden_getal.7.3317c15e9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er zeven"
+ },
+ "hint.wilden+getal.8": {
+  "file": "hint.wilden_getal.8.24cd688115.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er acht"
+ },
+ "hint.wilden+getal.9": {
+  "file": "hint.wilden_getal.9.7a083220c4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We wilden er negen"
+ },
+ "hint.zijn": {
+  "file": "hint.zijn.08dc18622d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er"
+ },
+ "hint.zijn.een": {
+  "file": "hint.zijn.een.130d4334f2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat is er"
+ },
+ "hint.zijn.een+getal.1": {
+  "file": "hint.zijn.een_getal.1.1478fcba9b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat is er één"
+ },
+ "hint.zijn+getal.10": {
+  "file": "hint.zijn_getal.10.06cc854b2b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er tien"
+ },
+ "hint.zijn+getal.2": {
+  "file": "hint.zijn_getal.2.d1e5462bdb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er twee"
+ },
+ "hint.zijn+getal.3": {
+  "file": "hint.zijn_getal.3.2146a5a6ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er drie"
+ },
+ "hint.zijn+getal.4": {
+  "file": "hint.zijn_getal.4.c7b6a9e512.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er vier"
+ },
+ "hint.zijn+getal.5": {
+  "file": "hint.zijn_getal.5.555da65a99.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er vijf"
+ },
+ "hint.zijn+getal.6": {
+  "file": "hint.zijn_getal.6.5b4cb549db.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er zes"
+ },
+ "hint.zijn+getal.7": {
+  "file": "hint.zijn_getal.7.a924898ecf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er zeven"
+ },
+ "hint.zijn+getal.8": {
+  "file": "hint.zijn_getal.8.4698afde1b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er acht"
+ },
+ "hint.zijn+getal.9": {
+  "file": "hint.zijn_getal.9.21d5293b66.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat zijn er negen"
+ },
+ "keuze.beginklank": {
+  "file": "keuze.beginklank.a48483ed52.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luisteren naar het begin van een woord"
+ },
+ "keuze.cijfer": {
+  "file": "keuze.cijfer.57a8f5c7af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Cijfers zoeken"
+ },
+ "keuze.foutje": {
+  "file": "keuze.foutje.214c3c3030.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijken of ik goed tel"
+ },
+ "keuze.goed": {
+  "file": "keuze.goed.02bc8d3457.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Goed, dat gaan we doen"
+ },
+ "keuze.hakken": {
+  "file": "keuze.hakken.3296ce4120.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Klanken aan elkaar plakken"
+ },
+ "keuze.kiekeboe": {
+  "file": "keuze.kiekeboe.ab9610197e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kiekeboe spelen met Stippe"
+ },
+ "keuze.letters": {
+  "file": "keuze.letters.2bee93261a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Letters zoeken"
+ },
+ "keuze.mandje": {
+  "file": "keuze.mandje.5252aa564b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fruit in het mandje leggen?"
+ },
+ "keuze.meer": {
+  "file": "keuze.meer.af9da885d1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koekjes vergelijken"
+ },
+ "keuze.of": {
+  "file": "keuze.of.86e1886788.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Of"
+ },
+ "keuze.pad": {
+  "file": "keuze.pad.4ccdbae76f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het konijntje naar huis brengen"
+ },
+ "keuze.patroon": {
+  "file": "keuze.patroon.d9d4f53708.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een kralenketting maken"
+ },
+ "keuze.rekenrek": {
+  "file": "keuze.rekenrek.668817c412.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kralen schuiven op het rekenrek"
+ },
+ "keuze.rijmen": {
+  "file": "keuze.rijmen.392813a509.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Woordjes die rijmen"
+ },
+ "keuze.ruimte": {
+  "file": "keuze.ruimte.3286de6a57.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het muisje zoeken"
+ },
+ "keuze.splitshuis": {
+  "file": "keuze.splitshuis.708880d3a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vlinders zoeken bij het huisje"
+ },
+ "keuze.tellen": {
+  "file": "keuze.tellen.f8c65e4caa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beestjes tellen?"
+ },
+ "keuze.tik": {
+  "file": "keuze.tik.c98d973608.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik maar op wat je wilt"
+ },
+ "keuze.vak.lezen": {
+  "file": "keuze.vak.lezen.6ede1a6385.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spelen met woordjes en klanken"
+ },
+ "keuze.vak.rekenen": {
+  "file": "keuze.vak.rekenen.844978ea90.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spelen met getallen"
+ },
+ "keuze.verhaal": {
+  "file": "keuze.verhaal.200b0c0424.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "De eendjes in de vijver"
+ },
+ "keuze.vormen": {
+  "file": "keuze.vormen.fedf487aeb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vormen zoeken"
+ },
+ "keuze.vraag": {
+  "file": "keuze.vraag.7cec37441f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat wil je doen?"
+ },
+ "keuze.woont": {
+  "file": "keuze.woont.ff6923fe03.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Huisjes zoeken in de straat"
+ },
+ "keuze.woordjes": {
+  "file": "keuze.woordjes.ab384e0965.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Woordjes lezen"
+ },
+ "kiekeboe.dobbel": {
+  "file": "kiekeboe.dobbel.646e1533d8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zo ziet het er altijd uit op een dobbelsteen"
+ },
+ "kiekeboe.dobbelvijf": {
+  "file": "kiekeboe.dobbelvijf.726c5edefd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op deze dobbelsteen zijn het er vijf"
+ },
+ "kiekeboe.hand": {
+  "file": "kiekeboe.hand.cbb02ad539.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een hele hand, dat is vijf"
+ },
+ "kiekeboe.isdat": {
+  "file": "kiekeboe.isdat.2ab9819b40.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat is"
+ },
+ "kiekeboe.kijk": {
+  "file": "kiekeboe.kijk.eb2689f95a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kiekeboe, kijk goed"
+ },
+ "kiekeboe.nogeens": {
+  "file": "kiekeboe.nogeens.d27eb22627.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we nog een keer kijken? Kijk goed"
+ },
+ "kiekeboe.rij": {
+  "file": "kiekeboe.rij.7c5091973a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een volle rij, dat is vijf"
+ },
+ "kiekeboe.uitleg": {
+  "file": "kiekeboe.uitleg.bf8ccc339d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik laat heel even iets zien. Daarna gaat het dekentje erover"
+ },
+ "kiekeboe.vijfen": {
+  "file": "kiekeboe.vijfen.2a5458ceb1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en"
+ },
+ "kiekeboe.vijfen+getal.1+kiekeboe.isdat+getal.6": {
+  "file": "kiekeboe.vijfen_getal.1_kiekeboe.isdat_getal.6.3dab5e2fa6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en één, dat is zes"
+ },
+ "kiekeboe.vijfen+getal.2+kiekeboe.isdat+getal.7": {
+  "file": "kiekeboe.vijfen_getal.2_kiekeboe.isdat_getal.7.fc02a7dc0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en twee, dat is zeven"
+ },
+ "kiekeboe.vijfen+getal.3+kiekeboe.isdat+getal.8": {
+  "file": "kiekeboe.vijfen_getal.3_kiekeboe.isdat_getal.8.217614a8a2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en drie, dat is acht"
+ },
+ "kiekeboe.vijfen+getal.4+kiekeboe.isdat+getal.9": {
+  "file": "kiekeboe.vijfen_getal.4_kiekeboe.isdat_getal.9.cd9c451efc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en vier, dat is negen"
+ },
+ "kiekeboe.vijfen+getal.5+kiekeboe.isdat+getal.10": {
+  "file": "kiekeboe.vijfen_getal.5_kiekeboe.isdat_getal.10.aa6c636fba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf en vijf, dat is tien"
+ },
+ "kiekeboe.vraag": {
+  "file": "kiekeboe.vraag.82dbd81e6f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel waren het er?"
+ },
+ "kl.aa": {
+  "file": "kl.aa.33011fd7a7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.b": {
+  "file": "kl.b.4c3bccded3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.d": {
+  "file": "kl.d.dbd6bfc571.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.ee": {
+  "file": "kl.ee.8896caef3b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.eu": {
+  "file": "kl.eu.a6cc9089c5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.h": {
+  "file": "kl.h.8db656320e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.k": {
+  "file": "kl.k.b4fd8a4569.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.m": {
+  "file": "kl.m.8eceadbd78.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.n": {
+  "file": "kl.n.7b187ecda5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.oe": {
+  "file": "kl.oe.704805e34b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.oo": {
+  "file": "kl.oo.89baffed2a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.p": {
+  "file": "kl.p.9ff8e3dfe9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.r": {
+  "file": "kl.r.5848c690b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.s": {
+  "file": "kl.s.a0b1d30651.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.t": {
+  "file": "kl.t.17967fd95f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.ui": {
+  "file": "kl.ui.9cf1a0fdae.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.uu": {
+  "file": "kl.uu.20529623d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "kl.v": {
+  "file": "kl.v.2abc060d64.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "klank.hint": {
+  "file": "klank.hint.145f76ce88.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luister goed naar het begin van het woord"
+ },
+ "klank.schrijf": {
+  "file": "klank.schrijf.79311631b0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van"
+ },
+ "klank.schrijf+w.bed": {
+  "file": "klank.schrijf_w.bed.0107f72ac0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van bed"
+ },
+ "klank.schrijf+w.beer": {
+  "file": "klank.schrijf_w.beer.de0d43afb0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Beer"
+ },
+ "klank.schrijf+w.boek": {
+  "file": "klank.schrijf_w.boek.84fb8e8e49.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van boek"
+ },
+ "klank.schrijf+w.boom": {
+  "file": "klank.schrijf_w.boom.d953b1ed63.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Boom"
+ },
+ "klank.schrijf+w.boot": {
+  "file": "klank.schrijf_w.boot.31e81e7724.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Boot"
+ },
+ "klank.schrijf+w.deur": {
+  "file": "klank.schrijf_w.deur.906c1efa90.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van deur"
+ },
+ "klank.schrijf+w.doos": {
+  "file": "klank.schrijf_w.doos.85fb6b45df.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Do's"
+ },
+ "klank.schrijf+w.hoed": {
+  "file": "klank.schrijf_w.hoed.ef278b29c5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van hoe't"
+ },
+ "klank.schrijf+w.huis": {
+  "file": "klank.schrijf_w.huis.2358751731.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van huis"
+ },
+ "klank.schrijf+w.kaas": {
+  "file": "klank.schrijf_w.kaas.47368d537a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van kaas"
+ },
+ "klank.schrijf+w.kip": {
+  "file": "klank.schrijf_w.kip.0372dff2f3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Kip"
+ },
+ "klank.schrijf+w.kop": {
+  "file": "klank.schrijf_w.kop.cd371addaa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Kop"
+ },
+ "klank.schrijf+w.maan": {
+  "file": "klank.schrijf_w.maan.2c78e54d86.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Maan"
+ },
+ "klank.schrijf+w.muis": {
+  "file": "klank.schrijf_w.muis.153aaa8ea7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Muis"
+ },
+ "klank.schrijf+w.paard": {
+  "file": "klank.schrijf_w.paard.1cceb52578.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van paard"
+ },
+ "klank.schrijf+w.pet": {
+  "file": "klank.schrijf_w.pet.4445f4b8f9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Pat"
+ },
+ "klank.schrijf+w.poes": {
+  "file": "klank.schrijf_w.poes.5c77f26ee4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Poes"
+ },
+ "klank.schrijf+w.pop": {
+  "file": "klank.schrijf_w.pop.15d16a0d62.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Pop"
+ },
+ "klank.schrijf+w.taart": {
+  "file": "klank.schrijf_w.taart.ce3ed9c17f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van taart"
+ },
+ "klank.schrijf+w.tas": {
+  "file": "klank.schrijf_w.tas.b52c138815.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van tas"
+ },
+ "klank.schrijf+w.ton": {
+  "file": "klank.schrijf_w.ton.95fb608811.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Tom"
+ },
+ "klank.schrijf+w.veer": {
+  "file": "klank.schrijf_w.veer.d7c37b6336.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Veer"
+ },
+ "klank.schrijf+w.vis": {
+  "file": "klank.schrijf_w.vis.cb77164570.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Vis"
+ },
+ "klank.schrijf+w.voet": {
+  "file": "klank.schrijf_w.voet.c4821c94e4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van voet"
+ },
+ "klank.schrijf+w.vuur": {
+  "file": "klank.schrijf_w.vuur.3c3b5c2777.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van vuur"
+ },
+ "klank.uitleg": {
+  "file": "klank.uitleg.dbda67f130.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We luisteren naar het begin van een woord. Boot en bal beginnen hetzelfde"
+ },
+ "klank.vraag": {
+  "file": "klank.vraag.039855b597.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zo als"
+ },
+ "klank.vraag+w.bed": {
+  "file": "klank.vraag_w.bed.88c037fcc1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals bed?"
+ },
+ "klank.vraag+w.beer": {
+  "file": "klank.vraag_w.beer.7a0457956b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals beer?"
+ },
+ "klank.vraag+w.boek": {
+  "file": "klank.vraag_w.boek.470be9634f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals boek"
+ },
+ "klank.vraag+w.boom": {
+  "file": "klank.vraag_w.boom.b72f041f8c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals boom"
+ },
+ "klank.vraag+w.boot": {
+  "file": "klank.vraag_w.boot.2139b26e66.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals boot?"
+ },
+ "klank.vraag+w.deur": {
+  "file": "klank.vraag_w.deur.fffcb84f3d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zo als deur?"
+ },
+ "klank.vraag+w.doos": {
+  "file": "klank.vraag_w.doos.c022fc987d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Do's"
+ },
+ "klank.vraag+w.hoed": {
+  "file": "klank.vraag_w.hoed.79fa3c8efc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals hoed"
+ },
+ "klank.vraag+w.huis": {
+  "file": "klank.vraag_w.huis.bb72481468.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals huis"
+ },
+ "klank.vraag+w.kaas": {
+  "file": "klank.vraag_w.kaas.7e2eebf08a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals kaas?"
+ },
+ "klank.vraag+w.kip": {
+  "file": "klank.vraag_w.kip.0022caad94.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals kip?"
+ },
+ "klank.vraag+w.kop": {
+  "file": "klank.vraag_w.kop.f492c10c2d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals kop?"
+ },
+ "klank.vraag+w.maan": {
+  "file": "klank.vraag_w.maan.4b0235295a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zo als maan?"
+ },
+ "klank.vraag+w.muis": {
+  "file": "klank.vraag_w.muis.016029e469.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals muis?"
+ },
+ "klank.vraag+w.paard": {
+  "file": "klank.vraag_w.paard.305e768bde.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals paard"
+ },
+ "klank.vraag+w.pet": {
+  "file": "klank.vraag_w.pet.1c8017bdef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Pet"
+ },
+ "klank.vraag+w.poes": {
+  "file": "klank.vraag_w.poes.92dcdb56f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals poes?"
+ },
+ "klank.vraag+w.pop": {
+  "file": "klank.vraag_w.pop.3008e2c856.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals pop"
+ },
+ "klank.vraag+w.taart": {
+  "file": "klank.vraag_w.taart.13e9ca2fc6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals taart?"
+ },
+ "klank.vraag+w.tas": {
+  "file": "klank.vraag_w.tas.9ccdc4cac0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals tas?"
+ },
+ "klank.vraag+w.ton": {
+  "file": "klank.vraag_w.ton.975dfc5e5f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Ton?"
+ },
+ "klank.vraag+w.veer": {
+  "file": "klank.vraag_w.veer.c8792efe47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals veer?"
+ },
+ "klank.vraag+w.vis": {
+  "file": "klank.vraag_w.vis.31f311e7ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals vis?"
+ },
+ "klank.vraag+w.voet": {
+  "file": "klank.vraag_w.voet.119bec8b24.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals voet?"
+ },
+ "klank.vraag+w.vuur": {
+  "file": "klank.vraag_w.vuur.59d739be5b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals vuur"
+ },
+ "klank.zelfde": {
+  "file": "klank.zelfde.604add0493.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, die beginnen hetzelfde"
+ },
+ "kleur.blauw": {
+  "file": "kleur.blauw.2972b22c3c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Blauw?"
+ },
+ "kleur.geel": {
+  "file": "kleur.geel.57e63f755f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Geel"
+ },
+ "kleur.groen": {
+  "file": "kleur.groen.bc5dbe6c85.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Groen"
+ },
+ "kleur.rood": {
+  "file": "kleur.rood.4022415a4f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Rood"
+ },
+ "later.nog": {
+  "file": "later.nog.ac7a2e97b1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Die doen we straks nog een keer"
+ },
+ "letter.hint": {
+  "file": "letter.hint.5600b7bd4f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luister nog eens goed naar het begin"
+ },
+ "letter.uitleg": {
+  "file": "letter.uitleg.990141aec2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Elke klank heeft een letter. Zo kun je hem opschrijven"
+ },
+ "letter.vraag": {
+  "file": "letter.vraag.e62feab724.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van"
+ },
+ "letter.vraag+w.bed": {
+  "file": "letter.vraag_w.bed.4dc4aa2e62.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van bed?"
+ },
+ "letter.vraag+w.beer": {
+  "file": "letter.vraag_w.beer.3741e43216.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van beer?"
+ },
+ "letter.vraag+w.boek": {
+  "file": "letter.vraag_w.boek.d74cc671ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van boek?"
+ },
+ "letter.vraag+w.boom": {
+  "file": "letter.vraag_w.boom.23244ca29f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van boom?"
+ },
+ "letter.vraag+w.boot": {
+  "file": "letter.vraag_w.boot.c341b7188e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van boot?"
+ },
+ "letter.vraag+w.deur": {
+  "file": "letter.vraag_w.deur.7c7e693646.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van deur?"
+ },
+ "letter.vraag+w.doos": {
+  "file": "letter.vraag_w.doos.bcf6f24b62.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van doos?"
+ },
+ "letter.vraag+w.hoed": {
+  "file": "letter.vraag_w.hoed.c10646fefc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van hoed?"
+ },
+ "letter.vraag+w.huis": {
+  "file": "letter.vraag_w.huis.3f3f18c17d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van huis?"
+ },
+ "letter.vraag+w.kaas": {
+  "file": "letter.vraag_w.kaas.7cdd860276.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van kaas?"
+ },
+ "letter.vraag+w.kip": {
+  "file": "letter.vraag_w.kip.e9cdf344bb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van kip?"
+ },
+ "letter.vraag+w.kop": {
+  "file": "letter.vraag_w.kop.25f4b5f492.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van kop?"
+ },
+ "letter.vraag+w.maan": {
+  "file": "letter.vraag_w.maan.6e51f585b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van maan?"
+ },
+ "letter.vraag+w.muis": {
+  "file": "letter.vraag_w.muis.8dfe2f9d91.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van muis?"
+ },
+ "letter.vraag+w.paard": {
+  "file": "letter.vraag_w.paard.22a7430f7d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van paard?"
+ },
+ "letter.vraag+w.pet": {
+  "file": "letter.vraag_w.pet.8cddde0006.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van pet?"
+ },
+ "letter.vraag+w.poes": {
+  "file": "letter.vraag_w.poes.7c7e79e15c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van poes?"
+ },
+ "letter.vraag+w.pop": {
+  "file": "letter.vraag_w.pop.d6b52fc1ba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van pop?"
+ },
+ "letter.vraag+w.taart": {
+  "file": "letter.vraag_w.taart.f474482e0a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van taart?"
+ },
+ "letter.vraag+w.tas": {
+  "file": "letter.vraag_w.tas.d1737371ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van tas?"
+ },
+ "letter.vraag+w.ton": {
+  "file": "letter.vraag_w.ton.e9f556198b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van Tom?"
+ },
+ "letter.vraag+w.veer": {
+  "file": "letter.vraag_w.veer.dea6c7b370.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van veer?"
+ },
+ "letter.vraag+w.vis": {
+  "file": "letter.vraag_w.vis.1c28df1c8d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van vis?"
+ },
+ "letter.vraag+w.voet": {
+  "file": "letter.vraag_w.voet.94ad40fdae.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van voet?"
+ },
+ "letter.vraag+w.vuur": {
+  "file": "letter.vraag_w.vuur.591e6c1e5e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van vuur?"
+ },
+ "lof.begin": {
+  "file": "lof.begin.b6711321d8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je luisterde goed naar het begin van het woord"
+ },
+ "lof.cijfer": {
+  "file": "lof.cijfer.f14af4fdc7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek goed naar het cijfer"
+ },
+ "lof.doorzetten": {
+  "file": "lof.doorzetten.297efb67dc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je bleef goed tellen, ook toen het lastig was"
+ },
+ "lof.eenkeer": {
+  "file": "lof.eenkeer.92486c9b18.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je tikte ze allemaal precies één keer aan"
+ },
+ "lof.eenkeerschuiven": {
+  "file": "lof.eenkeerschuiven.21b2ea1a9a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je schoof ze in één keer goed. Je zag de volle vijf"
+ },
+ "lof.eenvooreen": {
+  "file": "lof.eenvooreen.3f01f6e2f6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je legde ze er één voor één in. Goed gedaan"
+ },
+ "lof.getallen": {
+  "file": "lof.getallen.b65bb58acd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je weet goed welk getal erna komt"
+ },
+ "lof.helpen": {
+  "file": "lof.helpen.e9e16beeba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek goed of ik elk beestje één keer telde. Dank je wel"
+ },
+ "lof.laatste": {
+  "file": "lof.laatste.fe30688c41.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je wist het. Het laatste getal zegt hoeveel het er zijn"
+ },
+ "lof.letter": {
+  "file": "lof.letter.5ba72384b4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je luisterde naar het begin en je wist welke letter erbij hoort"
+ },
+ "lof.lezen": {
+  "file": "lof.lezen.58b4c60c89.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je zei de klanken achter elkaar. Zo lees je een woord"
+ },
+ "lof.luisteren": {
+  "file": "lof.luisteren.fde4b9a980.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je bleef goed luisteren, ook toen het lastig was"
+ },
+ "lof.maatjes": {
+  "file": "lof.maatjes.a901337d26.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je zorgde dat elk koekje een maatje had"
+ },
+ "lof.opletten": {
+  "file": "lof.opletten.40c8a4bd33.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je lette heel goed op"
+ },
+ "lof.patroon": {
+  "file": "lof.patroon.a1f4d75c2b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je zag hoe het patroon steeds terugkomt"
+ },
+ "lof.plakken": {
+  "file": "lof.plakken.77ae60de82.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je plakte de klanken aan elkaar"
+ },
+ "lof.plek": {
+  "file": "lof.plek.9d69c887c1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je wist precies waar het hoort"
+ },
+ "lof.precies": {
+  "file": "lof.precies.c9c31d9d90.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je telde heel precies"
+ },
+ "lof.rijm": {
+  "file": "lof.rijm.4bdedbc50f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je luisterde goed naar het eind van het woord"
+ },
+ "lof.ruimte": {
+  "file": "lof.ruimte.a7b0a6b665.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek goed waar het muisje zat"
+ },
+ "lof.samen": {
+  "file": "lof.samen.6e6627592a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Samen is het gelukt. Je telde goed mee"
+ },
+ "lof.samen.kort": {
+  "file": "lof.samen.kort.19de35d62a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Samen is het gelukt"
+ },
+ "lof.stoppen": {
+  "file": "lof.stoppen.c5e1a21624.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je stopte precies bij het goede getal"
+ },
+ "lof.tien": {
+  "file": "lof.tien.16fb978b9e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je zag hoe de tien kralen verdeeld waren"
+ },
+ "lof.vergelijk": {
+  "file": "lof.vergelijk.59d9f7a41f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek heel goed naar allebei de bordjes"
+ },
+ "lof.verhaal": {
+  "file": "lof.verhaal.4f191630f2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je hield goed bij wat er gebeurde"
+ },
+ "lof.verstopt": {
+  "file": "lof.verstopt.690077a617.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je bedacht hoeveel er binnen zaten"
+ },
+ "lof.vijf": {
+  "file": "lof.vijf.bd0c86be38.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je zag de volle vijf en wat erbij kwam"
+ },
+ "lof.voor": {
+  "file": "lof.voor.3fe86088d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je wist welk getal ervoor komt"
+ },
+ "lof.vorm": {
+  "file": "lof.vorm.9bd8e39d67.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek goed naar de kanten en de punten"
+ },
+ "lof.zien": {
+  "file": "lof.zien.7408bc2598.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je keek goed naar hoe ze lagen"
+ },
+ "mandje.cijfer.a": {
+  "file": "mandje.cijfer.a.442dcccdc8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk naar het cijfer. Kun je er zoveel?"
+ },
+ "mandje.cijfer.a+obj.appels+mandje.cijfer.b": {
+  "file": "mandje.cijfer.a_obj.appels_mandje.cijfer.b.b3de6b67dc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk naar het cijfer. Kun je er zoveel appels in het mandje leggen?"
+ },
+ "mandje.cijfer.a+obj.citroenen+mandje.cijfer.b": {
+  "file": "mandje.cijfer.a_obj.citroenen_mandje.cijfer.b.e8d2cef6ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk naar het cijfer. Kun je er zoveel citroenen in het mandje leggen?"
+ },
+ "mandje.cijfer.a+obj.peren+mandje.cijfer.b": {
+  "file": "mandje.cijfer.a_obj.peren_mandje.cijfer.b.e5b8749073.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk naar het cijfer. Kun je er zoveel peren in het mandje leggen?"
+ },
+ "mandje.cijfer.b": {
+  "file": "mandje.cijfer.b.da58914629.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In het mandje leggen"
+ },
+ "mandje.duim": {
+  "file": "mandje.duim.cfe0103ec8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ben je klaar? Tik dan op het duimpje"
+ },
+ "mandje.kijken": {
+  "file": "mandje.kijken.c10c6fd28f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eens kijken"
+ },
+ "mandje.leeg": {
+  "file": "mandje.leeg.0f43d1f7da.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het mandje is nog leeg"
+ },
+ "mandje.precies": {
+  "file": "mandje.precies.da3858cd3d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Precies goed"
+ },
+ "mandje.uitleg.slepen": {
+  "file": "mandje.uitleg.slepen.27d2886383.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je kunt ze naar het mandje schuiven of er gewoon op tikken"
+ },
+ "mandje.vraag.a": {
+  "file": "mandje.vraag.a.a0900b5636.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je"
+ },
+ "mandje.vraag.a+getal.1+obj.appel+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.1_obj.appel_mandje.vraag.b.9872bc1387.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je één appel in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.1+obj.citroen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.1_obj.citroen_mandje.vraag.b.4ca1016935.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je één citroen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.1+obj.peer+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.1_obj.peer_mandje.vraag.b.1bdfcce804.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je één peer in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.10+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.10_obj.appels_mandje.vraag.b.0b1e48c56b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je tien appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.10+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.10_obj.citroenen_mandje.vraag.b.ae2e668d7c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je tien citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.10+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.10_obj.peren_mandje.vraag.b.6e759fa0c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je tien peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.2+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.2_obj.appels_mandje.vraag.b.fb82e044e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je twee appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.2+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.2_obj.citroenen_mandje.vraag.b.688c51426a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je twee citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.2+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.2_obj.peren_mandje.vraag.b.35fd55b826.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je twee peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.3+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.3_obj.appels_mandje.vraag.b.7ebb7d1f1d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je drie appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.3+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.3_obj.citroenen_mandje.vraag.b.55662b4cc0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je drie citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.3+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.3_obj.peren_mandje.vraag.b.63a38dfabb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je drie peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.4+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.4_obj.appels_mandje.vraag.b.99e922af55.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vier appels in het mandje leggen"
+ },
+ "mandje.vraag.a+getal.4+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.4_obj.citroenen_mandje.vraag.b.16f79e53fe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vier citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.4+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.4_obj.peren_mandje.vraag.b.75265c95da.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vier peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.5+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.5_obj.appels_mandje.vraag.b.4c4275434c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vijf appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.5+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.5_obj.citroenen_mandje.vraag.b.abd3c6298c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vijf citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.5+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.5_obj.peren_mandje.vraag.b.7f225ee45b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je vijf peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.6+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.6_obj.appels_mandje.vraag.b.4bd1f0e957.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zes appels in het mandje leggen"
+ },
+ "mandje.vraag.a+getal.6+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.6_obj.citroenen_mandje.vraag.b.442d2c7983.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zes citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.6+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.6_obj.peren_mandje.vraag.b.2d17f29315.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zes peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.7+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.7_obj.appels_mandje.vraag.b.42c880eda8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zeven appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.7+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.7_obj.citroenen_mandje.vraag.b.ad7dea444f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zeven citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.7+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.7_obj.peren_mandje.vraag.b.f93019f29d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je zeven peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.8+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.8_obj.appels_mandje.vraag.b.7a7ac810a2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je acht appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.8+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.8_obj.citroenen_mandje.vraag.b.1f13c3bd47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je acht citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.8+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.8_obj.peren_mandje.vraag.b.5a9ef2ed4e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je acht peren in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.9+obj.appels+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.9_obj.appels_mandje.vraag.b.b69aa3ffe0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je negen appels in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.9+obj.citroenen+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.9_obj.citroenen_mandje.vraag.b.b45008a274.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je negen citroenen in het mandje leggen?"
+ },
+ "mandje.vraag.a+getal.9+obj.peren+mandje.vraag.b": {
+  "file": "mandje.vraag.a_getal.9_obj.peren_mandje.vraag.b.645e5319c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je negen peren in het mandje leggen?"
+ },
+ "mandje.vraag.b": {
+  "file": "mandje.vraag.b.da58914629.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In het mandje leggen"
+ },
+ "mandje.zijnhet": {
+  "file": "mandje.zijnhet.849962d7c8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hetzijner?"
+ },
+ "mandje.zijnhet.een": {
+  "file": "mandje.zijnhet.een.453b757d0e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het is er"
+ },
+ "mandje.zijnhet.een+getal.1": {
+  "file": "mandje.zijnhet.een_getal.1.72f534121c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het is er één"
+ },
+ "mandje.zijnhet+getal.10": {
+  "file": "mandje.zijnhet_getal.10.8a3cd66d9e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er tien"
+ },
+ "mandje.zijnhet+getal.2": {
+  "file": "mandje.zijnhet_getal.2.9143e6eb39.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er twee"
+ },
+ "mandje.zijnhet+getal.3": {
+  "file": "mandje.zijnhet_getal.3.5d7d20b91b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er drie"
+ },
+ "mandje.zijnhet+getal.4": {
+  "file": "mandje.zijnhet_getal.4.1de6c427c5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er vier"
+ },
+ "mandje.zijnhet+getal.5": {
+  "file": "mandje.zijnhet_getal.5.134a587383.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er vijf"
+ },
+ "mandje.zijnhet+getal.6": {
+  "file": "mandje.zijnhet_getal.6.90cf329123.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er zes"
+ },
+ "mandje.zijnhet+getal.7": {
+  "file": "mandje.zijnhet_getal.7.67294ad5a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er zeven"
+ },
+ "mandje.zijnhet+getal.8": {
+  "file": "mandje.zijnhet_getal.8.edf3076693.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er acht"
+ },
+ "mandje.zijnhet+getal.9": {
+  "file": "mandje.zijnhet_getal.9.aced88626e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zijn er negen"
+ },
+ "meer.allemaatje": {
+  "file": "meer.allemaatje.53fee8bc64.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, ze hebben allemaal een maatje"
+ },
+ "meer.en": {
+  "file": "meer.en.ea811f82b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Immunity"
+ },
+ "meer.evenveel": {
+  "file": "meer.evenveel.2b03a385ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun je op het onderste bordje evenveel koekjes leggen als op het bovenste?"
+ },
+ "meer.evenveel.uitleg": {
+  "file": "meer.evenveel.uitleg.a0302a87b7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik op de pot voor een koekje. Tik op een koekje om het terug te leggen. Ben je klaar? Tik dan op het duimpje"
+ },
+ "meer.evenveelklaar": {
+  "file": "meer.evenveelklaar.49999fbe16.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dat is evenveel"
+ },
+ "meer.geenmaatje": {
+  "file": "meer.geenmaatje.61d67bdae4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, deze hebben geen maatje"
+ },
+ "meer.goed.meer": {
+  "file": "meer.goed.meer.fa6e3a9d4a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, daar liggen er meer"
+ },
+ "meer.goed.minder": {
+  "file": "meer.goed.minder.596bd58394.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, daar liggen er minder"
+ },
+ "meer.ismeerdan": {
+  "file": "meer.ismeerdan.b9055d05aa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Is meer dan"
+ },
+ "meer.isminderdan": {
+  "file": "meer.isminderdan.50b63f26e2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Is minder dan"
+ },
+ "meer.maatjes": {
+  "file": "meer.maatjes.36af88f97e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Laten we maatjes maken. Elk koekje krijgt een maatje"
+ },
+ "meer.nu": {
+  "file": "meer.nu.a88daea48f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er"
+ },
+ "meer.nu+getal.1+meer.en+getal.1+meer.evenveelklaar": {
+  "file": "meer.nu_getal.1_meer.en_getal.1_meer.evenveelklaar.34972f35b0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er één en één. Dat is evenveel"
+ },
+ "meer.nu+getal.2+meer.en+getal.2+meer.evenveelklaar": {
+  "file": "meer.nu_getal.2_meer.en_getal.2_meer.evenveelklaar.7c903408f9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er twee en twee. Dat is evenveel"
+ },
+ "meer.nu+getal.3+meer.en+getal.3+meer.evenveelklaar": {
+  "file": "meer.nu_getal.3_meer.en_getal.3_meer.evenveelklaar.c71d3b1a5f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er drie en drie. Dat is evenveel"
+ },
+ "meer.nu+getal.4+meer.en+getal.4+meer.evenveelklaar": {
+  "file": "meer.nu_getal.4_meer.en_getal.4_meer.evenveelklaar.cd50405e9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er vier en vier. Dat is evenveel"
+ },
+ "meer.nu+getal.5+meer.en+getal.5+meer.evenveelklaar": {
+  "file": "meer.nu_getal.5_meer.en_getal.5_meer.evenveelklaar.31f083e78a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er vijf en vijf. Dat is evenveel"
+ },
+ "meer.nu+getal.6+meer.en+getal.6+meer.evenveelklaar": {
+  "file": "meer.nu_getal.6_meer.en_getal.6_meer.evenveelklaar.0defa69d05.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu liggen er zes en zes. Dat is even veel"
+ },
+ "meer.tikjij": {
+  "file": "meer.tikjij.b773fb0e19.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik jij maar op dat bordje"
+ },
+ "meer.uitleg": {
+  "file": "meer.uitleg.cc0516a140.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik op het bordje"
+ },
+ "meer.vraag.meer": {
+  "file": "meer.vraag.meer.22dca4ba17.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op welk bordje liggen er meer koekjes?"
+ },
+ "meer.vraag.minder": {
+  "file": "meer.vraag.minder.a9472d71e7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op welk bordje liggen er minder koekjes?"
+ },
+ "obj.appel": {
+  "file": "obj.appel.a743615af3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Appel"
+ },
+ "obj.appels": {
+  "file": "obj.appels.009982c099.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Appel"
+ },
+ "obj.citroen": {
+  "file": "obj.citroen.7c6bf9713c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Citrin"
+ },
+ "obj.citroenen": {
+  "file": "obj.citroenen.8d3c65d604.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ze trennen"
+ },
+ "obj.eendjes": {
+  "file": "obj.eendjes.0beb393ca5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eendjes"
+ },
+ "obj.lieveheersbeestjes": {
+  "file": "obj.lieveheersbeestjes.8960116283.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Lieve heersbeestjes"
+ },
+ "obj.peer": {
+  "file": "obj.peer.e329b0ac61.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Peer"
+ },
+ "obj.peren": {
+  "file": "obj.peren.42e755451d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Peren?"
+ },
+ "obj.visjes": {
+  "file": "obj.visjes.f062d87314.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Visjes"
+ },
+ "obj.vlinders": {
+  "file": "obj.vlinders.2a07d5d053.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vlinders"
+ },
+ "ouder.test": {
+  "file": "ouder.test.3ab1da335d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoi, zo klink ik"
+ },
+ "pad.hint": {
+  "file": "pad.hint.a2a71a189d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Laten we samen kijken. Hier staat het konijntje"
+ },
+ "pad.hint.terug": {
+  "file": "pad.hint.terug.8590836e0b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Laten we samen kijken. Hier staat het konijntje en het springt terug"
+ },
+ "pad.intro": {
+  "file": "pad.intro.e74298aa04.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We brengen het konijntje samen naar huis"
+ },
+ "pad.komt": {
+  "file": "pad.komt.f95679266f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Komt"
+ },
+ "pad.na": {
+  "file": "pad.na.f2a4e1cce4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na"
+ },
+ "pad.na+getal.1+pad.komt+getal.2": {
+  "file": "pad.na_getal.1_pad.komt_getal.2.d287377ca7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na één komt twee"
+ },
+ "pad.na+getal.2+pad.komt+getal.3": {
+  "file": "pad.na_getal.2_pad.komt_getal.3.b252486224.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na twee komt drie"
+ },
+ "pad.na+getal.3+pad.komt+getal.4": {
+  "file": "pad.na_getal.3_pad.komt_getal.4.b074bdff98.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na drie komt vier"
+ },
+ "pad.na+getal.4+pad.komt+getal.5": {
+  "file": "pad.na_getal.4_pad.komt_getal.5.829e8ac77e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na vier komt vijf"
+ },
+ "pad.na+getal.5+pad.komt+getal.6": {
+  "file": "pad.na_getal.5_pad.komt_getal.6.e0a079fabe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na vijf komt zes"
+ },
+ "pad.na+getal.6+pad.komt+getal.7": {
+  "file": "pad.na_getal.6_pad.komt_getal.7.b145d1d258.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na zes komt zeven"
+ },
+ "pad.na+getal.7+pad.komt+getal.8": {
+  "file": "pad.na_getal.7_pad.komt_getal.8.b4764475ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na zeven komt acht"
+ },
+ "pad.na+getal.8+pad.komt+getal.9": {
+  "file": "pad.na_getal.8_pad.komt_getal.9.18940ffc68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na acht komt negen"
+ },
+ "pad.na+getal.9+pad.komt+getal.10": {
+  "file": "pad.na_getal.9_pad.komt_getal.10.e9d2441125.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Na negen komt tien"
+ },
+ "pad.sprong.terug": {
+  "file": "pad.sprong.terug.d4ff71da85.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oeps, het konijntje springt één vakje terug"
+ },
+ "pad.sprong.twee": {
+  "file": "pad.sprong.twee.5c71c1d938.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het konijntje springt twee vakjes verder"
+ },
+ "pad.sprong.verder": {
+  "file": "pad.sprong.verder.f3aaec270f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het konijntje springt één vakje verder"
+ },
+ "pad.thuis": {
+  "file": "pad.thuis.979e8642e4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het konijntje is thuis"
+ },
+ "pad.voor": {
+  "file": "pad.voor.3085984c00.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor?"
+ },
+ "pad.voor+getal.10+pad.komt+getal.9": {
+  "file": "pad.voor_getal.10_pad.komt_getal.9.6729ad1359.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor tien komt negen"
+ },
+ "pad.voor+getal.2+pad.komt+getal.1": {
+  "file": "pad.voor_getal.2_pad.komt_getal.1.8fda665d41.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor twee komt één"
+ },
+ "pad.voor+getal.3+pad.komt+getal.2": {
+  "file": "pad.voor_getal.3_pad.komt_getal.2.8dd97175ae.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor drie komt twee"
+ },
+ "pad.voor+getal.4+pad.komt+getal.3": {
+  "file": "pad.voor_getal.4_pad.komt_getal.3.80531e5b1b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor vier komt drie"
+ },
+ "pad.voor+getal.5+pad.komt+getal.4": {
+  "file": "pad.voor_getal.5_pad.komt_getal.4.05372f05c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor vijf komt vier"
+ },
+ "pad.voor+getal.6+pad.komt+getal.5": {
+  "file": "pad.voor_getal.6_pad.komt_getal.5.1f4f77f342.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor zes komt vijf"
+ },
+ "pad.voor+getal.7+pad.komt+getal.6": {
+  "file": "pad.voor_getal.7_pad.komt_getal.6.7067ab968a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor zeven komt zes"
+ },
+ "pad.voor+getal.8+pad.komt+getal.7": {
+  "file": "pad.voor_getal.8_pad.komt_getal.7.b6a745c201.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor acht komt zeven"
+ },
+ "pad.voor+getal.9+pad.komt+getal.8": {
+  "file": "pad.voor_getal.9_pad.komt_getal.8.bd1c3f46ba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor negen komt acht"
+ },
+ "pad.waar": {
+  "file": "pad.waar.1e50c6809f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op welk vakje komt het? Tik het maar aan"
+ },
+ "pad.welkna": {
+  "file": "pad.welkna.9a2babba19.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na?"
+ },
+ "pad.welkna+getal.1": {
+  "file": "pad.welkna_getal.1.52be26caba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na één?"
+ },
+ "pad.welkna+getal.2": {
+  "file": "pad.welkna_getal.2.8f26c975f2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na twee?"
+ },
+ "pad.welkna+getal.3": {
+  "file": "pad.welkna_getal.3.e290dd2689.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na drie?"
+ },
+ "pad.welkna+getal.4": {
+  "file": "pad.welkna_getal.4.85208a1864.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na vier?"
+ },
+ "pad.welkna+getal.5": {
+  "file": "pad.welkna_getal.5.779725dabb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na vijf?"
+ },
+ "pad.welkna+getal.6": {
+  "file": "pad.welkna_getal.6.fd58c83708.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na zes?"
+ },
+ "pad.welkna+getal.7": {
+  "file": "pad.welkna_getal.7.a8317bb401.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na zeven?"
+ },
+ "pad.welkna+getal.8": {
+  "file": "pad.welkna_getal.8.4a10106df9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na acht?"
+ },
+ "pad.welkna+getal.9": {
+  "file": "pad.welkna_getal.9.9c36866486.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt na negen?"
+ },
+ "pad.welkvoor": {
+  "file": "pad.welkvoor.0a2b65c310.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor"
+ },
+ "pad.welkvoor+getal.10": {
+  "file": "pad.welkvoor_getal.10.42993fe171.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor tien?"
+ },
+ "pad.welkvoor+getal.2": {
+  "file": "pad.welkvoor_getal.2.d01e9107ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor twee?"
+ },
+ "pad.welkvoor+getal.3": {
+  "file": "pad.welkvoor_getal.3.c47d14b55b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor drie?"
+ },
+ "pad.welkvoor+getal.4": {
+  "file": "pad.welkvoor_getal.4.0cbdccdd0b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor vier?"
+ },
+ "pad.welkvoor+getal.5": {
+  "file": "pad.welkvoor_getal.5.76bbcd262c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor vijf?"
+ },
+ "pad.welkvoor+getal.6": {
+  "file": "pad.welkvoor_getal.6.ee414f1e81.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor zes?"
+ },
+ "pad.welkvoor+getal.7": {
+  "file": "pad.welkvoor_getal.7.5adf579492.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor zeven?"
+ },
+ "pad.welkvoor+getal.8": {
+  "file": "pad.welkvoor_getal.8.edceda1836.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor acht?"
+ },
+ "pad.welkvoor+getal.9": {
+  "file": "pad.welkvoor_getal.9.09309bc3d9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk getal komt voor negen?"
+ },
+ "patroon.hint": {
+  "file": "patroon.hint.f46fb898d5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeg het maar met mij mee"
+ },
+ "patroon.opnieuw": {
+  "file": "patroon.opnieuw.d876b990a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En dan weer opnieuw"
+ },
+ "patroon.uitleg": {
+  "file": "patroon.uitleg.fcf45f3584.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, een kralenketting. De kralen komen steeds in dezelfde volgorde"
+ },
+ "patroon.volgende": {
+  "file": "patroon.volgende.cb2d6c6c24.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En welke komt daarna?"
+ },
+ "patroon.voordoen": {
+  "file": "patroon.voordoen.84a5a316ab.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luister, het gaat steeds"
+ },
+ "patroon.vraag": {
+  "file": "patroon.vraag.ba0d25e6bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke kraal komt er nu?"
+ },
+ "patroon.vraag.twee": {
+  "file": "patroon.vraag.twee.7d22b9a523.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke kralen komen er nu? Tik ze één voor één aan"
+ },
+ "rek.blauw": {
+  "file": "rek.blauw.82a0c9ed09.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk alle blauwe kralen samen. Dat zijn er vijf"
+ },
+ "rek.hiereen": {
+  "file": "rek.hiereen.ef785c63c7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier is er één"
+ },
+ "rek.kijkhier": {
+  "file": "rek.kijkhier.e57b240935.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk maar goed naar deze kralen"
+ },
+ "rek.maakervan.a": {
+  "file": "rek.maakervan.a.d7f85cb720.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maker"
+ },
+ "rek.maakervan.a+getal.10+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.10_rek.maakervan.b.d545375bae.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er tien van"
+ },
+ "rek.maakervan.a+getal.2+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.2_rek.maakervan.b.acd9fd55c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er twee van"
+ },
+ "rek.maakervan.a+getal.3+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.3_rek.maakervan.b.95f463e362.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er drie van"
+ },
+ "rek.maakervan.a+getal.4+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.4_rek.maakervan.b.12b03329c4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er vier van"
+ },
+ "rek.maakervan.a+getal.5+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.5_rek.maakervan.b.a0278a653f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er vijf van"
+ },
+ "rek.maakervan.a+getal.6+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.6_rek.maakervan.b.e293eb997d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er zes van"
+ },
+ "rek.maakervan.a+getal.7+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.7_rek.maakervan.b.a693a0c983.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er zeven van"
+ },
+ "rek.maakervan.a+getal.8+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.8_rek.maakervan.b.1f159d3c5e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er acht van"
+ },
+ "rek.maakervan.a+getal.9+rek.maakervan.b": {
+  "file": "rek.maakervan.a_getal.9_rek.maakervan.b.3a289b5bf5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maak er negen van"
+ },
+ "rek.maakervan.b": {
+  "file": "rek.maakervan.b.bcc83eca2e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Van"
+ },
+ "rek.nujij": {
+  "file": "rek.nujij.a7fd14fae4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij"
+ },
+ "rek.nujij+rek.schuif.a+getal.10+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.10_rek.schuif.b.8d42d69b71.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif tien kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.2+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.2_rek.schuif.b.24d92e5f48.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif twee kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.3+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.3_rek.schuif.b.0fb4513f46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif drie kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.4+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.4_rek.schuif.b.83824c7629.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif vier kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.5+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.5_rek.schuif.b.5f78115a8f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif vijf kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.6+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.6_rek.schuif.b.0ddd9caf38.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif zes kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.7+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.7_rek.schuif.b.328a5504e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif zeven kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.8+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.8_rek.schuif.b.32688cb849.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif acht kralen naar mij toe"
+ },
+ "rek.nujij+rek.schuif.a+getal.9+rek.schuif.b": {
+  "file": "rek.nujij_rek.schuif.a_getal.9_rek.schuif.b.72abae33ff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu jij. Schuif negen kralen naar mij toe"
+ },
+ "rek.schuif.a": {
+  "file": "rek.schuif.a.19a1e0c725.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif"
+ },
+ "rek.schuif.a+getal.10+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.10_rek.schuif.b.a9db410063.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif tien kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.2+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.2_rek.schuif.b.4ea32b1925.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif twee kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.3+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.3_rek.schuif.b.1027744305.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif drie kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.4+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.4_rek.schuif.b.3379969a2e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif vier kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.5+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.5_rek.schuif.b.f2ab55e981.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif vijf kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.6+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.6_rek.schuif.b.d461e249ac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif zes kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.7+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.7_rek.schuif.b.86f90fc201.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif zeven kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.8+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.8_rek.schuif.b.3422933c42.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif acht kralen naar mij toe"
+ },
+ "rek.schuif.a+getal.9+rek.schuif.b": {
+  "file": "rek.schuif.a_getal.9_rek.schuif.b.bb14aacd5f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schuif negen kralen naar mij toe"
+ },
+ "rek.schuif.b": {
+  "file": "rek.schuif.b.0cfc3b7e70.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kralen naar mij toe?"
+ },
+ "rek.spieken": {
+  "file": "rek.spieken.587c1494a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we even onder het dekentje kijken? Kijk goed"
+ },
+ "rek.tien": {
+  "file": "rek.tien.3e5b74a2c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op het rekenrek zitten tien kralen"
+ },
+ "rek.uitleg": {
+  "file": "rek.uitleg.14112bdd55.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is een rekenrek. Tik op een kraal, dan schuiven de kralen naar mij toe. Ben je klaar? Tik dan op het duimpje"
+ },
+ "rek.vijf": {
+  "file": "rek.vijf.494b14a58c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Alle blauwe kralen in één keer. Dat is vijf"
+ },
+ "rek.vraag.deken": {
+  "file": "rek.vraag.deken.e6b5a1040d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel kralen zitten er onder het dekentje?"
+ },
+ "rek.vraag.kant": {
+  "file": "rek.vraag.kant.d170cd471d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel kralen zijn er aan de andere kant?"
+ },
+ "rek.wit": {
+  "file": "rek.wit.1e753138bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Alle witte kralen samen, dat is vijf"
+ },
+ "rekt.hoed": {
+  "file": "rekt.hoed.e4ce780e7d.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Huh. Goed",
+  "reason": "ander woord"
+ },
+ "rekt.huis": {
+  "file": "rekt.huis.1394c3b23d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ha! Huis"
+ },
+ "rekt.maan": {
+  "file": "rekt.maan.73e9bc6264.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Mmm, man",
+  "reason": "ander woord"
+ },
+ "rekt.muis": {
+  "file": "rekt.muis.1116c905a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hmm, muis"
+ },
+ "rekt.roos": {
+  "file": "rekt.roos.a5319388e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Rrr. Roos"
+ },
+ "rekt.veer": {
+  "file": "rekt.veer.7a75a3e9cf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "V v v. Veer"
+ },
+ "rekt.vis": {
+  "file": "rekt.vis.f82096757e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "V wie vis"
+ },
+ "rekt.voet": {
+  "file": "rekt.voet.42fd082ae8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vw. Voet"
+ },
+ "rekt.vuur": {
+  "file": "rekt.vuur.b399ac779d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "V, v, v. Vuur"
+ },
+ "rekt.zon": {
+  "file": "rekt.zon.a8b9dd796f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ssss. Zon"
+ },
+ "rijm.en": {
+  "file": "rijm.en.ea811f82b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En mijnen"
+ },
+ "rijm.hint": {
+  "file": "rijm.hint.1efc601f94.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Luister goed naar het eind van het woord"
+ },
+ "rijm.rijmen": {
+  "file": "rijm.rijmen.1d44209e00.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eddie Rijmen"
+ },
+ "rijm.uitleg": {
+  "file": "rijm.uitleg.781ec9be7b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Woorden die rijmen klinken aan het eind hetzelfde, zoals boom en droom"
+ },
+ "rijm.vraag": {
+  "file": "rijm.vraag.75fb42f76a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op"
+ },
+ "rijm.vraag+w.bed": {
+  "file": "rijm.vraag_w.bed.8be425f379.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op bed?"
+ },
+ "rijm.vraag+w.beer": {
+  "file": "rijm.vraag_w.beer.e693fe2f38.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op beer?"
+ },
+ "rijm.vraag+w.doos": {
+  "file": "rijm.vraag_w.doos.0576c8e5e1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op doos?"
+ },
+ "rijm.vraag+w.hoed": {
+  "file": "rijm.vraag_w.hoed.9c079da8fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op hoed?"
+ },
+ "rijm.vraag+w.huis": {
+  "file": "rijm.vraag_w.huis.229c4afbcd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op huis?"
+ },
+ "rijm.vraag+w.jas": {
+  "file": "rijm.vraag_w.jas.94a1939502.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op jas?"
+ },
+ "rijm.vraag+w.kip": {
+  "file": "rijm.vraag_w.kip.8d63dcd1fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op kip?"
+ },
+ "rijm.vraag+w.kop": {
+  "file": "rijm.vraag_w.kop.ca59454154.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op kop?"
+ },
+ "rijm.vraag+w.kraan": {
+  "file": "rijm.vraag_w.kraan.2624e344ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op kraan?"
+ },
+ "rijm.vraag+w.maan": {
+  "file": "rijm.vraag_w.maan.89e86a83d0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op maan?"
+ },
+ "rijm.vraag+w.muis": {
+  "file": "rijm.vraag_w.muis.a47fdd1f12.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op muis?"
+ },
+ "rijm.vraag+w.paard": {
+  "file": "rijm.vraag_w.paard.0d492b1ab8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op paard?"
+ },
+ "rijm.vraag+w.pet": {
+  "file": "rijm.vraag_w.pet.cc226a1a66.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op pet?"
+ },
+ "rijm.vraag+w.pop": {
+  "file": "rijm.vraag_w.pop.ef5701c4b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op pop?"
+ },
+ "rijm.vraag+w.roos": {
+  "file": "rijm.vraag_w.roos.23b3035799.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op Roos?"
+ },
+ "rijm.vraag+w.schip": {
+  "file": "rijm.vraag_w.schip.8c0c6a7414.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op schip?"
+ },
+ "rijm.vraag+w.taart": {
+  "file": "rijm.vraag_w.taart.d138539b75.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op taart?"
+ },
+ "rijm.vraag+w.tas": {
+  "file": "rijm.vraag_w.tas.3d10c66fbe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op tas?"
+ },
+ "rijm.vraag+w.ton": {
+  "file": "rijm.vraag_w.ton.ffba6cca7d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op ton?"
+ },
+ "rijm.vraag+w.veer": {
+  "file": "rijm.vraag_w.veer.e8344e8d60.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op veer?"
+ },
+ "rijm.vraag+w.voet": {
+  "file": "rijm.vraag_w.voet.1e65f43dc7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op voet?"
+ },
+ "rijm.vraag+w.zon": {
+  "file": "rijm.vraag_w.zon.9d142f06e2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op zon?"
+ },
+ "ruimte.achter.doos": {
+  "file": "ruimte.achter.doos.b6c0b460dd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Achter de doos"
+ },
+ "ruimte.hier": {
+  "file": "ruimte.hier.a0f097761c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje"
+ },
+ "ruimte.hier+ruimte.achter.doos": {
+  "file": "ruimte.hier_ruimte.achter.doos.dd64d1b956.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje achter de doos"
+ },
+ "ruimte.hier+ruimte.in.doos": {
+  "file": "ruimte.hier_ruimte.in.doos.68553026af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje in de doos"
+ },
+ "ruimte.hier+ruimte.naast.doos": {
+  "file": "ruimte.hier_ruimte.naast.doos.f87c4fc422.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje naast de doos"
+ },
+ "ruimte.hier+ruimte.naast.tafel": {
+  "file": "ruimte.hier_ruimte.naast.tafel.a38108ac8f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje naast de tafel"
+ },
+ "ruimte.hier+ruimte.onder.tafel": {
+  "file": "ruimte.hier_ruimte.onder.tafel.3833993f1a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje onder de tafel"
+ },
+ "ruimte.hier+ruimte.op.doos": {
+  "file": "ruimte.hier_ruimte.op.doos.192368635b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje op de doos"
+ },
+ "ruimte.hier+ruimte.op.tafel": {
+  "file": "ruimte.hier_ruimte.op.tafel.e464b4330d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje op de tafel"
+ },
+ "ruimte.hier+ruimte.voor.doos": {
+  "file": "ruimte.hier_ruimte.voor.doos.ad58097931.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier zit het muisje voor de doos"
+ },
+ "ruimte.hint": {
+  "file": "ruimte.hint.279c83dde7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk goed waar het muisje zit"
+ },
+ "ruimte.in.doos": {
+  "file": "ruimte.in.doos.f904904f6e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In de doos"
+ },
+ "ruimte.ja": {
+  "file": "ruimte.ja.acc624707a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit"
+ },
+ "ruimte.ja+ruimte.achter.doos": {
+  "file": "ruimte.ja_ruimte.achter.doos.755b911fc5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit achter de doos"
+ },
+ "ruimte.ja+ruimte.in.doos": {
+  "file": "ruimte.ja_ruimte.in.doos.9487ebc98e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit in de doos"
+ },
+ "ruimte.ja+ruimte.naast.doos": {
+  "file": "ruimte.ja_ruimte.naast.doos.462da4a52a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit naast de doos"
+ },
+ "ruimte.ja+ruimte.naast.tafel": {
+  "file": "ruimte.ja_ruimte.naast.tafel.d2b63fc4de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit naast de tafel"
+ },
+ "ruimte.ja+ruimte.onder.tafel": {
+  "file": "ruimte.ja_ruimte.onder.tafel.81ee47ee57.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit onder de tafel"
+ },
+ "ruimte.ja+ruimte.op.doos": {
+  "file": "ruimte.ja_ruimte.op.doos.6588ba0579.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit op de doos"
+ },
+ "ruimte.ja+ruimte.op.tafel": {
+  "file": "ruimte.ja_ruimte.op.tafel.66e8744f6a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit op de tafel"
+ },
+ "ruimte.ja+ruimte.voor.doos": {
+  "file": "ruimte.ja_ruimte.voor.doos.e741422057.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dit muisje zit voor de doos"
+ },
+ "ruimte.naast.doos": {
+  "file": "ruimte.naast.doos.804f033183.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Naast de doos"
+ },
+ "ruimte.naast.tafel": {
+  "file": "ruimte.naast.tafel.3654ac6d1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Naast de tafel"
+ },
+ "ruimte.onder.tafel": {
+  "file": "ruimte.onder.tafel.8294a615de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Onder de tafel?"
+ },
+ "ruimte.op.doos": {
+  "file": "ruimte.op.doos.a4296d00e9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op de doos"
+ },
+ "ruimte.op.tafel": {
+  "file": "ruimte.op.tafel.d60e410a07.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op de tafel?"
+ },
+ "ruimte.uitleg.doos": {
+  "file": "ruimte.uitleg.doos.2d4a7f0ecb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk een doos en een muisje. Het muisje zit steeds ergens anders"
+ },
+ "ruimte.uitleg.tafel": {
+  "file": "ruimte.uitleg.tafel.4626d36cc9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, een tafel en een muisje. Het muisje zit steeds ergens anders"
+ },
+ "ruimte.voor.doos": {
+  "file": "ruimte.voor.doos.ed8ac0a4b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voor de doos"
+ },
+ "ruimte.vraag": {
+  "file": "ruimte.vraag.b0354a9e7a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit"
+ },
+ "ruimte.vraag+ruimte.achter.doos": {
+  "file": "ruimte.vraag_ruimte.achter.doos.805558e349.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit achter de doos?"
+ },
+ "ruimte.vraag+ruimte.in.doos": {
+  "file": "ruimte.vraag_ruimte.in.doos.feec5a1f70.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit in de doos?"
+ },
+ "ruimte.vraag+ruimte.naast.doos": {
+  "file": "ruimte.vraag_ruimte.naast.doos.e0e65e0f13.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit naast de doos?"
+ },
+ "ruimte.vraag+ruimte.naast.tafel": {
+  "file": "ruimte.vraag_ruimte.naast.tafel.57af54a6b7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit naast de tafel?"
+ },
+ "ruimte.vraag+ruimte.onder.tafel": {
+  "file": "ruimte.vraag_ruimte.onder.tafel.acce586aa9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit onder de tafel?"
+ },
+ "ruimte.vraag+ruimte.op.doos": {
+  "file": "ruimte.vraag_ruimte.op.doos.d7fc183518.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit op de doos?"
+ },
+ "ruimte.vraag+ruimte.op.tafel": {
+  "file": "ruimte.vraag_ruimte.op.tafel.5b47675a00.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit op de tafel?"
+ },
+ "ruimte.vraag+ruimte.voor.doos": {
+  "file": "ruimte.vraag_ruimte.voor.doos.4a9451a297.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welk muisje zit voor de doos?"
+ },
+ "samen.hoi": {
+  "file": "samen.hoi.c861b67ec6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met"
+ },
+ "samen.hoi+wie.mama": {
+  "file": "samen.hoi_wie.mama.da4e4adf6e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met mama"
+ },
+ "samen.hoi+wie.oma": {
+  "file": "samen.hoi_wie.oma.2653f65bab.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met oma"
+ },
+ "samen.hoi+wie.opa": {
+  "file": "samen.hoi_wie.opa.1dd6d25d7c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met opa"
+ },
+ "samen.hoi+wie.papa": {
+  "file": "samen.hoi_wie.papa.ed14d45ddb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met papa"
+ },
+ "samen.hoi+wie.papaofmama": {
+  "file": "samen.hoi_wie.papaofmama.c6aedefd7a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Fijn, je speelt samen met papa of mama"
+ },
+ "slaap.tik": {
+  "file": "slaap.tik.7cabf028b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Sst, Fluffy slaapt. Een andere keer spelen we weer"
+ },
+ "splits.buiten": {
+  "file": "splits.buiten.b68d498063.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er"
+ },
+ "splits.buiten.een": {
+  "file": "splits.buiten.een.d5e5934ce1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten is er één"
+ },
+ "splits.buiten+getal.2": {
+  "file": "splits.buiten_getal.2.97b2f9659d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er twee"
+ },
+ "splits.buiten+getal.3": {
+  "file": "splits.buiten_getal.3.c7a8080358.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er drie"
+ },
+ "splits.buiten+getal.4": {
+  "file": "splits.buiten_getal.4.a0e30e68ed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er vier"
+ },
+ "splits.buiten+getal.5": {
+  "file": "splits.buiten_getal.5.154d30ec57.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er vijf"
+ },
+ "splits.buiten+getal.6": {
+  "file": "splits.buiten_getal.6.8a7237daa6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er zes"
+ },
+ "splits.buiten+getal.7": {
+  "file": "splits.buiten_getal.7.19fc0afcd3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er zeven"
+ },
+ "splits.buiten+getal.8": {
+  "file": "splits.buiten_getal.8.ef014c99ae.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er acht"
+ },
+ "splits.buiten+getal.9": {
+  "file": "splits.buiten_getal.9.ed7f3fc8e7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Buiten zijn er negen"
+ },
+ "splits.en": {
+  "file": "splits.en.ea811f82b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En mijn antwoord"
+ },
+ "splits.is": {
+  "file": "splits.is.6140d3d0e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Is"
+ },
+ "splits.kijk": {
+  "file": "splits.kijk.2ae1509ee8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn"
+ },
+ "splits.kijk+getal.10+obj.vlinders": {
+  "file": "splits.kijk_getal.10_obj.vlinders.31b17aa279.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn tien vlinders"
+ },
+ "splits.kijk+getal.2+obj.vlinders": {
+  "file": "splits.kijk_getal.2_obj.vlinders.13c9cca1b0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn twee vlinders"
+ },
+ "splits.kijk+getal.3+obj.vlinders": {
+  "file": "splits.kijk_getal.3_obj.vlinders.dac6135aee.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn drie vlinders"
+ },
+ "splits.kijk+getal.4+obj.vlinders": {
+  "file": "splits.kijk_getal.4_obj.vlinders.c95dca2c7e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn vier vlinders"
+ },
+ "splits.kijk+getal.5+obj.vlinders": {
+  "file": "splits.kijk_getal.5_obj.vlinders.a28e237798.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn vijf vlinders"
+ },
+ "splits.kijk+getal.6+obj.vlinders": {
+  "file": "splits.kijk_getal.6_obj.vlinders.0c746ba111.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn zes vlinders"
+ },
+ "splits.kijk+getal.7+obj.vlinders": {
+  "file": "splits.kijk_getal.7_obj.vlinders.38630eb921.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn zeven vlinders"
+ },
+ "splits.kijk+getal.8+obj.vlinders": {
+  "file": "splits.kijk_getal.8_obj.vlinders.be6913fdc0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn acht vlinders"
+ },
+ "splits.kijk+getal.9+obj.vlinders": {
+  "file": "splits.kijk_getal.9_obj.vlinders.21ac39ed97.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, hier zijn negen vlinders"
+ },
+ "splits.slapen": {
+  "file": "splits.slapen.f8255f7f48.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een paar vlinders gaan slapen"
+ },
+ "splits.spieken": {
+  "file": "splits.spieken.af192cb3b4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we even door de deur gluren? Kijk goed"
+ },
+ "splits.uitleg": {
+  "file": "splits.uitleg.9dd3928ee8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een paar vlinders gaan in het huisje slapen. Kijk maar"
+ },
+ "splits.uitleg.dak": {
+  "file": "splits.uitleg.dak.b17b80719b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Op het dak staat hoeveel vlinders er in dit huisje wonen. Sommige zijn binnen, sommige buiten"
+ },
+ "splits.vraag": {
+  "file": "splits.vraag.5d8d63fc17.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel vlinders zitten er in het huisje?"
+ },
+ "splits.waren.a": {
+  "file": "splits.waren.a.0d806563bf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren"
+ },
+ "splits.waren.a+getal.10+splits.waren.b": {
+  "file": "splits.waren.a_getal.10_splits.waren.b.d9f00c9072.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren tien vlinders"
+ },
+ "splits.waren.a+getal.2+splits.waren.b": {
+  "file": "splits.waren.a_getal.2_splits.waren.b.a3f9fbe7af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren twee vlinders"
+ },
+ "splits.waren.a+getal.3+splits.waren.b": {
+  "file": "splits.waren.a_getal.3_splits.waren.b.350e7f4f7a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren drie vlinders"
+ },
+ "splits.waren.a+getal.4+splits.waren.b": {
+  "file": "splits.waren.a_getal.4_splits.waren.b.53741edc67.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren vier vlinders"
+ },
+ "splits.waren.a+getal.5+splits.waren.b": {
+  "file": "splits.waren.a_getal.5_splits.waren.b.2612095c37.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren vijf vlinders"
+ },
+ "splits.waren.a+getal.6+splits.waren.b": {
+  "file": "splits.waren.a_getal.6_splits.waren.b.070252c89b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren zes vlinders"
+ },
+ "splits.waren.a+getal.7+splits.waren.b": {
+  "file": "splits.waren.a_getal.7_splits.waren.b.9d8d72c265.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren zeven vlinders"
+ },
+ "splits.waren.a+getal.8+splits.waren.b": {
+  "file": "splits.waren.a_getal.8_splits.waren.b.9b6fb1963e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren acht vlinders"
+ },
+ "splits.waren.a+getal.9+splits.waren.b": {
+  "file": "splits.waren.a_getal.9_splits.waren.b.8910683b38.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er waren negen vlinders"
+ },
+ "splits.waren.b": {
+  "file": "splits.waren.b.2a07d5d053.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vlinders"
+ },
+ "splits.welterusten": {
+  "file": "splits.welterusten.6b6bbb4fcf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Deur dicht. Welterusten vlinders"
+ },
+ "splits.wonen.a": {
+  "file": "splits.wonen.a.531c70878d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen?"
+ },
+ "splits.wonen.a+getal.10+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.10_splits.wonen.b.7fcd7ff8f5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen tien vlinders"
+ },
+ "splits.wonen.a+getal.2+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.2_splits.wonen.b.eb0b1eff09.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen twee vlinders"
+ },
+ "splits.wonen.a+getal.3+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.3_splits.wonen.b.b265bf4a73.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen drie vlinders"
+ },
+ "splits.wonen.a+getal.4+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.4_splits.wonen.b.287f9246a9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen vier vlinders"
+ },
+ "splits.wonen.a+getal.5+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.5_splits.wonen.b.f0758a8d96.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen vijf vlinders"
+ },
+ "splits.wonen.a+getal.6+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.6_splits.wonen.b.7451924e06.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen zes vlinders"
+ },
+ "splits.wonen.a+getal.7+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.7_splits.wonen.b.d7f3f9822d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen zeven vlinders"
+ },
+ "splits.wonen.a+getal.8+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.8_splits.wonen.b.63a40d7f32.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen acht vlinders"
+ },
+ "splits.wonen.a+getal.9+splits.wonen.b": {
+  "file": "splits.wonen.a_getal.9_splits.wonen.b.4b48cc31b3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In dit huisje wonen negen vlinders"
+ },
+ "splits.wonen.b": {
+  "file": "splits.wonen.b.2a07d5d053.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vlinders"
+ },
+ "tellen.algeteld": {
+  "file": "tellen.algeteld.1d49747b14.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Die hebben we al geteld"
+ },
+ "tellen.dushet": {
+  "file": "tellen.dushet.a203951157.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er"
+ },
+ "tellen.dushet.een": {
+  "file": "tellen.dushet.een.7ff8846bb0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het is er"
+ },
+ "tellen.dushet.een+getal.1": {
+  "file": "tellen.dushet.een_getal.1.a2e788838a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het is er één"
+ },
+ "tellen.dushet+getal.10": {
+  "file": "tellen.dushet_getal.10.1c5c55fa2b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er tien"
+ },
+ "tellen.dushet+getal.2": {
+  "file": "tellen.dushet_getal.2.e9802a4888.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er twee?"
+ },
+ "tellen.dushet+getal.3": {
+  "file": "tellen.dushet_getal.3.a783f303c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er drie"
+ },
+ "tellen.dushet+getal.4": {
+  "file": "tellen.dushet_getal.4.67a057a86f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er vier"
+ },
+ "tellen.dushet+getal.5": {
+  "file": "tellen.dushet_getal.5.7608c79b3d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er vijf"
+ },
+ "tellen.dushet+getal.6": {
+  "file": "tellen.dushet_getal.6.fef09cf82d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er zes"
+ },
+ "tellen.dushet+getal.7": {
+  "file": "tellen.dushet_getal.7.b5666aa47c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er zeven?"
+ },
+ "tellen.dushet+getal.8": {
+  "file": "tellen.dushet_getal.8.7c757febe7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er acht"
+ },
+ "tellen.dushet+getal.9": {
+  "file": "tellen.dushet_getal.9.e497cce3ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus het zijn er negen"
+ },
+ "tellen.hint": {
+  "file": "tellen.hint.cb345b74f2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hmm. Laten we nog een keer samen tellen"
+ },
+ "tellen.hoeveel": {
+  "file": "tellen.hoeveel.937c4e80e4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel zijn het er?"
+ },
+ "tellen.hoeveel.tik": {
+  "file": "tellen.hoeveel.tik.20c5bcff21.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik op het goede getal"
+ },
+ "tellen.kijkdeze": {
+  "file": "tellen.kijkdeze.17368927e1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, deze is het"
+ },
+ "tellen.tik.a": {
+  "file": "tellen.tik.a.f066604f1a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Gun jij de"
+ },
+ "tellen.tik.a+getal.1+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.1_tellen.tik.b.c83736850a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de één aantikken?"
+ },
+ "tellen.tik.a+getal.10+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.10_tellen.tik.b.df162325c7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de tien aantikken?"
+ },
+ "tellen.tik.a+getal.2+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.2_tellen.tik.b.a6691590ac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de twee aantikken?"
+ },
+ "tellen.tik.a+getal.3+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.3_tellen.tik.b.8aaa9cf5bf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij er drie aantikken?"
+ },
+ "tellen.tik.a+getal.4+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.4_tellen.tik.b.10884cdd06.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de vier aantikken?"
+ },
+ "tellen.tik.a+getal.5+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.5_tellen.tik.b.2e4269b66b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de vijf aantikken?"
+ },
+ "tellen.tik.a+getal.6+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.6_tellen.tik.b.1b8b57718b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de zes aantikken?"
+ },
+ "tellen.tik.a+getal.7+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.7_tellen.tik.b.fd73e666d2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de zeven aantikken?"
+ },
+ "tellen.tik.a+getal.8+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.8_tellen.tik.b.2f7c68f721.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de acht aantikken?"
+ },
+ "tellen.tik.a+getal.9+tellen.tik.b": {
+  "file": "tellen.tik.a_getal.9_tellen.tik.b.169201da30.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kun jij de negen aantikken?"
+ },
+ "tellen.tik.b": {
+  "file": "tellen.tik.b.11e7337c55.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Aantikken"
+ },
+ "tellen.uitleg.mee": {
+  "file": "tellen.uitleg.mee.20784a8c33.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik ze één voor één aan. Ik tel mee"
+ },
+ "tellen.uitleg.zelf": {
+  "file": "tellen.uitleg.zelf.8c2945b57a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tik ze één voor één aan en tel maar zelf"
+ },
+ "tellen.vraag.a": {
+  "file": "tellen.vraag.a.0595fba44d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we dat doen?"
+ },
+ "tellen.vraag.a+obj.eendjes+tellen.vraag.b": {
+  "file": "tellen.vraag.a_obj.eendjes_tellen.vraag.b.03275a22ec.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we de eendjes tellen?"
+ },
+ "tellen.vraag.a+obj.lieveheersbeestjes+tellen.vraag.b": {
+  "file": "tellen.vraag.a_obj.lieveheersbeestjes_tellen.vraag.b.a1df286dfe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we de lieveheersbeestjes tellen?"
+ },
+ "tellen.vraag.a+obj.visjes+tellen.vraag.b": {
+  "file": "tellen.vraag.a_obj.visjes_tellen.vraag.b.95857236c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zullen we de visjes tellen?"
+ },
+ "tellen.vraag.b": {
+  "file": "tellen.vraag.b.09aa7989fd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tellen?"
+ },
+ "tellen.zijnhet": {
+  "file": "tellen.zijnhet.3dbfee7540.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, hetzijner"
+ },
+ "tellen.zijnhet.een": {
+  "file": "tellen.zijnhet.een.856b513595.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het is er"
+ },
+ "tellen.zijnhet.een+getal.1": {
+  "file": "tellen.zijnhet.een_getal.1.e8fbb05987.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het is er één"
+ },
+ "tellen.zijnhet+getal.10": {
+  "file": "tellen.zijnhet_getal.10.3d67aeb651.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er tien"
+ },
+ "tellen.zijnhet+getal.2": {
+  "file": "tellen.zijnhet_getal.2.5d79bead3b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er twee"
+ },
+ "tellen.zijnhet+getal.3": {
+  "file": "tellen.zijnhet_getal.3.1dfd288aeb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er drie"
+ },
+ "tellen.zijnhet+getal.4": {
+  "file": "tellen.zijnhet_getal.4.09e08d8fd3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er vier"
+ },
+ "tellen.zijnhet+getal.5": {
+  "file": "tellen.zijnhet_getal.5.772a6ccd04.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er vijf"
+ },
+ "tellen.zijnhet+getal.6": {
+  "file": "tellen.zijnhet_getal.6.4dce04d5f6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er zes"
+ },
+ "tellen.zijnhet+getal.7": {
+  "file": "tellen.zijnhet_getal.7.f72796ab83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er zeven"
+ },
+ "tellen.zijnhet+getal.8": {
+  "file": "tellen.zijnhet_getal.8.0c6b2d38fd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er acht"
+ },
+ "tellen.zijnhet+getal.9": {
+  "file": "tellen.zijnhet_getal.9.84b8948821.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, het zijn er negen"
+ },
+ "verhaal.af.a": {
+  "file": "verhaal.af.a.a9cc812fdd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er zwemmen er"
+ },
+ "verhaal.af.a+getal.2+verhaal.af.b": {
+  "file": "verhaal.af.a_getal.2_verhaal.af.b.7201176ef9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijkt er zwemmend er twee weg"
+ },
+ "verhaal.af.a+getal.3+verhaal.af.b": {
+  "file": "verhaal.af.a_getal.3_verhaal.af.b.e42d9f6d79.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er zwemmen er drie weg"
+ },
+ "verhaal.af.b": {
+  "file": "verhaal.af.b.4db0163c68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Weg"
+ },
+ "verhaal.af.een": {
+  "file": "verhaal.af.een.dd0befb66a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er zwemt er één weg"
+ },
+ "verhaal.bij.a": {
+  "file": "verhaal.bij.a.c288d376ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er komen er"
+ },
+ "verhaal.bij.a+getal.2+verhaal.bij.b": {
+  "file": "verhaal.bij.a_getal.2_verhaal.bij.b.3e4048ca95.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er komen er twee bij"
+ },
+ "verhaal.bij.a+getal.3+verhaal.bij.b": {
+  "file": "verhaal.bij.a_getal.3_verhaal.bij.b.f7aeb7832b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er komen er drie bij"
+ },
+ "verhaal.bij.b": {
+  "file": "verhaal.bij.b.8bd3b5a9ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bij"
+ },
+ "verhaal.bij.een": {
+  "file": "verhaal.bij.een.d2e792302b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, er komt er één bij"
+ },
+ "verhaal.eerst": {
+  "file": "verhaal.eerst.d70a161b26.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er"
+ },
+ "verhaal.eerst.een": {
+  "file": "verhaal.eerst.een.94a3aee92b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst was er één"
+ },
+ "verhaal.eerst+getal.10": {
+  "file": "verhaal.eerst_getal.10.3324c7c0d8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er tien"
+ },
+ "verhaal.eerst+getal.2": {
+  "file": "verhaal.eerst_getal.2.6f5b80d2f4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er twee"
+ },
+ "verhaal.eerst+getal.3": {
+  "file": "verhaal.eerst_getal.3.37b7faab46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er drie"
+ },
+ "verhaal.eerst+getal.4": {
+  "file": "verhaal.eerst_getal.4.de9740eeb1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er vier"
+ },
+ "verhaal.eerst+getal.5": {
+  "file": "verhaal.eerst_getal.5.251a5c3c1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er vijf"
+ },
+ "verhaal.eerst+getal.6": {
+  "file": "verhaal.eerst_getal.6.1e61250370.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er zes"
+ },
+ "verhaal.eerst+getal.7": {
+  "file": "verhaal.eerst_getal.7.a19b4dcb14.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er zeven"
+ },
+ "verhaal.eerst+getal.8": {
+  "file": "verhaal.eerst_getal.8.00e36f026f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er acht"
+ },
+ "verhaal.eerst+getal.9": {
+  "file": "verhaal.eerst_getal.9.c559e92dc1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eerst waren er negen"
+ },
+ "verhaal.en": {
+  "file": "verhaal.en.ea811f82b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "En mee in de stad"
+ },
+ "verhaal.eraf": {
+  "file": "verhaal.eraf.2734c1ba9f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Errafis"
+ },
+ "verhaal.erbij": {
+  "file": "verhaal.erbij.48550b1078.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "erbij is"
+ },
+ "verhaal.hint": {
+  "file": "verhaal.hint.7d0ba21895.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Weet je nog wat er gebeurde? Ik vertel het nog een keer"
+ },
+ "verhaal.riet": {
+  "file": "verhaal.riet.23ece7915d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ze gaan achter het riet zitten. Nu zie je ze niet meer"
+ },
+ "verhaal.spiek": {
+  "file": "verhaal.spiek.4de4d603e8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk maar even achter het riet"
+ },
+ "verhaal.start.a": {
+  "file": "verhaal.start.a.f4e9058910.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het zwemmen"
+ },
+ "verhaal.start.a+getal.10+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.10_verhaal.start.b.e8595e3bb6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen tien eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.2+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.2_verhaal.start.b.81311b4dfb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen twee eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.3+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.3_verhaal.start.b.9eec6565c4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen drie eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.4+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.4_verhaal.start.b.b3b0e2245a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen vier eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.5+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.5_verhaal.start.b.d7f53f1316.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen vijf eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.6+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.6_verhaal.start.b.28157f7932.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen zes eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.7+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.7_verhaal.start.b.c27d00fae8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen zeven eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.8+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.8_verhaal.start.b.7c182cf093.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen acht eendjes in de vijver"
+ },
+ "verhaal.start.a+getal.9+verhaal.start.b": {
+  "file": "verhaal.start.a_getal.9_verhaal.start.b.a379bf3298.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemmen negen eendjes in de vijver"
+ },
+ "verhaal.start.b": {
+  "file": "verhaal.start.b.ed67acc962.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eendjes in de vijver"
+ },
+ "verhaal.start.een": {
+  "file": "verhaal.start.een.cd00a14f70.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Er zwemt één eendje in de vijver"
+ },
+ "verhaal.uitleg": {
+  "file": "verhaal.uitleg.98e7bad11a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik vertel een verhaaltje over eendjes. Kijk goed wat er gebeurt"
+ },
+ "verhaal.vraag": {
+  "file": "verhaal.vraag.4fe05a832c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel eendjes zijn er nu in de vijver?"
+ },
+ "verhaal.vraag.riet": {
+  "file": "verhaal.vraag.riet.99ef6332bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel eendjes zitten er nu achter het riet?"
+ },
+ "voordoen.denk": {
+  "file": "voordoen.denk.938d778f6c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik leg ze er één voor één in en ik tel mee"
+ },
+ "voordoen.kijk": {
+  "file": "voordoen.kijk.cc796c5458.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er"
+ },
+ "voordoen.kijk.een": {
+  "file": "voordoen.kijk.een.b958ff9d46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo is het er"
+ },
+ "voordoen.kijk.een+getal.1": {
+  "file": "voordoen.kijk.een_getal.1.4d23bca6d0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo is het er één"
+ },
+ "voordoen.kijk+getal.10": {
+  "file": "voordoen.kijk_getal.10.7edf7883a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er tien"
+ },
+ "voordoen.kijk+getal.2": {
+  "file": "voordoen.kijk_getal.2.1c32d4ce45.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er twee"
+ },
+ "voordoen.kijk+getal.3": {
+  "file": "voordoen.kijk_getal.3.f2297a25b3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er drie"
+ },
+ "voordoen.kijk+getal.4": {
+  "file": "voordoen.kijk_getal.4.8ad9f02176.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er vier"
+ },
+ "voordoen.kijk+getal.5": {
+  "file": "voordoen.kijk_getal.5.77932a9b71.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er vijf"
+ },
+ "voordoen.kijk+getal.6": {
+  "file": "voordoen.kijk_getal.6.750a7eb10d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er zes"
+ },
+ "voordoen.kijk+getal.7": {
+  "file": "voordoen.kijk_getal.7.d937c9b227.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er zeven"
+ },
+ "voordoen.kijk+getal.8": {
+  "file": "voordoen.kijk_getal.8.2b8dd80d01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er acht"
+ },
+ "voordoen.kijk+getal.9": {
+  "file": "voordoen.kijk_getal.9.c4ff14820e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo zijn het er negen"
+ },
+ "voordoen.laatste.a": {
+  "file": "voordoen.laatste.a.2eaef1798a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was"
+ },
+ "voordoen.laatste.a+getal.1": {
+  "file": "voordoen.laatste.a_getal.1.ee99a3aad9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was één"
+ },
+ "voordoen.laatste.a+getal.10": {
+  "file": "voordoen.laatste.a_getal.10.34fb02a6a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was tien"
+ },
+ "voordoen.laatste.a+getal.2": {
+  "file": "voordoen.laatste.a_getal.2.e48e4d5338.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was twee"
+ },
+ "voordoen.laatste.a+getal.3": {
+  "file": "voordoen.laatste.a_getal.3.43eb48adbf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was drie"
+ },
+ "voordoen.laatste.a+getal.4": {
+  "file": "voordoen.laatste.a_getal.4.a435dd7562.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was vier"
+ },
+ "voordoen.laatste.a+getal.5": {
+  "file": "voordoen.laatste.a_getal.5.8de3f5de7a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was vijf"
+ },
+ "voordoen.laatste.a+getal.6": {
+  "file": "voordoen.laatste.a_getal.6.3cfd35a092.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was zes"
+ },
+ "voordoen.laatste.a+getal.7": {
+  "file": "voordoen.laatste.a_getal.7.8e4423c20d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was zeven"
+ },
+ "voordoen.laatste.a+getal.8": {
+  "file": "voordoen.laatste.a_getal.8.a7dfdc80fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was acht"
+ },
+ "voordoen.laatste.a+getal.9": {
+  "file": "voordoen.laatste.a_getal.9.4c8bf678cf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het laatste getal dat ik zei was negen"
+ },
+ "voordoen.laatste.b": {
+  "file": "voordoen.laatste.b.0b125903bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er"
+ },
+ "voordoen.laatste.b.een": {
+  "file": "voordoen.laatste.b.een.6e13d12e07.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er ligt er"
+ },
+ "voordoen.laatste.b.een+getal.1+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b.een_getal.1_voordoen.laatste.c.92c9626277.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er ligt er één in het mandje"
+ },
+ "voordoen.laatste.b+getal.10+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.10_voordoen.laatste.c.1faf6affba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er tien in het mandje?"
+ },
+ "voordoen.laatste.b+getal.2+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.2_voordoen.laatste.c.4d13d417af.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er twee in het mandje"
+ },
+ "voordoen.laatste.b+getal.3+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.3_voordoen.laatste.c.fbcb74e7be.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er drie in het mandje?"
+ },
+ "voordoen.laatste.b+getal.4+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.4_voordoen.laatste.c.9ec10ed5aa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er vier in het mandje"
+ },
+ "voordoen.laatste.b+getal.5+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.5_voordoen.laatste.c.86b6fc5dee.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er vijf in het mandje"
+ },
+ "voordoen.laatste.b+getal.6+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.6_voordoen.laatste.c.38b1a7bd5a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er zes in het mandje"
+ },
+ "voordoen.laatste.b+getal.7+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.7_voordoen.laatste.c.f0e8ebdec1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er zeven in het mandje"
+ },
+ "voordoen.laatste.b+getal.8+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.8_voordoen.laatste.c.c09fba3b47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er acht in het mandje"
+ },
+ "voordoen.laatste.b+getal.9+voordoen.laatste.c": {
+  "file": "voordoen.laatste.b_getal.9_voordoen.laatste.c.58bce9fb7f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dus er liggen er negen in het mandje"
+ },
+ "voordoen.laatste.c": {
+  "file": "voordoen.laatste.c.7a6e4c8055.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In het mandje"
+ },
+ "voordoen.luister": {
+  "file": "voordoen.luister.66c13c186b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik doe het even voor. Luister maar"
+ },
+ "voordoen.samen": {
+  "file": "voordoen.samen.e759b0dcfa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Nu doen we het samen. Jij legt ze erin en ik tel mee"
+ },
+ "voordoen.start": {
+  "file": "voordoen.start.5a70763c88.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ik doe het even voor. Kijk maar"
+ },
+ "vorm.dit": {
+  "file": "vorm.dit.eafe28944c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is"
+ },
+ "vorm.dit+vorm.driehoek": {
+  "file": "vorm.dit_vorm.driehoek.678cef4446.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is de driehoek"
+ },
+ "vorm.dit+vorm.rechthoek": {
+  "file": "vorm.dit_vorm.rechthoek.7cfbbc1107.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is de rechthoek"
+ },
+ "vorm.dit+vorm.rondje": {
+  "file": "vorm.dit_vorm.rondje.eb3faa78bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is het rondje"
+ },
+ "vorm.dit+vorm.vierkant": {
+  "file": "vorm.dit_vorm.vierkant.5902d527be.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dit is het vierkant"
+ },
+ "vorm.driehoek": {
+  "file": "vorm.driehoek.99d464f357.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "De driehoek"
+ },
+ "vorm.ja": {
+  "file": "vorm.ja.d7bdf60d83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dat is"
+ },
+ "vorm.ja+vorm.driehoek": {
+  "file": "vorm.ja_vorm.driehoek.797098a853.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dat is de driehoek"
+ },
+ "vorm.ja+vorm.rechthoek": {
+  "file": "vorm.ja_vorm.rechthoek.795627ccc7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dat is de rechthoek"
+ },
+ "vorm.ja+vorm.rondje": {
+  "file": "vorm.ja_vorm.rondje.37d8b37e7c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dat is het rondje"
+ },
+ "vorm.ja+vorm.vierkant": {
+  "file": "vorm.ja_vorm.vierkant.71bfb5ff5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ja, dat is het vierkant"
+ },
+ "vorm.kenmerk.driehoek": {
+  "file": "vorm.kenmerk.driehoek.dbb2826362.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een driehoek heeft drie rechte kanten en drie punten. Hij mag ook scheef staan"
+ },
+ "vorm.kenmerk.rechthoek": {
+  "file": "vorm.kenmerk.rechthoek.a20a0585a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een rechthoek heeft vier rechte kanten, twee lange en twee korte"
+ },
+ "vorm.kenmerk.rondje": {
+  "file": "vorm.kenmerk.rondje.c192f1bf00.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een rondje is helemaal rond. Het heeft geen punten en het is net zo hoog als breed"
+ },
+ "vorm.kenmerk.vierkant": {
+  "file": "vorm.kenmerk.vierkant.dca234cd94.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een vierkant heeft vier rechte kanten en die zijn allemaal even lang"
+ },
+ "vorm.rechthoek": {
+  "file": "vorm.rechthoek.f6a1307d85.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "De rechthoek"
+ },
+ "vorm.rondje": {
+  "file": "vorm.rondje.2987097170.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het rondje?"
+ },
+ "vorm.uitleg": {
+  "file": "vorm.uitleg.b09c9b7e9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We gaan vormen zoeken. Kijk goed naar de kanten en de punten"
+ },
+ "vorm.vierkant": {
+  "file": "vorm.vierkant.66eeabf4bf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Het vierkant"
+ },
+ "vorm.vraag": {
+  "file": "vorm.vraag.819ece6344.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar is"
+ },
+ "vorm.vraag+vorm.driehoek": {
+  "file": "vorm.vraag_vorm.driehoek.cd0e3e09bc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar is de driehoek?"
+ },
+ "vorm.vraag+vorm.rechthoek": {
+  "file": "vorm.vraag_vorm.rechthoek.adda54135e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar is de rechthoek?"
+ },
+ "vorm.vraag+vorm.rondje": {
+  "file": "vorm.vraag_vorm.rondje.d50a1c84c3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar is het rondje?"
+ },
+ "vorm.vraag+vorm.vierkant": {
+  "file": "vorm.vraag_vorm.vierkant.99df47fb84.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar is het vierkant?"
+ },
+ "w.bed": {
+  "file": "w.bed.744e02273e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bed"
+ },
+ "w.bed+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.beer_klank.zelfde.a2dcd10f94.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bed en beer. Die beginnen hetzelfde"
+ },
+ "w.bed+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.boek_klank.zelfde.59fedad92f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bed en boek. Die beginnen hetzelfde"
+ },
+ "w.bed+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.boom_klank.zelfde.1f78381390.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en boom? Die beginnen hetzelfde"
+ },
+ "w.bed+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.boot_klank.zelfde.30e0024257.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bed en boot, die beginnen hetzelfde"
+ },
+ "w.bed+rijm.en+w.pet+rijm.rijmen": {
+  "file": "w.bed_rijm.en_w.pet_rijm.rijmen.e8bc987cf4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bed en pet, die rijmen"
+ },
+ "w.beer": {
+  "file": "w.beer.45864e3dc5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer"
+ },
+ "w.beer+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.bed_klank.zelfde.92e9182632.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en bed, die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.boek_klank.zelfde.db291e839d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en boek, die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.boom_klank.zelfde.8e251ca8a6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en boom. Die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.boot_klank.zelfde.6440000a23.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en boot, die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.veer+rijm.rijmen": {
+  "file": "w.beer_rijm.en_w.veer_rijm.rijmen.b4e27a90fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en veer die rijmen"
+ },
+ "w.boek": {
+  "file": "w.boek.160226ae10.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek"
+ },
+ "w.boek+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.bed_klank.zelfde.3e28b91895.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en bed die beginnen hetzelfde"
+ },
+ "w.boek+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.beer_klank.zelfde.08c0a579a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en beer, die beginnen hetzelfde"
+ },
+ "w.boek+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.boom_klank.zelfde.c1c05d0ef6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en boom die beginnen hetzelfde"
+ },
+ "w.boek+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.boot_klank.zelfde.7d5e3ac6ed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en boot die beginnen hetzelfde"
+ },
+ "w.boom": {
+  "file": "w.boom.10a288542a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom!"
+ },
+ "w.boom+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.bed_klank.zelfde.167bbbf107.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom en Beth, die beginnen hetzelfde"
+ },
+ "w.boom+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.beer_klank.zelfde.bd6f95b2ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boem en beer. Die beginnen hetzelfde"
+ },
+ "w.boom+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.boek_klank.zelfde.235d0fff36.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom en boek. Die beginnen hetzelfde"
+ },
+ "w.boom+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.boot_klank.zelfde.59f0980859.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom en boot die beginnen hetzelfde"
+ },
+ "w.boot": {
+  "file": "w.boot.fd94fb2f3e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot"
+ },
+ "w.boot+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.bed_klank.zelfde.13132f0284.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en bed die beginnen hetzelfde"
+ },
+ "w.boot+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.beer_klank.zelfde.8aca86f7b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en beer, die beginnen hetzelfde"
+ },
+ "w.boot+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.boek_klank.zelfde.3bba94ccd5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en boek, die beginnen hetzelfde"
+ },
+ "w.boot+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.boom_klank.zelfde.0b9e716e92.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en boom. Die beginnen hetzelfde"
+ },
+ "w.deur": {
+  "file": "w.deur.9a02637f96.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Deur"
+ },
+ "w.deur+rijm.en+w.doos+klank.zelfde": {
+  "file": "w.deur_rijm.en_w.doos_klank.zelfde.e6252f4f5b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Deur en doos? Die beginnen hetzelfde"
+ },
+ "w.doos": {
+  "file": "w.doos.bbf539deb3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doos"
+ },
+ "w.doos+rijm.en+w.deur+klank.zelfde": {
+  "file": "w.doos_rijm.en_w.deur_klank.zelfde.e42a7f1a96.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doos en deur, die beginnen hetzelfde"
+ },
+ "w.doos+rijm.en+w.roos+rijm.rijmen": {
+  "file": "w.doos_rijm.en_w.roos_rijm.rijmen.15bf076cf8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doos en Roos die rijmen"
+ },
+ "w.hoed": {
+  "file": "w.hoed.213f47daef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoed"
+ },
+ "w.hoed+rijm.en+w.huis+klank.zelfde": {
+  "file": "w.hoed_rijm.en_w.huis_klank.zelfde.54884294a7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoed en huis, die beginnen hetzelfde"
+ },
+ "w.hoed+rijm.en+w.voet+rijm.rijmen": {
+  "file": "w.hoed_rijm.en_w.voet_rijm.rijmen.ff825db1d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoed en voet die rijmen"
+ },
+ "w.huis": {
+  "file": "w.huis.2256b51b0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Huis"
+ },
+ "w.huis+rijm.en+w.hoed+klank.zelfde": {
+  "file": "w.huis_rijm.en_w.hoed_klank.zelfde.e7d48692a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Huis en hoed, die beginnen hetzelfde"
+ },
+ "w.huis+rijm.en+w.muis+rijm.rijmen": {
+  "file": "w.huis_rijm.en_w.muis_rijm.rijmen.a7981ec7ba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Huis en muis die rijmen"
+ },
+ "w.jas": {
+  "file": "w.jas.fcc5d91929.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Jas"
+ },
+ "w.jas+rijm.en+w.tas+rijm.rijmen": {
+  "file": "w.jas_rijm.en_w.tas_rijm.rijmen.d177aefa9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Jas en tas die rijmen"
+ },
+ "w.kaas": {
+  "file": "w.kaas.61f3f600d0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas"
+ },
+ "w.kaas+rijm.en+w.kip+klank.zelfde": {
+  "file": "w.kaas_rijm.en_w.kip_klank.zelfde.55c2ee8c5e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas en kip. Die beginnen hetzelfde"
+ },
+ "w.kaas+rijm.en+w.kop+klank.zelfde": {
+  "file": "w.kaas_rijm.en_w.kop_klank.zelfde.2bcf2e91b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas en kop die beginnen hetzelfde"
+ },
+ "w.kip": {
+  "file": "w.kip.633aa852a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip"
+ },
+ "w.kip+rijm.en+w.kaas+klank.zelfde": {
+  "file": "w.kip_rijm.en_w.kaas_klank.zelfde.88afadce45.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip en kaas, die beginnen hetzelfde"
+ },
+ "w.kip+rijm.en+w.kop+klank.zelfde": {
+  "file": "w.kip_rijm.en_w.kop_klank.zelfde.218d45103f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip en kop, die beginnen hetzelfde"
+ },
+ "w.kip+rijm.en+w.schip+rijm.rijmen": {
+  "file": "w.kip_rijm.en_w.schip_rijm.rijmen.9035a9fa29.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip en schip die rijmen"
+ },
+ "w.kop": {
+  "file": "w.kop.bae8d4ecfa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop"
+ },
+ "w.kop+rijm.en+w.kaas+klank.zelfde": {
+  "file": "w.kop_rijm.en_w.kaas_klank.zelfde.7f99895ae4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop en kaas, die beginnen hetzelfde"
+ },
+ "w.kop+rijm.en+w.kip+klank.zelfde": {
+  "file": "w.kop_rijm.en_w.kip_klank.zelfde.06820fab22.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop en kip, die beginnen hetzelfde"
+ },
+ "w.kop+rijm.en+w.pop+rijm.rijmen": {
+  "file": "w.kop_rijm.en_w.pop_rijm.rijmen.03b024de83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop en pop die rijmen"
+ },
+ "w.kraan": {
+  "file": "w.kraan.575615f8d6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kraan"
+ },
+ "w.kraan+rijm.en+w.maan+rijm.rijmen": {
+  "file": "w.kraan_rijm.en_w.maan_rijm.rijmen.c3de57527a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kraan en maan die rijmen"
+ },
+ "w.maan": {
+  "file": "w.maan.ee239ff914.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Man",
+  "reason": "ander woord"
+ },
+ "w.maan+rijm.en+w.kraan+rijm.rijmen": {
+  "file": "w.maan_rijm.en_w.kraan_rijm.rijmen.6bb7d8bee0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maan en kraan die rijmen"
+ },
+ "w.maan+rijm.en+w.muis+klank.zelfde": {
+  "file": "w.maan_rijm.en_w.muis_klank.zelfde.5c477303fe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maan en muis die beginnen hetzelfde"
+ },
+ "w.muis": {
+  "file": "w.muis.82ee936429.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis"
+ },
+ "w.muis+rijm.en+w.huis+rijm.rijmen": {
+  "file": "w.muis_rijm.en_w.huis_rijm.rijmen.7624cbe383.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis en huis die rijmen"
+ },
+ "w.muis+rijm.en+w.maan+klank.zelfde": {
+  "file": "w.muis_rijm.en_w.maan_klank.zelfde.fcca0409f7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis en maan. Die beginnen hetzelfde"
+ },
+ "w.paard": {
+  "file": "w.paard.5495113e9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard"
+ },
+ "w.paard+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.pet_klank.zelfde.6371d4eeda.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en pet, die beginnen hetzelfde"
+ },
+ "w.paard+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.poes_klank.zelfde.bbb961d83a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en poes, die beginnen hetzelfde"
+ },
+ "w.paard+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.pop_klank.zelfde.6455684f6a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en pop? Die beginnen hetzelfde"
+ },
+ "w.paard+rijm.en+w.taart+rijm.rijmen": {
+  "file": "w.paard_rijm.en_w.taart_rijm.rijmen.f7a6b2f45b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en taart die rijmen"
+ },
+ "w.pet": {
+  "file": "w.pet.f722c23606.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet"
+ },
+ "w.pet+rijm.en+w.bed+rijm.rijmen": {
+  "file": "w.pet_rijm.en_w.bed_rijm.rijmen.28fb8eb0e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en bed die rijmen"
+ },
+ "w.pet+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.paard_klank.zelfde.e41fa89065.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en paard, die beginnen hetzelfde"
+ },
+ "w.pet+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.poes_klank.zelfde.fa1ecbddc3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en poes. Die beginnen hetzelfde"
+ },
+ "w.pet+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.pop_klank.zelfde.1f01be44b7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en Pop? Die beginnen hetzelfde"
+ },
+ "w.poes": {
+  "file": "w.poes.933da4e64c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes"
+ },
+ "w.poes+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.paard_klank.zelfde.e17b316847.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en paard, die beginnen hetzelfde"
+ },
+ "w.poes+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.pet_klank.zelfde.5e7ad910e1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en Pet, die beginnen hetzelfde"
+ },
+ "w.poes+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.pop_klank.zelfde.f4a84a3465.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en pop die beginnen hetzelfde"
+ },
+ "w.pop": {
+  "file": "w.pop.b0661edca5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop"
+ },
+ "w.pop+rijm.en+w.kop+rijm.rijmen": {
+  "file": "w.pop_rijm.en_w.kop_rijm.rijmen.eb0f88779a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en kop die rijmen"
+ },
+ "w.pop+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.paard_klank.zelfde.870c9f926a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en paard, die beginnen hetzelfde"
+ },
+ "w.pop+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.pet_klank.zelfde.84ca696a42.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en pet, die beginnen hetzelfde"
+ },
+ "w.pop+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.poes_klank.zelfde.98f967307c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en poes, die beginnen hetzelfde"
+ },
+ "w.roos": {
+  "file": "w.roos.ea7f915492.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Roos"
+ },
+ "w.roos+rijm.en+w.doos+rijm.rijmen": {
+  "file": "w.roos_rijm.en_w.doos_rijm.rijmen.d1a07d86d2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Roos en doos die rijmen"
+ },
+ "w.schip": {
+  "file": "w.schip.b6ec797c27.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schip"
+ },
+ "w.schip+rijm.en+w.kip+rijm.rijmen": {
+  "file": "w.schip_rijm.en_w.kip_rijm.rijmen.b7eb99c077.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Schip en kip die rijmen"
+ },
+ "w.taart": {
+  "file": "w.taart.852cd0af9e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Taart"
+ },
+ "w.taart+rijm.en+w.paard+rijm.rijmen": {
+  "file": "w.taart_rijm.en_w.paard_rijm.rijmen.70c0fe2883.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Taart en paard die rijmen"
+ },
+ "w.taart+rijm.en+w.tas+klank.zelfde": {
+  "file": "w.taart_rijm.en_w.tas_klank.zelfde.04f23715aa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Taart en tas die beginnen hetzelfde"
+ },
+ "w.taart+rijm.en+w.ton+klank.zelfde": {
+  "file": "w.taart_rijm.en_w.ton_klank.zelfde.b124258a8e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Taart en Ton, die beginnen hetzelfde"
+ },
+ "w.tas": {
+  "file": "w.tas.11db63907c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tas"
+ },
+ "w.tas+rijm.en+w.jas+rijm.rijmen": {
+  "file": "w.tas_rijm.en_w.jas_rijm.rijmen.0a9f77e96e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tas en jas die rijmen"
+ },
+ "w.tas+rijm.en+w.taart+klank.zelfde": {
+  "file": "w.tas_rijm.en_w.taart_klank.zelfde.0bfba51187.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tas en taart. Die beginnen hetzelfde"
+ },
+ "w.tas+rijm.en+w.ton+klank.zelfde": {
+  "file": "w.tas_rijm.en_w.ton_klank.zelfde.03addc93a1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tas en Tom die beginnen hetzelfde"
+ },
+ "w.ton": {
+  "file": "w.ton.1d88f6120b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ton"
+ },
+ "w.ton+rijm.en+w.taart+klank.zelfde": {
+  "file": "w.ton_rijm.en_w.taart_klank.zelfde.73652bc0e4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ton en taart, die beginnen hetzelfde"
+ },
+ "w.ton+rijm.en+w.tas+klank.zelfde": {
+  "file": "w.ton_rijm.en_w.tas_klank.zelfde.d1ebe858f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ton en Taas, die beginnen hetzelfde"
+ },
+ "w.ton+rijm.en+w.zon+rijm.rijmen": {
+  "file": "w.ton_rijm.en_w.zon_rijm.rijmen.3cf6600d1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ton en zon die rijmen"
+ },
+ "w.veer": {
+  "file": "w.veer.8990e28ce1.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Fear",
+  "reason": "ander woord"
+ },
+ "w.veer+rijm.en+w.beer+rijm.rijmen": {
+  "file": "w.veer_rijm.en_w.beer_rijm.rijmen.2b900244a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veer en beer die rijmen"
+ },
+ "w.veer+rijm.en+w.vis+klank.zelfde": {
+  "file": "w.veer_rijm.en_w.vis_klank.zelfde.a7366ca107.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veer en vis, die beginnen hetzelfde"
+ },
+ "w.veer+rijm.en+w.voet+klank.zelfde": {
+  "file": "w.veer_rijm.en_w.voet_klank.zelfde.f47d41c4f3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veer en voet die beginnen hetzelfde"
+ },
+ "w.veer+rijm.en+w.vuur+klank.zelfde": {
+  "file": "w.veer_rijm.en_w.vuur_klank.zelfde.899eed84e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veer en vuur die beginnen hetzelfde"
+ },
+ "w.vis": {
+  "file": "w.vis.5f2a9b2d9c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vis"
+ },
+ "w.vis+rijm.en+w.veer+klank.zelfde": {
+  "file": "w.vis_rijm.en_w.veer_klank.zelfde.a2175bae9d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vis en veer, die beginnen hetzelfde"
+ },
+ "w.vis+rijm.en+w.voet+klank.zelfde": {
+  "file": "w.vis_rijm.en_w.voet_klank.zelfde.3f5baa375b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vis en voet die beginnen hetzelfde"
+ },
+ "w.vis+rijm.en+w.vuur+klank.zelfde": {
+  "file": "w.vis_rijm.en_w.vuur_klank.zelfde.542cc2ab12.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vis en vuur, die beginnen hetzelfde"
+ },
+ "w.voet": {
+  "file": "w.voet.81cabafc81.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet"
+ },
+ "w.voet+rijm.en+w.hoed+rijm.rijmen": {
+  "file": "w.voet_rijm.en_w.hoed_rijm.rijmen.8099f3fd00.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet en hoed die rijmen"
+ },
+ "w.voet+rijm.en+w.veer+klank.zelfde": {
+  "file": "w.voet_rijm.en_w.veer_klank.zelfde.183ddfe3fb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet en veer die beginnen hetzelfde"
+ },
+ "w.voet+rijm.en+w.vis+klank.zelfde": {
+  "file": "w.voet_rijm.en_w.vis_klank.zelfde.73e01bf781.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet en vis, die beginnen hetzelfde"
+ },
+ "w.voet+rijm.en+w.vuur+klank.zelfde": {
+  "file": "w.voet_rijm.en_w.vuur_klank.zelfde.f016291a2c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet en vuur, die beginnen hetzelfde"
+ },
+ "w.vuur": {
+  "file": "w.vuur.7312249a75.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur"
+ },
+ "w.vuur+rijm.en+w.veer+klank.zelfde": {
+  "file": "w.vuur_rijm.en_w.veer_klank.zelfde.b8b31fca4e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur en veer, die beginnen hetzelfde"
+ },
+ "w.vuur+rijm.en+w.vis+klank.zelfde": {
+  "file": "w.vuur_rijm.en_w.vis_klank.zelfde.1460353327.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur en vis, die beginnen hetzelfde"
+ },
+ "w.vuur+rijm.en+w.voet+klank.zelfde": {
+  "file": "w.vuur_rijm.en_w.voet_klank.zelfde.3926e8595e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur en voet, die beginnen hetzelfde"
+ },
+ "w.zon": {
+  "file": "w.zon.079e7064ed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zon"
+ },
+ "w.zon+rijm.en+w.ton+rijm.rijmen": {
+  "file": "w.zon_rijm.en_w.ton_rijm.rijmen.83b473331c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zon en ton die rijmen"
+ },
+ "wie.mama": {
+  "file": "wie.mama.f7e0a906f0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Mama"
+ },
+ "wie.oma": {
+  "file": "wie.oma.3ad0ac05ba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Oma"
+ },
+ "wie.opa": {
+  "file": "wie.opa.0035427b28.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Opa"
+ },
+ "wie.papa": {
+  "file": "wie.papa.60452761ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "パパ?"
+ },
+ "wie.papaofmama": {
+  "file": "wie.papaofmama.e232ede2d3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Papa of mama"
+ },
+ "woont.hier": {
+  "file": "woont.hier.749cbf181b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont"
+ },
+ "woont.hier+getal.1": {
+  "file": "woont.hier_getal.1.8a537603b6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont één"
+ },
+ "woont.hier+getal.10": {
+  "file": "woont.hier_getal.10.54d6e93904.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont tien"
+ },
+ "woont.hier+getal.2": {
+  "file": "woont.hier_getal.2.02c0a8a39d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont twee"
+ },
+ "woont.hier+getal.3": {
+  "file": "woont.hier_getal.3.14f9686e28.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont drie"
+ },
+ "woont.hier+getal.4": {
+  "file": "woont.hier_getal.4.75d306f4c1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont vier"
+ },
+ "woont.hier+getal.5": {
+  "file": "woont.hier_getal.5.8ecf15a4ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont vijf"
+ },
+ "woont.hier+getal.6": {
+  "file": "woont.hier_getal.6.6794633a64.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont zes"
+ },
+ "woont.hier+getal.7": {
+  "file": "woont.hier_getal.7.45cae53977.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont zeven"
+ },
+ "woont.hier+getal.8": {
+  "file": "woont.hier_getal.8.0fef4b5fc4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont acht"
+ },
+ "woont.hier+getal.9": {
+  "file": "woont.hier_getal.9.b3abc01562.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hier woont negen"
+ },
+ "woont.uitleg": {
+  "file": "woont.uitleg.e3b434c6c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "In deze straat heeft elk huisje een nummer. Niet elk nummer kun je zien"
+ },
+ "woont.vraag": {
+  "file": "woont.vraag.58df3d1dc1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont?"
+ },
+ "woont.vraag+getal.1": {
+  "file": "woont.vraag_getal.1.2328e50cfa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont één?"
+ },
+ "woont.vraag+getal.10": {
+  "file": "woont.vraag_getal.10.4c782f7399.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont Tien?"
+ },
+ "woont.vraag+getal.2": {
+  "file": "woont.vraag_getal.2.9e9ff61650.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont twee?"
+ },
+ "woont.vraag+getal.3": {
+  "file": "woont.vraag_getal.3.ac7d4a7643.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont drie?"
+ },
+ "woont.vraag+getal.4": {
+  "file": "woont.vraag_getal.4.2275fb8492.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont vier?"
+ },
+ "woont.vraag+getal.5": {
+  "file": "woont.vraag_getal.5.b797b5eac6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont vijf?"
+ },
+ "woont.vraag+getal.6": {
+  "file": "woont.vraag_getal.6.35c0e90203.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont zes?"
+ },
+ "woont.vraag+getal.7": {
+  "file": "woont.vraag_getal.7.d0d98e097d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont Zeven?"
+ },
+ "woont.vraag+getal.8": {
+  "file": "woont.vraag_getal.8.762ccb4f5e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont acht?"
+ },
+ "woont.vraag+getal.9": {
+  "file": "woont.vraag_getal.9.50923aac6d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Waar woont negen?"
+ },
+ "woont.zoekverder": {
+  "file": "woont.zoekverder.7872d5959b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zoek maar verder vanaf hier"
+ }
+}
