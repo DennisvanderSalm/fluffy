@@ -10,6 +10,9 @@ import { ALL_SOUNDS, PICTURE, SOUND_WORDS, SOUNDS, rhymes, WORDS } from '../src/
 import { makePatroonItem } from '../src/domains/rekenen/patroon';
 import { makeRuimteItem } from '../src/domains/rekenen/ruimte';
 import { makeVerhaalItem, verhaalResult } from '../src/domains/rekenen/verhaal';
+import { BEAD_COLORS, makeSomItem, somCombos, somResult } from '../src/domains/rekenen/sommen';
+import { clipJobs, segIds } from '../src/core/audio/phrases';
+import { ALL_PHRASES } from '../src/domains';
 import { makeVormItem } from '../src/domains/rekenen/vormen';
 
 describe('Hakken en plakken, eerste woordjes', () => {
@@ -204,5 +207,44 @@ describe('samen en back-up', () => {
     // Proefjes staan standaard aan, ook bij gegevens van vóór de proefjes.
     expect(normalize(old)!.settings.probe).toBe(true);
     expect(normalize({ ...old, settings: { probe: false } })!.settings.probe).toBe(false);
+  });
+});
+
+describe('Sommen met kralen', () => {
+  it('uitkomst 1 t/m 10 en altijd tussen de kaartjes; tot 5 blijft onder de vijf', () => {
+    const rng = seededRng(21);
+    for (const skill of ['sommen-5', 'sommen-10']) {
+      for (let level = 0; level < 3; level++) {
+        for (let i = 0; i < 150; i++) {
+          const it = makeSomItem(skill, level, rng);
+          const r = somResult(it);
+          expect(r).toBeGreaterThanOrEqual(1);
+          expect(r).toBeLessThanOrEqual(10);
+          expect(it.options).toContain(r);
+          expect(it.mode).toBe(['kralen', 'handen', 'som'][level]);
+          if (skill === 'sommen-5') expect(Math.max(it.a, r)).toBeLessThanOrEqual(5);
+          if (skill === 'sommen-10') expect(Math.max(it.a, r)).toBeGreaterThanOrEqual(6);
+        }
+      }
+    }
+  });
+
+  it('tot 10 komen de dubbelen (3 + 3, 5 + 5) geregeld langs', () => {
+    const rng = seededRng(5);
+    const items = Array.from({ length: 200 }, () => makeSomItem('sommen-10', 0, rng));
+    expect(items.filter((x) => x.op === '+' && x.a === x.b).length).toBeGreaterThan(30);
+    expect(items.some((x) => x.op === '-')).toBe(true);
+  });
+
+  it('elke Montessori-kleur voor 1 t/m 10, en elke som is als hele zin ingesproken', () => {
+    expect(BEAD_COLORS).toHaveLength(10);
+    const ids = new Set(clipJobs(ALL_PHRASES()).map((j) => j.id));
+    for (const skill of ['sommen-5', 'sommen-10']) {
+      for (const c of somCombos(skill)) {
+        const word = c.op === '+' ? 'som.plus' : 'som.min';
+        expect(ids.has(segIds(['som.hoeveel', c.a, word, c.b]).join('+'))).toBe(true);
+        expect(ids.has(segIds([c.a, word, c.b, 'som.is', somResult(c)]).join('+'))).toBe(true);
+      }
+    }
   });
 });

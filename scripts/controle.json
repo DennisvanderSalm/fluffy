@@ -515,6 +515,30 @@
   "abrupt": false,
   "heard": "Doe het maar samen met papa of mama"
  },
+ "echt.sommen-10": {
+  "file": "echt.sommen-10.28fbaa9c11.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Spring eens vijf keer en dan nog vijf keer. Hoeveel sprongen zijn dat samen? Vijf plus vijf"
+ },
+ "echt.sommen-10.b": {
+  "file": "echt.sommen-10.b.82e37ecf58.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Leg eens acht dingen neer. Pak er twee weg. Hoeveel liggen er nog? Acht min twee"
+ },
+ "echt.sommen-5": {
+  "file": "echt.sommen-5.1d44898cdd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pak eens drie blokjes en dan nog twee. Hoeveel heb je er nu? Drie plus twee"
+ },
+ "echt.sommen-5.b": {
+  "file": "echt.sommen-5.b.e1744d32bc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steek eens vier vingers op. Doe er één naar beneden. Hoeveel staan er nog? Vier min één"
+ },
  "echt.splitsen-10": {
   "file": "echt.splitsen-10.acdab6cdc0.mp3",
   "ok": true,
@@ -838,6 +862,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Ik word een beetje moe. Ik ga lekker slapen"
+ },
+ "einde.som": {
+  "file": "einde.som.21e9dec331.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "We hebben sommen gemaakt met kralen"
  },
  "einde.splitshuis": {
   "file": "einde.splitshuis.e48d5b45bc.mp3",
@@ -1337,6 +1367,60 @@
   "abrupt": false,
   "heard": "Een is minder dan zes"
  },
+ "getal.1+som.plus+getal.1+som.is+getal.2": {
+  "file": "getal.1_som.plus_getal.1_som.is_getal.2.73206cf35b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een plus één is twee"
+ },
+ "getal.1+som.plus+getal.2+som.is+getal.3": {
+  "file": "getal.1_som.plus_getal.2_som.is_getal.3.5f64285573.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een plus twee is drie"
+ },
+ "getal.1+som.plus+getal.3+som.is+getal.4": {
+  "file": "getal.1_som.plus_getal.3_som.is_getal.4.f0d20563f4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een plus drie is vier"
+ },
+ "getal.1+som.plus+getal.4+som.is+getal.5": {
+  "file": "getal.1_som.plus_getal.4_som.is_getal.5.546505a3eb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eén plus vier is vijf"
+ },
+ "getal.1+som.plus+getal.5+som.is+getal.6": {
+  "file": "getal.1_som.plus_getal.5_som.is_getal.6.8e4ff76919.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Één plus vijf is zes"
+ },
+ "getal.1+som.plus+getal.6+som.is+getal.7": {
+  "file": "getal.1_som.plus_getal.6_som.is_getal.7.e94568173d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een plus zes is zeven"
+ },
+ "getal.1+som.plus+getal.7+som.is+getal.8": {
+  "file": "getal.1_som.plus_getal.7_som.is_getal.8.9b82bbd51c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Een plus zeven is acht"
+ },
+ "getal.1+som.plus+getal.8+som.is+getal.9": {
+  "file": "getal.1_som.plus_getal.8_som.is_getal.9.5c954ab8d5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eén plus acht is negen"
+ },
+ "getal.1+som.plus+getal.9+som.is+getal.10": {
+  "file": "getal.1_som.plus_getal.9_som.is_getal.10.496999523d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Eén plus negen is tien"
+ },
  "getal.1+verhaal.en+getal.1+verhaal.erbij+getal.2": {
   "file": "getal.1_verhaal.en_getal.1_verhaal.erbij_getal.2.7bef9470af.mp3",
   "ok": true,
@@ -1360,6 +1444,36 @@
   "ok": true,
   "abrupt": false,
   "heard": "Tien"
+ },
+ "getal.10+som.min+getal.1+som.is+getal.9": {
+  "file": "getal.10_som.min_getal.1_som.is_getal.9.02e9f1eae9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien min één is negen"
+ },
+ "getal.10+som.min+getal.2+som.is+getal.8": {
+  "file": "getal.10_som.min_getal.2_som.is_getal.8.4fad38f5cc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien min twee is acht"
+ },
+ "getal.10+som.min+getal.3+som.is+getal.7": {
+  "file": "getal.10_som.min_getal.3_som.is_getal.7.48349fc111.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien min drie is zeven"
+ },
+ "getal.10+som.min+getal.4+som.is+getal.6": {
+  "file": "getal.10_som.min_getal.4_som.is_getal.6.aa7daacd47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien min vier is zes"
+ },
+ "getal.10+som.min+getal.5+som.is+getal.5": {
+  "file": "getal.10_som.min_getal.5_som.is_getal.5.5d422325a1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tien min vijf is vijf"
  },
  "getal.10+splits.is+getal.1+splits.en+getal.9": {
   "file": "getal.10_splits.is_getal.1_splits.en_getal.9.ded22216a1.mp3",
@@ -1505,6 +1619,60 @@
   "abrupt": false,
   "heard": "Twee is minder dan zes"
  },
+ "getal.2+som.min+getal.1+som.is+getal.1": {
+  "file": "getal.2_som.min_getal.1_som.is_getal.1.c6f20dda9f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee min één is één"
+ },
+ "getal.2+som.plus+getal.1+som.is+getal.3": {
+  "file": "getal.2_som.plus_getal.1_som.is_getal.3.737f113874.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus één is drie"
+ },
+ "getal.2+som.plus+getal.2+som.is+getal.4": {
+  "file": "getal.2_som.plus_getal.2_som.is_getal.4.e1ac32db4e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus twee is vier"
+ },
+ "getal.2+som.plus+getal.3+som.is+getal.5": {
+  "file": "getal.2_som.plus_getal.3_som.is_getal.5.5ba4ce2083.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus drie is vijf"
+ },
+ "getal.2+som.plus+getal.4+som.is+getal.6": {
+  "file": "getal.2_som.plus_getal.4_som.is_getal.6.393fd10474.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus vier is zes"
+ },
+ "getal.2+som.plus+getal.5+som.is+getal.7": {
+  "file": "getal.2_som.plus_getal.5_som.is_getal.7.ad67c7b5ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus vijf is zeven"
+ },
+ "getal.2+som.plus+getal.6+som.is+getal.8": {
+  "file": "getal.2_som.plus_getal.6_som.is_getal.8.d5cade9d4f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus zes is acht"
+ },
+ "getal.2+som.plus+getal.7+som.is+getal.9": {
+  "file": "getal.2_som.plus_getal.7_som.is_getal.9.9db73ae780.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus zeven is negen"
+ },
+ "getal.2+som.plus+getal.8+som.is+getal.10": {
+  "file": "getal.2_som.plus_getal.8_som.is_getal.10.7e9209eb01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Twee plus acht is tien"
+ },
  "getal.2+splits.is+getal.1+splits.en+getal.1": {
   "file": "getal.2_splits.is_getal.1_splits.en_getal.1.7bdcfad423.mp3",
   "ok": true,
@@ -1576,6 +1744,60 @@
   "ok": true,
   "abrupt": false,
   "heard": "Drie is minder dan zes"
+ },
+ "getal.3+som.min+getal.1+som.is+getal.2": {
+  "file": "getal.3_som.min_getal.1_som.is_getal.2.a4a1267c2c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie min één is twee"
+ },
+ "getal.3+som.min+getal.2+som.is+getal.1": {
+  "file": "getal.3_som.min_getal.2_som.is_getal.1.cc7d487a68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie min twee is één"
+ },
+ "getal.3+som.plus+getal.1+som.is+getal.4": {
+  "file": "getal.3_som.plus_getal.1_som.is_getal.4.ae4e76b9c1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus één is vier"
+ },
+ "getal.3+som.plus+getal.2+som.is+getal.5": {
+  "file": "getal.3_som.plus_getal.2_som.is_getal.5.ac8272ca9a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus twee is vijf"
+ },
+ "getal.3+som.plus+getal.3+som.is+getal.6": {
+  "file": "getal.3_som.plus_getal.3_som.is_getal.6.e90147c363.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus drie is zes"
+ },
+ "getal.3+som.plus+getal.4+som.is+getal.7": {
+  "file": "getal.3_som.plus_getal.4_som.is_getal.7.445ac9da5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus vier is zeven"
+ },
+ "getal.3+som.plus+getal.5+som.is+getal.8": {
+  "file": "getal.3_som.plus_getal.5_som.is_getal.8.24aa5cbb9b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus vijf is acht"
+ },
+ "getal.3+som.plus+getal.6+som.is+getal.9": {
+  "file": "getal.3_som.plus_getal.6_som.is_getal.9.e695fbf4f7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus zes is negen"
+ },
+ "getal.3+som.plus+getal.7+som.is+getal.10": {
+  "file": "getal.3_som.plus_getal.7_som.is_getal.10.c1b7a36cff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Drie plus zeven is tien"
  },
  "getal.3+splits.is+getal.1+splits.en+getal.2": {
   "file": "getal.3_splits.is_getal.1_splits.en_getal.2.fc9204c8b3.mp3",
@@ -1654,6 +1876,60 @@
   "ok": true,
   "abrupt": false,
   "heard": "Vier is minder dan zes"
+ },
+ "getal.4+som.min+getal.1+som.is+getal.3": {
+  "file": "getal.4_som.min_getal.1_som.is_getal.3.6c650ec2bd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier min één is drie"
+ },
+ "getal.4+som.min+getal.2+som.is+getal.2": {
+  "file": "getal.4_som.min_getal.2_som.is_getal.2.69b9deba5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier min twee is twee"
+ },
+ "getal.4+som.min+getal.3+som.is+getal.1": {
+  "file": "getal.4_som.min_getal.3_som.is_getal.1.3942c9bf5c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier min drie is één"
+ },
+ "getal.4+som.plus+getal.1+som.is+getal.5": {
+  "file": "getal.4_som.plus_getal.1_som.is_getal.5.149d76e60f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus één is vijf"
+ },
+ "getal.4+som.plus+getal.2+som.is+getal.6": {
+  "file": "getal.4_som.plus_getal.2_som.is_getal.6.2903826664.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus twee is zes"
+ },
+ "getal.4+som.plus+getal.3+som.is+getal.7": {
+  "file": "getal.4_som.plus_getal.3_som.is_getal.7.837dc685eb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus drie is zeven"
+ },
+ "getal.4+som.plus+getal.4+som.is+getal.8": {
+  "file": "getal.4_som.plus_getal.4_som.is_getal.8.501ffc0963.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus vier is acht"
+ },
+ "getal.4+som.plus+getal.5+som.is+getal.9": {
+  "file": "getal.4_som.plus_getal.5_som.is_getal.9.4b74e34cf1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus vijf is negen"
+ },
+ "getal.4+som.plus+getal.6+som.is+getal.10": {
+  "file": "getal.4_som.plus_getal.6_som.is_getal.10.c873952236.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vier plus zes is tien"
  },
  "getal.4+splits.is+getal.1+splits.en+getal.3": {
   "file": "getal.4_splits.is_getal.1_splits.en_getal.3.468fd4b5b3.mp3",
@@ -1744,6 +2020,60 @@
   "ok": true,
   "abrupt": false,
   "heard": "Vijf is minder dan zes"
+ },
+ "getal.5+som.min+getal.1+som.is+getal.4": {
+  "file": "getal.5_som.min_getal.1_som.is_getal.4.0af6bfda47.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf min één is vier"
+ },
+ "getal.5+som.min+getal.2+som.is+getal.3": {
+  "file": "getal.5_som.min_getal.2_som.is_getal.3.c3c0a5f853.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf min twee is drie"
+ },
+ "getal.5+som.min+getal.3+som.is+getal.2": {
+  "file": "getal.5_som.min_getal.3_som.is_getal.2.8edd91b4c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf min drie is twee"
+ },
+ "getal.5+som.min+getal.4+som.is+getal.1": {
+  "file": "getal.5_som.min_getal.4_som.is_getal.1.2213caf48e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf min vier is één"
+ },
+ "getal.5+som.plus+getal.1+som.is+getal.6": {
+  "file": "getal.5_som.plus_getal.1_som.is_getal.6.d57247110a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf plus één is zes"
+ },
+ "getal.5+som.plus+getal.2+som.is+getal.7": {
+  "file": "getal.5_som.plus_getal.2_som.is_getal.7.6fea61e08a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf plus twee is zeven"
+ },
+ "getal.5+som.plus+getal.3+som.is+getal.8": {
+  "file": "getal.5_som.plus_getal.3_som.is_getal.8.e74b33d4a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf plus drie is acht"
+ },
+ "getal.5+som.plus+getal.4+som.is+getal.9": {
+  "file": "getal.5_som.plus_getal.4_som.is_getal.9.1ed16b83a2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf plus vier is negen"
+ },
+ "getal.5+som.plus+getal.5+som.is+getal.10": {
+  "file": "getal.5_som.plus_getal.5_som.is_getal.10.a5b15c6d2b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vijf plus vijf is tien"
  },
  "getal.5+splits.is+getal.1+splits.en+getal.4": {
   "file": "getal.5_splits.is_getal.1_splits.en_getal.4.c842fe800e.mp3",
@@ -1841,6 +2171,60 @@
   "abrupt": false,
   "heard": "Zes is meer dan vijf"
  },
+ "getal.6+som.min+getal.1+som.is+getal.5": {
+  "file": "getal.6_som.min_getal.1_som.is_getal.5.6ac14fce01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes min één is vijf"
+ },
+ "getal.6+som.min+getal.2+som.is+getal.4": {
+  "file": "getal.6_som.min_getal.2_som.is_getal.4.67a0851e21.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes min twee is vier"
+ },
+ "getal.6+som.min+getal.3+som.is+getal.3": {
+  "file": "getal.6_som.min_getal.3_som.is_getal.3.104db6dfa1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes min drie is drie"
+ },
+ "getal.6+som.min+getal.4+som.is+getal.2": {
+  "file": "getal.6_som.min_getal.4_som.is_getal.2.9e1e080350.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes min vier is twee"
+ },
+ "getal.6+som.min+getal.5+som.is+getal.1": {
+  "file": "getal.6_som.min_getal.5_som.is_getal.1.7294f05418.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes min vijf is één"
+ },
+ "getal.6+som.plus+getal.1+som.is+getal.7": {
+  "file": "getal.6_som.plus_getal.1_som.is_getal.7.366287a7cb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes plus één is zeven"
+ },
+ "getal.6+som.plus+getal.2+som.is+getal.8": {
+  "file": "getal.6_som.plus_getal.2_som.is_getal.8.75bd3a119d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes plus twee is acht"
+ },
+ "getal.6+som.plus+getal.3+som.is+getal.9": {
+  "file": "getal.6_som.plus_getal.3_som.is_getal.9.65db4fc4a2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes plus drie is negen"
+ },
+ "getal.6+som.plus+getal.4+som.is+getal.10": {
+  "file": "getal.6_som.plus_getal.4_som.is_getal.10.45ceae6f89.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zes plus vier is tien"
+ },
  "getal.6+splits.is+getal.1+splits.en+getal.5": {
   "file": "getal.6_splits.is_getal.1_splits.en_getal.5.9aed596ccd.mp3",
   "ok": true,
@@ -1912,6 +2296,54 @@
   "ok": true,
   "abrupt": false,
   "heard": "Zeven"
+ },
+ "getal.7+som.min+getal.1+som.is+getal.6": {
+  "file": "getal.7_som.min_getal.1_som.is_getal.6.2ab9e8ba11.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven min één is zes"
+ },
+ "getal.7+som.min+getal.2+som.is+getal.5": {
+  "file": "getal.7_som.min_getal.2_som.is_getal.5.765888d30d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven min twee is vijf"
+ },
+ "getal.7+som.min+getal.3+som.is+getal.4": {
+  "file": "getal.7_som.min_getal.3_som.is_getal.4.6315522c35.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven min drie is vier"
+ },
+ "getal.7+som.min+getal.4+som.is+getal.3": {
+  "file": "getal.7_som.min_getal.4_som.is_getal.3.1ed6192bda.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven min vier is drie"
+ },
+ "getal.7+som.min+getal.5+som.is+getal.2": {
+  "file": "getal.7_som.min_getal.5_som.is_getal.2.7e564f2a83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven min vijf is twee"
+ },
+ "getal.7+som.plus+getal.1+som.is+getal.8": {
+  "file": "getal.7_som.plus_getal.1_som.is_getal.8.2423de047c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven plus één is acht"
+ },
+ "getal.7+som.plus+getal.2+som.is+getal.9": {
+  "file": "getal.7_som.plus_getal.2_som.is_getal.9.832a9bf243.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven plus twee is negen"
+ },
+ "getal.7+som.plus+getal.3+som.is+getal.10": {
+  "file": "getal.7_som.plus_getal.3_som.is_getal.10.88125eefb8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeven plus drie is tien"
  },
  "getal.7+splits.is+getal.1+splits.en+getal.6": {
   "file": "getal.7_splits.is_getal.1_splits.en_getal.6.8b01e5400d.mp3",
@@ -1991,6 +2423,48 @@
   "abrupt": false,
   "heard": "Acht"
  },
+ "getal.8+som.min+getal.1+som.is+getal.7": {
+  "file": "getal.8_som.min_getal.1_som.is_getal.7.1a4303d5a5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht min één is zeven"
+ },
+ "getal.8+som.min+getal.2+som.is+getal.6": {
+  "file": "getal.8_som.min_getal.2_som.is_getal.6.69946ab18e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht min twee is zes"
+ },
+ "getal.8+som.min+getal.3+som.is+getal.5": {
+  "file": "getal.8_som.min_getal.3_som.is_getal.5.cbbfb7560c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht min drie is vijf"
+ },
+ "getal.8+som.min+getal.4+som.is+getal.4": {
+  "file": "getal.8_som.min_getal.4_som.is_getal.4.bf991929ed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht min vier is vier"
+ },
+ "getal.8+som.min+getal.5+som.is+getal.3": {
+  "file": "getal.8_som.min_getal.5_som.is_getal.3.e858dab2ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht min vijf is drie"
+ },
+ "getal.8+som.plus+getal.1+som.is+getal.9": {
+  "file": "getal.8_som.plus_getal.1_som.is_getal.9.92fe40bf7c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht plus één is negen"
+ },
+ "getal.8+som.plus+getal.2+som.is+getal.10": {
+  "file": "getal.8_som.plus_getal.2_som.is_getal.10.c6d8a26b6b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Acht plus twee is tien"
+ },
  "getal.8+splits.is+getal.1+splits.en+getal.7": {
   "file": "getal.8_splits.is_getal.1_splits.en_getal.7.19a6ff2c91.mp3",
   "ok": true,
@@ -2068,6 +2542,42 @@
   "ok": true,
   "abrupt": false,
   "heard": "Negen"
+ },
+ "getal.9+som.min+getal.1+som.is+getal.8": {
+  "file": "getal.9_som.min_getal.1_som.is_getal.8.af1ecde0ad.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen min één is acht"
+ },
+ "getal.9+som.min+getal.2+som.is+getal.7": {
+  "file": "getal.9_som.min_getal.2_som.is_getal.7.c396aa2445.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen min twee is zeven"
+ },
+ "getal.9+som.min+getal.3+som.is+getal.6": {
+  "file": "getal.9_som.min_getal.3_som.is_getal.6.732bcab67b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen min drie is zes"
+ },
+ "getal.9+som.min+getal.4+som.is+getal.5": {
+  "file": "getal.9_som.min_getal.4_som.is_getal.5.82ab6581d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen min vier is vijf"
+ },
+ "getal.9+som.min+getal.5+som.is+getal.4": {
+  "file": "getal.9_som.min_getal.5_som.is_getal.4.c5215a4433.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen min vijf is vier"
+ },
+ "getal.9+som.plus+getal.1+som.is+getal.10": {
+  "file": "getal.9_som.plus_getal.1_som.is_getal.10.e0a1fa943a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Negen plus één is tien"
  },
  "getal.9+splits.is+getal.1+splits.en+getal.8": {
   "file": "getal.9_splits.is_getal.1_splits.en_getal.8.c692a827f0.mp3",
@@ -2566,6 +3076,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Het muisje zoeken"
+ },
+ "keuze.som": {
+  "file": "keuze.som.6113e4a104.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "De sommen met kralen"
  },
  "keuze.splitshuis": {
   "file": "keuze.splitshuis.708880d3a5.mp3",
@@ -3485,6 +4001,12 @@
   "abrupt": false,
   "heard": "Samen is het gelukt"
  },
+ "lof.som": {
+  "file": "lof.som.9e9ae3e7a9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Goed gerekend"
+ },
  "lof.stoppen": {
   "file": "lof.stoppen.c5e1a21624.mp3",
   "ok": true,
@@ -4150,6 +4672,30 @@
   "ok": true,
   "abrupt": false,
   "heard": "Als je gaat eten, wat staat er naast je bord en wat staat er achter je bord?"
+ },
+ "missie.sommen-10.a": {
+  "file": "missie.sommen-10.a.6efb7221d4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je in bad zit, steek vijf vingers op en nog eens vijf. Hoeveel vingers zijn dat samen?"
+ },
+ "missie.sommen-10.b": {
+  "file": "missie.sommen-10.b.56819781fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je de tafel dekt, tel de borden en de bekers bij elkaar op. Hoeveel zijn het er samen?"
+ },
+ "missie.sommen-5.a": {
+  "file": "missie.sommen-5.a.2091364c19.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je gaat eten, pak twee druiven en dan nog twee. Hoeveel heb je er nu?"
+ },
+ "missie.sommen-5.b": {
+  "file": "missie.sommen-5.b.fd1c733736.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Als je buiten loopt, doe drie stappen en dan nog twee. Hoeveel stappen zijn het samen?"
  },
  "missie.splitsen-10.a": {
   "file": "missie.splitsen-10.a.1568db13bb.mp3",
@@ -4980,10 +5526,10 @@
   "heard": "Alle witte kralen samen, dat is vijf"
  },
  "rekt.hoed": {
-  "file": "rekt.hoed.e4ce780e7d.mp3",
+  "file": "rekt.hoed.3e896f0110.mp3",
   "ok": false,
   "abrupt": false,
-  "heard": "Huh. Goed",
+  "heard": "Hmm. Goed",
   "reason": "ander woord"
  },
  "rekt.huis": {
@@ -4993,11 +5539,10 @@
   "heard": "Ha! Huis"
  },
  "rekt.maan": {
-  "file": "rekt.maan.73e9bc6264.mp3",
-  "ok": false,
+  "file": "rekt.maan.0b4e7dbd90.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Mmm, man",
-  "reason": "ander woord"
+  "heard": "Hmm. Maan?"
  },
  "rekt.muis": {
   "file": "rekt.muis.1116c905a8.mp3",
@@ -5472,6 +6017,552 @@
   "ok": true,
   "abrupt": false,
   "heard": "Sst, Fluffy slaapt. Een andere keer spelen we weer"
+ },
+ "som.handen": {
+  "file": "som.handen.e67b7c016b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk naar de handjes. Je mag het ook met je eigen vingers doen"
+ },
+ "som.hint.min": {
+  "file": "som.hint.min.bf4d7d3732.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tel de kralen die nog over zijn"
+ },
+ "som.hint.plus": {
+  "file": "som.hint.plus.547b1a721a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tel alle kralen maar samen"
+ },
+ "som.hint.vingers": {
+  "file": "som.hint.vingers.882e0d4cb6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doe het eens met je eigen vingers, net als de handjes"
+ },
+ "som.hoeveel": {
+  "file": "som.hoeveel.39e4239d1b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "som.hoeveel+getal.1+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.1.08d8db6a7f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus één?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.2.a68da05879.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus twee?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.3.045114b564.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus drie?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.4.731b152e87.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus vier?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.5": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.5.b6c87af570.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus vijf?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.6": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.6.14093eb2dd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus zes?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.7": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.7.3d2d5133ac.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus zeven?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.8": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.8.e3b89c916a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus acht?"
+ },
+ "som.hoeveel+getal.1+som.plus+getal.9": {
+  "file": "som.hoeveel_getal.1_som.plus_getal.9.d15e4c180a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is één plus negen?"
+ },
+ "som.hoeveel+getal.10+som.min+getal.1": {
+  "file": "som.hoeveel_getal.10_som.min_getal.1.4c78598544.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is tien min één?"
+ },
+ "som.hoeveel+getal.10+som.min+getal.2": {
+  "file": "som.hoeveel_getal.10_som.min_getal.2.07b808501e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is tien min twee?"
+ },
+ "som.hoeveel+getal.10+som.min+getal.3": {
+  "file": "som.hoeveel_getal.10_som.min_getal.3.8980dc64d7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is tien min drie?"
+ },
+ "som.hoeveel+getal.10+som.min+getal.4": {
+  "file": "som.hoeveel_getal.10_som.min_getal.4.837c198cf1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is tien min vier?"
+ },
+ "som.hoeveel+getal.10+som.min+getal.5": {
+  "file": "som.hoeveel_getal.10_som.min_getal.5.12f1c6d52e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is tien min vijf?"
+ },
+ "som.hoeveel+getal.2+som.min+getal.1": {
+  "file": "som.hoeveel_getal.2_som.min_getal.1.1e25bb4262.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee min één?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.1.c4fab2b7b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus één?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.2.daf2d4a533.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus twee?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.3.1feaeb5663.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus drie?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.4.7550d77aa5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus vier?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.5": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.5.78c9abd8c2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus vijf?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.6": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.6.9573242a5d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus zes?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.7": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.7.eac79934d9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus zeven?"
+ },
+ "som.hoeveel+getal.2+som.plus+getal.8": {
+  "file": "som.hoeveel_getal.2_som.plus_getal.8.c46ef8f532.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is twee plus acht?"
+ },
+ "som.hoeveel+getal.3+som.min+getal.1": {
+  "file": "som.hoeveel_getal.3_som.min_getal.1.7f27e1f263.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie min één?"
+ },
+ "som.hoeveel+getal.3+som.min+getal.2": {
+  "file": "som.hoeveel_getal.3_som.min_getal.2.054d952b82.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie min twee?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.1.d075cf636f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus één?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.2.ff622943fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus twee?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.3.2fbbfd4097.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus drie?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.4.8d2a62fd68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus vier?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.5": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.5.887d0f9c2d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus vijf?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.6": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.6.5d3c48451a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus zes?"
+ },
+ "som.hoeveel+getal.3+som.plus+getal.7": {
+  "file": "som.hoeveel_getal.3_som.plus_getal.7.63bab276ce.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is drie plus zeven?"
+ },
+ "som.hoeveel+getal.4+som.min+getal.1": {
+  "file": "som.hoeveel_getal.4_som.min_getal.1.8d63dc1667.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier min één?"
+ },
+ "som.hoeveel+getal.4+som.min+getal.2": {
+  "file": "som.hoeveel_getal.4_som.min_getal.2.133e3a8b94.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier min twee?"
+ },
+ "som.hoeveel+getal.4+som.min+getal.3": {
+  "file": "som.hoeveel_getal.4_som.min_getal.3.6f9634328a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier min drie?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.1.fa1b0c5fb7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus één?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.2.486d365272.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus twee?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.3.15b1177596.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus drie?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.4.c4ee74ef01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus vier?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.5": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.5.805d8b1550.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus vijf?"
+ },
+ "som.hoeveel+getal.4+som.plus+getal.6": {
+  "file": "som.hoeveel_getal.4_som.plus_getal.6.28665ac7b2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vier plus zes?"
+ },
+ "som.hoeveel+getal.5+som.min+getal.1": {
+  "file": "som.hoeveel_getal.5_som.min_getal.1.2a1f0c837a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf min één?"
+ },
+ "som.hoeveel+getal.5+som.min+getal.2": {
+  "file": "som.hoeveel_getal.5_som.min_getal.2.eff0f7a05c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf min twee?"
+ },
+ "som.hoeveel+getal.5+som.min+getal.3": {
+  "file": "som.hoeveel_getal.5_som.min_getal.3.39e944d4fd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf min drie?"
+ },
+ "som.hoeveel+getal.5+som.min+getal.4": {
+  "file": "som.hoeveel_getal.5_som.min_getal.4.06c0404c06.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf min vier?"
+ },
+ "som.hoeveel+getal.5+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.5_som.plus_getal.1.4066459549.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf plus één?"
+ },
+ "som.hoeveel+getal.5+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.5_som.plus_getal.2.404a36e93c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf plus twee?"
+ },
+ "som.hoeveel+getal.5+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.5_som.plus_getal.3.89c3ba61a7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf plus drie?"
+ },
+ "som.hoeveel+getal.5+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.5_som.plus_getal.4.bb0f2e8e7c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf plus vier?"
+ },
+ "som.hoeveel+getal.5+som.plus+getal.5": {
+  "file": "som.hoeveel_getal.5_som.plus_getal.5.876da0f4d0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is vijf plus vijf?"
+ },
+ "som.hoeveel+getal.6+som.min+getal.1": {
+  "file": "som.hoeveel_getal.6_som.min_getal.1.21a61b79a4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes min één?"
+ },
+ "som.hoeveel+getal.6+som.min+getal.2": {
+  "file": "som.hoeveel_getal.6_som.min_getal.2.ca9eab92f6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes min twee?"
+ },
+ "som.hoeveel+getal.6+som.min+getal.3": {
+  "file": "som.hoeveel_getal.6_som.min_getal.3.2e447674ec.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes min drie?"
+ },
+ "som.hoeveel+getal.6+som.min+getal.4": {
+  "file": "som.hoeveel_getal.6_som.min_getal.4.a47f98123d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes min vier?"
+ },
+ "som.hoeveel+getal.6+som.min+getal.5": {
+  "file": "som.hoeveel_getal.6_som.min_getal.5.c039d8c5d2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes min vijf?"
+ },
+ "som.hoeveel+getal.6+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.6_som.plus_getal.1.c8fb37101f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes plus één?"
+ },
+ "som.hoeveel+getal.6+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.6_som.plus_getal.2.fd94fff027.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes plus twee?"
+ },
+ "som.hoeveel+getal.6+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.6_som.plus_getal.3.a4bf30fbde.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes plus drie?"
+ },
+ "som.hoeveel+getal.6+som.plus+getal.4": {
+  "file": "som.hoeveel_getal.6_som.plus_getal.4.84224f039e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zes plus vier?"
+ },
+ "som.hoeveel+getal.7+som.min+getal.1": {
+  "file": "som.hoeveel_getal.7_som.min_getal.1.5eaf5dd821.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven min één?"
+ },
+ "som.hoeveel+getal.7+som.min+getal.2": {
+  "file": "som.hoeveel_getal.7_som.min_getal.2.ec75f543e5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven min twee?"
+ },
+ "som.hoeveel+getal.7+som.min+getal.3": {
+  "file": "som.hoeveel_getal.7_som.min_getal.3.f5c4f4a2ba.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven min drie?"
+ },
+ "som.hoeveel+getal.7+som.min+getal.4": {
+  "file": "som.hoeveel_getal.7_som.min_getal.4.33395550ed.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven min vier?"
+ },
+ "som.hoeveel+getal.7+som.min+getal.5": {
+  "file": "som.hoeveel_getal.7_som.min_getal.5.415a3d3831.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven min vijf?"
+ },
+ "som.hoeveel+getal.7+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.7_som.plus_getal.1.c1705b3c19.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven plus één?"
+ },
+ "som.hoeveel+getal.7+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.7_som.plus_getal.2.31bb4f6143.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven plus twee?"
+ },
+ "som.hoeveel+getal.7+som.plus+getal.3": {
+  "file": "som.hoeveel_getal.7_som.plus_getal.3.8c7cb84f53.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is zeven plus drie?"
+ },
+ "som.hoeveel+getal.8+som.min+getal.1": {
+  "file": "som.hoeveel_getal.8_som.min_getal.1.0f0373ff0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht min één?"
+ },
+ "som.hoeveel+getal.8+som.min+getal.2": {
+  "file": "som.hoeveel_getal.8_som.min_getal.2.f3567f6bd2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht min twee?"
+ },
+ "som.hoeveel+getal.8+som.min+getal.3": {
+  "file": "som.hoeveel_getal.8_som.min_getal.3.90d3e699c1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht min drie?"
+ },
+ "som.hoeveel+getal.8+som.min+getal.4": {
+  "file": "som.hoeveel_getal.8_som.min_getal.4.8d255c830f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht min vier?"
+ },
+ "som.hoeveel+getal.8+som.min+getal.5": {
+  "file": "som.hoeveel_getal.8_som.min_getal.5.ed318a9b4a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht min vijf?"
+ },
+ "som.hoeveel+getal.8+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.8_som.plus_getal.1.54c2b7a662.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht plus één?"
+ },
+ "som.hoeveel+getal.8+som.plus+getal.2": {
+  "file": "som.hoeveel_getal.8_som.plus_getal.2.5816dd8da6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is acht plus twee?"
+ },
+ "som.hoeveel+getal.9+som.min+getal.1": {
+  "file": "som.hoeveel_getal.9_som.min_getal.1.d404e25323.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen min één?"
+ },
+ "som.hoeveel+getal.9+som.min+getal.2": {
+  "file": "som.hoeveel_getal.9_som.min_getal.2.4818136220.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen min twee?"
+ },
+ "som.hoeveel+getal.9+som.min+getal.3": {
+  "file": "som.hoeveel_getal.9_som.min_getal.3.95ee5c45c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen min drie?"
+ },
+ "som.hoeveel+getal.9+som.min+getal.4": {
+  "file": "som.hoeveel_getal.9_som.min_getal.4.bafda2362a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen min vier?"
+ },
+ "som.hoeveel+getal.9+som.min+getal.5": {
+  "file": "som.hoeveel_getal.9_som.min_getal.5.f7bfa824a4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen min vijf?"
+ },
+ "som.hoeveel+getal.9+som.plus+getal.1": {
+  "file": "som.hoeveel_getal.9_som.plus_getal.1.0ac226d2eb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoeveel is negen plus één?"
+ },
+ "som.is": {
+  "file": "som.is.6140d3d0e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "som.min": {
+  "file": "som.min.f8555acfb5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "som.plus": {
+  "file": "som.plus.c5a78f0bd4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": ""
+ },
+ "som.uitleg.min": {
+  "file": "som.uitleg.min.effb7518ab.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, dit is een som. Dit teken heet min. Min betekent eraf"
+ },
+ "som.uitleg.plus": {
+  "file": "som.uitleg.plus.6c4bff486f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, dit is een som. Dit teken heet plus. Plus betekent erbij"
+ },
+ "som.vingers": {
+  "file": "som.vingers.6f26a5ca50.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Je mag je vingers gebruiken"
  },
  "splits.buiten": {
   "file": "splits.buiten.b68d498063.mp3",
@@ -7016,10 +8107,10 @@
   "heard": "Kraan en maan die rijmen"
  },
  "w.maan": {
-  "file": "w.maan.ee239ff914.mp3",
+  "file": "w.maan.7fe2108bb5.mp3",
   "ok": false,
   "abrupt": false,
-  "heard": "Man",
+  "heard": "Maam?",
   "reason": "ander woord"
  },
  "w.maan+rijm.en+w.kraan+rijm.rijmen": {
@@ -7263,7 +8354,7 @@
   "heard": "Ton en zon die rijmen"
  },
  "w.veer": {
-  "file": "w.veer.8990e28ce1.mp3",
+  "file": "w.veer.fcb22c2b61.mp3",
   "ok": false,
   "abrupt": false,
   "heard": "Fear",

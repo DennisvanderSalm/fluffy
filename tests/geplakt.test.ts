@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { clipJobs, gluedJoins, segIds } from '../src/core/audio/phrases';
 import type { Seg } from '../src/core/audio/speech';
 import { ALL_PHRASES } from '../src/domains';
+import { somCombos, somResult } from '../src/domains/rekenen/sommen';
 
 /**
  * Elke zin met een getal erin moet als geheel ingesproken zijn. Anders plakt de app losse
@@ -43,6 +44,11 @@ const SENTENCES: [where: string, make: () => (string | number)[][]][] = [
   ['pad: vraag en regel', () => range(1, 9).flatMap((k) => [['pad.welkna', k], ['pad.na', k, 'pad.komt', k + 1], ['tellen.kijkdeze', 'tellen.dushet', k]])],
   ['pad: terug', () => range(2, 10).flatMap((k) => [['pad.welkvoor', k], ['pad.voor', k, 'pad.komt', k - 1]])],
   ['woont', () => range(1, 10).flatMap((n) => [['woont.vraag', n], ['woont.hier', n, PRAISE]])],
+  ['sommen: vraag en uitkomst', () => ['sommen-5', 'sommen-10'].flatMap((s) => somCombos(s).flatMap(({ a, b, op }) => {
+    const w = op === '+' ? 'som.plus' : 'som.min';
+    const r = somResult({ a, b, op });
+    return [['som.hoeveel', a, w, b], [a, w, b, 'som.is', r, 'lof.som'], [a, w, b, 'som.is', r, PRAISE], ['tellen.tik.a', r, 'tellen.tik.b']];
+  }))],
 ];
 
 describe('geen geplakte zinnen', () => {

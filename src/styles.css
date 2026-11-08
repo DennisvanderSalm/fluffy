@@ -525,6 +525,29 @@ body.is-night .gear { filter: invert(1); }
 
 /* ── Eendjes in de vijver ── */
 .verhaal { position: absolute; inset: 0; }
+.som { position: absolute; inset: 0; }
+.som-tekst {
+  position: absolute; left: 22%; right: 4%; top: 5%;
+  display: flex; justify-content: center; align-items: baseline; gap: 0.35em;
+  font-size: min(13vh, 104px); font-weight: 800; color: var(--ink); line-height: 1;
+  font-family: ui-rounded, system-ui, sans-serif;
+}
+.som-op { color: var(--ink-soft); }
+.som-vraag { min-width: 0.7em; text-align: center; color: var(--ink-soft); }
+.som-materiaal {
+  position: absolute; left: 22%; right: 4%; top: 28%; height: 36%;
+  display: flex; justify-content: center; align-items: center; gap: min(3vw, 28px);
+}
+.som-staaf { height: min(10vh, 72px); width: auto; max-width: 46%; flex: 0 1 auto; }
+.som-kraal { transition: opacity 0.4s ease; }
+.som-kraal.is-weg { opacity: 0.18; }
+.som-kraal.is-counted { stroke: var(--ink); stroke-width: 5; }
+.som-teken { font-size: min(9vh, 64px); font-weight: 800; color: var(--ink-soft); font-family: ui-rounded, system-ui, sans-serif; }
+.som-handen { display: flex; gap: 4px; height: 100%; }
+.som-hand { height: 100%; width: auto; max-height: min(30vh, 230px); }
+.som-palm, .som-vinger { fill: #f6d2b8; stroke: #d9a98a; stroke-width: 3; }
+.som-vinger.is-dicht { fill: #f1c4a6; }
+.som-vinger.is-weg { fill: #fbeee4; stroke: #d9a98a; stroke-dasharray: 5 4; }
 .vh-vijver { position: absolute; background: #bfe0f2; border: 6px solid #8fc1e0; border-radius: 50%; }
 .vh-eend { position: absolute; z-index: 5; pointer-events: none; transition: left 0.85s ease, top 0.85s ease, opacity 0.6s ease; }
 .vh-eend svg { width: 100%; height: 100%; display: block; }
