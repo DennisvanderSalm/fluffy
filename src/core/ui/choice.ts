@@ -11,7 +11,7 @@ export interface ChoiceCard {
 /**
  * Keuzemoment: twee grote plaatjes, Fluffy noemt ze allebei. Eén tik kiest.
  * Autonomie (zelfdeterminatietheorie): een kleine, echte keuze werkt beter dan een beloning.
- * Meer dan twee opties is voor een kleuter zonder lezen te veel om te onthouden.
+ * Meer dan twee opties is voor een kind dat nog niet leest te veel om te onthouden.
  */
 export async function askChoice(ctx: ActivityContext, options: ChoiceCard[]): Promise<number> {
   const root = el('div', 'keuze');

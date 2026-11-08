@@ -9,7 +9,6 @@ import { expect, test, type Page } from '@playwright/test';
  * opnames), anders duurt elke sessie minuten.
  */
 
-const WORDS = ['', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen'];
 
 async function fastSpeech(page: Page, keepClips = false): Promise<void> {
   await page.addInitScript(() => {
@@ -57,8 +56,9 @@ async function openParentArea(page: Page): Promise<void> {
   await page.mouse.down();
   await page.waitForTimeout(2300);
   await page.mouse.up();
-  const words = (await page.locator('.lock-words').textContent())!.split(' – ');
-  for (const w of words) await page.locator('.lock-pad button', { hasText: String(WORDS.indexOf(w)) }).click();
+  // De som uitrekenen ("7 × 8") en het antwoord intikken.
+  const [a, b] = (await page.locator('.lock-words').textContent())!.split(' × ').map(Number);
+  for (const digit of String(a * b)) await page.locator('.lock-pad button', { hasText: new RegExp(`^${digit}$`) }).click();
   await expect(page.getByRole('heading', { name: 'Ouderdeel' })).toBeVisible();
 }
 

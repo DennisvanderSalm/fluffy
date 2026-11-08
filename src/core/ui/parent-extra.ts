@@ -437,7 +437,7 @@ export function privacySection(name: string): HTMLElement[] {
       el('li', '', 'De stem van Fluffy is vooraf opgenomen en staat op het apparaat. Mist er een keer een opname, dan springt de computerstem in, maar alleen een stem die op het apparaat zelf werkt, nooit een online stem.'),
       el('li', '', 'Een back-up bevat de voortgang en de instellingen, en geen opnames. Hij gaat nergens vanzelf heen; jij kiest waar je hem bewaart.'),
       el('li', '', 'De microfoon gebruikt de app alleen als jij zelf iets inspreekt. Delen gebeurt alleen als jij op Delen tikt.'),
-      el('li', '', 'Het slot van het ouderdeel is een kinderslot, geen wachtwoord: een kleuter komt er niet in, een volwassene wel.'),
+      el('li', '', 'Het slot van het ouderdeel is een kinderslot, geen wachtwoord: een keersom kan een kind van 4 tot 6 nog niet, een volwassene wel.'),
     ),
   ];
 }

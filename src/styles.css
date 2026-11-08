@@ -636,6 +636,8 @@ body.is-night .missie-kaart { background: #f4efe6; box-shadow: none; }
 }
 .lock-pad button { height: 72px; font-size: 26px; font-weight: 700; }
 .lock-pad button.is-hit { background: var(--ok); }
+.lock-pad button.is-zero { grid-column: 2; }
+.lock-typed { font-size: 28px; font-weight: 800; letter-spacing: 0.15em; min-height: 1.3em; margin: 0 0 14px; }
 .btn.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
 .btn.danger { border-color: #d9a3a3; }
 .lock .btn { margin-top: 22px; }

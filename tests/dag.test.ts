@@ -5,6 +5,8 @@ import { initialState } from '../src/core/engine/mastery';
 import { byPractice, chooseMission, missionAtEnd, missionFollowUpDue } from '../src/core/session/flow';
 import { emptyData, normalize, type DayMission } from '../src/core/storage/store';
 import { ABOUT_URL, dayCard, dayCardText } from '../src/core/ui/parent-extra';
+import { lockQuestion } from '../src/core/ui/parent';
+import { seededRng } from '../src/core/util';
 import { MOMENTS } from '../src/core/ui/moments';
 import { SPRAAK } from '../src/content/spraak.nl';
 import { ALL_PHRASES, DOMAINS } from '../src/domains';
@@ -105,5 +107,18 @@ describe('dagkaart voor de ouder', () => {
 describe('uitleg voor ouders', () => {
   it('het ouderdeel linkt naar de openbare README', () => {
     expect(ABOUT_URL).toBe('https://github.com/DennisvanderSalm/fluffy#readme');
+  });
+});
+
+describe('slot van het ouderdeel', () => {
+  it('altijd een keersom met een antwoord van twee cijfers, uit de tafels van 3 t/m 9', () => {
+    const rng = seededRng(9);
+    for (let i = 0; i < 300; i++) {
+      const { a, b, answer } = lockQuestion(rng);
+      expect(a).toBeGreaterThanOrEqual(3);
+      expect(b).toBeLessThanOrEqual(9);
+      expect(answer).toBe(String(a * b));
+      expect(answer).toHaveLength(2);
+    }
   });
 });

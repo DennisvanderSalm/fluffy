@@ -1,4 +1,6 @@
-# Plan: leer-app voor een kleuter (4 jaar), met Fluffy
+# Plan: leer-app voor kinderen van 4 tot 6, met Fluffy
+
+> Begonnen voor één kleuter van 4; sinds stap 7i is de doelgroep 4 tot 6 jaar (groep 1, 2 en het begin van groep 3).
 
 Uitgangspunten uit de vragen: **iPad, liggend** · ze **telt tot 10+ en kent de cijfers 1–10** ·
 Fluffy is een **lichtblauw wolkje** · hosting via **GitHub Pages** (https, offline installeerbaar).
@@ -328,5 +330,6 @@ Bewust níet: beloningen, reeksen, een Fluffy die verdrietig is als je niet spee
 | **7f (klaar)** | De rest van de dag: aan het eind geeft Fluffy een opdracht bij een gewoon moment van de dag ("Als je de trap op gaat: tel de treden"; 48 opdrachten, 2 per vaardigheid), met een plaatje op het slaapscherm (tikken = nog een keer horen); de volgende dag vraagt Fluffy ernaar (telt niet als speeltijd). Ouderdeel: dagkaart "Vandaag samen" met de opdracht, ideeën bij gewone momenten en een spelletje, te delen via WhatsApp |
 | **7g (klaar)** | Sommen met kralen: optellen en aftrekken met cijfers tot 10 (Sommen tot 5 en tot 10, na Erbij en eraf). Niveaus: kralenstaafjes in Montessori-kleuren → handjes (vingerpatronen) → de som alleen; tot 10 geregeld dubbelen. Onderbouwing: Jordan e.a. (2012), Kullberg e.a. (2019); voor 4-jarigen niet onderzocht, daarom pas na erbij en eraf. README: "Hoe Fluffy lesgeeft" (ook: geen leerstijlen, Pashler e.a. 2008) en eerlijke grenzen van het bewijs |
 | **7h (klaar)** | Privacy: de naam van het kind is helemaal weg (geen invulveld, geen opname; Fluffy zegt "Hoi!" en "Doei doei!"); een eerder ingevulde naam en opname worden gewist. De computerstem (alleen nog reserve) gebruikt alleen stemmen op het apparaat zelf, nooit een online stem. Privacy-sectie in de README en het ouderdeel bijgewerkt |
+| **7i (klaar)** | Doelgroep 4 tot 6 jaar: teksten in README, ouderdeel en doc aangepast. Het slot van het ouderdeel is een keersom (zoals 7 × 8) in plaats van uitgeschreven getallen, want een 6-jarige leest die al. |
 | 8 | Afronding v1: met haar testen en bijstellen |
 | later | Leesmodule |

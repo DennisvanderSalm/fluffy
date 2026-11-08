@@ -1,11 +1,10 @@
-import { numberWord } from '../../content/spraak.nl';
 import type { Speech } from '../audio/speech';
 import type { DomainModule, SkillInfo } from '../domain';
 import { initialState, manualLevelOf, type ManualLevel } from '../engine/mastery';
 import { PLAN_RULES, prerequisitesMet } from '../engine/planner';
 import { storageInfo, type SaveData } from '../storage/store';
 import type { OwnClip } from '../audio/own';
-import { el, shuffle } from '../util';
+import { el } from '../util';
 import {
   backupReminder, backupSection, listenSection, ownVoiceSection, privacySection, safetySection, strugglesSection, todaySection,
 } from './parent-extra';
@@ -37,9 +36,21 @@ export interface ParentDeps {
 }
 
 /**
- * Oudervergrendeling: drie uitgeschreven getalwoorden in volgorde aantikken.
- * Een kleuter die nog niet leest kan dit niet; een ouder doet het in een paar seconden.
+ * Vraag voor de oudervergrendeling: een keersom met een antwoord van twee cijfers (zoals 7 × 8).
+ * Een kind van 4 tot 6 kan dat nog niet, ook niet als het al een beetje leest; een ouder doet het
+ * in een paar seconden. Gokken lukt niet: één verkeerd cijfer geeft een nieuwe som.
  */
+export function lockQuestion(rng: () => number): { a: number; b: number; answer: string } {
+  let a = 0;
+  let b = 0;
+  do {
+    a = 3 + Math.floor(rng() * 7);
+    b = 3 + Math.floor(rng() * 7);
+  } while (a * b < 12);
+  return { a, b, answer: String(a * b) };
+}
+
+/** Oudervergrendeling: een keersom uitrekenen en het antwoord intikken (zie lockQuestion). */
 export function openParentArea(root: HTMLElement, deps: ParentDeps): void {
   const overlay = el('div', 'overlay');
   // Tikken in het ouderdeel mogen nooit doorlekken naar het spel eronder.
@@ -63,21 +74,23 @@ export function openParentArea(root: HTMLElement, deps: ParentDeps): void {
   bumpIdle();
 
   const showLock = () => {
-    const target = shuffle(Math.random, [2, 3, 4, 5, 6, 7, 8, 9]).slice(0, 3);
-    let pos = 0;
+    const { a, b, answer } = lockQuestion(Math.random);
+    let typed = '';
+    const shown = el('p', 'lock-typed', ' ');
     const pad = el('div', 'lock-pad');
-    const buttons = shuffle(Math.random, [1, 2, 3, 4, 5, 6, 7, 8, 9]).map((n) => {
-      const b = el('button', '', String(n));
-      b.addEventListener('click', () => {
-        if (n !== target[pos]) return showLock();
-        b.classList.add('is-hit');
-        if (++pos === target.length) {
+    const buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((n) => {
+      const btn = el('button', n === 0 ? 'is-zero' : '', String(n));
+      btn.addEventListener('click', () => {
+        typed += String(n);
+        if (!answer.startsWith(typed)) return showLock();
+        shown.textContent = typed;
+        if (typed === answer) {
           clearTimeout(idle);
           unlocked = true;
           showArea(overlay, deps, close);
         }
       });
-      return b;
+      return btn;
     });
     pad.append(...buttons);
     const back = el('button', 'btn', 'Terug naar Fluffy');
@@ -85,8 +98,9 @@ export function openParentArea(root: HTMLElement, deps: ParentDeps): void {
     overlay.replaceChildren(
       el('div', 'lock', el('div', 'lock-box',
         el('h2', '', 'Voor ouders'),
-        el('p', 'muted', 'Tik deze getallen in deze volgorde aan:'),
-        el('p', 'lock-words', target.map(numberWord).join(' – ')),
+        el('p', 'muted', 'Reken deze som uit en tik het antwoord:'),
+        el('p', 'lock-words', `${a} × ${b}`),
+        shown,
         pad,
         back,
       )),

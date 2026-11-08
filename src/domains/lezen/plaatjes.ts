@@ -1,8 +1,8 @@
 import type { LineId } from '../../content/spraak.nl';
 
 /**
- * Plaatjes van eenvoudige, bekende woorden. Ze is vier en leest nog niet: alles wat ze moet
- * horen, zegt Fluffy, en elk woord heeft een plaatje dat ze herkent.
+ * Plaatjes van eenvoudige, bekende woorden. Kinderen van 4 tot 6 lezen nog niet of net: alles wat
+ * ze moeten horen, zegt Fluffy, en elk woord heeft een plaatje dat ze herkennen.
  * Rijmparen en beginklanken komen uit dezelfde woordenlijst.
  */
 

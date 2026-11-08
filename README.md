@@ -1,15 +1,16 @@
-# Fluffy, een leer-app voor kleuters
+# Fluffy, een leer-app voor kinderen van 4 tot 6
 
 **[Open Fluffy](https://dennisvandersalm.github.io/fluffy/)**
 
-Fluffy is een gratis app waarin een wolkje met je kleuter rekent en de eerste stapjes naar lezen zet:
+Fluffy is een gratis app waarin een wolkje met je kind van 4 tot 6 rekent en de eerste stapjes naar lezen zet:
 tien minuten per keer, in het Nederlands, zonder reclame of account. Daarna gaat Fluffy slapen, en geeft
 ze een opdracht mee voor de rest van de dag.
 
 ## Voor wie
 
-Fluffy is gemaakt voor kinderen van ongeveer 3 tot 5 jaar die nog niet lezen. Alles wordt uitgesproken:
-je kind hoeft niets te lezen en tikt of schuift alleen.
+Fluffy is gemaakt voor kinderen van 4 tot 6 jaar: groep 1 en 2, en het begin van groep 3. Alles wordt
+uitgesproken: je kind hoeft nog niet te lezen en tikt of schuift alleen. Kan je kind al meer, dan slaat
+Fluffy dat over met een proefje.
 
 - **Rekenen:** van tellen tot 5 tot splitsen, erbij en eraf, en sommen met plus en min tot 10, plus
   patronen, vormen en waar iets is (op, onder, naast).
@@ -140,8 +141,9 @@ houden.
 - **Geen trucjes.** Geen reclame, geen aankopen, geen punten, sterren of reeksen die je kind moet
   volhouden. Fout is nooit erg: Fluffy helpt en doet het voor.
 - **Privé.** Geen account, geen naam, niets wordt verstuurd. Zie [Privacy](#privacy).
-- **Een slot op het ouderdeel.** Je komt er alleen in door drie uitgeschreven getallen aan te tikken,
-  zoals "drie – negen – zes". Een kleuter die nog niet leest, kan dat niet.
+- **Een slot op het ouderdeel.** Je komt er alleen in met het antwoord op een keersom, zoals 7 × 8. Een
+  kind van 4 tot 6 kan dat nog niet, ook niet als het al een beetje leest. Eén verkeerd cijfer geeft een
+  nieuwe som, dus gokken lukt niet.
 - **Werkt offline.** Na het eerste bezoek doet de app het ook zonder internet.
 - **Een echte stem.** Ruim 1.400 opnames zijn ingesproken door een vriendelijke Nederlandse voorleesstem.
   Je kunt ook zelf een welterusten inspreken, of een opname vervangen door je eigen stem.
@@ -160,7 +162,7 @@ Fluffy weet niet wie je kind is en stuurt niets weg. Dat is zo ingericht:
 | De stem | Vooraf opgenomen en meegeleverd. Tijdens het spelen gaat er niets naar een stemdienst. Mist er een opname, dan springt de computerstem in, maar alleen een stem die op het apparaat zelf werkt. Online stemmen (zoals "Google Nederlands" in Chrome) gebruikt Fluffy nooit. |
 | Alleen als jij iets doet | De microfoon (als je zelf iets inspreekt), Delen van de dagkaart, en een back-up maken. Een back-up bevat de voortgang en instellingen, geen opnames; jij kiest waar je hem bewaart. |
 | Andere gebruikers | Elk apparaat heeft zijn eigen, lege Fluffy. Wie dezelfde link opent, ziet niets van een ander. |
-| Ouderdeel | Achter een kinderslot (drie uitgeschreven getallen aantikken). Dat houdt een kleuter tegen, geen volwassene. |
+| Ouderdeel | Achter een kinderslot: het antwoord op een keersom intikken (zoals 7 × 8). Dat houdt een kind van 4 tot 6 tegen, geen volwassene. |
 | Bij het maken | De opnames zijn één keer gemaakt met ElevenLabs, op de computer van de maker. Daar gaan geen gegevens van gebruikers heen. |
 
 ## Voor ouders: het ouderdeel
