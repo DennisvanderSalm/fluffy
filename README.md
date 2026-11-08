@@ -11,8 +11,8 @@ ze een opdracht mee voor de rest van de dag.
 Fluffy is gemaakt voor kinderen van ongeveer 3 tot 5 jaar die nog niet lezen. Alles wordt uitgesproken:
 je kind hoeft niets te lezen en tikt of schuift alleen.
 
-- **Rekenen:** van tellen tot 5 tot splitsen en erbij en eraf tot 10, plus patronen, vormen en waar iets
-  is (op, onder, naast).
+- **Rekenen:** van tellen tot 5 tot splitsen, erbij en eraf, en sommen met plus en min tot 10, plus
+  patronen, vormen en waar iets is (op, onder, naast).
 - **Voorbereidend lezen:** klanken horen, rijmen, letters bij klanken, woorden hakken en plakken, en de
   eerste korte woordjes lezen.
 
@@ -36,7 +36,7 @@ Een sessie duurt standaard 10 minuten en verloopt altijd op dezelfde rustige man
 
 ## Wat je kind oefent
 
-Er zijn 19 spelletjes voor 24 vaardigheden. Ze komen in een vaste volgorde aan bod: iets nieuws pas als
+Er zijn 20 spelletjes voor 26 vaardigheden. Ze komen in een vaste volgorde aan bod: iets nieuws pas als
 het vorige goed gaat.
 
 | Vak | Spelletje | Wat je kind oefent |
@@ -52,6 +52,7 @@ het vorige goed gaat.
 | Rekenen | Rekenrek | Aantallen tot 10 zien en splitsen in vijf en nog wat |
 | Rekenen | Splitshuisje | Splitsen tot 5 en tot 10 |
 | Rekenen | Eendjes in de vijver | Erbij en eraf, als klein verhaaltje |
+| Rekenen | Sommen met kralen | Sommen met cijfers tot 10 (3 + 2, 5 + 5, 8 − 2): eerst met kralen, dan met handjes, dan de som alleen |
 | Rekenen | Kralenketting | Patronen afmaken (rood, blauw, rood, blauw) |
 | Rekenen | Waar zit het muisje? | Op, onder, naast, voor en achter |
 | Rekenen | Vormen zoeken | Rondjes, driehoeken, vierkanten en rechthoeken |
@@ -82,13 +83,41 @@ genoeg om te leren.
 - **Niet te veel tegelijk.** Per vak oefent Fluffy hooguit twee nieuwe dingen tegelijk.
 - **Geen haast.** Hoe snel je kind antwoordt, telt nergens mee. Er zijn geen punten en geen scores.
 
+## Hoe Fluffy lesgeeft
+
+Fluffy volgt een paar vaste principes. Ze komen uit het onderzoek in de tabel verderop, en een deel
+uit Montessori.
+
+- **Eerst doen, dan het plaatje, dan het symbool.** Bij de sommen ziet je kind eerst kralen, dan handjes,
+  en pas daarna alleen de som. Bij lezen eerst de klank, dan de letter.
+- **Kleine stapjes, in een vaste volgorde.** Iets nieuws komt pas als het vorige stevig zit. Elke
+  vaardigheid heeft drie niveaus.
+- **Voordoen in plaats van fout rekenen.** Een fout antwoord krijgt nooit een kruis. Fluffy geeft een
+  hint, doet het daarna voor, en laat het later nog eens proberen.
+- **Zelf kunnen controleren** (Montessori). Je kind kan altijd natellen of het klopt: de kralen, de
+  eendjes en de vingers zijn er om zelf te checken.
+- **Montessori-materiaal als voorbeeld.** De kralenstaafjes hebben de vaste kleuren van de
+  Montessori-kralentrap: 1 rood, 2 groen, 3 roze, 4 geel, 5 lichtblauw, 6 paars, 7 wit, 8 bruin,
+  9 donkerblauw, 10 goud ([kralentrap](https://montessorimom.com/short-bead-stair)).
+- **Vingers mogen.** Rekenen met je vingers is een stap, geen valsspelen: 5 + 5 is twee hele handen.
+- **Bewegen en in het echt.** Opdrachten als "tien grote stappen" en de dagopdracht brengen het naar
+  de rest van de dag, samen met een ouder.
+- **Gespreid herhalen.** Wat je kind kan, komt terug na een dag, een week en een maand.
+- **Geen tijdsdruk, geen beloningen.** Snelheid telt nergens mee. Er zijn geen punten of sterren: de
+  opdracht zelf is leuk genoeg.
+
+**Geen "leerstijlen".** Fluffy past zich niet aan een "beelddenker" of "doener" aan. Elk kind krijgt
+beeld, geluid en doen tegelijk. Er is geen goed bewijs dat lesgeven volgens een leerstijl beter werkt
+([Pashler e.a., 2008](https://doi.org/10.1111/j.1539-6053.2009.01038.x)). Wat wel werkt, is dat
+de stof in kleine stappen opbouwt en dat je kind zelf actief is.
+
 ## Ook zonder scherm
 
 De app is maar tien minuten per keer. Kinderen leren het meest als ze het onderwerp ook de rest van de
 dag tegenkomen, samen met een ouder. Daarom zit dat in de app zelf.
 
 - **Opdrachten in het echt.** Tijdens het spelen vraagt Fluffy twee keer iets in het echt te doen, samen
-  met papa, mama, opa of oma. Er zijn er 72, veel met bewegen: "Stamp eens tien keer als een olifant, en
+  met papa, mama, opa of oma. Er zijn er 76, veel met bewegen: "Stamp eens tien keer als een olifant, en
   tel hardop mee." Of: "Maak eens een letter met je lijf." Je kind tikt op het duimpje als het klaar is.
   Die tijd telt niet als schermtijd.
 - **Een opdracht voor de rest van de dag.** Aan het eind geeft Fluffy één opdracht bij een gewoon moment:
@@ -164,8 +193,21 @@ en de onderbouwing staan in [PLAN.md](PLAN.md).
 | Rekenen in dagelijkse momenten, samen met een ouder | Berkowitz e.a. (2015) |
 | Samen voorlezen voor woordenschat en begrip | Mol, Bus & de Jong (2009) |
 | Gespreid herhalen: na een dag, een week, een maand | Het Leitner-systeem |
+| Een rekenprogramma in kleine stapjes voor 4-jarigen, met erbij en eraf met voorwerpen | [Clements & Sarama (2008)](https://journals.sagepub.com/doi/10.3102/0002831207312908): proef met loting, groot effect op rekenen (1,07) |
+| Sommen met cijfers tot 10, eerst met vingers en blokjes | [Jordan e.a. (2012)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4389641): proef met loting bij kleuters van gemiddeld 5½; effect op sommen 1,10 direct en 0,52 na 8 weken |
+| Vingerpatronen en deel-deel-geheel (5 + 5 is twee handen) | [Kullberg e.a. (2019)](https://link.springer.com/doi/10.1007/s10649-019-09927-1): vijfjarigen met controlegroep, voorsprong na een jaar nog zichtbaar |
+| Getallen en bewerkingen in een vaste volgorde | [IES-richtlijn voor jonge kinderen (2013)](https://ies.ed.gov/ncee/wwc/PracticeGuide/18): bewijs beoordeeld als matig |
+| Geen leerstijlen | [Pashler e.a. (2008)](https://doi.org/10.1111/j.1539-6053.2009.01038.x) |
 
-De app oefent vooral klanken en getallen. Samen voorlezen, praten en spelen blijft het belangrijkste.
+**Eerlijk over de grenzen van het bewijs:**
+- De sommen met cijfers zijn onderzocht bij kinderen van 5 tot 5½ jaar, niet bij 4-jarigen. Daarom komen
+  ze pas na erbij en eraf met eendjes, en slaat Fluffy ze alleen over als je kind ze echt al kan.
+- Montessori als geheel is in een grote proef met loting onderzocht. Daar was er bij rekenen geen
+  verschil met gewone kleuterscholen ([Lillard e.a., 2025](https://ies.ed.gov/ncee/WWC/Study/95226)).
+  Fluffy gebruikt daarom wel Montessori-ideeën (concreet materiaal, zelf controleren), maar beweert niet dat
+  het daardoor beter werkt.
+- Een app is geen vervanging van een volwassene. Samen voorlezen, praten en spelen blijft het
+  belangrijkste.
 
 ---
 
