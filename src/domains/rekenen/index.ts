@@ -10,6 +10,7 @@ import { ruimte } from './ruimte';
 import { rekenrek } from './rekenrek';
 import { splitshuis } from './splitshuis';
 import { sommen } from './sommen';
+import { tientallen } from './tientallen';
 import { REKEN_SKILLS, REKEN_START_LEVELS } from './skills';
 import { tellen } from './tellen';
 import { verhaal } from './verhaal';
@@ -28,7 +29,7 @@ export const rekenen: DomainModule = {
   id: 'rekenen',
   name: 'Rekenen',
   skills: REKEN_SKILLS,
-  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont, rekenrek, splitshuis, verhaal, sommen, patroon, ruimte, vormen],
+  activities: [mandje, tellen, foutje, kiekeboe, meer, cijfer, pad, woont, rekenrek, splitshuis, verhaal, sommen, tientallen, patroon, ruimte, vormen],
   startLevels: REKEN_START_LEVELS,
   icon: ICON,
   choice: ['keuze.vak.rekenen'],

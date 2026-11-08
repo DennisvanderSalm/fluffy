@@ -44,7 +44,11 @@ const SENTENCES: [where: string, make: () => (string | number)[][]][] = [
   ['pad: vraag en regel', () => range(1, 9).flatMap((k) => [['pad.welkna', k], ['pad.na', k, 'pad.komt', k + 1], ['tellen.kijkdeze', 'tellen.dushet', k]])],
   ['pad: terug', () => range(2, 10).flatMap((k) => [['pad.welkvoor', k], ['pad.voor', k, 'pad.komt', k - 1]])],
   ['woont', () => range(1, 10).flatMap((n) => [['woont.vraag', n], ['woont.hier', n, PRAISE]])],
-  ['sommen: vraag en uitkomst', () => ['sommen-5', 'sommen-10'].flatMap((s) => somCombos(s).flatMap(({ a, b, op }) => {
+  ['tien en nog wat', () => range(11, 20).flatMap((n) => [
+    [10, 'tien.en', n - 10, 'tien.is', n, 'lof.tienstaaf'], [10, 'tien.en', n - 10, 'tien.is', n, PRAISE],
+    ['tellen.tik.a', n, 'tellen.tik.b'], ['tellen.kijkdeze', 'tellen.dushet', n],
+  ])],
+  ['sommen: vraag en uitkomst', () => ['sommen-5', 'sommen-10', 'sommen-20'].flatMap((s) => somCombos(s).flatMap(({ a, b, op }) => {
     const w = op === '+' ? 'som.plus' : 'som.min';
     const r = somResult({ a, b, op });
     return [['som.hoeveel', a, w, b], [a, w, b, 'som.is', r, 'lof.som'], [a, w, b, 'som.is', r, PRAISE], ['tellen.tik.a', r, 'tellen.tik.b']];

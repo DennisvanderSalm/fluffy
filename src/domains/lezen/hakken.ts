@@ -2,7 +2,7 @@ import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { Seg } from '../../core/audio/speech';
 import { onTap } from '../../core/ui/drag';
 import { el, pick, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
-import { PICTURE, SOUND_WORDS, SOUNDS, soundLine, wordLine, type Word } from './plaatjes';
+import { PICTURE, SHORT_WORDS, SOUND_WORDS, soundLine, soundsOf, wordLine, type Word } from './plaatjes';
 
 /**
  * HAKKEN EN PLAKKEN — losse klanken samenvoegen tot een woord (auditieve synthese). Na de
@@ -26,17 +26,17 @@ export interface HakItem {
   letters: boolean;
 }
 
-const sounds = (w: Word) => SOUNDS[w]!;
+const sounds = soundsOf;
 const sameStart = (a: Word, b: Word) => a !== b && sounds(a)[0] === sounds(b)[0];
 const sameRest = (a: Word, b: Word) => a !== b && sounds(a).slice(1).join() === sounds(b).slice(1).join();
 
 let lastWord: Word | null = null;
 
-export function makeHakItem(mode: HakMode, level: number, rng: Rng): HakItem {
-  let word = pick(rng, SOUND_WORDS);
-  for (let i = 0; i < 5 && word === lastWord; i++) word = pick(rng, SOUND_WORDS);
+export function makeHakItem(mode: HakMode, level: number, rng: Rng, words: readonly Word[] = SOUND_WORDS): HakItem {
+  let word = pick(rng, words);
+  for (let i = 0; i < 5 && word === lastWord; i++) word = pick(rng, words);
   lastWord = word;
-  const others = SOUND_WORDS.filter((w) => w !== word);
+  const others = words.filter((w) => w !== word);
   const plain = shuffle(rng, others.filter((w) => !sameStart(word, w) && !sameRest(word, w)));
   const start = shuffle(rng, others.filter((w) => sameStart(word, w)));
   const rest = shuffle(rng, others.filter((w) => sameRest(word, w)));
@@ -278,5 +278,19 @@ export const woordjes: Activity<HakItem> = {
   // Plaatje voor het keuzemoment: m-aa-n op blokjes en een maan.
   icon: `<svg viewBox="0 0 200 160">${block(8, 'm')}${block(66, 'aa')}${block(124, 'n')}${pictureAt('maan', 62, 74, 76)}</svg>`,
   choice: ['keuze.woordjes'],
+  phrases: () => [],
+};
+
+/** KORTE WOORDJES — hetzelfde lezen, met een korte klank (vis, pet, jas). Na de eerste woordjes. */
+export const kortewoordjes: Activity<HakItem> = {
+  id: 'kortewoordjes',
+  name: 'Korte woordjes',
+  skills: ['woordjes-kort'],
+  makeItem: (_skill, level, rng) => makeHakItem('lees', level, rng, SHORT_WORDS),
+  run,
+  summary: ['einde.kortewoordjes'],
+  // Plaatje voor het keuzemoment: p-e-t op blokjes en een pet.
+  icon: `<svg viewBox="0 0 200 160">${block(8, 'p')}${block(66, 'e')}${block(124, 't')}${pictureAt('pet', 62, 74, 76)}</svg>`,
+  choice: ['keuze.kortewoordjes'],
   phrases: () => [],
 };

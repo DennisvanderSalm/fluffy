@@ -41,6 +41,12 @@ export const LEES_SKILLS: SkillInfo[] = [
     about: 'Korte woordjes zelf lezen: ze tikt op de letters, hoort de klanken en plakt ze aan elkaar (m-aa-n, maan).',
     offScreen: 'Schrijf korte woordjes (vis, maan, roos) op briefjes en leg ze bij het echte ding.',
   },
+  {
+    id: 'woordjes-kort', domain: d, requires: ['woordjes'], levels: 3, stage: 5,
+    name: 'Korte woordjes lezen',
+    about: 'Woordjes met een korte klank lezen, zoals vis, pet en jas (groep 3). Woorden die maar één letter verschillen (pop en kop) staan naast elkaar, zodat ze elke letter echt leest.',
+    offScreen: 'Leg letters neer (van een spel of op briefjes): p-e-t. Zeg samen de klanken en plak ze aan elkaar. Wissel dan één letter: pet wordt pot.',
+  },
 ];
 
 /** Opdrachten in het echt per vaardigheid (zie core/ui/samen.ts). */
@@ -50,6 +56,7 @@ const TASKS: Record<string, LineId[]> = {
   letters: ['echt.letters', 'echt.letters.b', 'echt.letters.c'],
   hakken: ['echt.hakken', 'echt.hakken.b', 'echt.hakken.c'],
   woordjes: ['echt.woordjes', 'echt.woordjes.b'],
+  'woordjes-kort': ['echt.woordjes-kort', 'echt.woordjes-kort.b'],
 };
 for (const s of LEES_SKILLS) s.realTasks = TASKS[s.id];
 
@@ -60,6 +67,7 @@ const MISSIONS: Record<string, Mission[]> = {
   letters: [{ line: 'missie.letters.a', moment: 'onderweg' }, { line: 'missie.letters.b', moment: 'keuken' }],
   hakken: [{ line: 'missie.hakken.a', moment: 'tafel' }, { line: 'missie.hakken.b', moment: 'bed' }],
   woordjes: [{ line: 'missie.woordjes.a', moment: 'keuken' }, { line: 'missie.woordjes.b', moment: 'bed' }],
+  'woordjes-kort': [{ line: 'missie.woordjes-kort.a', moment: 'bed' }, { line: 'missie.woordjes-kort.b', moment: 'keuken' }],
 };
 for (const s of LEES_SKILLS) s.missions = MISSIONS[s.id];
 

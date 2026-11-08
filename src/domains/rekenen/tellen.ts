@@ -56,6 +56,15 @@ export function answerOptions(n: number, rng: Rng): number[] {
   return [n, ...others].sort((a, b) => a - b);
 }
 
+/** Drie keuzes rond n binnen 1 t/m max, oplopend; het goede antwoord zit er altijd bij. */
+export function numberOptions(n: number, max: number, rng: Rng, min = 1): number[] {
+  const valid = (k: number) => k >= min && k <= max && k !== n;
+  const near = shuffle(rng, [n - 1, n + 1].filter(valid));
+  const far = shuffle(rng, [n - 2, n + 2, n - 3, n + 3].filter(valid));
+  const others = [...near.slice(0, 1), ...shuffle(rng, [...near.slice(1), ...far])].slice(0, 2);
+  return [n, ...others].sort((a, b) => a - b);
+}
+
 let lastN = 0;
 
 export function makeTellenItem(skill: string, level: number, rng: Rng): TellenItem {

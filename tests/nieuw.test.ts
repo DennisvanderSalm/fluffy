@@ -6,11 +6,12 @@ import { initialState } from '../src/core/engine/mastery';
 import { emptyData, makeBackup, normalize, readBackup } from '../src/core/storage/store';
 import { DOMAINS } from '../src/domains';
 import { makeHakItem } from '../src/domains/lezen/hakken';
-import { ALL_SOUNDS, PICTURE, SOUND_WORDS, SOUNDS, rhymes, WORDS } from '../src/domains/lezen/plaatjes';
+import { ALL_SOUNDS, PICTURE, SHORT_WORDS, SOUND_WORDS, SOUNDS, rhymes, soundsOf, WORDS } from '../src/domains/lezen/plaatjes';
 import { makePatroonItem } from '../src/domains/rekenen/patroon';
 import { makeRuimteItem } from '../src/domains/rekenen/ruimte';
 import { makeVerhaalItem, verhaalResult } from '../src/domains/rekenen/verhaal';
-import { BEAD_COLORS, makeSomItem, somCombos, somResult } from '../src/domains/rekenen/sommen';
+import { BEAD_COLORS, makeSomItem, modesFor, somCombos, somResult } from '../src/domains/rekenen/sommen';
+import { makeTienItem, TIEN_LEVELS } from '../src/domains/rekenen/tientallen';
 import { clipJobs, segIds } from '../src/core/audio/phrases';
 import { ALL_PHRASES } from '../src/domains';
 import { makeVormItem } from '../src/domains/rekenen/vormen';
@@ -247,5 +248,54 @@ describe('Sommen met kralen', () => {
         expect(ids.has(segIds([c.a, word, c.b, 'som.is', somResult(c)]).join('+'))).toBe(true);
       }
     }
+  });
+});
+
+describe('voor 5- en 6-jarigen', () => {
+  it('Tien en nog wat: getallen 11 t/m 20, het goede antwoord zit erbij', () => {
+    const rng = seededRng(31);
+    for (let level = 0; level < TIEN_LEVELS.length; level++) {
+      const [lo, hi, mode] = TIEN_LEVELS[level];
+      for (let i = 0; i < 100; i++) {
+        const it = makeTienItem('getallen-20', level, rng);
+        expect(it.n).toBeGreaterThanOrEqual(lo);
+        expect(it.n).toBeLessThanOrEqual(hi);
+        expect(it.mode).toBe(mode);
+        expect(it.options).toContain(it.n);
+        for (const o of it.options) expect(o).toBeGreaterThanOrEqual(10);
+      }
+    }
+  });
+
+  it('Sommen tot 20 gaan over de tien heen, met alleen kralen en de som', () => {
+    expect(modesFor('sommen-20')).toEqual(['kralen', 'som']);
+    const rng = seededRng(41);
+    for (let level = 0; level < 2; level++) {
+      for (let i = 0; i < 150; i++) {
+        const it = makeSomItem('sommen-20', level, rng);
+        const r = somResult(it);
+        if (it.op === '+') expect(r).toBeGreaterThanOrEqual(11);
+        else expect(it.a).toBeGreaterThanOrEqual(11);
+        expect(r).toBeLessThanOrEqual(18);
+        expect(it.options).toContain(r);
+      }
+    }
+  });
+
+  it('korte woordjes: precies hun klanken, in mini-paren, en alle klanken hebben een opname-tekst', () => {
+    for (const w of SHORT_WORDS) {
+      expect(soundsOf(w).join('')).toBe(w);
+      expect(soundsOf(w)).toHaveLength(3);
+    }
+    const rng = seededRng(51);
+    for (let level = 0; level < 3; level++) {
+      for (let i = 0; i < 50; i++) {
+        const it = makeHakItem('lees', level, rng, SHORT_WORDS);
+        expect(SHORT_WORDS).toContain(it.word);
+        for (const o of it.options) expect(SHORT_WORDS).toContain(o);
+        expect(it.letters).toBe(true);
+      }
+    }
+    for (const s of ALL_SOUNDS) expect(lineText(`kl.${s}` as never)).not.toBe('');
   });
 });

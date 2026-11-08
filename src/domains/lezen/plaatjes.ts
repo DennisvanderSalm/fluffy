@@ -57,8 +57,22 @@ export const SOUNDS: Partial<Record<Word, string[]>> = {
   boek: ['b', 'oe', 'k'], deur: ['d', 'eu', 'r'], vuur: ['v', 'uu', 'r'],
 };
 export const SOUND_WORDS = Object.keys(SOUNDS) as Word[];
+
+/**
+ * Korte woordjes (groep 3): één korte klinker tussen twee medeklinkers, zoals vis en pet. Ze zitten
+ * in mini-paren (pop/kop, jas/tas, zon/ton, kip/kop), zodat ze elke letter echt moet lezen.
+ * Systematisch letters en klanken leren werkt aantoonbaar, het sterkst als het vroeg begint
+ * (Ehri e.a., 2001). Bed staat er niet bij: daar klinkt de d als een t.
+ */
+export const SHORT_SOUNDS: Partial<Record<Word, string[]>> = {
+  vis: ['v', 'i', 's'], zon: ['z', 'o', 'n'], kip: ['k', 'i', 'p'], pet: ['p', 'e', 't'], pop: ['p', 'o', 'p'],
+  kop: ['k', 'o', 'p'], jas: ['j', 'a', 's'], tas: ['t', 'a', 's'], ton: ['t', 'o', 'n'],
+};
+export const SHORT_WORDS = Object.keys(SHORT_SOUNDS) as Word[];
+/** De klanken van een woord, lang of kort. */
+export const soundsOf = (w: Word): string[] => SOUNDS[w] ?? SHORT_SOUNDS[w]!;
 /** Alle losse klanken die Fluffy moet kunnen zeggen. */
-export const ALL_SOUNDS = [...new Set(SOUND_WORDS.flatMap((w) => SOUNDS[w]!))];
+export const ALL_SOUNDS = [...new Set([...SOUND_WORDS, ...SHORT_WORDS].flatMap(soundsOf))];
 export const soundLine = (s: string) => `kl.${s}` as LineId;
 
 /** Uitgerekt als dat kan, anders gewoon het woord. */

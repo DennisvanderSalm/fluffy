@@ -1,7 +1,7 @@
 import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { Seg } from '../../core/audio/speech';
 import { el, randInt, sleep, svgEl, type Rng } from '../../core/util';
-import { answerOptions } from './tellen';
+import { numberOptions } from './tellen';
 import { NumberCards } from './veld';
 
 /**
@@ -12,6 +12,7 @@ import { NumberCards } from './veld';
  * Montessori-geïnspireerd: kralenstaafjes in de vaste Montessori-kleuren, en ze kan zichzelf altijd
  * controleren door te tellen.
  * Niveaus: met kralen → met handjes → alleen de som (ze mag haar vingers gebruiken).
+ * Tot 20 (groep 3): over de tien heen, met het gouden tienstaafje; daar alleen kralen → de som.
  */
 
 export type SomOp = '+' | '-';
@@ -27,12 +28,19 @@ export interface SomItem {
 
 export const somResult = (it: Pick<SomItem, 'a' | 'b' | 'op'>) => (it.op === '+' ? it.a + it.b : it.a - it.b);
 
-const MODES: SomMode[] = ['kralen', 'handen', 'som'];
+/** Tot 20 zijn handjes te weinig (meer dan tien vingers): daar alleen kralen en de som. */
+export const modesFor = (skill: string): SomMode[] => (skill === 'sommen-20' ? ['kralen', 'som'] : ['kralen', 'handen', 'som']);
 
 /** Alle sommen die bij een vaardigheid horen. Uitkomst altijd 1 t/m 10. */
 export function somCombos(skill: string): { a: number; b: number; op: SomOp }[] {
   const out: { a: number; b: number; op: SomOp }[] = [];
   const ten = skill === 'sommen-10';
+  if (skill === 'sommen-20') {
+    // Over de tien heen: 8 + 5, en terug: 13 − 5. Getallen onder de tien erbij of eraf.
+    for (let a = 2; a <= 9; a++) for (let b = 2; b <= 9; b++) if (a + b >= 11) out.push({ a, b, op: '+' });
+    for (let a = 11; a <= 18; a++) for (let b = 2; b <= 9; b++) if (a - b >= 2 && a - b <= 9) out.push({ a, b, op: '-' });
+    return out;
+  }
   for (let a = 1; a <= 10; a++) {
     for (let b = 1; b <= 10; b++) {
       // Tot 5: alles binnen vijf. Tot 10: wat boven de vijf uitkomt, en eraf vanaf 6.
@@ -47,7 +55,8 @@ let last = '';
 
 export function makeSomItem(skill: string, level: number, rng: Rng): SomItem {
   const combos = somCombos(skill);
-  const mode = MODES[Math.min(level, MODES.length - 1)];
+  const modes = modesFor(skill);
+  const mode = modes[Math.min(level, modes.length - 1)];
   let c = combos[0];
   for (let i = 0; i < 20; i++) {
     // Tot 10: geregeld een dubbele (3 + 3, 5 + 5), die zijn met twee handen goed te zien.
@@ -56,7 +65,7 @@ export function makeSomItem(skill: string, level: number, rng: Rng): SomItem {
     if (`${c.a}${c.op}${c.b}` !== last) break;
   }
   last = `${c.a}${c.op}${c.b}`;
-  return { ...c, mode, options: answerOptions(somResult(c), rng) };
+  return { ...c, mode, options: numberOptions(somResult(c), skill === 'sommen-20' ? 20 : 10, rng) };
 }
 
 /** De Montessori-kleuren van de kralenstaafjes 1 t/m 10. */
@@ -70,11 +79,11 @@ export const BEAD_COLORS: readonly [fill: string, edge: string][] = [
   ['#fbfaf4', '#b9b4a6'], // 7 wit
   ['#a0714a', '#7a5333'], // 8 bruin
   ['#30589f', '#20407a'], // 9 donkerblauw
-  ['#e6b740', '#bb8f1f'], // 10 goud
+  ['#c8901c', '#8a5f0c'], // 10 goud (donkerder dan het geel van 4, zodat het tienstaafje opvalt)
 ];
 
-/** Een kralenstaafje van n kralen, in de kleur van n. */
-function beadBar(n: number): SVGSVGElement {
+/** Een kralenstaafje van n kralen, in de kleur van n (10 = het gouden tienstaafje). */
+export function beadBar(n: number): SVGSVGElement {
   const [fill, edge] = BEAD_COLORS[n - 1];
   const w = n * 22 + 6;
   const beads = Array.from({ length: n }, (_, i) =>
@@ -147,9 +156,11 @@ class Round {
     if (op === '+') {
       this.material.append(beadBar(a), sign('+'), beadBar(b));
     } else {
-      const bar = beadBar(a);
-      [...bar.querySelectorAll('.som-kraal')].slice(a - b).forEach((k) => k.classList.add('is-weg'));
-      this.material.append(bar);
+      // Boven de tien: het gouden tienstaafje en wat erbij hoort. De laatste kralen gaan eraf.
+      const bars = a > 10 ? [beadBar(10), beadBar(a - 10)] : [beadBar(a)];
+      this.material.append(...bars);
+      const all = bars.flatMap((bar) => [...bar.querySelectorAll('.som-kraal')]);
+      all.slice(a - b).forEach((k) => k.classList.add('is-weg'));
     }
     return [...this.material.querySelectorAll<SVGCircleElement>('.som-kraal:not(.is-weg)')];
   }
@@ -195,7 +206,8 @@ class Round {
     // Ladder 1: zelf natellen (kralen), of het met de vingers doen (handjes).
     ctx.fluffy.set('nadenken');
     this.cards.show(false);
-    if (item.mode === 'kralen') {
+    if (item.mode === 'kralen' || item.a > 10 || somResult(item) > 10) {
+      this.showBeads();
       await ctx.say([item.op === '+' ? 'som.hint.plus' : 'som.hint.min']);
     } else {
       this.showHands();
@@ -255,7 +267,7 @@ const ICON = `<svg viewBox="0 0 200 160">
 export const sommen: Activity<SomItem> = {
   id: 'sommen',
   name: 'Sommen met kralen',
-  skills: ['sommen-5', 'sommen-10'],
+  skills: ['sommen-5', 'sommen-10', 'sommen-20'],
   makeItem: makeSomItem,
   async run(ctx, item, retry) {
     const round = new Round(ctx, item);
@@ -271,12 +283,13 @@ export const sommen: Activity<SomItem> = {
   choice: ['keuze.som'],
   phrases() {
     const out: Seg[][] = [];
-    for (const skill of ['sommen-5', 'sommen-10']) {
+    for (const skill of ['sommen-5', 'sommen-10', 'sommen-20']) {
       for (const { a, b, op } of somCombos(skill)) {
         const word = op === '+' ? 'som.plus' : 'som.min';
         out.push(['som.hoeveel', a, word, b], [a, word, b, 'som.is', somResult({ a, b, op })]);
       }
     }
+    for (let n = 11; n <= 20; n++) out.push(['tellen.tik.a', n, 'tellen.tik.b'], ['tellen.dushet', n]);
     return out;
   },
 };

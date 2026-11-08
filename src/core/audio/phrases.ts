@@ -71,6 +71,16 @@ export interface ClipJob {
 /** Losse woordjes die de app ook los zegt (lezen, kleuren). */
 const SINGLE_WORD = /^(w|kleur|rekt)\./;
 const WORD_CONTEXT = 'Luister maar goed, ik zeg een Nederlands woordje:';
+/**
+ * Korte klinkers los: zonder context zegt de stem de letternaam ("aa" in plaats van de a uit jas).
+ * Met het woord ervoor (niet in de opname) klinkt het als de korte klank. Toch altijd zelf naluisteren.
+ */
+const SHORT_VOWEL_CONTEXT: Record<string, string> = {
+  'kl.a': 'jas, j, a, s. De korte klank:',
+  'kl.e': 'pet, p, e, t. De korte klank:',
+  'kl.i': 'vis, v, i, s. De korte klank:',
+  'kl.o': 'zon, z, o, n. De korte klank:',
+};
 
 /** Hoogste getal dat als losse opname gemaakt wordt. */
 export const MAX_NUMBER = 20;
@@ -85,7 +95,8 @@ export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
     const text = lineText(id);
     // Een los woordje zonder context spreekt de stem soms Engels uit ("jas" als "yes"). Met een
     // Nederlandse zin ervoor (die niet in de opname komt) klinkt het Nederlands.
-    if (text) jobs.set(id, { id, text, ...(SINGLE_WORD.test(id) ? { before: WORD_CONTEXT } : {}) });
+    const before = SINGLE_WORD.test(id) ? WORD_CONTEXT : SHORT_VOWEL_CONTEXT[id];
+    if (text) jobs.set(id, { id, text, ...(before ? { before } : {}) });
   }
   for (let n = 1; n <= MAX_NUMBER; n++) {
     const word = (k: number) => lineText(`getal.${k}`);

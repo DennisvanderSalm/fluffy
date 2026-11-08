@@ -12,10 +12,11 @@ Fluffy is gemaakt voor kinderen van 4 tot 6 jaar: groep 1 en 2, en het begin van
 uitgesproken: je kind hoeft nog niet te lezen en tikt of schuift alleen. Kan je kind al meer, dan slaat
 Fluffy dat over met een proefje.
 
-- **Rekenen:** van tellen tot 5 tot splitsen, erbij en eraf, en sommen met plus en min tot 10, plus
-  patronen, vormen en waar iets is (op, onder, naast).
-- **Voorbereidend lezen:** klanken horen, rijmen, letters bij klanken, woorden hakken en plakken, en de
-  eerste korte woordjes lezen.
+- **Rekenen:** van tellen tot 5 tot splitsen, erbij en eraf, en sommen met plus en min tot 10. Voor
+  oudere kinderen de getallen tot 20 en sommen over de tien heen (8 + 5). Plus patronen, vormen en waar
+  iets is (op, onder, naast).
+- **Lezen:** klanken horen, rijmen, letters bij klanken, woorden hakken en plakken, de eerste woordjes
+  (maan, roos) en daarna korte woordjes zoals vis, pet en jas.
 
 Aan het begin kiest je kind met twee plaatjes waar het zin in heeft. Je kunt het vak ook vastzetten. De
 app werkt het best op een iPad, liggend.
@@ -37,7 +38,7 @@ Een sessie duurt standaard 10 minuten en verloopt altijd op dezelfde rustige man
 
 ## Wat je kind oefent
 
-Er zijn 20 spelletjes voor 26 vaardigheden. Ze komen in een vaste volgorde aan bod: iets nieuws pas als
+Er zijn 22 spelletjes voor 29 vaardigheden. Ze komen in een vaste volgorde aan bod: iets nieuws pas als
 het vorige goed gaat.
 
 | Vak | Spelletje | Wat je kind oefent |
@@ -53,7 +54,8 @@ het vorige goed gaat.
 | Rekenen | Rekenrek | Aantallen tot 10 zien en splitsen in vijf en nog wat |
 | Rekenen | Splitshuisje | Splitsen tot 5 en tot 10 |
 | Rekenen | Eendjes in de vijver | Erbij en eraf, als klein verhaaltje |
-| Rekenen | Sommen met kralen | Sommen met cijfers tot 10 (3 + 2, 5 + 5, 8 − 2): eerst met kralen, dan met handjes, dan de som alleen |
+| Rekenen | Sommen met kralen | Sommen met cijfers tot 10 (3 + 2, 5 + 5, 8 − 2): eerst met kralen, dan met handjes, dan de som alleen. Daarna tot 20, over de tien heen (8 + 5, 13 − 5) |
+| Rekenen | Tien en nog wat | De getallen 11 tot en met 20: het gouden tienstaafje en nog wat kralen erbij |
 | Rekenen | Kralenketting | Patronen afmaken (rood, blauw, rood, blauw) |
 | Rekenen | Waar zit het muisje? | Op, onder, naast, voor en achter |
 | Rekenen | Vormen zoeken | Rondjes, driehoeken, vierkanten en rechthoeken |
@@ -61,7 +63,8 @@ het vorige goed gaat.
 | Lezen | Rijmen | Horen welke woorden rijmen |
 | Lezen | Letters zoeken | De letter bij een klank vinden |
 | Lezen | Hakken en plakken | Een woord in klanken hakken en klanken samenvoegen |
-| Lezen | Eerste woordjes | Korte woordjes zoals maan en vis zelf lezen |
+| Lezen | Eerste woordjes | Woordjes met een lange klank zoals maan en roos zelf lezen |
+| Lezen | Korte woordjes | Woordjes met een korte klank lezen, zoals vis, pet en jas. Woorden die één letter verschillen (pop, kop) staan naast elkaar |
 
 Rijmen is een opwarmer: het voorspelt weinig voor leren lezen. De beginklank horen en letters bij klanken
 wel, dus die komen eerst.
@@ -118,7 +121,7 @@ De app is maar tien minuten per keer. Kinderen leren het meest als ze het onderw
 dag tegenkomen, samen met een ouder. Daarom zit dat in de app zelf.
 
 - **Opdrachten in het echt.** Tijdens het spelen vraagt Fluffy twee keer iets in het echt te doen, samen
-  met papa, mama, opa of oma. Er zijn er 76, veel met bewegen: "Stamp eens tien keer als een olifant, en
+  met papa, mama, opa of oma. Er zijn er 82, veel met bewegen: "Stamp eens tien keer als een olifant, en
   tel hardop mee." Of: "Maak eens een letter met je lijf." Je kind tikt op het duimpje als het klaar is.
   Die tijd telt niet als schermtijd.
 - **Een opdracht voor de rest van de dag.** Aan het eind geeft Fluffy één opdracht bij een gewoon moment:
@@ -214,6 +217,9 @@ De keuzes in Fluffy volgen onderzoek naar hoe jonge kinderen leren rekenen en le
 | Vingerpatronen en deel-deel-geheel (5 + 5 is twee handen) | [Kullberg e.a. (2019)](https://link.springer.com/doi/10.1007/s10649-019-09927-1): vijfjarigen met controlegroep, voorsprong na een jaar nog zichtbaar |
 | Getallen en bewerkingen in een vaste volgorde | [IES-richtlijn voor jonge kinderen (2013)](https://ies.ed.gov/ncee/wwc/PracticeGuide/18): bewijs beoordeeld als matig |
 | Geen leerstijlen | [Pashler e.a. (2008)](https://doi.org/10.1111/j.1539-6053.2009.01038.x) |
+| Tellen tot 20 eind groep 2, rekenen tot 20 in groep 3 | De Nederlandse leerdoelen: [SLO groep 2](https://slo.nl/publish/pages/6431/tussendoelen-alle-domeinen-groep-2.pdf) en [SLO groep 3](https://slo.nl/publish/pages/6432/tussendoelen-alle-domeinen-groep-3.pdf) |
+| Getalbegrip en sommen tot 20 in groep 3 | [Fuchs e.a. (2013)](https://edknowledge.stanford.edu/node/266): grote proef met loting in groep 3, beter op alle rekentoetsen |
+| Lezen met letters en klanken, zo vroeg mogelijk | [Ehri e.a. (2001)](https://data.zhenzhi.com/details/1/900085678): overzicht van 38 experimenten; het sterkst als het in groep 2 of 3 begint (effect 0,55) |
 
 **Eerlijk over de grenzen van het bewijs:**
 - De sommen met cijfers zijn onderzocht bij kinderen van 5 tot 5½ jaar, niet bij 4-jarigen. Daarom komen
@@ -222,6 +228,10 @@ De keuzes in Fluffy volgen onderzoek naar hoe jonge kinderen leren rekenen en le
   verschil met gewone kleuterscholen ([Lillard e.a., 2025](https://ies.ed.gov/ncee/WWC/Study/95226)).
   Fluffy gebruikt daarom wel Montessori-ideeën (concreet materiaal, zelf controleren), maar beweert niet dat
   het daardoor beter werkt.
+- Over hoe groot het effect van leren lezen met letters en klanken is, verschillen onderzoekers van mening
+  ([overzicht](https://pmc.ncbi.nlm.nih.gov/articles/PMC3024599/)). Dat het werkt, staat vast.
+- De losse korte klanken (de a uit jas, de e uit pet) zijn lastig voor een opgenomen stem. Luister ze zelf
+  na in het ouderdeel; klinkt er een niet goed, dan kun je hem zelf inspreken.
 - Een app is geen vervanging van een volwassene. Samen voorlezen, praten en spelen blijft het
   belangrijkste.
 

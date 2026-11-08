@@ -250,6 +250,13 @@ export const SPRAAK = {
   'kl.oe': 'oe',
   'kl.eu': 'eu',
   'kl.uu': 'uu',
+  // Korte klanken (korte woordjes): kort en zonder naklank, zoals in jas, pet, vis, zon.
+  'kl.a': 'a',
+  'kl.e': 'e',
+  'kl.i': 'i',
+  'kl.o': 'o',
+  'kl.z': 'zzz',
+  'kl.j': 'j',
 
   // ── Hakken en plakken, eerste woordjes ──
   'hak.uitleg': 'Ik zeg een woordje in stukjes. Kun jij de stukjes aan elkaar plakken?',
@@ -298,8 +305,10 @@ export const SPRAAK = {
   'keuze.letters': 'Letters zoeken.',
   'keuze.hakken': 'Klanken aan elkaar plakken.',
   'keuze.woordjes': 'Woordjes lezen.',
+  'keuze.kortewoordjes': 'De korte woordjes.',
   'keuze.verhaal': 'De eendjes in de vijver.',
   'keuze.som': 'De sommen met kralen.',
+  'keuze.tien': 'Tien en nog wat.',
   'keuze.patroon': 'Een kralenketting maken.',
   'keuze.ruimte': 'Het muisje zoeken.',
   'keuze.vormen': 'Vormen zoeken.',
@@ -338,6 +347,14 @@ export const SPRAAK = {
   'som.hint.plus': 'Tel alle kralen maar samen.',
   'som.hint.min': 'Tel de kralen die nog over zijn.',
   'som.hint.vingers': 'Doe het eens met je eigen vingers, net als de handjes.',
+
+  // ── Tien en nog wat (getallen tot 20) ──
+  'tien.uitleg': 'Kijk, dit gouden staafje heeft tien kralen. Daarachter liggen er nog een paar.',
+  'tien.uitleg.woord': 'Ik zeg een getal boven de tien. Zoek jij het goede kaartje?',
+  'tien.vraag': 'Hoeveel kralen zijn het samen?',
+  'tien.hint': 'Het gouden staafje is tien. Tel maar verder vanaf tien.',
+  'tien.en': 'en',
+  'tien.is': 'is',
 
   // ── Kralenketting ──
   'patroon.uitleg': 'Kijk, een kralenketting. De kralen komen steeds in dezelfde volgorde.',
@@ -452,6 +469,10 @@ export const SPRAAK = {
   'echt.sommen-5.b': 'Steek eens vier vingers op. Doe er één naar beneden. Hoeveel staan er nog? Vier min één!',
   'echt.sommen-10': 'Spring eens vijf keer, en dan nog vijf keer. Hoeveel sprongen zijn dat samen? Vijf plus vijf!',
   'echt.sommen-10.b': 'Leg eens acht dingen neer. Pak er twee weg. Hoeveel liggen er nog? Acht min twee!',
+  'echt.getallen-20': 'Spring eens twaalf keer, en tel hardop. Na tien tel je gewoon verder: elf, twaalf!',
+  'echt.getallen-20.b': 'Zoek eens een getal boven de tien, op een klok, een kalender of een huis.',
+  'echt.sommen-20': 'Pak eens acht blokjes, en dan nog vier. Maak eerst tien vol. Hoeveel heb je er samen?',
+  'echt.sommen-20.b': 'Steek eens tien vingers op. De ander steekt er nog drie op. Hoeveel vingers zijn het samen?',
   'echt.patroon-ab.b': 'Loop eens als een reus, en dan als een muis. Reus, muis, reus, muis. Wat komt er nu?',
   'echt.patroon-ab.c': 'Leg eens een patroon met lepels en vorken: lepel, vork, lepel, vork. Kun jij verder?',
   'echt.patroon-abc.b': 'Doe eens: springen, hurken, zwaaien. Springen, hurken, zwaaien. Kun jij verder?',
@@ -469,6 +490,8 @@ export const SPRAAK = {
   'echt.hakken.b': 'Spring eens bij elk stukje van een woord: o, li, fant. Hoe vaak sprong je?',
   'echt.hakken.c': 'Klap eens de stukjes van je eigen naam. Hoeveel klappen zijn het?',
   'echt.woordjes.b': 'Schrijf eens samen een woordje op een briefje, zoals vis of maan. Leg het bij het echte ding.',
+  'echt.woordjes-kort': 'Zeg eens het woord pet in stukjes: p, e, t. Kun je pop ook in stukjes zeggen?',
+  'echt.woordjes-kort.b': 'Zoek eens een kort woordje op een boek of een doos, en lees het samen, letter voor letter.',
 
   // ── Opdracht voor de rest van de dag ──
   'missie.start': 'Ik heb nog een opdracht voor jou, voor de rest van de dag.',
@@ -512,6 +535,10 @@ export const SPRAAK = {
   'missie.sommen-5.b': 'Als je buiten loopt: doe drie stappen, en dan nog twee. Hoeveel stappen zijn het samen?',
   'missie.sommen-10.a': 'Als je in bad zit: steek vijf vingers op, en nog eens vijf. Hoeveel vingers zijn dat samen?',
   'missie.sommen-10.b': 'Als je de tafel dekt: tel de borden en de bekers bij elkaar op. Hoeveel zijn het er samen?',
+  'missie.getallen-20.a': 'Als je de trap op gaat: tel door tot je boven bent, ook voorbij de tien.',
+  'missie.getallen-20.b': 'Als je gaat eten: tel alle vorken en lepels samen. Kom je boven de tien?',
+  'missie.sommen-20.a': 'Als je in bad zit: tel tien speeltjes, en dan nog twee. Hoeveel zijn het samen?',
+  'missie.sommen-20.b': 'Als je boodschappen uitpakt: tel de dingen uit twee tassen bij elkaar op. Hoeveel zijn het samen?',
   'missie.patroon-ab.a': 'Als je buiten loopt: zoek een patroon, zoals de tegels op de stoep, of strepen op de weg.',
   'missie.patroon-ab.b': 'Als je speelt: maak een rij met twee kleuren. Rood, blauw, rood, blauw.',
   'missie.patroon-abc.a': 'Als je je aankleedt: zoek een patroon op je kleren, zoals strepen of stippen.',
@@ -530,6 +557,8 @@ export const SPRAAK = {
   'missie.hakken.b': 'Als je naar bed gaat: zeg de namen van je knuffels in stukjes.',
   'missie.woordjes.a': 'Als je in de keuken bent: zoek een kort woordje op een pak, en probeer het te lezen.',
   'missie.woordjes.b': 'Als je samen een boekje leest: zoek een woordje dat je zelf kunt lezen.',
+  'missie.woordjes-kort.a': 'Als je samen een boekje leest: zoek een kort woordje, zoals vis of pet, en lees het zelf.',
+  'missie.woordjes-kort.b': 'Als je in de keuken bent: zoek een kort woordje op een pak, en lees het letter voor letter.',
 
   // ── Feedbackladder ──
   // Stap 1: hint (samen natellen)
@@ -583,6 +612,7 @@ export const SPRAAK = {
   'lof.lezen': 'Je zei de klanken achter elkaar. Zo lees je een woord.',
   'lof.verhaal': 'Je hield goed bij wat er gebeurde.',
   'lof.som': 'Goed gerekend.',
+  'lof.tienstaaf': 'Goed gezien, met het tienstaafje.',
   'lof.patroon': 'Je zag hoe het patroon steeds terugkomt.',
   'lof.ruimte': 'Je keek goed waar het muisje zat.',
   'lof.vorm': 'Je keek goed naar de kanten en de punten.',
@@ -608,6 +638,8 @@ export const SPRAAK = {
   'einde.woordjes': 'En we hebben woordjes gelezen.',
   'einde.verhaal': 'We hebben eendjes zien zwemmen in de vijver.',
   'einde.som': 'We hebben sommen gemaakt met kralen.',
+  'einde.tien': 'We hebben getallen boven de tien gemaakt, met het gouden staafje.',
+  'einde.kortewoordjes': 'We hebben korte woordjes gelezen.',
   'einde.patroon': 'We hebben kralenkettingen gemaakt.',
   'einde.ruimte': 'We hebben het muisje gezocht.',
   'einde.vormen': 'We hebben vormen gezocht.',
