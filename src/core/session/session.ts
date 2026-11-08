@@ -2,7 +2,6 @@ import { isoDate } from '../util';
 
 /** Instellingen die de ouder bepaalt. */
 export interface Settings {
-  childName: string;
   sessionMinutes: number;
   /** 0 = geen maximum. */
   maxSessionsPerDay: number;
@@ -28,7 +27,6 @@ export interface Settings {
 }
 
 export const DEFAULT_SETTINGS: Settings = {
-  childName: '',
   sessionMinutes: 10,
   maxSessionsPerDay: 0,
   restMinutes: 60,

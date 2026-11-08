@@ -27,7 +27,6 @@ const BUFFER_CACHE = 60;
  */
 export class Speech {
   volume = 0.8;
-  childName = '';
   voiceURI: string | null = null;
 
   private clips = new Map<string, string>();
@@ -117,10 +116,13 @@ export class Speech {
     return () => this.listeners.delete(fn);
   }
 
-  /** Nederlandse stemmen op dit apparaat (voor het ouderdeel). */
+  /**
+   * Nederlandse stemmen die op dit apparaat zelf werken. Online stemmen (zoals "Google Nederlands" in
+   * Chrome) sturen de tekst naar een server; die gebruikt Fluffy nooit.
+   */
   dutchVoices(): SpeechSynthesisVoice[] {
     if (!this.synth) return [];
-    return this.synth.getVoices().filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith('nl'));
+    return this.synth.getVoices().filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith('nl') && v.localService !== false);
   }
 
   /** Zegt een reeks segmenten. Een nieuwe `say` breekt de vorige af. Lost op als het klaar is. */
@@ -182,7 +184,7 @@ export class Speech {
 
   /** Tekst voor de computerstem; een hele zin ('a+getal.4+b') wordt weer losse stukjes. */
   private text(id: string): string {
-    return joinText(id.split('+').map((part) => lineText(part as LineId, this.childName)));
+    return joinText(id.split('+').map((part) => lineText(part as LineId)));
   }
 
   private pickVoice(): SpeechSynthesisVoice | null {
@@ -206,11 +208,13 @@ export class Speech {
       await sleep(60);
       if (my !== this.token) return;
     }
+    // Alleen met een stem op het apparaat zelf; anders liever stil dan online.
+    const voice = this.pickVoice();
+    if (!voice) return sleep(estimateMs(text));
     await new Promise<void>((resolve) => {
       const u = new SpeechSynthesisUtterance(text);
       u.lang = 'nl-NL';
-      const voice = this.pickVoice();
-      if (voice) u.voice = voice;
+      u.voice = voice;
       u.rate = 0.92;
       u.pitch = 1.15;
       u.volume = this.volume;

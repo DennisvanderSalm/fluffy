@@ -35,7 +35,7 @@ export function chunk(ids: readonly string[], hasClip: (id: string) => boolean):
 /**
  * Waar wordt een zin uit losse opnames aan elkaar geplakt, midden in de zin? Dat klinkt
  * hakkelig ("Het laatste getal dat ik zei was" + "vier" op teltoon). Een grens na een
- * hele zin mag, net als een rij losse getallen of kleuren (tellen, patronen) en de naam.
+ * hele zin mag, net als een rij losse getallen of kleuren (tellen, patronen).
  */
 export function gluedJoins(ids: readonly string[], hasClip: (id: string) => boolean): string[] {
   const parts = chunk(ids, hasClip);
@@ -44,9 +44,8 @@ export function gluedJoins(ids: readonly string[], hasClip: (id: string) => bool
   for (let k = 0; k + 1 < parts.length; k++) {
     const last = parts[k].id.split('+').at(-1)!;
     const first = parts[k + 1].id.split('+')[0];
-    if (last === 'naam' || first === 'naam') continue;
-    if (/[.?!]$/.test(lineText(last as LineId, ''))) continue;
-    if (list(last) && (list(first) || /^[A-Z]/.test(lineText(first as LineId, '')))) continue;
+    if (/[.?!]$/.test(lineText(last as LineId))) continue;
+    if (list(last) && (list(first) || /^[A-Z]/.test(lineText(first as LineId)))) continue;
     out.push(`${parts[k].id} | ${parts[k + 1].id}`);
   }
   return out;
@@ -78,18 +77,18 @@ export const MAX_NUMBER = 20;
 
 /**
  * Alles wat ingesproken moet worden: elke zin uit het script, de getallen, en de hele zinnen
- * die activiteiten opgeven. De naam van het kind hoort er bewust niet bij.
+ * die activiteiten opgeven. De app vraagt geen naam van het kind, dus die zit er nooit in.
  */
 export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
   const jobs = new Map<string, ClipJob>();
   for (const id of Object.keys(SPRAAK) as (keyof typeof SPRAAK)[]) {
-    const text = lineText(id, '');
+    const text = lineText(id);
     // Een los woordje zonder context spreekt de stem soms Engels uit ("jas" als "yes"). Met een
     // Nederlandse zin ervoor (die niet in de opname komt) klinkt het Nederlands.
     if (text) jobs.set(id, { id, text, ...(SINGLE_WORD.test(id) ? { before: WORD_CONTEXT } : {}) });
   }
   for (let n = 1; n <= MAX_NUMBER; n++) {
-    const word = (k: number) => lineText(`getal.${k}`, '');
+    const word = (k: number) => lineText(`getal.${k}`);
     const before = [n - 2, n - 1].filter((k) => k >= 1).map(word);
     jobs.set(`getal.${n}`, {
       id: `getal.${n}`,
@@ -99,11 +98,11 @@ export function clipJobs(phrases: readonly Seg[][]): ClipJob[] {
     });
   }
   for (const segs of phrases) {
-    if (segs.length < 2 || segs.includes('naam')) continue;
+    if (segs.length < 2) continue;
     const ids = segIds(segs);
     const id = ids.join('+');
     // Begint er midden in een zin een nieuwe zin ("… één en één" + "Dat is evenveel."), dan een punt.
-    const pieces = ids.map((p) => lineText(p as LineId, ''));
+    const pieces = ids.map((p) => lineText(p as LineId));
     const raw = joinText(pieces.map((t, i) => (/^[A-Z]/.test(pieces[i + 1] ?? '') && !/[.?!,:]$/.test(t) ? `${t}.` : t)));
     const text = raw.charAt(0).toUpperCase() + raw.slice(1);
     const end = /^(Welke?|Waar|Wat|Wie|Hoeveel|Kun|Zullen)\b/.test(text) ? '?' : '.';

@@ -95,8 +95,8 @@ describe('dagkaart voor de ouder', () => {
   });
 
   it('als tekst om te delen', () => {
-    const text = dayCardText(dayCard(data(), DOMAINS, today)!, '');
-    expect(text.split('\n')[0]).toBe('Vandaag samen met haar');
+    const text = dayCardText(dayCard(data(), DOMAINS, today)!);
+    expect(text.split('\n')[0]).toBe('Vandaag samen');
     expect(text).toContain('Vraag er eens naar!');
     expect(text).toContain('- Onderweg:');
   });

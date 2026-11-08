@@ -2,7 +2,7 @@ import type { SkillState } from '../engine/types';
 import { DEFAULT_SETTINGS, type SessionRecord, type Settings } from '../session/session';
 import { MOMENTS, type Moment } from '../ui/moments';
 
-/** Alles wat de app bewaart, lokaal op het apparaat. Er gaat niets naar buiten. */
+/** Alles wat de app bewaart, lokaal op het apparaat. Er gaat niets naar buiten, en er staat geen naam in. */
 export interface SaveData {
   version: 1;
   settings: Settings;
@@ -82,7 +82,6 @@ const STATUS = ['new', 'practicing', 'mastered'];
 function cleanSettings(raw: unknown): Settings {
   const s: Settings = { ...DEFAULT_SETTINGS };
   if (!isObj(raw)) return s;
-  if (isStr(raw.childName)) s.childName = raw.childName.slice(0, 40);
   for (const k of ['sessionMinutes', 'maxSessionsPerDay', 'restMinutes'] as const) {
     const v = raw[k];
     if (isNum(v) && v >= 0 && v <= 24 * 60) s[k] = v;

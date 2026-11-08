@@ -53,7 +53,7 @@ describe('wat er ingesproken wordt', () => {
 
   it('elke hele zin bestaat uit bekende stukjes en eindigt als een zin', () => {
     for (const j of jobs.filter((x) => x.id.includes('+'))) {
-      for (const part of j.id.split('+')) expect(lineText(part as never, '')).not.toBe('');
+      for (const part of j.id.split('+')) expect(lineText(part as never)).not.toBe('');
       expect(j.text).toMatch(/[.?!]$/);
     }
   });

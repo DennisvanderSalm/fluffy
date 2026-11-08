@@ -1,8 +1,8 @@
 {
  "clips": {
-  "begroeting.eerste.a": "begroeting.eerste.a.ec53d84d92.mp3",
+  "begroeting.eerste.a": "begroeting.eerste.a.a9ed764588.mp3",
   "begroeting.eerste.b": "begroeting.eerste.b.4facd755bb.mp3",
-  "begroeting.terug.a": "begroeting.terug.a.ec53d84d92.mp3",
+  "begroeting.terug.a": "begroeting.terug.a.a9ed764588.mp3",
   "begroeting.terug.b": "begroeting.terug.b.1d6275068a.mp3",
   "begroeting.uitleg.fluffy": "begroeting.uitleg.fluffy.08af551672.mp3",
   "cijfer.bijcijfer": "cijfer.bijcijfer.bdb3c56934.mp3",
@@ -128,7 +128,7 @@
   "echt.zien-5.c": "echt.zien-5.c.50669f090b.mp3",
   "einde.beginklank": "einde.beginklank.bc26576c58.mp3",
   "einde.cijfer": "einde.cijfer.3770a8e6b5.mp3",
-  "einde.dag": "einde.dag.17f064e7c3.mp3",
+  "einde.dag": "einde.dag.cd7b12597c.mp3",
   "einde.foutje": "einde.foutje.09cd08d51a.mp3",
   "einde.hakken": "einde.hakken.6e9281e82f.mp3",
   "einde.kiekeboe": "einde.kiekeboe.9770b9186f.mp3",
@@ -1443,9 +1443,9 @@
   "woont.zoekverder": "woont.zoekverder.7872d5959b.mp3"
  },
  "generated": {
-  "begroeting.eerste.a": "ec53d84d92",
+  "begroeting.eerste.a": "a9ed764588",
   "begroeting.eerste.b": "4facd755bb",
-  "begroeting.terug.a": "ec53d84d92",
+  "begroeting.terug.a": "a9ed764588",
   "begroeting.terug.b": "1d6275068a",
   "begroeting.uitleg.fluffy": "08af551672",
   "cijfer.bijcijfer": "bdb3c56934",
@@ -1571,7 +1571,7 @@
   "echt.zien-5.c": "50669f090b",
   "einde.beginklank": "bc26576c58",
   "einde.cijfer": "3770a8e6b5",
-  "einde.dag": "17f064e7c3",
+  "einde.dag": "cd7b12597c",
   "einde.foutje": "09cd08d51a",
   "einde.hakken": "6e9281e82f",
   "einde.kiekeboe": "9770b9186f",

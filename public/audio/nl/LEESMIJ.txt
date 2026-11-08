@@ -14,10 +14,11 @@ ElevenLabs (automatisch)
 Eigen opnames (met de hand)
 1. Neem een zinnetje op (bijv. met Spraakmemo's op de iPhone) en exporteer als .m4a.
 2. Zoek de id op in src/content/spraak.nl.ts, bijv. begroeting.terug.b.
-   Getallen heten getal.1 ... getal.20, de naam van je kind naam.
+   Getallen heten getal.1 ... getal.20.
    Een hele zin kan ook: zet de id's met een + aan elkaar, bijv. tellen.zijnhet+getal.5
    ("Ja, het zijn er vijf").
 3. Zet het bestand in deze map en voeg het toe onder "clips" in manifest.json.
    Eigen opnames gaan voor: het ElevenLabs-script laat ze met rust.
 
-Let op: de repository is openbaar. Een opname van de naam van je kind staat dan ook online.
+Let op: de repository is openbaar. Alles in deze map staat dus online: zet hier nooit iets
+persoonlijks in, zoals de naam of stem van je kind.

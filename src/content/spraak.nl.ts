@@ -15,14 +15,12 @@
 export const SPRAAK = {
   // Getallen (getal.1 … getal.20) worden hieronder automatisch toegevoegd.
 
-  // Naam van het kind: tekst komt uit de instellingen; opname als 'naam.m4a'.
-  naam: '',
 
   // ── Begroeting ──
-  'begroeting.eerste.a': 'Hoi',
+  'begroeting.eerste.a': 'Hoi!',
   'begroeting.eerste.b': 'Ik ben Fluffy. Ik ben een wolkje, en ik speel heel graag met getallen en woordjes. Wij gaan samen spelen.',
   'begroeting.uitleg.fluffy': 'Als je mij aantikt, zeg ik het nog een keer.',
-  'begroeting.terug.a': 'Hoi',
+  'begroeting.terug.a': 'Hoi!',
   'begroeting.terug.b': 'Daar ben je. Kom, we gaan samen spelen.',
 
   // ── Mandje vullen (Geef-me-N) ──
@@ -617,7 +615,7 @@ export const SPRAAK = {
   'einde.vertel.b': 'wat we gedaan hebben',
   'einde.lof.doorzetten': 'Je bleef goed proberen, ook als het lastig was.',
   'einde.slapen': 'Ik word een beetje moe. Ik ga lekker slapen.',
-  'einde.dag': 'Doei doei',
+  'einde.dag': 'Doei doei!',
   'slaap.tik': 'Sst. Fluffy slaapt. Een andere keer spelen we weer.',
 
   // ── Ouderdeel ──
@@ -634,8 +632,7 @@ const GETALLEN = [
 export type LineId = keyof typeof SPRAAK | `getal.${number}`;
 
 /** Tekst van een zinnetje voor de computerstem. */
-export function lineText(id: LineId, childName: string): string {
-  if (id === 'naam') return childName;
+export function lineText(id: LineId): string {
   if (id.startsWith('getal.')) return GETALLEN[Number(id.slice(6))] ?? id.slice(6);
   return SPRAAK[id as keyof typeof SPRAAK] ?? '';
 }

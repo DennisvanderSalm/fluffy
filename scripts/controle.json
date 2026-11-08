@@ -1,6 +1,6 @@
 {
  "begroeting.eerste.a": {
-  "file": "begroeting.eerste.a.ec53d84d92.mp3",
+  "file": "begroeting.eerste.a.a9ed764588.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Hoi"
@@ -12,7 +12,7 @@
   "heard": "Ik ben Fluffy. Ik ben een wolkje en ik speel heel graag met getallen en woordjes. Wij gaan samen spelen"
  },
  "begroeting.terug.a": {
-  "file": "begroeting.terug.a.ec53d84d92.mp3",
+  "file": "begroeting.terug.a.a9ed764588.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Hoi"
@@ -768,7 +768,7 @@
   "heard": "We hebben cijfers gezocht"
  },
  "einde.dag": {
-  "file": "einde.dag.17f064e7c3.mp3",
+  "file": "einde.dag.cd7b12597c.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Doei doei"

@@ -17,16 +17,15 @@ import { backupDue, makeBackup, readBackup, type SaveData, type StorageInfo } fr
 const skillMap = (domains: DomainModule[]) => new Map(domains.flatMap((d) => d.skills).map((s) => [s.id, s]));
 
 /** "Na de laatste keer": één of twee spelletjes zonder scherm die aansluiten bij wat ze net deed. */
-export function todaySection(data: SaveData, domains: DomainModule[], name: string, childName: string): HTMLElement[] {
+export function todaySection(data: SaveData, domains: DomainModule[], name: string): HTMLElement[] {
   const card = dayCard(data, domains, isoDate(Date.now()));
   if (!card) return [];
-  const who = childName || 'je kind';
   const block = (title: string, items: string[]) =>
     items.length ? [el('p', 'muted', title), el('ul', 'sessions', ...items.map((t) => el('li', '', t)))] : [];
 
   const share = el('button', 'btn', 'Delen');
   share.addEventListener('click', () => {
-    const text = dayCardText(card, childName);
+    const text = dayCardText(card);
     void (async () => {
       try {
         if (navigator.share) await navigator.share({ title: 'Vandaag samen', text });
@@ -44,7 +43,7 @@ export function todaySection(data: SaveData, domains: DomainModule[], name: stri
     el('div', 'today',
       el('h2', '', 'Vandaag samen'),
       card.mission
-        ? el('p', '', `Fluffy gaf ${who} deze opdracht voor de rest van de dag: “${card.mission}” Vraag er eens naar! De volgende keer vraagt Fluffy het ook.`)
+        ? el('p', '', `Fluffy gaf ${name} deze opdracht voor de rest van de dag: “${card.mission}” Vraag er eens naar! De volgende keer vraagt Fluffy het ook.`)
         : '',
       card.practiced.length
         ? el('p', 'muted', `${name.charAt(0).toUpperCase() + name.slice(1)} oefende ${card.when} met ${card.practiced.join(' en ')}. Zo kun je er vandaag samen mee verder, zonder scherm:`)
@@ -77,7 +76,7 @@ export function dayCard(data: SaveData, domains: DomainModule[], today: string):
   // Eerst wat ze nog oefent: daar helpt samen spelen het meest.
   const picks = (last ? byPractice(last.skills, data.skills) : [])
     .map((id) => skills.get(id)).filter((s): s is SkillInfo => !!s).slice(0, 2);
-  const text = (id: string) => lineText(id as LineId, '');
+  const text = (id: string) => lineText(id as LineId);
   return {
     when: last?.date === today ? 'vandaag' : 'de laatste keer',
     mission: mission ? text(mission) || null : null,
@@ -89,10 +88,9 @@ export function dayCard(data: SaveData, domains: DomainModule[], today: string):
 }
 
 /** De dagkaart als tekst, om te delen (bijvoorbeeld via WhatsApp). */
-export function dayCardText(card: DayCard, childName: string): string {
-  const who = childName || 'haar';
-  const lines = [`Vandaag samen met ${who}`];
-  if (card.mission) lines.push('', `Fluffy gaf ${who} deze opdracht: “${card.mission}” Vraag er eens naar!`);
+export function dayCardText(card: DayCard): string {
+  const lines = ['Vandaag samen'];
+  if (card.mission) lines.push('', `Fluffy gaf haar deze opdracht: “${card.mission}” Vraag er eens naar!`);
   if (card.practiced.length) lines.push('', `Ze oefende ${card.when} met ${card.practiced.join(' en ')}.`);
   if (card.moments.length) lines.push('', 'Tussendoor:', ...card.moments.map((t) => `- ${t}`));
   if (card.games.length) lines.push('', 'Een spelletje:', ...card.games.map((t) => `- ${t}`));
@@ -195,19 +193,18 @@ function recordControls(
   return { status, buttons: el('div', 'header-buttons', play, ...(Recorder.supported() ? [rec, del] : [])) };
 }
 
-/** Eigen stem: de naam en een welterusten-boodschap zelf inspreken. */
+/** Eigen stem: een welterusten-boodschap zelf inspreken. */
 export function ownVoiceSection(speech: Speech, onClip: (id: string, clip: OwnClip | null) => void): HTMLElement[] {
   if (!Recorder.supported()) {
     return [el('h2', '', 'Eigen stem'), el('p', 'muted', 'Opnemen kan niet in deze browser.')];
   }
   const slot = (id: string, label: string, hint: string) => {
-    const c = recordControls(speech, id, onClip, id === 'naam' ? 4000 : 10000);
+    const c = recordControls(speech, id, onClip, 10000);
     return el('div', 'form-row', el('div', '', el('label', '', label), el('div', 'muted', hint), c.status), c.buttons);
   };
   return [
     el('h2', '', 'Eigen stem'),
     el('p', 'muted', 'Spreek zelf iets in. De opnames blijven op dit apparaat en gaan nergens heen.'),
-    slot('naam', 'Haar naam', 'Fluffy zegt de naam dan met jouw opname in plaats van met de computerstem.'),
     slot('eigen.welterusten', 'Welterusten van jou', 'Na Fluffy\'s "doei doei" hoort ze jouw stem, bijvoorbeeld: "Fluffy slaapt. Kom je bij mij? Dan lezen we een boekje." Kort houden, hooguit 10 seconden.'),
   ];
 }
@@ -221,7 +218,7 @@ const GROUPS: [prefix: string, label: string][] = [
 ];
 
 /** De tekst van een opname, ook van een hele zin ('a+getal.4+b'). */
-const clipText = (id: string) => joinText(id.split('+').map((p) => lineText(p as LineId, '…')));
+const clipText = (id: string) => joinText(id.split('+').map((p) => lineText(p as LineId)));
 
 /**
  * Alle opnames beluisteren, per onderwerp. Klinkt er één niet goed (bv. "bee" in plaats van de
@@ -425,11 +422,12 @@ export function privacySection(name: string): HTMLElement[] {
   return [
     el('h2', '', 'Privacy'),
     el('ul', 'sessions',
-      el('li', '', `Alles wat Fluffy over ${name} weet (naam, voortgang, wat opviel, instellingen en je eigen opnames) staat alleen op dit apparaat. Niemand anders kan het zien, ook niet wie dezelfde link opent: elk apparaat heeft zijn eigen, lege Fluffy.`),
+      el('li', '', `Fluffy vraagt geen naam, leeftijd of andere gegevens over ${name}. Wat de app bijhoudt (voortgang, wat opviel, instellingen en je eigen opname) staat alleen op dit apparaat. Niemand anders kan het zien, ook niet wie dezelfde link opent: elk apparaat heeft zijn eigen, lege Fluffy.`),
       el('li', '', 'De app verstuurt niets: geen account, geen reclame, geen statistieken, geen tracking. Dat is ook technisch afgedwongen: de app mag alleen met zijn eigen website praten.'),
       el('li', '', 'De app zelf staat openbaar op GitHub, en iedereen mag hem gebruiken. Als je de app opent, kijkt de iPad bij GitHub of er een nieuwe versie is. GitHub ziet dan, zoals bij elke website, het internetadres en het tijdstip. Niet wat er gespeeld wordt of hoe het gaat.'),
-      el('li', '', 'De stem van Fluffy is vooraf opgenomen. Tijdens het spelen gaat er niets naar een stemdienst. De naam wordt nooit opgenomen of verstuurd: die zegt de computerstem van de iPad, of jouw eigen opname.'),
-      el('li', '', 'Een back-up bevat de naam en de voortgang. Hij gaat nergens vanzelf heen; jij kiest waar je hem bewaart.'),
+      el('li', '', 'De stem van Fluffy is vooraf opgenomen en staat op het apparaat. Mist er een keer een opname, dan springt de computerstem in, maar alleen een stem die op het apparaat zelf werkt, nooit een online stem.'),
+      el('li', '', 'Een back-up bevat de voortgang en de instellingen, en geen opnames. Hij gaat nergens vanzelf heen; jij kiest waar je hem bewaart.'),
+      el('li', '', 'De microfoon gebruikt de app alleen als jij zelf iets inspreekt. Delen gebeurt alleen als jij op Delen tikt.'),
       el('li', '', 'Het slot van het ouderdeel is een kinderslot, geen wachtwoord: een kleuter komt er niet in, een volwassene wel.'),
     ),
   ];

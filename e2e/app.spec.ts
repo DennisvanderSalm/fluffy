@@ -17,16 +17,25 @@ async function fastSpeech(page: Page, keepClips = false): Promise<void> {
       speaking: false,
       pending: false,
       cancel() {},
-      getVoices: () => [],
-      speak(u: { onend?: (() => void) | null }) {
+      // Een Nederlandse stem op het apparaat zelf (Fluffy gebruikt nooit een online stem), plus een
+      // online stem die de app moet laten liggen.
+      getVoices: () => [
+        { lang: 'nl-NL', name: 'Online', voiceURI: 'online', localService: false },
+        { lang: 'nl-NL', name: 'Test', voiceURI: 'test', localService: true },
+      ],
+      speak(u: { onend?: (() => void) | null; voice?: { localService: boolean } | null }) {
+        // Een online stem zou de tekst naar een server sturen: dat mag nooit.
+        if (u.voice && !u.voice.localService) throw new Error('online stem gebruikt');
         setTimeout(() => u.onend?.(), 5);
       },
       addEventListener() {},
     };
     Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true });
-    if (!('SpeechSynthesisUtterance' in window)) {
-      (window as unknown as Record<string, unknown>).SpeechSynthesisUtterance = class { constructor(public text: string) {} };
-    }
+    // Nep-uitspraak: de echte accepteert alleen een echte stem.
+    (window as unknown as Record<string, unknown>).SpeechSynthesisUtterance = class {
+      voice: unknown = null;
+      constructor(public text: string) {}
+    };
   });
   // Geen opnames: dan zegt Fluffy alles met de (nep-)computerstem.
   if (!keepClips) await page.route('**/audio/nl/manifest.json', (r) => r.fulfill({ json: { clips: {} } }));

@@ -21,7 +21,7 @@ describe('Hakken en plakken, eerste woordjes', () => {
       expect(SOUNDS[w]!.join('')).toBe(w);
       expect(PICTURE[w]).toMatch(/^<svg/);
     }
-    for (const s of ALL_SOUNDS) expect(lineText(`kl.${s}` as never, '')).not.toBe('');
+    for (const s of ALL_SOUNDS) expect(lineText(`kl.${s}` as never)).not.toBe('');
   });
 
   it('nieuwe woorden rijmen niet stiekem op oude (anders zijn er bij Rijmen twee goede)', () => {
@@ -155,14 +155,14 @@ describe('samen en back-up', () => {
       for (const s of d.skills) {
         expect(playable.has(s.id)).toBe(true);
         expect(s.realTasks?.length).toBeGreaterThan(0);
-        for (const t of s.realTasks!) expect(lineText(t, '')).not.toBe('');
+        for (const t of s.realTasks!) expect(lineText(t)).not.toBe('');
       }
     }
   });
 
   it('back-up gaat heen en terug, en vreemde bestanden worden geweigerd', () => {
     const data = emptyData();
-    data.settings.childName = 'Test';
+    data.settings.volume = 0.5;
     data.notes.push({ skill: 'letters', text: 'x', date: '2026-11-07' });
     const back = readBackup(JSON.stringify(makeBackup(data, Date.now())));
     expect(back).toEqual(data);
@@ -184,7 +184,8 @@ describe('samen en back-up', () => {
       lastBackup: 'gisteren',
     };
     const d = readBackup(JSON.stringify(makeBackup(evil as never, 0)))!;
-    expect(d.settings.childName).toHaveLength(40);
+    // Een naam uit een oude back-up wordt niet overgenomen: Fluffy bewaart geen naam meer.
+    expect('childName' in d.settings).toBe(false);
     expect(d.settings.volume).toBe(1);
     expect(d.settings.together).toBe('echt');
     expect(d.settings.grownUp).toBe('wie.papaofmama');

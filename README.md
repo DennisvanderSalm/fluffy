@@ -24,7 +24,7 @@ app werkt het best op een iPad, liggend.
 Een sessie duurt standaard 10 minuten en verloopt altijd op dezelfde rustige manier.
 
 1. Fluffy ligt te slapen. Je kind tikt op het scherm en maakt haar wakker.
-2. Fluffy begroet je kind bij naam.
+2. Fluffy zegt hoi en vertelt wat jullie gaan doen.
 3. De volgende dag vraagt Fluffy eerst naar de opdracht van gisteren: "Weet je nog wat je opdracht was?"
 4. Je kind kiest rekenen of lezen, met twee plaatjes.
 5. Fluffy kiest de opdrachten. Af en toe mag je kind zelf kiezen tussen twee spelletjes.
@@ -139,13 +139,29 @@ houden.
   uur) en eventueel een maximum per dag.
 - **Geen trucjes.** Geen reclame, geen aankopen, geen punten, sterren of reeksen die je kind moet
   volhouden. Fout is nooit erg: Fluffy helpt en doet het voor.
-- **Niets wordt verstuurd.** Er is geen account. De voortgang blijft op het apparaat. De naam van je kind
-  zegt de stem van het apparaat zelf, of jij neemt hem op.
+- **Privé.** Geen account, geen naam, niets wordt verstuurd. Zie [Privacy](#privacy).
 - **Een slot op het ouderdeel.** Je komt er alleen in door drie uitgeschreven getallen aan te tikken,
   zoals "drie – negen – zes". Een kleuter die nog niet leest, kan dat niet.
 - **Werkt offline.** Na het eerste bezoek doet de app het ook zonder internet.
-- **Een echte stem.** Ruim 1.200 opnames zijn ingesproken door een vriendelijke Nederlandse voorleesstem.
-  Je kunt ook zelf zinnen inspreken, zoals de naam van je kind of een eigen welterusten.
+- **Een echte stem.** Ruim 1.400 opnames zijn ingesproken door een vriendelijke Nederlandse voorleesstem.
+  Je kunt ook zelf een welterusten inspreken, of een opname vervangen door je eigen stem.
+
+## Privacy
+
+Fluffy weet niet wie je kind is en stuurt niets weg. Dat is zo ingericht:
+
+| Wat | Hoe |
+| --- | --- |
+| Gegevens over je kind | Fluffy vraagt geen naam, leeftijd of andere gegevens. Fluffy zegt "Hoi!" en "Doei doei!", zonder naam. |
+| Wat de app bijhoudt | Voortgang, wat opviel, instellingen en de opdracht van vandaag, in de opslag van de browser. Een eigen opname van jou in een aparte database. De app en de opnames in een offline-cache. Alles alleen op dit apparaat. |
+| Account, reclame, statistieken | Geen. Er is geen server en geen cookie. |
+| Technisch afgedwongen | Een strenge beveiligingsregel (Content-Security-Policy) laat de app alleen met zijn eigen website praten. Statistieken of andere diensten worden door de browser geblokkeerd. |
+| GitHub | Host de app. Bij het openen ziet GitHub, zoals bij elke website, het internetadres en het tijdstip. Niet wat er gespeeld wordt. |
+| De stem | Vooraf opgenomen en meegeleverd. Tijdens het spelen gaat er niets naar een stemdienst. Mist er een opname, dan springt de computerstem in, maar alleen een stem die op het apparaat zelf werkt. Online stemmen (zoals "Google Nederlands" in Chrome) gebruikt Fluffy nooit. |
+| Alleen als jij iets doet | De microfoon (als je zelf iets inspreekt), Delen van de dagkaart, en een back-up maken. Een back-up bevat de voortgang en instellingen, geen opnames; jij kiest waar je hem bewaart. |
+| Andere gebruikers | Elk apparaat heeft zijn eigen, lege Fluffy. Wie dezelfde link opent, ziet niets van een ander. |
+| Ouderdeel | Achter een kinderslot (drie uitgeschreven getallen aantikken). Dat houdt een kleuter tegen, geen volwassene. |
+| Bij het maken | De opnames zijn één keer gemaakt met ElevenLabs, op de computer van de maker. Daar gaan geen gegevens van gebruikers heen. |
 
 ## Voor ouders: het ouderdeel
 
@@ -156,7 +172,7 @@ Je vindt er:
 - **Waar je kind mee bezig is:** per vaardigheid in gewone taal, zonder scores ("Gaat goed", "Hier
   oefent ze nu mee, stap 2 van 3"). Je kunt het niveau ook zelf instellen.
 - **Waar je kind tegenaan loopt:** wat de laatste weken vaak lastig was, zoals het verwisselen van b en d.
-- **Instellingen:** naam, speeltijd, rustpauze, volume, rekenen of lezen, samen spelen, en of Fluffy eerst
+- **Instellingen:** speeltijd, rustpauze, volume, rekenen of lezen, samen spelen, en of Fluffy eerst
   kijkt wat je kind al kan.
 - **Opnames:** alle zinnen beluisteren, zelf inspreken, en melden wat niet goed klinkt.
 - **Back-up:** de voortgang bewaren als bestand, bijvoorbeeld in iCloud.
@@ -169,8 +185,7 @@ Fluffy is gratis en iedereen mag hem gebruiken. Er is niets te installeren uit e
 1. Open [dennisvandersalm.github.io/fluffy](https://dennisvandersalm.github.io/fluffy/) in Safari op de iPad.
 2. Tik op Deel en dan op **Zet op beginscherm**. Fluffy staat dan als app tussen je andere apps, werkt
    offline en houdt de voortgang beter vast.
-3. Open het ouderdeel en vul de naam van je kind in. Kies eventueel het startniveau en hoe lang een keer
-   spelen duurt.
+3. Open het ouderdeel. Kies eventueel het startniveau en hoe lang een keer spelen duurt.
 4. Zet **Begeleide toegang** aan (Instellingen, Toegankelijkheid). Dan blijft je kind in de app.
 5. Maak af en toe een back-up in het ouderdeel. De voortgang staat alleen op dit apparaat; met een
    back-up zet je hem terug op een nieuwe iPad.
@@ -297,8 +312,7 @@ Goed om te weten:
   De sleutel moet daarvoor ook Speech-to-Text mogen gebruiken.
 - **Alleen wat verandert** wordt opnieuw ingesproken. Een andere stem of gewijzigde tekst? Draai het script opnieuw.
   Met `--opnieuw` spreek je alles opnieuw in.
-- **De naam van je kind gaat niet naar ElevenLabs.** Die zegt de computerstem. Wil je ook de naam
-  met een opname, neem die dan zelf op (zie hieronder).
+- **Geen naam.** De app vraagt geen naam van het kind, dus die kan ook nooit naar ElevenLabs gaan.
 - Controleer zelf de actuele prijzen en de gebruiksvoorwaarden van je ElevenLabs-abonnement.
 - Optioneel in `.env.local`: `ELEVENLABS_MODEL` (standaard `eleven_multilingual_v2`) en `ELEVENLABS_SPEED` (standaard `0.95`).
 

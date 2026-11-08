@@ -137,7 +137,7 @@ function statusOf(deps: ParentDeps, domain: DomainModule, skill: SkillInfo): { t
 function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): void {
   const { data, domains } = deps;
   const s = data.settings;
-  const name = s.childName || 'je kind';
+  const name = 'je kind';
 
   const closeBtn = el('button', `btn${deps.awake ? ' primary' : ''}`, 'Terug naar Fluffy');
   closeBtn.addEventListener('click', close);
@@ -202,13 +202,6 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
     el('div', 'form-row', el('div', '', el('label', '', label), hint ? el('div', 'muted', hint) : ''), control);
 
 
-  const nameInput = el('input');
-  nameInput.type = 'text';
-  nameInput.value = s.childName;
-  nameInput.addEventListener('change', () => {
-    s.childName = nameInput.value.trim();
-    deps.onChange();
-  });
 
   const minutes = select([['5', '5 minuten'], ['10', '10 minuten'], ['15', '15 minuten'], ['20', '20 minuten']], String(s.sessionMinutes), (v) => {
     s.sessionMinutes = Number(v);
@@ -246,7 +239,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
   const test = el('button', 'btn', 'Laat Fluffy iets zeggen');
   test.addEventListener('click', () => {
     deps.speech.unlock();
-    void deps.speech.say(['ouder.test', 'naam']);
+    void deps.speech.say(['ouder.test']);
   });
 
   // Startniveau bestaat alleen bij een vak waar iets te kiezen valt (rekenen).
@@ -334,7 +327,7 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       el('header', '', el('h1', '', 'Ouderdeel'), el('div', 'header-buttons', deps.awake ? '' : wakeBtn, closeBtn)),
       el('p', 'muted', `Alles blijft op dit apparaat. De app verstuurt niets. Zolang dit scherm open is, staat de speeltijd stil.`),
       ...backupReminder(data, Date.now()),
-      ...todaySection(data, domains, name, s.childName),
+      ...todaySection(data, domains, name),
 
       el('h2', '', `Waar ${name} mee bezig is`),
       el('p', 'muted', 'Iets nieuws begint met een proefje: drie moeilijke opdrachten. Lukken die meteen, dan gaat Fluffy door naar het volgende. Anders oefent ze, en gaat de app pas verder als het een paar keer goed gaat, verdeeld over minstens twee dagen of sessies. Wat al beheerst wordt, komt af en toe kort terug. Vind je het te makkelijk of te moeilijk? Zet het niveau dan zelf; daarna past de app het weer aan op hoe het gaat.'),
@@ -347,13 +340,12 @@ function showArea(overlay: HTMLElement, deps: ParentDeps, close: () => void): vo
       sessions.length ? el('ul', 'sessions', ...sessions) : el('p', 'muted', 'Nog niet gespeeld.'),
 
       el('h2', '', 'Instellingen'),
-      row('Naam', nameInput, 'Fluffy zegt deze naam hardop.'),
       row('Hoe lang per keer', minutes, 'Daarna maakt Fluffy de opdracht af en gaat slapen.'),
       row('Rustpauze na een sessie', rest, 'Zolang blijft Fluffy slapen.'),
       row('Maximaal per dag', maxPerDay),
       row('Volume', volume),
       row('Stem', voice, [
-        deps.speech.clipCount ? `Fluffy praat met opnames (${deps.speech.clipCount} zinnen). Deze computerstem is alleen voor wat geen opname heeft, zoals de naam.` : '',
+        deps.speech.clipCount ? `Fluffy praat met opnames (${deps.speech.clipCount} zinnen). Deze computerstem springt alleen in als een opname een keer niet laadt, en alleen met een stem die op dit apparaat zelf werkt (nooit online).` : '',
         voices.length ? 'Tip: download een "verbeterde" Nederlandse stem in Instellingen → Toegankelijkheid → Gesproken materiaal → Stemmen.' : 'Geen Nederlandse stem gevonden op dit apparaat.',
       ].join(' ').trim()),
       row('Stem testen', test),

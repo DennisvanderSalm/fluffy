@@ -16,7 +16,7 @@ import {
   byPractice, chooseMission, easyWin, missionAtEnd, missionFollowUpDue, pickRealTask, togetherDue, warmUpSkill,
 } from '../session/flow';
 import { load, requestPersistence, save, type SaveData } from '../storage/store';
-import type { OwnClip } from '../audio/own';
+import { deleteOwnClip, type OwnClip } from '../audio/own';
 import { COUNT_BEAT, el, isoDate, makeBeat, pick, shuffle, sleep, svgEl } from '../util';
 import { askChoice } from './choice';
 import { onTap } from './drag';
@@ -96,6 +96,8 @@ export class App {
     this.setupGear();
     this.setupGlobalGuards();
     requestPersistence();
+    // Uit een eerdere versie: een eigen opname van de naam. Fluffy zegt geen naam meer, dus weg ermee.
+    void deleteOwnClip('naam').catch(() => undefined);
     void this.speech.init();
     this.updates?.onReady(() => this.maybeUpdate());
   }
@@ -194,13 +196,13 @@ export class App {
     await sleep(700);
     this.fluffy.set('blij');
     if (!this.data.introduced) {
-      await this.say(['begroeting.eerste.a', 'naam', 'begroeting.eerste.b']);
+      await this.say(['begroeting.eerste.a', 'begroeting.eerste.b']);
       this.fluffy.set('rust');
       await this.say(['begroeting.uitleg.fluffy']);
       this.data.introduced = true;
       save(this.data);
     } else {
-      await this.say(['begroeting.terug.a', 'naam', 'begroeting.terug.b']);
+      await this.say(['begroeting.terug.a', 'begroeting.terug.b']);
     }
     if (this.data.settings.together === 'samen') await this.say(['samen.hoi', this.grownUp()]);
     await this.askMission();
@@ -375,7 +377,7 @@ export class App {
     if (this.data.settings.together !== 'uit') await this.say(['einde.vertel.a', this.grownUp(), 'einde.vertel.b']);
     await this.giveMission();
     this.fluffy.set('slaperig');
-    await this.say(['einde.slapen', 'einde.dag', 'naam']);
+    await this.say(['einde.slapen', 'einde.dag']);
     if (this.speech.hasOwn('eigen.welterusten')) {
       await sleep(700);
       await this.say(['eigen.welterusten']);
@@ -508,7 +510,6 @@ export class App {
   private applySettings(): void {
     const s = this.data.settings;
     this.speech.volume = s.volume;
-    this.speech.childName = s.childName;
     this.speech.voiceURI = s.voiceURI;
     this.sounds.volume = s.volume;
   }
