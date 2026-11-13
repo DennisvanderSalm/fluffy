@@ -16,7 +16,20 @@ import {
  * oefenen werkt beter samen met letters (Bus & van IJzendoorn, 1999).
  * Niveaus: twee plaatjes → drie plaatjes → drie met een lastige afleider (bij rijmen een woord
  * met dezelfde beginklank, bij beginklank een woord dat rijmt).
+ * Beginklank en rijmen lijken op elkaar, dus ze zijn duidelijk verschillend: elk een eigen kleur en
+ * teken (groen met een pijl = het begin, paars met muzieknootjes = rijmen), ze komen in aparte
+ * reeksen, en elke reeks begint met uitleg en een voorbeeld.
  */
+
+/** Teken voor het soort opdracht: een pijl naar het begin, of muzieknootjes voor rijmen. */
+const KIND_SVG: Record<KlankKind, string> = {
+  begin: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#7cc47a" stroke="#4f9a4d" stroke-width="5"/>
+    <path d="M30 50 H66 M52 34 L68 50 L52 66" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 28 V72" stroke="#fff" stroke-width="10" stroke-linecap="round"/></svg>`,
+  rijm: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#a88bd6" stroke="#7d62ad" stroke-width="5"/>
+    <path d="M38 66 V30 L70 24 V60" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/>
+    <ellipse cx="32" cy="67" rx="9" ry="7" fill="#fff"/><ellipse cx="64" cy="61" rx="9" ry="7" fill="#fff"/></svg>`,
+};
 
 export type KlankKind = 'rijm' | 'begin';
 
@@ -58,13 +71,18 @@ class Round {
   private cards: HTMLElement[];
   private answer: ((i: number) => void) | null = null;
 
+  /** Het teken voor het soort opdracht, links van het voorbeeldplaatje. */
+  private badge: HTMLElement;
+
   constructor(private ctx: ActivityContext, private item: KlankItem) {
-    this.root = el('div', 'klanken');
+    this.root = el('div', `klanken is-${item.kind}`);
     this.root.dataset.answer = item.answer; // voor tests
     this.model = el('div', 'lz-doel');
     this.model.append(svgEl(PICTURE[item.target]));
     this.letter = el('div', 'lz-letter', letterOf(item.target) ?? '');
-    this.root.append(this.model, this.letter);
+    this.badge = el('div', 'lz-soort');
+    this.badge.append(svgEl(KIND_SVG[item.kind]));
+    this.root.append(this.badge, this.model, this.letter);
     this.cards = item.options.map((w, i) => {
       const c = el('div', 'lz-kaart');
       c.dataset.word = w;
@@ -88,6 +106,8 @@ class Round {
     const H = this.ctx.stage.clientHeight;
     const m = Math.min(0.3 * H, 0.2 * W, 220);
     place(this.model, { x: 0.59 * W - m / 2, y: 0.05 * H, w: m, h: m });
+    const s = m * 0.55;
+    place(this.badge, { x: 0.59 * W - m / 2 - s - 0.03 * W, y: 0.05 * H + (m - s) / 2, w: s, h: s });
     place(this.letter, { x: 0.59 * W + m / 2 + 0.03 * W, y: 0.05 * H + m * 0.1, w: m * 0.8, h: m * 0.8 });
     const c = Math.min(0.27 * H, 0.19 * W, 210);
     const gap = c * 1.3;
@@ -163,7 +183,12 @@ class Round {
     ctx.fluffy.still(true);
     await sleep(300);
     ctx.fluffy.set('rust');
-    if (ctx.beginner) await ctx.say([item.kind === 'rijm' ? 'rijm.uitleg' : 'klank.uitleg']);
+    // Aan het begin van elke reeks (en de eerste keren): eerst uitleggen wat de opdracht is.
+    if (ctx.beginner || ctx.newRun) {
+      this.badge.classList.add('is-named');
+      await ctx.say([item.kind === 'rijm' ? 'rijm.uitleg' : 'klank.uitleg']);
+      this.badge.classList.remove('is-named');
+    }
     await this.present();
     let w = await this.ask(this.question());
     if (w === item.answer) return this.celebrate(1);

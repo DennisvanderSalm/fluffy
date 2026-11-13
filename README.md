@@ -29,7 +29,8 @@ Een sessie duurt standaard 10 minuten en verloopt altijd op dezelfde rustige man
 2. Fluffy zegt hoi en vertelt wat jullie gaan doen.
 3. De volgende dag vraagt Fluffy eerst naar de opdracht van gisteren: "Weet je nog wat je opdracht was?"
 4. Je kind kiest rekenen of lezen, met twee plaatjes.
-5. Fluffy kiest de opdrachten. Af en toe mag je kind zelf kiezen tussen twee spelletjes.
+5. Fluffy kiest de opdrachten, in reeksen van vier van hetzelfde soort. Voor elke reeks legt Fluffy eerst
+   uit wat de bedoeling is. Tussen twee reeksen mag je kind soms zelf kiezen tussen twee spelletjes.
 6. Tussendoor vraagt Fluffy iets in het echt te doen, samen met papa of mama: "Doe eens tien grote
    stappen, en tel ze hardop."
 7. Is de tijd om, dan maakt Fluffy de opdracht nog af. Ze vertelt wat jullie gedaan hebben, vraagt je
@@ -85,6 +86,8 @@ genoeg om te leren.
 - **Herhalen.** Wat je kind al kan, komt af en toe kort terug: eerst na een dag, later na een week of een
   maand.
 - **Niet te veel tegelijk.** Per vak oefent Fluffy hooguit twee nieuwe dingen tegelijk.
+- **Eén soort opdracht per reeks.** Opdrachten komen in reeksen van vier van hetzelfde soort, niet door
+  elkaar. Herhalingen komen alleen tussen twee reeksen.
 - **Geen haast.** Hoe snel je kind antwoordt, telt nergens mee. Er zijn geen punten en geen scores.
 
 ## Hoe Fluffy lesgeeft
@@ -96,6 +99,11 @@ uit Montessori.
   en pas daarna alleen de som. Bij lezen eerst de klank, dan de letter.
 - **Kleine stapjes, in een vaste volgorde.** Iets nieuws komt pas als het vorige stevig zit. Elke
   vaardigheid heeft drie niveaus.
+- **Eerst uitleggen, en niet mixen.** Elke reeks begint met uitleg en een voorbeeld ("Nu gaan we rijmen.
+  Huis en muis: die rijmen!"). Opdrachten die op elkaar lijken, zoals de beginklank en rijmen, hebben
+  elk een eigen kleur en teken: groen met een pijl voor het begin van een woord, paars met
+  muzieknootjes voor rijmen. Jonge kinderen vinden wisselen tussen twee regels moeilijk: ze blijven de
+  vorige regel gebruiken ([Zelazo, 2006](https://doi.org/10.1038/nprot.2006.46)).
 - **Voordoen in plaats van fout rekenen.** Een fout antwoord krijgt nooit een kruis. Fluffy geeft een
   hint, doet het daarna voor, en laat het later nog eens proberen.
 - **Zelf kunnen controleren** (Montessori). Je kind kan altijd natellen of het klopt: de kralen, de
@@ -217,6 +225,7 @@ De keuzes in Fluffy volgen onderzoek naar hoe jonge kinderen leren rekenen en le
 | Vingerpatronen en deel-deel-geheel (5 + 5 is twee handen) | [Kullberg e.a. (2019)](https://link.springer.com/doi/10.1007/s10649-019-09927-1): vijfjarigen met controlegroep, voorsprong na een jaar nog zichtbaar |
 | Getallen en bewerkingen in een vaste volgorde | [IES-richtlijn voor jonge kinderen (2013)](https://ies.ed.gov/ncee/wwc/PracticeGuide/18): bewijs beoordeeld als matig |
 | Geen leerstijlen | [Pashler e.a. (2008)](https://doi.org/10.1111/j.1539-6053.2009.01038.x) |
+| Eén soort opdracht per reeks, met uitleg vooraf | [Zelazo (2006)](https://doi.org/10.1038/nprot.2006.46): de meeste 3-jarigen blijven bij de oude regel als die wisselt; rond 5 jaar lukt wisselen als het gezegd wordt, moeilijkere wissels pas later |
 | Tellen tot 20 eind groep 2, rekenen tot 20 in groep 3 | De Nederlandse leerdoelen: [SLO groep 2](https://slo.nl/publish/pages/6431/tussendoelen-alle-domeinen-groep-2.pdf) en [SLO groep 3](https://slo.nl/publish/pages/6432/tussendoelen-alle-domeinen-groep-3.pdf) |
 | Getalbegrip en sommen tot 20 in groep 3 | [Fuchs e.a. (2013)](https://edknowledge.stanford.edu/node/266): grote proef met loting in groep 3, beter op alle rekentoetsen |
 | Lezen met letters en klanken, zo vroeg mogelijk | [Ehri e.a. (2001)](https://data.zhenzhi.com/details/1/900085678): overzicht van 38 experimenten; het sterkst als het in groep 2 of 3 begint (effect 0,55) |

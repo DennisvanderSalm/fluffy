@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { assumeMastered, initialState } from '../src/core/engine/mastery';
 import {
-  choiceOptions, frontier, isChoiceMoment, pickNext, scheduleRetry, type PlannerInput,
+  atRunBoundary, choiceOptions, frontier, isChoiceMoment, pickNext, PLAN_RULES, scheduleRetry, type PlannerInput,
 } from '../src/core/engine/planner';
 import type { SkillDef, SkillState } from '../src/core/engine/types';
 
@@ -50,23 +50,45 @@ describe('voorwaarden', () => {
 });
 
 describe('volgorde van items', () => {
-  it('wisselt af tussen de vaardigheden aan de grens', () => {
-    const first = pickNext(input({}));
-    expect(first).toEqual({ kind: 'learn', skill: 'a' });
-    const second = pickNext(input({}, { played: [{ skill: 'a', review: false }] }));
-    expect(second).toEqual({ kind: 'learn', skill: 'los' });
+  const times = (skill: string, n: number) => Array.from({ length: n }, () => ({ skill, review: false }));
+
+  it('blijft een reeks van vier bij hetzelfde soort opdracht, en wisselt pas daarna', () => {
+    expect(PLAN_RULES.runLength).toBe(4);
+    expect(pickNext(input({}))).toEqual({ kind: 'learn', skill: 'a' });
+    for (let n = 1; n < 4; n++) expect(pickNext(input({}, { played: times('a', n) }))).toEqual({ kind: 'learn', skill: 'a' });
+    expect(pickNext(input({}, { played: times('a', 4) }))).toEqual({ kind: 'learn', skill: 'los' });
+    expect(pickNext(input({}, { played: [...times('a', 4), ...times('los', 2)] }))).toEqual({ kind: 'learn', skill: 'los' });
   });
 
-  it('mengt een herhaling erdoor als die aan de beurt is (interleaving)', () => {
+  it('een herhaling komt alleen tussen twee reeksen, nooit midden in een reeks', () => {
     const states = { a: mastered(today), b: practicing() };
-    expect(pickNext(input(states))).toEqual({ kind: 'learn', skill: 'b' });
-    expect(pickNext(input(states, { played: [{ skill: 'b', review: false }] }))).toEqual({ kind: 'review', skill: 'a' });
+    expect(pickNext(input(states))).toEqual({ kind: 'review', skill: 'a' });
+    const afterReview = [{ skill: 'a', review: true }];
+    expect(pickNext(input(states, { played: afterReview }))).toEqual({ kind: 'learn', skill: 'b' });
+    for (let n = 1; n < 4; n++) {
+      expect(pickNext(input({ a: mastered(today), b: practicing() }, { played: times('b', n) }))).toEqual({ kind: 'learn', skill: 'b' });
+    }
+    expect(pickNext(input({ a: mastered(today), b: practicing() }, { played: times('b', 4) }))).toEqual({ kind: 'review', skill: 'a' });
+  });
+
+  it('weet waar een reeks ophoudt', () => {
+    expect(atRunBoundary(input({}))).toBe(true);
+    expect(atRunBoundary(input({}, { played: times('a', 2) }))).toBe(false);
+    expect(atRunBoundary(input({}, { played: times('a', 4) }))).toBe(true);
+    expect(atRunBoundary(input({}, { played: times('a', 5) }))).toBe(false);
+    expect(atRunBoundary(input({}, { played: [{ skill: 'a', review: true }] }))).toBe(true);
   });
 
   it('herhaalt een vaardigheid niet twee keer in één sessie', () => {
     const states = { a: mastered(today), b: practicing() };
     const played = [{ skill: 'b', review: false }, { skill: 'a', review: true }, { skill: 'b', review: false }, { skill: 'b', review: false }];
     expect(pickNext(input(states, { played }))?.kind).toBe('learn');
+  });
+
+  it('een voorgedaan item van een ander soort wacht tot de reeks klaar is', () => {
+    const entry = scheduleRetry({ skill: 'los', activity: 'tellen', level: 0, params: {} }, 1);
+    expect(pickNext(input({}, { played: times('a', 3), retries: [entry] }))).toEqual({ kind: 'learn', skill: 'a' });
+    expect(pickNext(input({}, { played: times('a', 4), retries: [entry] }))).toEqual({ kind: 'retry', entry });
   });
 
   it('laat een voorgedaan item terugkomen, met minstens twee andere items ertussen', () => {
@@ -88,8 +110,7 @@ describe('volgorde van items', () => {
 
   it('controleert aangenomen vaardigheden in de eerste sessie', () => {
     const states = { a: assumeMastered(skills[0], today) };
-    const p = pickNext(input(states, { played: [{ skill: 'los', review: false }] }));
-    expect(p).toEqual({ kind: 'review', skill: 'a' });
+    expect(pickNext(input(states))).toEqual({ kind: 'review', skill: 'a' });
   });
 });
 
@@ -98,12 +119,13 @@ describe('keuzemomenten', () => {
   const activitiesFor = (s: string) => acts[s] ?? [];
   const played = (n: number) => Array.from({ length: n }, () => ({ skill: 'a', review: false }));
 
-  it('komt om de drie items, niet bij het eerste', () => {
-    expect([0, 1, 2, 3, 4, 5, 6].map((n) => isChoiceMoment(played(n)))).toEqual([false, false, false, true, false, false, true]);
+  it('komt aan het begin van een nieuwe reeks, niet bij het eerste item', () => {
+    const at = [0, 1, 2, 3, 4, 5, 6, 7, 8].map((n) => isChoiceMoment(input({}, { played: played(n) })));
+    expect(at).toEqual([false, false, false, false, true, false, false, false, true]);
   });
 
-  it('biedt twee verschillende activiteiten voor dezelfde vaardigheid', () => {
-    const o = choiceOptions(input({}, { played: played(3) }), activitiesFor);
+  it('biedt twee verschillende activiteiten, ook van de andere vaardigheid aan de grens', () => {
+    const o = choiceOptions(input({}, { played: played(4) }), activitiesFor);
     // De planner kiest 'los' (langst geleden); daarna zou 'a' komen.
     expect(o.map((x) => x.activity)).toEqual(['tellen', 'mandje']);
     expect(o.map((x) => x.skill)).toEqual(['los', 'a']);

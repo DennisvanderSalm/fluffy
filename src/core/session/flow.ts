@@ -91,9 +91,9 @@ export interface EasyWin {
  */
 export function easyWin(input: PlannerInput, lastSkill: string | undefined): EasyWin | null {
   const stateOf = (id: string): SkillState => input.states[id] ?? initialState();
+  // Liefst hetzelfde soort opdracht, één stap makkelijker: zo blijft de reeks van één soort.
+  const level = lastSkill ? stateOf(lastSkill).level - 1 : -1;
+  if (lastSkill && level >= 0) return { skill: lastSkill, level, record: false };
   const solid = easyPick(input);
-  if (solid) return { skill: solid, level: stateOf(solid).level, record: true };
-  if (!lastSkill) return null;
-  const level = stateOf(lastSkill).level - 1;
-  return level >= 0 ? { skill: lastSkill, level, record: false } : null;
+  return solid ? { skill: solid, level: stateOf(solid).level, record: true } : null;
 }

@@ -72,6 +72,8 @@ export class App {
   private playable: Set<string>;
   /** Het vak van de lopende sessie. */
   private domain: DomainModule;
+  /** Het vorige item van deze sessie: blijft het hetzelfde soort opdracht, of begint er een nieuwe reeks? */
+  private lastItem: { skill: string; activity: string } | null = null;
 
   constructor(private root: HTMLElement, private domains: DomainModule[], private updates?: Updates) {
     this.data = load();
@@ -215,6 +217,7 @@ export class App {
     const played: PlayedRef[] = [];
     const retries: RetryEntry[] = [];
     const recent: ItemResult[] = [];
+    this.lastItem = null;
     await this.warmUp(played, retries);
     await playUntilTimeUp(this.clock, () => this.playOne(played, retries, recent));
     await this.endSession();
@@ -263,7 +266,7 @@ export class App {
     const easy = isStruggling(recent) ? easyWin(input, played[played.length - 1]?.skill) : null;
     let plan = easy && this.planFor(easy.skill, easy.level, easy.record);
     if (plan) recent.length = 0;
-    plan ??= await this.planNext(input, played, retries);
+    plan ??= await this.planNext(input, retries);
     if (!plan) return false;
     recent.push(await this.playItem(plan, played, retries));
     await this.maybeTogether(plan.skill, played.length);
@@ -273,7 +276,7 @@ export class App {
   }
 
   /** Wat de planner kiest: een item dat terugkomt, of iets nieuws (soms mag ze kiezen). */
-  private async planNext(input: PlannerInput, played: PlayedRef[], retries: RetryEntry[]): Promise<Plan | null> {
+  private async planNext(input: PlannerInput, retries: RetryEntry[]): Promise<Plan | null> {
     const choice = pickNext(input);
     if (!choice) return null;
 
@@ -289,9 +292,11 @@ export class App {
       isRetry = true;
     } else {
       skill = choice.skill;
-      activity = pick(this.rng, this.activitiesFor(skill));
-      // Keuzemoment: ze kiest zelf uit twee activiteiten die allebei in het plan passen.
-      const options = isChoiceMoment(played)
+      // Binnen een reeks hetzelfde spelletje houden; bij een nieuwe reeks mag het een ander zijn.
+      const same = this.lastItem?.skill === skill ? this.activitiesFor(skill).find((a) => a.id === this.lastItem!.activity) : undefined;
+      activity = same ?? pick(this.rng, this.activitiesFor(skill));
+      // Keuzemoment (tussen twee reeksen): ze kiest zelf uit twee activiteiten die allebei in het plan passen.
+      const options = isChoiceMoment(input)
         ? choiceOptions(input, (s) => shuffle(this.rng, this.activitiesFor(s)).map((a) => a.id))
         : [];
       if (options.length === 2) {
@@ -315,7 +320,9 @@ export class App {
   private async playItem(p: Plan, played: PlayedRef[], retries: RetryEntry[]): Promise<ItemResult> {
     const today = isoDate(Date.now());
     const before = this.stateOf(p.skill);
-    const result = await p.activity.run(this.context(p.activity.id), p.params, p.retry);
+    const newRun = this.lastItem?.skill !== p.skill || this.lastItem?.activity !== p.activity.id;
+    this.lastItem = { skill: p.skill, activity: p.activity.id };
+    const result = await p.activity.run(this.context(p.activity.id, newRun), p.params, p.retry);
     await this.whenResumed();
     this.data.seen[p.activity.id] = (this.data.seen[p.activity.id] ?? 0) + 1;
 
@@ -453,7 +460,7 @@ export class App {
     return this.domains.flatMap((d) => d.activities).filter((a) => a.skills.includes(skill));
   }
 
-  private context(activityId: string | null): ActivityContext {
+  private context(activityId: string | null, newRun = false): ActivityContext {
     return {
       stage: this.stage,
       fluffy: this.fluffy,
@@ -462,6 +469,7 @@ export class App {
       sounds: this.sounds,
       setRepeat: (fn) => (this.repeatFn = fn),
       beginner: activityId !== null && (this.data.seen[activityId] ?? 0) < 2,
+      newRun,
       countBeat: (slow = false) =>
         makeBeat(slow || (activityId !== null && (this.data.seen[activityId] ?? 0) < 2) ? COUNT_BEAT.beginner : COUNT_BEAT.normal),
       rng: this.rng,

@@ -35,12 +35,15 @@ export type Pick =
 export const PLAN_RULES = {
   /** Maximaal zoveel vaardigheden tegelijk "aan de grens". */
   frontierSize: 2,
-  /** Elk zoveelste item is een herhaling (interleaving), als er iets aan de beurt is. */
-  reviewEvery: 3,
+  /**
+   * Opdrachten komen in reeksen van hetzelfde soort, niet door elkaar. Jonge kinderen vinden
+   * wisselen tussen regels ("hoe begint het?" en "wat rijmt?") moeilijk: ze blijven de vorige regel
+   * gebruiken (Zelazo, 2006). Afwisselen (interleaving) helpt vooral oudere leerlingen. Herhalingen
+   * en keuzemomenten komen daarom alleen tussen twee reeksen.
+   */
+  runLength: 4,
   /** Minimaal zoveel andere items tussen voordoen en terugkomen. */
   retryGap: 2,
-  /** Elk zoveelste item mag ze kiezen uit twee activiteiten. */
-  choiceEvery: 3,
 } as const;
 
 const stateOf = (input: PlannerInput, id: SkillId) => input.states[id] ?? initialState();
@@ -69,16 +72,42 @@ export function dueReviews(input: PlannerInput): SkillId[] {
     .map((d) => d.id);
 }
 
+/** De reeks waar ze nu in zit: de vaardigheid van het laatste item, en hoe vaak die achter elkaar kwam. */
+export function currentRun(played: readonly PlayedRef[]): { skill: SkillId; length: number; review: boolean } | null {
+  const last = played[played.length - 1];
+  if (!last) return null;
+  let length = 0;
+  for (let i = played.length - 1; i >= 0 && played[i].skill === last.skill; i--) length++;
+  return { skill: last.skill, length, review: last.review };
+}
+
+/**
+ * Mag er nu iets anders komen? Pas als de reeks vol is, of als de vaardigheid van de reeks niet
+ * meer aan de grens staat (beheerst, of het was een herhaling).
+ */
+export function atRunBoundary(input: PlannerInput): boolean {
+  const run = currentRun(input.played);
+  if (!run) return true;
+  return run.review || run.length % PLAN_RULES.runLength === 0 || !frontier(input).includes(run.skill);
+}
+
 /** Kiest het volgende item. Geeft null als er niets te spelen valt. */
 export function pickNext(input: PlannerInput): Pick | null {
   const index = input.played.length;
+  const run = currentRun(input.played);
+  const boundary = atRunBoundary(input);
 
-  const retry = input.retries.find((r) => r.after <= index);
+  // Een voorgedaan item komt terug; midden in een reeks alleen als het van hetzelfde soort is.
+  const retry = input.retries.find((r) => r.after <= index && (boundary || r.skill === run?.skill));
   if (retry) return { kind: 'retry', entry: retry };
+
+  // Midden in een reeks: gewoon verder met hetzelfde.
+  if (!boundary && run) return { kind: 'learn', skill: run.skill };
 
   const front = frontier(input);
   const due = dueReviews(input);
-  if (due.length && (index % PLAN_RULES.reviewEvery === 1 || front.length === 0)) {
+  // Tussen twee reeksen hooguit één herhaling (niet de ene herhaling na de andere).
+  if (due.length && (!run?.review || front.length === 0)) {
     return { kind: 'review', skill: due[0] };
   }
 
@@ -129,24 +158,23 @@ export function scheduleRetry<P>(
 export type LearnOrReview = Exclude<Pick, { kind: 'retry' }>;
 export type ChoiceOption = LearnOrReview & { activity: string };
 
-/** Is dit item een keuzemoment? Niet het eerste item, daarna om de paar items. */
-export function isChoiceMoment(played: readonly PlayedRef[]): boolean {
-  return played.length > 0 && played.length % PLAN_RULES.choiceEvery === 0;
+/** Is dit item een keuzemoment? Niet het eerste item; daarna aan het begin van elke nieuwe reeks. */
+export function isChoiceMoment(input: PlannerInput): boolean {
+  return input.played.length > 0 && atRunBoundary(input);
 }
 
 /**
- * Keuzemoment (autonomie): twee opties met verschillende activiteiten, allebei uit het plan.
- * De eerste komt van het item dat de planner nu zou kiezen, de tweede van een andere activiteit
- * voor dezelfde vaardigheid, of anders van het item dat erna aan de beurt zou zijn.
+ * Keuzemoment (autonomie), tussen twee reeksen: twee opties met verschillende activiteiten, allebei
+ * uit het plan. De eerste komt van wat de planner nu zou kiezen, de tweede van een andere activiteit
+ * voor dezelfde vaardigheid, of anders van een andere vaardigheid aan de grens.
  * Geeft een lege lijst als er niets te kiezen valt (bv. een item dat terugkomt).
  */
 export function choiceOptions(input: PlannerInput, activitiesFor: (skill: SkillId) => string[]): ChoiceOption[] {
   const first = pickNext(input);
   if (!first || first.kind === 'retry') return [];
   const candidates: ChoiceOption[] = activitiesFor(first.skill).map((activity) => ({ ...first, activity }));
-  const next = pickNext({ ...input, played: [...input.played, { skill: first.skill, review: first.kind === 'review' }] });
-  if (next && next.kind !== 'retry' && next.skill !== first.skill) {
-    candidates.push(...activitiesFor(next.skill).map((activity) => ({ ...next, activity })));
+  for (const skill of frontier(input)) {
+    if (skill !== first.skill) candidates.push(...activitiesFor(skill).map((activity): ChoiceOption => ({ kind: 'learn', skill, activity })));
   }
   const out: ChoiceOption[] = [];
   for (const c of candidates) if (!out.some((o) => o.activity === c.activity)) out.push(c);

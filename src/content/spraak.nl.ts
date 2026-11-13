@@ -268,12 +268,12 @@ export const SPRAAK = {
   'hak.lees.hint': 'Ik zeg de klanken voor je.',
 
   // ── Rijmen en beginklank ──
-  'rijm.uitleg': 'Woorden die rijmen, klinken aan het eind hetzelfde. Zoals boom en droom.',
+  'rijm.uitleg': 'Nu gaan we rijmen. Dan luisteren we naar het eind van een woord. Huis en muis: die rijmen!',
   'rijm.vraag': 'Wat rijmt op',
   'rijm.hint': 'Luister goed naar het eind van het woord.',
   'rijm.en': 'en',
   'rijm.rijmen': ', die rijmen',
-  'klank.uitleg': 'We luisteren naar het begin van een woord. Boot en bal beginnen hetzelfde.',
+  'klank.uitleg': 'Nu gaan we luisteren naar het begin van een woord. Maan en muis beginnen allebei hetzelfde.',
   'klank.vraag': 'Welke begint net zo als',
   'klank.hint': 'Luister goed naar het begin van het woord.',
   'klank.zelfde': ', die beginnen hetzelfde',

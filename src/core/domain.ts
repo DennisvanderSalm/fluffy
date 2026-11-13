@@ -73,6 +73,11 @@ export interface ActivityContext {
   /** De eerste keren met deze activiteit: iets meer uitleg. */
   beginner: boolean;
   /**
+   * Het eerste item van een nieuwe reeks (een ander soort opdracht dan net). Dan legt een
+   * activiteit eerst uit wat de opdracht is, zodat ze weet waar ze op moet letten.
+   */
+  newRun: boolean;
+  /**
    * Telritme voor Fluffy's tellen: `const tel = ctx.countBeat(); … await tel(); await ctx.say([k]);`.
    * Zo klinken de getallen rustig en even ver uit elkaar (zie makeBeat).
    */

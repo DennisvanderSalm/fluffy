@@ -471,6 +471,14 @@ body.is-night .gear { filter: invert(1); }
   transition: box-shadow 0.3s ease, transform 0.15s ease;
 }
 .lz-doel { background: var(--fl); border: 4px solid var(--fl-edge); }
+/* Beginklank en rijmen elk een eigen kleur en teken, zodat ze niet door elkaar lopen. */
+.lz-soort { position: absolute; transition: box-shadow 0.2s ease; border-radius: 50%; }
+.lz-soort svg { width: 100%; height: 100%; display: block; }
+.lz-soort.is-named { box-shadow: 0 0 0 10px var(--glow); }
+.klanken.is-begin { background: rgba(124, 196, 122, 0.10); }
+.klanken.is-begin .lz-doel { border-color: #7cc47a; }
+.klanken.is-rijm { background: rgba(168, 139, 214, 0.10); }
+.klanken.is-rijm .lz-doel { border-color: #a88bd6; }
 .lz-kaart { background: #fff; border: 4px solid var(--panel-edge); }
 .lz-doel svg, .lz-kaart svg { width: 78%; height: 78%; pointer-events: none; }
 .lz-doel.is-named, .lz-kaart.is-named { box-shadow: 0 0 0 10px var(--glow); }

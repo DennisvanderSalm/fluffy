@@ -131,7 +131,7 @@ class Round {
     ctx.fluffy.still(true);
     await sleep(300);
     ctx.fluffy.set('rust');
-    if (ctx.beginner) await ctx.say(['letter.uitleg']);
+    if (ctx.beginner || ctx.newRun) await ctx.say(['letter.uitleg']);
     this.glow(this.model);
     await ctx.say([stretchLine(item.word)]);
     this.glow(null);

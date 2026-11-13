@@ -187,7 +187,7 @@ class Round {
     ctx.fluffy.still(true);
     await sleep(300);
     ctx.fluffy.set('rust');
-    if (ctx.beginner) await ctx.say([item.mode === 'lees' ? 'hak.lees.uitleg' : 'hak.uitleg']);
+    if (ctx.beginner || ctx.newRun) await ctx.say([item.mode === 'lees' ? 'hak.lees.uitleg' : 'hak.uitleg']);
     await this.names();
     if (item.mode === 'plak') await this.sayParts(450);
     let w = await this.ask(this.question());

@@ -50,15 +50,15 @@ describe('opwarmer uit het andere vak', () => {
 });
 
 describe('succesje na een lastig stukje', () => {
-  it('liefst iets wat ze al kan; dat telt gewoon mee', () => {
+  it('liefst hetzelfde soort opdracht één stap makkelijker (dan blijft de reeks van één soort); telt niet mee', () => {
     const r = easyWin(input({ a: mastered('2026-12-01', 2), b: { ...initialState(), status: 'practicing', level: 2 } }), 'b');
-    expect(r).toEqual({ skill: 'a', level: 0, record: true });
-  });
-  it('anders hetzelfde één stap makkelijker, en dat telt niet mee', () => {
-    const r = easyWin(input({ b: { ...initialState(), status: 'practicing', level: 2 } }), 'b');
     expect(r).toEqual({ skill: 'b', level: 1, record: false });
   });
-  it('op de eerste stap valt er niets makkelijkers te kiezen', () => {
+  it('op de eerste stap: iets wat ze al stevig kan; dat telt gewoon mee', () => {
+    const r = easyWin(input({ a: mastered('2026-12-01', 2), b: { ...initialState(), status: 'practicing', level: 0 } }), 'b');
+    expect(r).toEqual({ skill: 'a', level: 0, record: true });
+  });
+  it('anders valt er niets makkelijkers te kiezen', () => {
     expect(easyWin(input({ b: { ...initialState(), status: 'practicing', level: 0 } }), 'b')).toBe(null);
     expect(easyWin(input({}), undefined)).toBe(null);
   });
