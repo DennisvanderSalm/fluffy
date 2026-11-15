@@ -328,7 +328,7 @@ export function listenSection(speech: Speech, onClip: (id: string, clip: OwnClip
 
   return [
     el('h2', '', 'Opnames beluisteren'),
-    el('p', 'muted', 'Hier hoor je alles wat Fluffy kan zeggen. Alles is automatisch nagekeken met spraakherkenning, behalve de losse klanken: luister daar zelf naar (b moet klinken als de klank, niet als "bee"). Klinkt iets niet goed? Tik op "Klinkt niet goed", of spreek het zelf in: jouw opname gaat voor.'),
+    el('p', 'muted', 'Hier hoor je alles wat Fluffy kan zeggen. Alles is automatisch nagekeken met spraakherkenning. De losse klanken (mmm, k, aa) zijn uit de woorden geknipt: de k is de k uit kaas. Luister daar zelf naar: b moet klinken als de klank, niet als "bee". Klinkt iets niet goed? Tik op "Klinkt niet goed", of spreek het zelf in: jouw opname gaat voor.'),
     flagBox,
     ...groups,
   ];
