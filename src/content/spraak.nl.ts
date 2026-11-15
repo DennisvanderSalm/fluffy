@@ -232,6 +232,8 @@ export const SPRAAK = {
 
   // Losse klanken (hakken en plakken). Altijd de klank, nooit de letternaam. Klanken die je kunt
   // aanhouden lang; bij b, d, k, p en t kan dat niet, die zo kort mogelijk.
+  // De opnames hiervan (en van rekt.*) zijn uit hele woorden geknipt met scripts/klanken.py: de
+  // spraakcomputer zegt anders de letternaam. De tekst hier is alleen nog de terugval.
   'kl.m': 'mmm',
   'kl.n': 'nnn',
   'kl.s': 'sss',

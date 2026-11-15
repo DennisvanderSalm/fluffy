@@ -74,14 +74,43 @@ Goed om te weten:
   npm run stem -- --herstel                  # wat niet klopt opnieuw inspreken (tot 3 keer)
   npm run stem -- --afgekeurd getal.8,w.vis  # deze opnieuw inspreken
   ```
-  Losse klanken ("mmm", "b") kan spraakherkenning niet beoordelen: luister die zelf na in het ouderdeel.
-  Klinkt daar iets niet goed, tik dan op **Klinkt niet goed**; het ouderdeel geeft je dan de regel voor `--afgekeurd`.
+  Klinkt er in het ouderdeel iets niet goed, tik dan op **Klinkt niet goed**; het ouderdeel geeft je dan de regel voor `--afgekeurd`.
   De sleutel moet daarvoor ook Speech-to-Text mogen gebruiken.
 - **Alleen wat verandert** wordt opnieuw ingesproken. Een andere stem of gewijzigde tekst? Draai het script opnieuw.
   Met `--opnieuw` spreek je alles opnieuw in.
 - **Geen naam.** De app vraagt geen naam van het kind, dus die kan ook nooit naar ElevenLabs gaan.
 - Controleer zelf de actuele prijzen en de gebruiksvoorwaarden van je ElevenLabs-abonnement.
 - Optioneel in `.env.local`: `ELEVENLABS_MODEL` (standaard `eleven_multilingual_v2`) en `ELEVENLABS_SPEED` (standaard `0.95`).
+
+### Zonder eigen computer (GitHub Actions)
+
+Het inspreken kan ook in de cloud, bijvoorbeeld vanaf je telefoon:
+
+1. Eenmalig: ga in de repository naar **Settings → Secrets and variables → Actions → New repository
+   secret** en maak `ELEVENLABS_API_KEY` aan met je sleutel. De sleutel is daarna voor niemand meer te lezen.
+2. Ga naar **Actions → Stem inspreken → Run workflow**, kies wat je wilt doen (begin met de proef, die
+   kost niets) en start.
+3. De workflow spreekt in, controleert, draait de tests, zet de opnames in de repository en publiceert de app.
+
+De stem is die uit `manifest.json`. Een andere stem? Zet het id als variabele `ELEVENLABS_VOICE_ID`
+(zelfde scherm, tabblad *Variables*).
+
+## Losse klanken en uitgerekte woorden
+
+De losse klanken (`kl.*`: "mmm", "k", "aa") en de uitgerekte woorden (`rekt.*`: "vvv… vis") zijn **niet**
+ingesproken door ElevenLabs. Een spraakcomputer kan geen losse klank zeggen: bij "k" zegt hij de
+letternaam ("kaa"), bij "Hhhh… huis" zegt hij "haa… huis". Hele woorden gaan wel goed. Daarom knipt
+`scripts/klanken.py` elke klank uit de opname van een woord: de k en de aa uit kaas, de n uit zon.
+
+```bash
+python3 scripts/klanken.py --proef   # wav's in /tmp/klanken, om te luisteren
+python3 scripts/klanken.py           # opnames en manifest.json bijwerken
+```
+
+Nodig: python3 met numpy en scipy, en ffmpeg. De knippunten staan bovenin het script en horen bij
+precies deze opnames van de woorden. Spreek je een woord opnieuw in, zoek de knippunten dan opnieuw
+op (het script stopt met een melding). De opnames staan in `manifest.json` als eigen opname, dus
+`npm run stem` laat ze met rust. De beste klanken blijven die van een mens: zie hieronder.
 
 ## Eigen stem opnemen
 

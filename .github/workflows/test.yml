@@ -1,0 +1,30 @@
+# Draait de tests bij elke pull request en elke branch, zodat je ziet of iets werkt vóór het naar main gaat.
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    # Vast op 24.04: Playwright-WebKit ondersteunt niet elke nieuwe Ubuntu meteen.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps webkit
+      - run: npx playwright test

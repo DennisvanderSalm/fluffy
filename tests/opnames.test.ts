@@ -8,7 +8,7 @@ import { ALL_PHRASES } from '../src/domains';
 import { flaggedCommand, parseFlagged, stillFlagged } from '../src/core/audio/flagged';
 
 const DIR = join(process.cwd(), 'public', 'audio', 'nl');
-const manifest = JSON.parse(readFileSync(join(DIR, 'manifest.json'), 'utf8')) as { clips: Record<string, string> };
+const manifest = JSON.parse(readFileSync(join(DIR, 'manifest.json'), 'utf8')) as { clips: Record<string, string>; generated: Record<string, string> };
 
 const texts = new Map(clipJobs(ALL_PHRASES()).map((j) => [j.id, j.text]));
 
@@ -25,6 +25,27 @@ describe('opnames', () => {
     }
     expect(abrupt).toEqual([]);
   }, 60_000);
+});
+
+describe('losse klanken', () => {
+  // Een spraakcomputer zegt bij "k" de letternaam ("kaa"). Daarom zijn de losse klanken uit
+  // opnames van hele woorden geknipt (scripts/klanken.py) en mag het stem-script ze niet overschrijven.
+  const sounds = Object.keys(manifest.clips).filter((id) => id.startsWith('kl.'));
+
+  it('zijn geknipt uit woorden, niet ingesproken door de spraakcomputer', () => {
+    expect(sounds.length).toBeGreaterThan(20);
+    expect(sounds.filter((id) => id in manifest.generated)).toEqual([]);
+  });
+
+  it('een plofklank is kort: geen letternaam ("bee", "kaa")', async () => {
+    const long: string[] = [];
+    for (const s of ['b', 'd', 'k', 'p', 't']) {
+      const { samples, sampleRate } = await decodeMp3(join(DIR, manifest.clips[`kl.${s}`]));
+      const seconds = samples.length / sampleRate;
+      if (seconds > 0.35) long.push(`kl.${s} (${seconds.toFixed(2)} s)`);
+    }
+    expect(long).toEqual([]);
+  });
 });
 
 describe('controle met spraakherkenning', () => {

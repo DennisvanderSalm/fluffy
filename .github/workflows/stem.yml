@@ -1,0 +1,88 @@
+# Laat de stem van Fluffy inspreken door ElevenLabs, zonder eigen computer.
+# Starten: GitHub → Actions → "Stem inspreken" → Run workflow (kan ook vanaf je telefoon).
+# Eenmalig nodig: Settings → Secrets and variables → Actions → New repository secret:
+#   ELEVENLABS_API_KEY   je sleutel van elevenlabs.io (mag Text-to-Speech en Speech-to-Text)
+# Optioneel, onder Variables: ELEVENLABS_VOICE_ID (anders de stem die al in manifest.json staat).
+name: Stem inspreken
+
+on:
+  workflow_dispatch:
+    inputs:
+      wat:
+        description: Wat wil je doen?
+        type: choice
+        default: proef (alleen laten zien, kost niets)
+        options:
+          - proef (alleen laten zien, kost niets)
+          - inspreken wat nieuw of veranderd is
+          - inspreken en herstellen wat niet klopt
+          - alleen controleren
+      afgekeurd:
+        description: 'Opnieuw inspreken (uit het ouderdeel, "Klinkt niet goed"), bv. getal.8,w.vis'
+        type: string
+        required: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: stem
+  cancel-in-progress: false
+
+jobs:
+  stem:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Inspreken
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          WAT: ${{ inputs.wat }}
+          AFGEKEURD: ${{ inputs.afgekeurd }}
+        run: |
+          if [ -z "$ELEVENLABS_VOICE_ID" ]; then
+            ELEVENLABS_VOICE_ID=$(node -p "require('./public/audio/nl/manifest.json').voice || ''")
+            export ELEVENLABS_VOICE_ID
+          fi
+          args=()
+          case "$WAT" in
+            proef*) args+=(--proef) ;;
+            *herstellen*) args+=(--herstel) ;;
+            *controleren*) args+=(--controle) ;;
+          esac
+          if [ -n "$AFGEKEURD" ] && [[ "$WAT" != proef* ]] && [[ "$WAT" != *controleren* ]]; then
+            if ! [[ "$AFGEKEURD" =~ ^[A-Za-z0-9.,+_\ -]+$ ]]; then
+              echo "Ongeldige lijst bij 'afgekeurd'." && exit 1
+            fi
+            args+=(--afgekeurd "${AFGEKEURD// /}")
+          fi
+          if [[ "$WAT" != proef* ]] && [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "::error::Zet eerst de secret ELEVENLABS_API_KEY (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+          npm run stem -- "${args[@]}"
+      - name: Testen
+        run: npm test
+      - name: Opnames bewaren en publiceren
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add public/audio/nl scripts/controle.json
+          if git diff --cached --quiet; then
+            echo "Niets veranderd."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Stem: opnames bijgewerkt"
+          git push
+          # Een push van een workflow start de deploy niet vanzelf; daarom hier met de hand.
+          if [ "$GITHUB_REF_NAME" = "main" ]; then gh workflow run deploy.yml --ref main; fi
