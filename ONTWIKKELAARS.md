@@ -139,3 +139,14 @@ tests/           Vitest: engine, planner, sessielogica, activiteiten, opnames
 e2e/             Playwright (WebKit): de app nagespeeld zoals op de iPad
 oud/             de eerdere app ("Tellen & Hoeveelheden"), ter referentie bewaard
 ```
+
+De app zelf (`src/core/ui/`) bestaat uit een paar delen:
+
+```
+app.ts           de schermen (start, sessie, slapen), pauze en het ouderdeel openen
+play.ts          de items van één sessie: plannen, spelen, bijhouden
+dagopdracht.ts   de opdracht voor de rest van de dag
+gear.ts          het tandwiel (2 tellen vasthouden)
+host.ts          wat die delen van de app mogen gebruiken
+../session/progress.ts   vaardigheden, activiteiten en hoe ver ze is
+```
