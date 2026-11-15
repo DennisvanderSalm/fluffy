@@ -100,7 +100,7 @@ export class App {
     requestPersistence();
     // Uit een eerdere versie: een eigen opname van de naam. Fluffy zegt geen naam meer, dus weg ermee.
     void deleteOwnClip('naam').catch(() => undefined);
-    void this.speech.init();
+    void this.speech.init().then(() => domains.forEach((d) => d.onClips?.((id) => this.speech.clipFile(id) !== undefined)));
     this.updates?.onReady(() => this.maybeUpdate());
   }
 

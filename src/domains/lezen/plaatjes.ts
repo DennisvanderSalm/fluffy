@@ -9,20 +9,27 @@ import type { LineId } from '../../content/spraak.nl';
 export type Word =
   | 'huis' | 'muis' | 'beer' | 'veer' | 'hoed' | 'voet' | 'roos' | 'doos' | 'zon' | 'ton' | 'kip' | 'schip'
   | 'taart' | 'paard' | 'pet' | 'bed' | 'pop' | 'kop' | 'jas' | 'tas' | 'maan' | 'kraan' | 'vis'
-  | 'boom' | 'poes' | 'boot' | 'kaas' | 'boek' | 'deur' | 'vuur';
+  | 'boom' | 'poes' | 'boot' | 'kaas' | 'boek' | 'deur' | 'vuur'
+  | 'zeep' | 'neus' | 'been' | 'steen' | 'raam' | 'duim' | 'soep' | 'muur' | 'noot' | 'vaas' | 'koek'
+  | 'man' | 'pan' | 'sok' | 'rok' | 'mes' | 'bes' | 'kam' | 'ham' | 'pen' | 'pot' | 'tak';
 
 /** Woorden die op elkaar rijmen. */
 export const RHYMES: [Word, Word][] = [
   ['huis', 'muis'], ['beer', 'veer'], ['hoed', 'voet'], ['roos', 'doos'], ['zon', 'ton'], ['kip', 'schip'],
   ['taart', 'paard'], ['pet', 'bed'], ['pop', 'kop'], ['jas', 'tas'], ['maan', 'kraan'],
+  ['been', 'steen'], ['vuur', 'muur'], ['boot', 'noot'], ['kaas', 'vaas'], ['boek', 'koek'],
+  ['man', 'pan'], ['sok', 'rok'], ['mes', 'bes'], ['kam', 'ham'],
 ];
 
-/** De eerste klank. Kraan en schip beginnen met twee klanken; die tellen niet als "hetzelfde begin". */
+/** De eerste klank. Kraan, schip en steen beginnen met twee klanken; die tellen niet als "hetzelfde begin". */
 export const ONSET: Record<Word, string> = {
   huis: 'h', muis: 'm', beer: 'b', veer: 'v', hoed: 'h', voet: 'v', roos: 'r', doos: 'd', zon: 'z', ton: 't',
   kip: 'k', schip: 'sch', taart: 't', paard: 'p', pet: 'p', bed: 'b', pop: 'p', kop: 'k', jas: 'j', tas: 't',
   maan: 'm', kraan: 'kr', vis: 'v',
   boom: 'b', poes: 'p', boot: 'b', kaas: 'k', boek: 'b', deur: 'd', vuur: 'v',
+  zeep: 'z', neus: 'n', been: 'b', steen: 'st', raam: 'r', duim: 'd', soep: 's', muur: 'm', noot: 'n', vaas: 'v',
+  koek: 'k', man: 'm', pan: 'p', sok: 's', rok: 'r', mes: 'm', bes: 'b', kam: 'k', ham: 'h', pen: 'p', pot: 'p',
+  tak: 't',
 };
 
 export const WORDS = Object.keys(ONSET) as Word[];
@@ -31,17 +38,37 @@ export const rhymes = (a: Word, b: Word) => a !== b && RHYMES.some(([x, y]) => (
 export const sameOnset = (a: Word, b: Word) => a !== b && ONSET[a] === ONSET[b];
 export const wordLine = (w: Word) => `w.${w}` as LineId;
 
-/** Woorden met een beginklank die ook nog bij een ander woord hoort. */
-export const ONSET_WORDS = WORDS.filter((w) => WORDS.some((v) => sameOnset(w, v)));
+/**
+ * Is er een opname van? Een nieuw woord doet pas mee als Fluffy het met haar eigen stem kan zeggen;
+ * tot die tijd zou de computerstem het zeggen, en dat klinkt anders. Zonder opnames (bij het
+ * ontwikkelen, in de tests) doet alles mee.
+ */
+let hasClip: (id: string) => boolean = () => true;
+export function setClipCheck(check: (id: string) => boolean): void {
+  hasClip = check;
+}
+/** De woorden uit een lijst die Fluffy kan zeggen; zijn dat er te weinig voor een opdracht, dan de hele lijst. */
+export function spokenOf<T extends Word>(words: readonly T[]): T[] {
+  const spoken = words.filter((w) => hasClip(wordLine(w)));
+  return spoken.length >= 4 ? spoken : [...words];
+}
+
+/** Woorden met een beginklank die ook nog bij een ander woord (uit dezelfde lijst) hoort. */
+export const onsetWords = (among: readonly Word[]): Word[] => among.filter((w) => among.some((v) => sameOnset(w, v)));
+export const ONSET_WORDS = onsetWords(WORDS);
 
 /**
- * Woorden waarvan je de eerste klank kunt aanhouden (m, v, h, z, r). Die zegt Fluffy eerst los en
- * dan in het woord ("mmm… maan"), zoals een juf het voordoet. Zo hoort ze de klank zelf
+ * Woorden waarvan je de eerste klank kunt aanhouden (m, n, v, h, z, r, s). Die zegt Fluffy eerst los
+ * en dan in het woord ("mmm… maan"), zoals een juf het voordoet. Zo hoort ze de klank zelf
  * (Byrne & Fielding-Barnsley, 1991). Bij b, p, k en t kan dat niet: daar zegt ze het gewone woord.
+ * De opnames maakt scripts/klanken.py: de aangehouden klank, een pauze, en dan de opname van het woord.
  */
 export const STRETCHED: Partial<Record<Word, string>> = {
   maan: 'Mmmm… maan', muis: 'Mmmm… muis', vis: 'Vvvv… vis', voet: 'Vvvv… voet', veer: 'Vvvv… veer',
   huis: 'Hhhh… huis', hoed: 'Hhhh… hoed', zon: 'Zzzz… zon', roos: 'Rrrr… roos', vuur: 'Vvvv… vuur',
+  zeep: 'Zzzz… zeep', raam: 'Rrrr… raam', muur: 'Mmmm… muur', vaas: 'Vvvv… vaas', man: 'Mmmm… man',
+  rok: 'Rrrr… rok', mes: 'Mmmm… mes', ham: 'Hhhh… ham', neus: 'Nnnn… neus', noot: 'Nnnn… noot',
+  soep: 'Ssss… soep', sok: 'Ssss… sok',
 };
 
 /**
@@ -55,18 +82,25 @@ export const SOUNDS: Partial<Record<Word, string[]>> = {
   huis: ['h', 'ui', 's'], roos: ['r', 'oo', 's'], doos: ['d', 'oo', 's'], beer: ['b', 'ee', 'r'],
   boom: ['b', 'oo', 'm'], poes: ['p', 'oe', 's'], boot: ['b', 'oo', 't'], kaas: ['k', 'aa', 's'],
   boek: ['b', 'oe', 'k'], deur: ['d', 'eu', 'r'], vuur: ['v', 'uu', 'r'],
+  zeep: ['z', 'ee', 'p'], neus: ['n', 'eu', 's'], been: ['b', 'ee', 'n'], raam: ['r', 'aa', 'm'],
+  duim: ['d', 'ui', 'm'], soep: ['s', 'oe', 'p'], muur: ['m', 'uu', 'r'], noot: ['n', 'oo', 't'],
+  vaas: ['v', 'aa', 's'], koek: ['k', 'oe', 'k'],
 };
 export const SOUND_WORDS = Object.keys(SOUNDS) as Word[];
 
 /**
  * Korte woordjes (groep 3): één korte klinker tussen twee medeklinkers, zoals vis en pet. Ze zitten
- * in mini-paren (pop/kop, jas/tas, zon/ton, kip/kop), zodat ze elke letter echt moet lezen.
+ * in mini-paren (pop/kop/pot, pet/pen/pan, jas/tas/tak, man/pan, mes/bes, kam/ham, sok/rok), zodat ze
+ * elke letter echt moet lezen.
  * Systematisch letters en klanken leren werkt aantoonbaar, het sterkst als het vroeg begint
  * (Ehri e.a., 2001). Bed staat er niet bij: daar klinkt de d als een t.
  */
 export const SHORT_SOUNDS: Partial<Record<Word, string[]>> = {
   vis: ['v', 'i', 's'], zon: ['z', 'o', 'n'], kip: ['k', 'i', 'p'], pet: ['p', 'e', 't'], pop: ['p', 'o', 'p'],
   kop: ['k', 'o', 'p'], jas: ['j', 'a', 's'], tas: ['t', 'a', 's'], ton: ['t', 'o', 'n'],
+  man: ['m', 'a', 'n'], pan: ['p', 'a', 'n'], sok: ['s', 'o', 'k'], rok: ['r', 'o', 'k'], mes: ['m', 'e', 's'],
+  bes: ['b', 'e', 's'], kam: ['k', 'a', 'm'], ham: ['h', 'a', 'm'], pen: ['p', 'e', 'n'], pot: ['p', 'o', 't'],
+  tak: ['t', 'a', 'k'],
 };
 export const SHORT_WORDS = Object.keys(SHORT_SOUNDS) as Word[];
 /** De klanken van een woord, lang of kort. */
@@ -75,10 +109,10 @@ export const soundsOf = (w: Word): string[] => SOUNDS[w] ?? SHORT_SOUNDS[w]!;
 export const ALL_SOUNDS = [...new Set([...SOUND_WORDS, ...SHORT_WORDS].flatMap(soundsOf))];
 export const soundLine = (s: string) => `kl.${s}` as LineId;
 
-/** Uitgerekt als dat kan, anders gewoon het woord. */
-export const stretchLine = (w: Word) => (STRETCHED[w] ? (`rekt.${w}` as LineId) : wordLine(w));
+/** Uitgerekt als dat kan (en er een opname van is), anders gewoon het woord. */
+export const stretchLine = (w: Word) => (STRETCHED[w] && hasClip(`rekt.${w}`) ? (`rekt.${w}` as LineId) : wordLine(w));
 
-/** De letter waarmee een woord begint, als de beginklank één letter is (kraan en schip niet). */
+/** De letter waarmee een woord begint, als de beginklank één letter is (kraan, schip en steen niet). */
 export const letterOf = (w: Word): string | null => (ONSET[w].length === 1 ? ONSET[w] : null);
 
 const S = (inner: string) => `<svg viewBox="0 0 100 100">${inner}</svg>`;
@@ -204,4 +238,84 @@ export const PICTURE: Record<Word, string> = {
     <ellipse cx="46" cy="50" rx="36" ry="24" fill="#9fcbe8" stroke="#73a9cf" stroke-width="4"/>
     <circle cx="26" cy="44" r="4" fill="${INK}"/>
     <path d="M48 36 C54 44 54 56 48 64" stroke="#73a9cf" stroke-width="4" fill="none" stroke-linecap="round"/>`),
+  zeep: S(`<rect x="14" y="46" width="62" height="38" rx="14" fill="#f5c3cf" stroke="#d98aa0" stroke-width="4"/>
+    <path d="M30 58 H60" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="70" cy="30" r="13" fill="#e3f1fb" stroke="#73a9cf" stroke-width="3"/><circle cx="46" cy="24" r="8" fill="#e3f1fb" stroke="#73a9cf" stroke-width="3"/>
+    <circle cx="86" cy="52" r="6" fill="#e3f1fb" stroke="#73a9cf" stroke-width="3"/><path d="M64 26 C66 22 70 21 73 22" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>`),
+  neus: S(`<path d="M56 10 C54 34 34 52 28 66 C22 82 40 90 52 82 C58 90 72 90 76 78 C80 66 70 50 68 10 Z" fill="#f6d2b8" stroke="#d9a98a" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="42" cy="74" rx="6" ry="4" fill="#d9a98a"/><ellipse cx="64" cy="76" rx="5" ry="4" fill="#d9a98a"/>`),
+  been: S(`<path d="M22 6 H78 V34 H54 L50 26 L46 34 H22 Z" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M27 34 H44 V76 H27 Z M56 34 H73 V76 H56 Z" fill="#f6d2b8" stroke="#d9a98a" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M30 54 C33 57 38 57 41 54 M59 54 C62 57 67 57 70 54" stroke="#d9a98a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M25 76 H46 V92 H14 C14 84 18 80 25 78 Z M54 76 H75 C82 80 86 84 86 92 H54 Z" fill="#f19a8c" stroke="#d27769" stroke-width="4" stroke-linejoin="round"/>`),
+  steen: S(`<path d="M12 78 C6 60 18 40 36 34 C50 22 74 26 82 42 C94 52 94 70 88 78 C70 86 30 86 12 78 Z" fill="#c9c3d6" stroke="#9e97b3" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M36 50 C42 44 50 42 56 44 M62 62 C68 60 74 62 78 66" stroke="#9e97b3" stroke-width="3.5" fill="none" stroke-linecap="round"/>`),
+  raam: S(`<rect x="16" y="14" width="68" height="70" rx="4" fill="#a3cdea" stroke="#a2764c" stroke-width="6"/>
+    <path d="M50 14 V84 M16 49 H84" stroke="#a2764c" stroke-width="5"/>
+    <rect x="10" y="82" width="80" height="9" rx="3" fill="#c8996a" stroke="#a2764c" stroke-width="3"/>
+    <path d="M26 40 L38 26 M60 76 L72 62" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`),
+  duim: S(`<path d="M40 46 C44 34 46 24 46 14 C46 6 60 6 60 16 V42 H78 C86 42 86 54 80 55 C86 57 85 67 79 68 C84 71 82 80 76 80 C80 84 77 92 70 92 H46 C42 92 40 90 40 88 Z" fill="#f6d2b8" stroke="#d9a98a" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="16" y="44" width="24" height="46" rx="5" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4"/>`),
+  soep: S(`<path d="M10 50 H90 C90 74 72 88 50 88 C28 88 10 74 10 50 Z" fill="#fbf4e6" stroke="#d6ba8c" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="50" cy="50" rx="40" ry="9" fill="#f2a65a" stroke="#d6ba8c" stroke-width="4"/>
+    <path d="M58 50 L88 18" stroke="#9e97b3" stroke-width="6" stroke-linecap="round"/>
+    <path d="M30 34 C26 28 34 24 30 16 M46 32 C42 26 50 22 46 14" stroke="#c9c3d6" stroke-width="3.5" fill="none" stroke-linecap="round"/>`),
+  muur: S(`<rect x="8" y="20" width="84" height="66" rx="3" fill="#f4a690" stroke="#d98670" stroke-width="4"/>
+    <path d="M8 42 H92 M8 64 H92 M36 20 V42 M66 20 V42 M22 42 V64 M52 42 V64 M80 42 V64 M36 64 V86 M66 64 V86" stroke="#fbf4e6" stroke-width="4"/>`),
+  noot: S(`<path d="M50 14 C74 14 88 34 88 54 C88 76 70 90 50 90 C30 90 12 76 12 54 C12 34 26 14 50 14 Z" fill="#c8996a" stroke="#a2764c" stroke-width="4"/>
+    <path d="M50 14 C44 30 56 40 50 54 C44 68 56 76 50 90" stroke="#a2764c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M28 40 C32 46 32 54 28 60 M72 42 C68 48 68 58 72 64" stroke="#a2764c" stroke-width="3" fill="none" stroke-linecap="round"/>`),
+  vaas: S(`<path d="M40 8 H60 V26 C78 38 80 70 62 92 H38 C20 70 22 38 40 26 Z" fill="#a9d4ef" stroke="#73a9cf" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M36 8 H64" stroke="#73a9cf" stroke-width="6" stroke-linecap="round"/>
+    <path d="M27 54 C36 48 44 60 50 54 C56 48 64 60 73 54" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M30 70 H70" stroke="#5a8fc4" stroke-width="4" stroke-linecap="round"/>`),
+  koek: S(`<path d="M50 10 C74 10 90 28 90 50 C90 74 72 90 50 90 C26 90 10 72 10 50 C10 28 26 10 50 10 Z" fill="#e6b980" stroke="#c18e55" stroke-width="4"/>
+    <circle cx="36" cy="34" r="5.5" fill="#7a5236"/><circle cx="62" cy="30" r="5" fill="#7a5236"/><circle cx="70" cy="56" r="5.5" fill="#7a5236"/>
+    <circle cx="44" cy="58" r="5" fill="#7a5236"/><circle cx="56" cy="74" r="4.5" fill="#7a5236"/><circle cx="26" cy="56" r="4" fill="#7a5236"/>`),
+  man: S(`<path d="M22 94 C22 70 34 62 50 62 C66 62 78 70 78 94 Z" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M50 62 V94" stroke="#5a8fc4" stroke-width="3"/>
+    <circle cx="50" cy="38" r="22" fill="#f6d2b8" stroke="#d9a98a" stroke-width="4"/>
+    <path d="M29 32 C30 12 70 12 71 32 C60 24 40 24 29 32 Z" fill="#7a5236"/>
+    <circle cx="42" cy="37" r="2.6" fill="${INK}"/><circle cx="58" cy="37" r="2.6" fill="${INK}"/>
+    <path d="M36 48 C42 43 48 46 50 48 C52 46 58 43 64 48 C58 53 54 51 50 50 C46 51 42 53 36 48 Z" fill="#7a5236"/>`),
+  pan: S(`<path d="M6 44 H22 M78 44 H94" stroke="#7a6a5a" stroke-width="7" stroke-linecap="round"/>
+    <rect x="20" y="36" width="60" height="48" rx="8" fill="#c9c3d6" stroke="#9e97b3" stroke-width="4"/>
+    <path d="M16 36 H84" stroke="#9e97b3" stroke-width="7" stroke-linecap="round"/>
+    <path d="M24 34 C28 22 72 22 76 34 Z" fill="#c9c3d6" stroke="#9e97b3" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="50" cy="20" r="5" fill="#7a6a5a"/>`),
+  sok: S(`<path d="M34 8 H62 V54 C62 60 66 62 72 64 C88 68 92 78 88 86 C86 92 80 92 74 92 H50 C38 92 34 84 34 74 Z" fill="#f4a690" stroke="#d98670" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M34 22 H62" stroke="#d98670" stroke-width="4"/><path d="M34 8 H62 V22 H34 Z" fill="#fbf4e6" stroke="#d98670" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M76 66 C82 72 82 84 78 92" stroke="#d98670" stroke-width="3.5" fill="none"/>
+    <path d="M34 62 C40 58 48 60 52 68" stroke="#d98670" stroke-width="3.5" fill="none"/>`),
+  rok: S(`<path d="M32 22 H68 L90 84 C70 94 30 94 10 84 Z" fill="#b9a5e0" stroke="#8a7bb8" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="30" y="12" width="40" height="12" rx="3" fill="#8a7bb8" stroke="#6c5e99" stroke-width="3"/>
+    <path d="M42 26 L34 88 M58 26 L66 88 M50 26 V90" stroke="#8a7bb8" stroke-width="3" stroke-linecap="round"/>`),
+  mes: S(`<path d="M44 46 L84 8 C92 18 88 34 58 60 Z" fill="#e3e6ee" stroke="#9e97b3" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M46 44 L60 58 L26 92 C20 96 8 86 12 78 Z" fill="#c8996a" stroke="#a2764c" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="36" cy="68" r="2.6" fill="#a2764c"/><circle cx="25" cy="79" r="2.6" fill="#a2764c"/>`),
+  bes: S(`<path d="M50 30 C48 20 52 12 60 8" stroke="#7fae6c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M52 26 C60 12 78 14 82 22 C72 32 60 32 52 26 Z" fill="#a5cf93" stroke="#7fae6c" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="50" cy="60" r="31" fill="#7f8fd6" stroke="#5c6bb3" stroke-width="4"/>
+    <path d="M42 34 L50 41 L58 34 L55 44 L64 46 L54 49 L50 46 L46 49 L36 46 L45 44 Z" fill="#5c6bb3"/>
+    <path d="M30 60 C30 50 36 44 42 42" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>`),
+  kam: S(`<rect x="10" y="22" width="80" height="22" rx="8" fill="#f2a65a" stroke="#cf8440" stroke-width="4"/>
+    <path d="M18 44 V82 M28 44 V82 M38 44 V82 M48 44 V82 M58 44 V82 M68 44 V82 M78 44 V82" stroke="#cf8440" stroke-width="5" stroke-linecap="round"/>`),
+  ham: S(`<path d="M70 30 L88 12" stroke="#fbf4e6" stroke-width="9" stroke-linecap="round"/><path d="M70 30 L88 12" stroke="#d6ba8c" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="90" cy="9" r="6" fill="#fbf4e6" stroke="#d6ba8c" stroke-width="3"/>
+    <path d="M14 62 C12 40 36 22 58 24 C74 26 82 40 76 56 C70 76 52 90 34 88 C22 86 15 76 14 62 Z" fill="#f19a8c" stroke="#d27769" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="42" cy="62" rx="17" ry="19" fill="#f5c3cf" stroke="#d27769" stroke-width="3"/><circle cx="42" cy="62" r="5" fill="#fbf4e6" stroke="#d6ba8c" stroke-width="2"/>`),
+  pen: S(`<path d="M70 8 L92 30 L40 82 L18 60 Z" fill="#8dbbe6" stroke="#5a8fc4" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M18 60 L40 82 L22 88 L12 78 Z" fill="#c9c3d6" stroke="#9e97b3" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M12 78 L22 88 L6 94 Z" fill="${INK}" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M58 20 L80 42" stroke="#5a8fc4" stroke-width="4"/>
+    <path d="M86 12 L96 22 L70 52" stroke="#5a8fc4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`),
+  pot: S(`<rect x="24" y="30" width="52" height="60" rx="10" fill="#f4a690" stroke="#d98670" stroke-width="4"/>
+    <rect x="20" y="12" width="60" height="18" rx="5" fill="#f8de7e" stroke="#ddbb52" stroke-width="4"/>
+    <rect x="32" y="48" width="36" height="24" rx="4" fill="#fbf4e6" stroke="#d98670" stroke-width="3"/>
+    <circle cx="50" cy="60" r="6" fill="#f19a8c"/>`),
+  tak: S(`<path d="M8 82 C30 72 50 62 88 34" stroke="#a2764c" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M38 68 C34 54 38 42 42 36 M62 52 C66 62 72 70 78 74" stroke="#a2764c" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M42 36 C32 28 34 14 44 10 C54 18 52 30 42 36 Z" fill="#a5cf93" stroke="#7fae6c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M78 74 C90 74 92 86 86 94 C74 92 72 80 78 74 Z" fill="#a5cf93" stroke="#7fae6c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M88 34 C78 26 80 12 90 8 C98 18 96 28 88 34 Z" fill="#a5cf93" stroke="#7fae6c" stroke-width="3" stroke-linejoin="round"/>`),
 };

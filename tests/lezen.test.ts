@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { seededRng } from '../src/core/util';
 import { makeKlankItem, type KlankKind } from '../src/domains/lezen/klanken';
 import { LETTER_WORDS, makeLetterItem } from '../src/domains/lezen/letters';
-import { letterOf, ONSET, PICTURE, rhymes, RHYMES, sameOnset, STRETCHED, WORDS } from '../src/domains/lezen/plaatjes';
+import {
+  letterOf, ONSET, ONSET_WORDS, PICTURE, rhymes, RHYMES, sameOnset, setClipCheck, spokenOf, stretchLine, STRETCHED, WORDS,
+} from '../src/domains/lezen/plaatjes';
+import { makeHakItem } from '../src/domains/lezen/hakken';
 import { DOMAINS } from '../src/domains';
 import { initialState, manualLevelOf, manualState } from '../src/core/engine/mastery';
 
@@ -70,7 +73,49 @@ describe('Letters zoeken', () => {
   it('alleen woorden met één beginletter, en uitgerekt alleen klanken die je kunt aanhouden', () => {
     expect(LETTER_WORDS).not.toContain('kraan');
     expect(LETTER_WORDS).not.toContain('schip');
-    for (const w of Object.keys(STRETCHED)) expect(['m', 'v', 'h', 'z', 'r']).toContain(ONSET[w as keyof typeof ONSET]);
+    for (const w of Object.keys(STRETCHED)) expect(['m', 'n', 'v', 'h', 'z', 'r', 's']).toContain(ONSET[w as keyof typeof ONSET]);
+  });
+});
+
+describe('nieuwe woorden wachten op hun opname', () => {
+  it('zonder opname doet een woord niet mee, en wordt het niet uitgerekt gezegd', () => {
+    const missing = new Set(['w.zeep', 'w.neus', 'w.noot', 'w.man', 'w.pan', 'w.koek', 'rekt.zon']);
+    setClipCheck((id) => !missing.has(id));
+    try {
+      expect(spokenOf(WORDS)).not.toContain('zeep');
+      expect(spokenOf(WORDS)).toContain('maan');
+      expect(stretchLine('zon')).toBe('w.zon');
+      expect(stretchLine('maan')).toBe('rekt.maan');
+      const rng = seededRng(11);
+      const used = new Set<string>();
+      for (const kind of ['rijm', 'begin'] as const) {
+        for (let i = 0; i < 300; i++) {
+          const it = makeKlankItem(kind, i % 3, rng);
+          [it.target, ...it.options].forEach((w) => used.add(w));
+          expect(it.options.filter((w) => fits(kind, it.target, w))).toEqual([it.answer]);
+        }
+      }
+      for (let i = 0; i < 300; i++) {
+        const it = makeHakItem(i % 2 ? 'plak' : 'lees', i % 3, rng);
+        [it.word, ...it.options].forEach((w) => used.add(w));
+        used.add(makeLetterItem('letters', i % 3, rng).word);
+      }
+      for (const id of missing) if (id.startsWith('w.')) expect(used.has(id.slice(2)), id).toBe(false);
+      // Boot rijmt alleen op noot: zonder noot is boot geen doelwoord meer, maar nog wel een gewoon plaatje.
+      expect(used.has('boot')).toBe(true);
+    } finally {
+      setClipCheck(() => true);
+    }
+  });
+
+  it('zijn er (bijna) geen opnames, dan doet alles mee', () => {
+    setClipCheck(() => false);
+    try {
+      expect(spokenOf(WORDS)).toHaveLength(WORDS.length);
+      expect(spokenOf(ONSET_WORDS)).toHaveLength(ONSET_WORDS.length);
+    } finally {
+      setClipCheck(() => true);
+    }
   });
 });
 

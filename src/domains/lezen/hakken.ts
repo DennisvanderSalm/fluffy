@@ -2,7 +2,7 @@ import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { Seg } from '../../core/audio/speech';
 import { onTap } from '../../core/ui/drag';
 import { el, pick, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
-import { PICTURE, SHORT_WORDS, SOUND_WORDS, soundLine, soundsOf, wordLine, type Word } from './plaatjes';
+import { PICTURE, SHORT_WORDS, SOUND_WORDS, soundLine, soundsOf, spokenOf, wordLine, type Word } from './plaatjes';
 
 /**
  * HAKKEN EN PLAKKEN — losse klanken samenvoegen tot een woord (auditieve synthese). Na de
@@ -32,7 +32,8 @@ const sameRest = (a: Word, b: Word) => a !== b && sounds(a).slice(1).join() === 
 
 let lastWord: Word | null = null;
 
-export function makeHakItem(mode: HakMode, level: number, rng: Rng, words: readonly Word[] = SOUND_WORDS): HakItem {
+export function makeHakItem(mode: HakMode, level: number, rng: Rng, list: readonly Word[] = SOUND_WORDS): HakItem {
+  const words = spokenOf(list);
   let word = pick(rng, words);
   for (let i = 0; i < 5 && word === lastWord; i++) word = pick(rng, words);
   lastWord = word;

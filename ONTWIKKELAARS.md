@@ -112,6 +112,17 @@ precies deze opnames van de woorden. Spreek je een woord opnieuw in, zoek de kni
 op (het script stopt met een melding). De opnames staan in `manifest.json` als eigen opname, dus
 `npm run stem` laat ze met rust. De beste klanken blijven die van een mens: zie hieronder.
 
+### Nieuwe woorden toevoegen
+
+1. Zet het woord in `src/domains/lezen/plaatjes.ts` (plaatje, beginklank, klanken, rijmpaar, uitgerekt)
+   en in `src/content/spraak.nl.ts` (`w.<woord>`, en `rekt.<woord>` als de beginklank aan te houden is).
+   Gebruik alleen klanken waar al een opname van is (`kl.*`).
+2. Start **Stem inspreken** (of `npm run stem`): ElevenLabs spreekt het woord en de zinnen ermee in.
+3. De workflow knipt daarna vanzelf de uitgerekte versie (`python3 scripts/klanken.py --nieuw`).
+
+Tot stap 2 gedaan is, **doet het woord niet mee** in de app (`spokenOf` in `plaatjes.ts`): anders zou
+de computerstem het zeggen. Je kunt dus eerst publiceren en daarna inspreken.
+
 ## Eigen stem opnemen
 
 Alle zinnen staan met een id in [src/content/spraak.nl.ts](src/content/spraak.nl.ts).

@@ -12,13 +12,15 @@ Gebruik (python3 met numpy en scipy, en ffmpeg met libmp3lame):
 
     python3 scripts/klanken.py            # maakt de opnames en werkt manifest.json bij
     python3 scripts/klanken.py --proef    # schrijft alleen wav's naar /tmp/klanken, om te luisteren
+    python3 scripts/klanken.py --nieuw    # alleen wat er nog niet is (na het inspreken van nieuwe woorden)
 
-De opnames komen als "eigen opname" in manifest.json (wel onder clips, niet onder generated):
-`npm run stem` laat ze dan met rust. De knippunten horen bij precies deze opnames van de woorden.
-Wordt een woord opnieuw ingesproken, dan stopt dit script: kijk dan opnieuw waar de klank zit.
+De opnames komen als "eigen opname" in manifest.json (wel onder clips, niet onder generated), en
+`npm run stem` slaat kl.* en rekt.* altijd over. De knippunten horen bij de opnames in scripts/bron/
+(kopieën van de woorden zoals ze waren toen de knippunten gezocht zijn).
 """
 import hashlib
 import json
+import re
 import os
 import subprocess
 import sys
@@ -30,6 +32,8 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 DIR = os.path.join(ROOT, 'public', 'audio', 'nl')
 MANIFEST = os.path.join(DIR, 'manifest.json')
 RESULTS = os.path.join(ROOT, 'scripts', 'controle.json')
+BRON = os.path.join(ROOT, 'scripts', 'bron')
+WORDS_TS = os.path.join(ROOT, 'src', 'domains', 'lezen', 'plaatjes.ts')
 
 # id → (bronopname, begin, eind, bewerking). Tijden in seconden in de bronopname.
 #   ('',)          zo laten
@@ -63,48 +67,46 @@ CUTS = {
     'kl.o': ('w.kop', 0.100, 0.205, ('rek', 1.3)),
 }
 
-# Uitgerekt: de klank aangehouden, een pauze, dan het woord. rekt.maan was al goed en blijft.
-#   id → (klank als in CUTS maar langer, woord)
+# Uitgerekt: de klank aangehouden, een pauze, dan het woord. Welke woorden staat in plaatjes.ts
+# (STRETCHED); het woord zelf is de gewone opname (w.*). rekt.maan was al goed en blijft zoals hij is.
 SUSTAIN = {
     'm': ('rekt.maan', 0.030, 0.900, ('',)),
+    'n': ('w.zon', 0.400, 0.680, ('rek', 2.2)),
+    's': ('w.kaas', 0.315, 0.540, ('ruis', 0.60)),
     'v': ('w.veer', 0.005, 0.088, ('ruis', 0.60)),
     'h': ('rekt.huis', 0.028, 0.095, ('ruis', 0.45)),
     'z': ('w.zon', 0.005, 0.170, ('rek', 3.0)),
     'r': ('rekt.roos', 0.040, 0.148, ('tril', 3)),
 }
-STRETCHED = {
-    'rekt.muis': ('m', 'w.muis'), 'rekt.vis': ('v', 'w.vis'), 'rekt.voet': ('v', 'w.voet'),
-    'rekt.veer': ('v', 'w.veer'), 'rekt.vuur': ('v', 'w.vuur'), 'rekt.huis': ('h', 'w.huis'),
-    'rekt.hoed': ('h', 'w.hoed'), 'rekt.zon': ('z', 'w.zon'), 'rekt.roos': ('r', 'w.roos'),
-}
+KEEP = {'rekt.maan'}
 PAUSE = 0.5
 
-# De opnames waar de knippunten bij horen. De drie uitgerekte bronnen staan apart in scripts/bron/,
-# want rekt.huis en rekt.roos worden zelf vervangen.
+# De opnames waar de knippunten bij horen, als kopie in scripts/bron/. Zo blijven de knippunten kloppen,
+# ook als een woord later opnieuw wordt ingesproken.
 SOURCE_FILES = {
-    'rekt.maan': 'scripts/bron/rekt.maan.0b4e7dbd90.mp3',
-    'rekt.huis': 'scripts/bron/rekt.huis.1394c3b23d.mp3',
-    'rekt.roos': 'scripts/bron/rekt.roos.a5319388e3.mp3',
-    'w.zon': 'public/audio/nl/w.zon.079e7064ed.mp3',
-    'w.kaas': 'public/audio/nl/w.kaas.61f3f600d0.mp3',
-    'w.veer': 'public/audio/nl/w.veer.a731381e22.mp3',
-    'w.jas': 'public/audio/nl/w.jas.fcc5d91929.mp3',
-    'w.boot': 'public/audio/nl/w.boot.fd94fb2f3e.mp3',
-    'w.doos': 'public/audio/nl/w.doos.bbf539deb3.mp3',
-    'w.pop': 'public/audio/nl/w.pop.b0661edca5.mp3',
-    'w.pet': 'public/audio/nl/w.pet.f722c23606.mp3',
-    'w.boom': 'public/audio/nl/w.boom.10a288542a.mp3',
-    'w.beer': 'public/audio/nl/w.beer.45864e3dc5.mp3',
-    'w.muis': 'public/audio/nl/w.muis.82ee936429.mp3',
-    'w.hoed': 'public/audio/nl/w.hoed.213f47daef.mp3',
-    'w.deur': 'public/audio/nl/w.deur.9a02637f96.mp3',
-    'w.vuur': 'public/audio/nl/w.vuur.7312249a75.mp3',
-    'w.tas': 'public/audio/nl/w.tas.11db63907c.mp3',
-    'w.vis': 'public/audio/nl/w.vis.5f2a9b2d9c.mp3',
-    'w.kop': 'public/audio/nl/w.kop.bae8d4ecfa.mp3',
-    'w.voet': 'public/audio/nl/w.voet.81cabafc81.mp3',
-    'w.huis': 'public/audio/nl/w.huis.2256b51b0c.mp3',
-    'w.roos': 'public/audio/nl/w.roos.ea7f915492.mp3',
+    'rekt.maan': 'rekt.maan.0b4e7dbd90.mp3',
+    'rekt.huis': 'rekt.huis.1394c3b23d.mp3',
+    'rekt.roos': 'rekt.roos.a5319388e3.mp3',
+    'w.zon': 'w.zon.079e7064ed.mp3',
+    'w.kaas': 'w.kaas.61f3f600d0.mp3',
+    'w.veer': 'w.veer.a731381e22.mp3',
+    'w.jas': 'w.jas.fcc5d91929.mp3',
+    'w.boot': 'w.boot.fd94fb2f3e.mp3',
+    'w.doos': 'w.doos.bbf539deb3.mp3',
+    'w.pop': 'w.pop.b0661edca5.mp3',
+    'w.pet': 'w.pet.f722c23606.mp3',
+    'w.boom': 'w.boom.10a288542a.mp3',
+    'w.beer': 'w.beer.45864e3dc5.mp3',
+    'w.muis': 'w.muis.82ee936429.mp3',
+    'w.hoed': 'w.hoed.213f47daef.mp3',
+    'w.deur': 'w.deur.9a02637f96.mp3',
+    'w.vuur': 'w.vuur.7312249a75.mp3',
+    'w.tas': 'w.tas.11db63907c.mp3',
+    'w.vis': 'w.vis.5f2a9b2d9c.mp3',
+    'w.kop': 'w.kop.bae8d4ecfa.mp3',
+    'w.voet': 'w.voet.81cabafc81.mp3',
+    'w.huis': 'w.huis.2256b51b0c.mp3',
+    'w.roos': 'w.roos.ea7f915492.mp3',
 }
 
 
@@ -210,18 +212,22 @@ def encode(x, path):
                    input=x.astype(np.float32).tobytes(), check=True)
 
 
+def stretched_words():
+    """De woorden uit STRETCHED in plaatjes.ts: {'zon': 'z', ...}."""
+    with open(WORDS_TS, encoding='utf8') as fh:
+        block = re.search(r'export const STRETCHED[^=]*=\s*\{(.*?)\};', fh.read(), re.S).group(1)
+    return {w: text[0].lower() for w, text in re.findall(r"(\w+): '([^']+)'", block)}
+
+
 def main():
     proef = '--proef' in sys.argv
+    only_new = '--nieuw' in sys.argv
     with open(MANIFEST) as fh:
         manifest = json.load(fh)
     clips = manifest['clips']
 
     def src(sid):
-        path = os.path.join(ROOT, SOURCE_FILES[sid])
-        if not os.path.exists(path):
-            sys.exit(f'{sid} is opnieuw ingesproken ({SOURCE_FILES[sid]} bestaat niet meer). '
-                     'Zoek de knippunten opnieuw op en pas CUTS en SOURCE_FILES aan.')
-        return path
+        return os.path.join(BRON, SOURCE_FILES[sid])
 
     # De luidheid van een gewone klinker, als maat voor de zachte ruisklanken.
     vowel = peak_rms(decode(src('w.kaas')))
@@ -238,9 +244,20 @@ def main():
         if key in 'vh':
             x = x * min(8.0, 0.35 * vowel / max(peak_rms(x), 1e-9))
         sustained[key] = x
-    for cid, (key, wid) in STRETCHED.items():
-        word = fade(trim(decode(src(wid))), 5, 20)
+    waiting = []
+    for w, key in stretched_words().items():
+        cid = f'rekt.{w}'
+        if cid in KEEP:
+            continue
+        if f'w.{w}' not in clips:
+            waiting.append(w)
+            continue
+        word = fade(trim(decode(os.path.join(DIR, clips[f'w.{w}']))), 5, 20)
         out[cid] = finish(np.concatenate([sustained[key], np.zeros(int(PAUSE * SR)), word]))
+    if waiting:
+        print(f'Nog geen opname van het woord, dus nog niet uitgerekt: {", ".join(waiting)}')
+    if only_new:
+        out = {cid: x for cid, x in out.items() if cid not in clips}
 
     if proef:
         os.makedirs('/tmp/klanken', exist_ok=True)

@@ -50,6 +50,8 @@ export interface DomainModule {
   choice: Seg[];
   /** Lof aan het einde van een sessie zonder hulp ("Je hebt heel precies geteld"). */
   endPraise: Seg[];
+  /** Zodra bekend is welke opnames er zijn: het vak kan zich daarop instellen. */
+  onClips?: (hasClip: (id: string) => boolean) => void;
 }
 
 export interface ItemResult {

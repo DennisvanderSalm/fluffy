@@ -27,8 +27,8 @@ describe('Hakken en plakken, eerste woordjes', () => {
 
   it('nieuwe woorden rijmen niet stiekem op oude (anders zijn er bij Rijmen twee goede)', () => {
     const ends = (w: string) => w.slice(-3);
-    for (const a of ['boom', 'poes', 'boot', 'kaas', 'boek', 'deur', 'vuur'] as const) {
-      for (const b of WORDS) if (a !== b && !rhymes(a, b)) expect(ends(a) === ends(b) && a.length === b.length && a[0] !== b[0]).toBe(false);
+    for (const a of WORDS) {
+      for (const b of WORDS) if (a !== b && !rhymes(a, b)) expect(ends(a) === ends(b) && a.length === b.length && a[0] !== b[0], `${a}/${b}`).toBe(false);
     }
   });
 

@@ -69,6 +69,12 @@ jobs:
             exit 1
           fi
           npm run stem -- "${args[@]}"
+      - name: Uitgerekte woorden knippen ("mmm… man")
+        if: ${{ !startsWith(inputs.wat, 'proef') && !contains(inputs.wat, 'controleren') }}
+        run: |
+          command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          python3 -m pip install --quiet --break-system-packages numpy scipy
+          python3 scripts/klanken.py --nieuw
       - name: Testen
         run: npm test
       - name: Opnames bewaren en publiceren

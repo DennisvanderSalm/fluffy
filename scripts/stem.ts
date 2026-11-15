@@ -302,7 +302,9 @@ async function main(): Promise<void> {
   const m = await readManifest();
   const results = await readResults();
   const own = new Set(Object.keys(m.clips).filter((id) => !(id in m.generated)));
-  const wanted = jobList.filter((j) => !own.has(j.id));
+  // Losse klanken en uitgerekte woorden maakt scripts/klanken.py (geknipt uit woorden), niet ElevenLabs.
+  const cut = (id: string) => id.startsWith('kl.') || id.startsWith('rekt.');
+  const wanted = jobList.filter((j) => !own.has(j.id) && !cut(j.id));
   const todo = wanted.filter((j) => {
     if (flag('--opnieuw')) return true;
     const h = hashOf(j, e, m.takes[j.id]);

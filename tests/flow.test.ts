@@ -1,12 +1,14 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { clipJobs } from '../src/core/audio/phrases';
+import { clipJobs, phraseId } from '../src/core/audio/phrases';
 import type { DomainModule } from '../src/core/domain';
 import { initialState } from '../src/core/engine/mastery';
 import type { PlannerInput } from '../src/core/engine/planner';
 import { easyWin, pickRealTask, togetherDue, warmUpSkill } from '../src/core/session/flow';
 import { backupDue, emptyData } from '../src/core/storage/store';
 import { ALL_PHRASES } from '../src/domains';
+import { wordPhrases } from '../src/domains/lezen';
+import { WORDS } from '../src/domains/lezen/plaatjes';
 
 const skill = (id: string) => ({ id, domain: 'x', requires: [], levels: 3 });
 const mastered = (due: string, box = 1) => ({ ...initialState(), status: 'mastered' as const, review: { box, due } });
@@ -87,7 +89,14 @@ describe('opnames', () => {
   // Vangt een vergeten "npm run stem": dan zou Fluffy die zinnen met de computerstem zeggen.
   it('elke zin die de app zegt heeft een opname, en elk bestand bestaat', () => {
     const clips = JSON.parse(readFileSync('public/audio/nl/manifest.json', 'utf8')).clips as Record<string, string>;
-    const missing = clipJobs(ALL_PHRASES()).map((j) => j.id).filter((id) => !clips[id]);
+    // Een nieuw woord zonder opname wacht: de app gebruikt het nog niet (zie spokenOf in plaatjes.ts), dus
+    // ook de zinnen met dat woord mogen nog ontbreken. Zodra het woord er is, moet alles er zijn.
+    const recorded = WORDS.filter((w) => clips[`w.${w}`]);
+    const withWord = new Set(wordPhrases(WORDS).map(phraseId));
+    const needed = new Set(wordPhrases(recorded).map(phraseId));
+    const waiting = (id: string) =>
+      withWord.has(id) ? !needed.has(id) : /^(w|rekt)\./.test(id) && !clips[`w.${id.split('.')[1]}`];
+    const missing = clipJobs(ALL_PHRASES()).map((j) => j.id).filter((id) => !clips[id] && !waiting(id));
     expect(missing).toEqual([]);
     for (const f of new Set(Object.values(clips))) expect(existsSync(`public/audio/nl/${f}`), f).toBe(true);
   });

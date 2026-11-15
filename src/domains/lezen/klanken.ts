@@ -4,7 +4,7 @@ import type { LineId } from '../../content/spraak.nl';
 import { onTap } from '../../core/ui/drag';
 import { el, pick, shuffle, sleep, svgEl, svgInner, type Rng } from '../../core/util';
 import {
-  letterOf, ONSET_WORDS, PICTURE, RHYMES, rhymes, sameOnset, stretchLine, wordLine, WORDS, type Word,
+  letterOf, onsetWords, PICTURE, RHYMES, rhymes, sameOnset, spokenOf, stretchLine, wordLine, WORDS, type Word,
 } from './plaatjes';
 
 /**
@@ -45,16 +45,23 @@ const fits = (kind: KlankKind, a: Word, b: Word) => (kind === 'rijm' ? rhymes(a,
 /** De lastige afleider: lijkt op een andere manier op het doelwoord. */
 const tricky = (kind: KlankKind, a: Word, b: Word) => (kind === 'rijm' ? sameOnset(a, b) : rhymes(a, b));
 
+/** Doelwoorden: woorden uit de lijst waar een ander woord uit de lijst bij past. */
+const targetsFor = (kind: KlankKind, words: readonly Word[]): Word[] =>
+  kind === 'rijm' ? RHYMES.flat().filter((t) => words.includes(t) && words.some((w) => rhymes(t, w))) : onsetWords(words);
+
 let lastTarget: Word | null = null;
 
 export function makeKlankItem(kind: KlankKind, level: number, rng: Rng): KlankItem {
-  const pool = kind === 'rijm' ? RHYMES.flat() : ONSET_WORDS;
+  // Alleen woorden die Fluffy kan zeggen, en als doelwoord alleen een woord waar dan nog iets bij past.
+  const spoken = spokenOf(WORDS);
+  const among = targetsFor(kind, spoken).length ? spoken : WORDS;
+  const pool = targetsFor(kind, among);
   let target = pick(rng, pool);
   for (let i = 0; i < 5 && target === lastTarget; i++) target = pick(rng, pool);
   lastTarget = target;
-  const answer = pick(rng, WORDS.filter((w) => fits(kind, target, w)));
+  const answer = pick(rng, among.filter((w) => fits(kind, target, w)));
   // Afleiders passen niet bij het doelwoord, en ook niet bij het antwoord (geen twee goede).
-  const wrong = WORDS.filter((w) => w !== target && !fits(kind, target, w) && !fits(kind, answer, w));
+  const wrong = among.filter((w) => w !== target && !fits(kind, target, w) && !fits(kind, answer, w));
   const plain = wrong.filter((w) => !tricky(kind, target, w));
   const count = level <= 0 ? 1 : 2;
   let distractors = shuffle(rng, plain).slice(0, count);
@@ -268,13 +275,13 @@ const pictureAt = (w: Word, x: number, y: number, s: number) =>
   `<svg x="${x}" y="${y}" width="${s}" height="${s}" viewBox="0 0 100 100">${svgInner(PICTURE[w])}</svg>`;
 
 /** Alle zinnen met een woord erin, als hele opname. */
-function phrasesFor(kind: KlankKind): Seg[][] {
+/** De hele zinnen bij deze woorden (standaard alle woorden; de test kijkt ook naar alleen de ingesproken woorden). */
+export function phrasesFor(kind: KlankKind, words: readonly Word[] = WORDS): Seg[][] {
   const out: Seg[][] = [];
-  const targets = kind === 'rijm' ? RHYMES.flat() : ONSET_WORDS;
-  for (const t of targets) {
+  for (const t of targetsFor(kind, words)) {
     out.push([kind === 'rijm' ? 'rijm.vraag' : 'klank.vraag', wordLine(t)]);
     if (kind === 'begin') out.push(['klank.schrijf', wordLine(t)]);
-    for (const a of WORDS) {
+    for (const a of words) {
       if (fits(kind, t, a)) out.push([wordLine(t), 'rijm.en', wordLine(a), kind === 'rijm' ? 'rijm.rijmen' : 'klank.zelfde']);
     }
   }

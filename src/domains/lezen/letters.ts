@@ -2,7 +2,7 @@ import type { Activity, ActivityContext, ItemResult } from '../../core/domain';
 import type { Seg } from '../../core/audio/speech';
 import { onTap } from '../../core/ui/drag';
 import { el, pick, shuffle, sleep, svgEl, type Rng } from '../../core/util';
-import { letterOf, ONSET_WORDS, PICTURE, stretchLine, wordLine, type Word } from './plaatjes';
+import { letterOf, onsetWords, PICTURE, spokenOf, stretchLine, wordLine, WORDS, type Word } from './plaatjes';
 
 /**
  * LETTERS ZOEKEN — de letter bij een beginklank kiezen. Klanken horen en letters kennen werken
@@ -23,14 +23,20 @@ const POOL = ['m', 'v', 'h', 'b', 'p', 'k', 't', 's', 'r', 'n', 'd', 'z', 'l'];
 /** Letters die op elkaar lijken: de lastige afleiders. */
 const LOOKALIKE: Record<string, string> = { m: 'n', n: 'm', b: 'd', d: 'b', p: 'b', h: 'n', v: 'w', k: 'h', t: 'f' };
 
-/** Woorden waarvan de beginklank één letter is. */
-export const LETTER_WORDS = ONSET_WORDS.filter((w) => letterOf(w));
+/** Woorden waarvan de beginklank één letter is (en die een ander woord met dat begin hebben: het sleutelwoord). */
+export const letterWords = (among: readonly Word[]): Word[] => onsetWords(among).filter((w) => letterOf(w));
+export const LETTER_WORDS = letterWords(WORDS);
+/** De hele zinnen bij deze woorden. */
+export const letterPhrases = (words: readonly Word[] = WORDS): Seg[][] =>
+  letterWords(words).flatMap((w): Seg[][] => [['letter.vraag', wordLine(w)], ['klank.schrijf', wordLine(w)]]);
 
 let lastWord: Word | null = null;
 
 export function makeLetterItem(_skill: string, level: number, rng: Rng): LetterItem {
-  let word = pick(rng, LETTER_WORDS);
-  for (let i = 0; i < 5 && word === lastWord; i++) word = pick(rng, LETTER_WORDS);
+  const spoken = letterWords(spokenOf(WORDS));
+  const words = spoken.length ? spoken : LETTER_WORDS;
+  let word = pick(rng, words);
+  for (let i = 0; i < 5 && word === lastWord; i++) word = pick(rng, words);
   lastWord = word;
   const letter = letterOf(word)!;
   let others = shuffle(rng, POOL.filter((l) => l !== letter && l !== LOOKALIKE[letter])).slice(0, level <= 0 ? 1 : 2);
@@ -214,5 +220,5 @@ export const letters: Activity<LetterItem> = {
   summary: ['einde.letters'],
   icon: ICON,
   choice: ['keuze.letters'],
-  phrases: () => LETTER_WORDS.flatMap((w): Seg[][] => [['letter.vraag', wordLine(w)], ['klank.schrijf', wordLine(w)]]),
+  phrases: () => letterPhrases(),
 };
