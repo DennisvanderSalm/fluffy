@@ -6535,10 +6535,9 @@
  },
  "rijm.vraag+w.kam": {
   "file": "rijm.vraag_w.kam.9500d2c432.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
-  "heard": "Wat rijmt op cam?",
-  "reason": "andere woorden"
+  "heard": "Wat rijmt op cam?"
  },
  "rijm.vraag+w.kip": {
   "file": "rijm.vraag_w.kip.8d63dcd1fa.mp3",
@@ -6596,10 +6595,9 @@
  },
  "rijm.vraag+w.noot": {
   "file": "rijm.vraag_w.noot.6216efa9dd.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
-  "heard": "Wat rijmt op nood?",
-  "reason": "andere woorden"
+  "heard": "Wat rijmt op nood?"
  },
  "rijm.vraag+w.paard": {
   "file": "rijm.vraag_w.paard.0d492b1ab8.mp3",
@@ -9350,11 +9348,10 @@
   "heard": "Bed en beer. Die beginnen hetzelfde"
  },
  "w.bed+rijm.en+w.bes+klank.zelfde": {
-  "file": "w.bed_rijm.en_w.bes_klank.zelfde.b16f15b686.mp3",
-  "ok": false,
+  "file": "w.bed_rijm.en_w.bes_klank.zelfde.628b5d9ece.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Pat en Bess, die beginnen hetzelfde",
-  "reason": "andere woorden"
+  "heard": "Bet en Bes, die beginnen hetzelfde"
  },
  "w.bed+rijm.en+w.boek+klank.zelfde": {
   "file": "w.bed_rijm.en_w.boek_klank.zelfde.59fedad92f.mp3",
@@ -9423,11 +9420,10 @@
   "heard": "Pen en boot, die beginnen hetzelfde"
  },
  "w.been+rijm.en+w.steen+rijm.rijmen": {
-  "file": "w.been_rijm.en_w.steen_rijm.rijmen.7ad0a2d6de.mp3",
-  "ok": false,
+  "file": "w.been_rijm.en_w.steen_rijm.rijmen.70c8bd8c7e.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Ben en Steen, die rijmen",
-  "reason": "andere woorden"
+  "heard": "Been en steen die rijmen"
  },
  "w.beer": {
   "file": "w.beer.45864e3dc5.mp3",
@@ -9479,10 +9475,10 @@
  },
  "w.bes": {
   "file": "w.bes.e58840487b.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Best",
-  "reason": "ander woord"
+  "context": "Wat rijmt op bes?"
  },
  "w.bes+rijm.en+w.bed+klank.zelfde": {
   "file": "w.bes_rijm.en_w.bed_klank.zelfde.e5bca4b25e.mp3",
@@ -9521,10 +9517,10 @@
   "heard": "Bes en boot, die beginnen hetzelfde"
  },
  "w.bes+rijm.en+w.mes+rijm.rijmen": {
-  "file": "w.bes_rijm.en_w.mes_rijm.rijmen.a0a7c79f7b.mp3",
+  "file": "w.bes_rijm.en_w.mes_rijm.rijmen.e27769f0f7.mp3",
   "ok": false,
   "abrupt": false,
-  "heard": "SMS die rijmen",
+  "heard": "Best en mest die rijmen",
   "reason": "andere woorden"
  },
  "w.boek": {
@@ -9660,11 +9656,10 @@
   "heard": "Boot en boom. Die beginnen hetzelfde"
  },
  "w.boot+rijm.en+w.noot+rijm.rijmen": {
-  "file": "w.boot_rijm.en_w.noot_rijm.rijmen.26083aa28f.mp3",
-  "ok": false,
+  "file": "w.boot_rijm.en_w.noot_rijm.rijmen.de51dcc789.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Poot en noot die rijmen",
-  "reason": "andere woorden"
+  "heard": "Boot en noot die rijmen"
  },
  "w.deur": {
   "file": "w.deur.9a02637f96.mp3",
@@ -9710,10 +9705,10 @@
  },
  "w.duim": {
   "file": "w.duim.70e8915ed2.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Douw?",
-  "reason": "ander woord"
+  "context": "Wat rijmt op duim?"
  },
  "w.duim+rijm.en+w.deur+klank.zelfde": {
   "file": "w.duim_rijm.en_w.deur_klank.zelfde.b2ee8c8d1d.mp3",
@@ -9746,11 +9741,10 @@
   "heard": "Ham en huis, die beginnen hetzelfde"
  },
  "w.ham+rijm.en+w.kam+rijm.rijmen": {
-  "file": "w.ham_rijm.en_w.kam_rijm.rijmen.dd7795c2b3.mp3",
-  "ok": false,
+  "file": "w.ham_rijm.en_w.kam_rijm.rijmen.7044fc1d1c.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Ham en kamp die rijmen?",
-  "reason": "andere woorden"
+  "heard": "Ham en kam die rijmen"
  },
  "w.hoed": {
   "file": "w.hoed.213f47daef.mp3",
@@ -9783,11 +9777,10 @@
   "heard": "Huis"
  },
  "w.huis+rijm.en+w.ham+klank.zelfde": {
-  "file": "w.huis_rijm.en_w.ham_klank.zelfde.607dfac54b.mp3",
-  "ok": false,
+  "file": "w.huis_rijm.en_w.ham_klank.zelfde.44107cab99.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Hij is een ham. Die beginnen hetzelfde",
-  "reason": "andere woorden"
+  "heard": "Huis en ham, die beginnen hetzelfde"
  },
  "w.huis+rijm.en+w.hoed+klank.zelfde": {
   "file": "w.huis_rijm.en_w.hoed_klank.zelfde.e7d48692a8.mp3",
@@ -9850,17 +9843,16 @@
   "heard": "Kaas en vaas die rijmen"
  },
  "w.kam": {
-  "file": "w.kam.1eeea8cd46.mp3",
-  "ok": false,
+  "file": "w.kam.754fb7d1e9.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Kom",
-  "reason": "ander woord"
+  "heard": "Kam"
  },
  "w.kam+rijm.en+w.ham+rijm.rijmen": {
-  "file": "w.kam_rijm.en_w.ham_rijm.rijmen.b37895d5c3.mp3",
+  "file": "w.kam_rijm.en_w.ham_rijm.rijmen.6321795381.mp3",
   "ok": false,
   "abrupt": false,
-  "heard": "Kom in ham die rijmen",
+  "heard": "Kan men ham die rijmen?",
   "reason": "andere woorden"
  },
  "w.kam+rijm.en+w.kaas+klank.zelfde": {
@@ -10009,10 +10001,10 @@
  },
  "w.maan": {
   "file": "w.maan.8f21824e87.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Mam?",
-  "reason": "ander woord"
+  "context": "Wat rijmt op maan?"
  },
  "w.maan+rijm.en+w.kraan+rijm.rijmen": {
   "file": "w.maan_rijm.en_w.kraan_rijm.rijmen.6bb7d8bee0.mp3",
@@ -10045,11 +10037,11 @@
   "heard": "Maan en muur, die beginnen hetzelfde"
  },
  "w.man": {
-  "file": "w.man.ac1c3431e0.mp3",
-  "ok": false,
+  "file": "w.man.b5bad1d258.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Mama?",
-  "reason": "ander woord"
+  "heard": "Mam",
+  "context": "Wat rijmt op man?"
  },
  "w.man+rijm.en+w.maan+klank.zelfde": {
   "file": "w.man_rijm.en_w.maan_klank.zelfde.71a0adb151.mp3",
@@ -10083,17 +10075,15 @@
  },
  "w.mes": {
   "file": "w.mes.334744bd52.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
-  "heard": "mess",
-  "reason": "ander woord"
+  "heard": "mess"
  },
  "w.mes+rijm.en+w.bes+rijm.rijmen": {
-  "file": "w.mes_rijm.en_w.bes_rijm.rijmen.6e8056ae70.mp3",
-  "ok": false,
+  "file": "w.mes_rijm.en_w.bes_rijm.rijmen.f724d941d3.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Mes en best die rijmen",
-  "reason": "andere woorden"
+  "heard": "Mes en bes, die rijmen"
  },
  "w.mes+rijm.en+w.maan+klank.zelfde": {
   "file": "w.mes_rijm.en_w.maan_klank.zelfde.2a118ce5e3.mp3",
@@ -10271,10 +10261,10 @@
  },
  "w.pan": {
   "file": "w.pan.00d5d503d5.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Pam?",
-  "reason": "ander woord"
+  "context": "Wat rijmt op pan?"
  },
  "w.pan+rijm.en+w.man+rijm.rijmen": {
   "file": "w.pan_rijm.en_w.man_rijm.rijmen.72b9d4454d.mp3",
@@ -10320,10 +10310,10 @@
  },
  "w.pen": {
   "file": "w.pen.78823774e1.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Ben?",
-  "reason": "ander woord"
+  "context": "Wat rijmt op pen?"
  },
  "w.pen+rijm.en+w.paard+klank.zelfde": {
   "file": "w.pen_rijm.en_w.paard_klank.zelfde.18925d7e01.mp3",
@@ -10579,10 +10569,9 @@
  },
  "w.rok+rijm.en+w.sok+rijm.rijmen": {
   "file": "w.rok_rijm.en_w.sok_rijm.rijmen.4aac6353ed.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
-  "heard": "Rock en sock die rijmen",
-  "reason": "andere woorden"
+  "heard": "Rock en sock die rijmen"
  },
  "w.roos": {
   "file": "w.roos.ea7f915492.mp3",
@@ -10634,10 +10623,10 @@
  },
  "w.sok": {
   "file": "w.sok.a79674bbd7.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Is oké",
-  "reason": "ander woord"
+  "context": "Wat rijmt op sok?"
  },
  "w.sok+rijm.en+w.rok+rijm.rijmen": {
   "file": "w.sok_rijm.en_w.rok_rijm.rijmen.8569e5ede1.mp3",
@@ -10653,10 +10642,10 @@
  },
  "w.steen": {
   "file": "w.steen.97d659e956.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Stijn",
-  "reason": "ander woord"
+  "context": "Wat rijmt op steen?"
  },
  "w.steen+rijm.en+w.been+rijm.rijmen": {
   "file": "w.steen_rijm.en_w.been_rijm.rijmen.ec7a47dc27.mp3",
@@ -10780,10 +10769,10 @@
  },
  "w.vaas": {
   "file": "w.vaas.cce11906af.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
   "heard": "Vas",
-  "reason": "ander woord"
+  "context": "Wat rijmt op vaas"
  },
  "w.vaas+rijm.en+w.kaas+rijm.rijmen": {
   "file": "w.vaas_rijm.en_w.kaas_rijm.rijmen.6df144e93c.mp3",
@@ -10817,10 +10806,9 @@
  },
  "w.veer": {
   "file": "w.veer.a731381e22.mp3",
-  "ok": false,
+  "ok": true,
   "abrupt": false,
-  "heard": "Fear",
-  "reason": "ander woord"
+  "heard": "Fear"
  },
  "w.veer+rijm.en+w.beer+rijm.rijmen": {
   "file": "w.veer_rijm.en_w.beer_rijm.rijmen.2b900244a3.mp3",
