@@ -1,6 +1,7 @@
 # Laat de stem van Fluffy inspreken door ElevenLabs, zonder eigen computer.
 # Starten: GitHub → Actions → "Stem inspreken" → Run workflow (kan ook vanaf je telefoon).
-# Of: wijzig scripts/inspreken.txt op main (eerste regel: proef, inspreken, herstellen of controleren).
+# Of: wijzig scripts/inspreken.txt op main (eerste regel: proef, inspreken, herstellen of controleren;
+# een regel "afgekeurd: w.vis, getal.8" spreekt precies die opnieuw in).
 # Eenmalig nodig: Settings → Secrets and variables → Actions → New repository secret:
 #   ELEVENLABS_API_KEY   je sleutel van elevenlabs.io (mag Text-to-Speech en Speech-to-Text)
 # Optioneel, onder Variables: ELEVENLABS_VOICE_ID (anders de stem die al in manifest.json staat).
@@ -60,7 +61,11 @@ jobs:
           AFGEKEURD: ${{ inputs.afgekeurd }}
         run: |
           # Gestart door een wijziging van scripts/inspreken.txt: de eerste regel zegt wat er moet gebeuren.
-          if [ -z "$WAT" ]; then WAT=$(head -n 1 scripts/inspreken.txt | tr -cd 'a-z'); fi
+          if [ -z "$WAT" ]; then
+            WAT=$(head -n 1 scripts/inspreken.txt | tr -cd 'a-z')
+            # Een regel "afgekeurd: w.vis, getal.8" spreekt precies die opnieuw in.
+            AFGEKEURD=$(sed -n 's/^afgekeurd: *//p' scripts/inspreken.txt | head -n 1)
+          fi
           echo "WAT=$WAT" >> "$GITHUB_ENV"
           if [ -z "$ELEVENLABS_VOICE_ID" ]; then
             ELEVENLABS_VOICE_ID=$(node -p "require('./public/audio/nl/manifest.json').voice || ''")

@@ -1,4 +1,6 @@
-herstellen
+inspreken
+afgekeurd: w.vaas, w.bes+rijm.en+w.mes+rijm.rijmen, w.kam+rijm.en+w.ham+rijm.rijmen
 # Wijzig dit bestand op main en de stem wordt ingesproken (workflow "Stem inspreken").
 # Eerste regel: proef (kost niets), inspreken, herstellen of controleren.
-# Aangevraagd: 2026-11-16 08:50, herstellen wat de controle afkeurde.
+# Een regel "afgekeurd: ..." spreekt precies die opnames opnieuw in.
+# Aangevraagd: 2026-11-16 09:00. vaas klonk als "vas" (spraakherkenning én klinkermeting).
