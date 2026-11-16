@@ -3803,11 +3803,23 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van bed"
  },
+ "klank.schrijf+w.been": {
+  "file": "klank.schrijf_w.been.dea8d2f051.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van been"
+ },
  "klank.schrijf+w.beer": {
   "file": "klank.schrijf_w.beer.de0d43afb0.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Beer"
+ },
+ "klank.schrijf+w.bes": {
+  "file": "klank.schrijf_w.bes.79d6e8c734.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Bes"
  },
  "klank.schrijf+w.boek": {
   "file": "klank.schrijf_w.boek.84fb8e8e49.mp3",
@@ -3839,6 +3851,18 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Do's"
  },
+ "klank.schrijf+w.duim": {
+  "file": "klank.schrijf_w.duim.a345e2f8de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Duim"
+ },
+ "klank.schrijf+w.ham": {
+  "file": "klank.schrijf_w.ham.6a97e23a83.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Ham"
+ },
  "klank.schrijf+w.hoed": {
   "file": "klank.schrijf_w.hoed.ef278b29c5.mp3",
   "ok": true,
@@ -3857,11 +3881,23 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van kaas"
  },
+ "klank.schrijf+w.kam": {
+  "file": "klank.schrijf_w.kam.d12759ae67.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van CAM"
+ },
  "klank.schrijf+w.kip": {
   "file": "klank.schrijf_w.kip.0372dff2f3.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Kip"
+ },
+ "klank.schrijf+w.koek": {
+  "file": "klank.schrijf_w.koek.0021d5771f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Koek"
  },
  "klank.schrijf+w.kop": {
   "file": "klank.schrijf_w.kop.cd371addaa.mp3",
@@ -3875,17 +3911,59 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Maan"
  },
+ "klank.schrijf+w.man": {
+  "file": "klank.schrijf_w.man.30507710fa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van man"
+ },
+ "klank.schrijf+w.mes": {
+  "file": "klank.schrijf_w.mes.43220b5594.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Mes"
+ },
  "klank.schrijf+w.muis": {
   "file": "klank.schrijf_w.muis.153aaa8ea7.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Muis"
  },
+ "klank.schrijf+w.muur": {
+  "file": "klank.schrijf_w.muur.fd9aaa95b9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van MUUR"
+ },
+ "klank.schrijf+w.neus": {
+  "file": "klank.schrijf_w.neus.66f2fa20e1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van neus"
+ },
+ "klank.schrijf+w.noot": {
+  "file": "klank.schrijf_w.noot.cd566eec35.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van nood"
+ },
  "klank.schrijf+w.paard": {
   "file": "klank.schrijf_w.paard.1cceb52578.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van paard"
+ },
+ "klank.schrijf+w.pan": {
+  "file": "klank.schrijf_w.pan.9d68eb7a54.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Pan"
+ },
+ "klank.schrijf+w.pen": {
+  "file": "klank.schrijf_w.pen.bd04266ba0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Pen"
  },
  "klank.schrijf+w.pet": {
   "file": "klank.schrijf_w.pet.4445f4b8f9.mp3",
@@ -3905,11 +3983,53 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Pop"
  },
+ "klank.schrijf+w.pot": {
+  "file": "klank.schrijf_w.pot.25ab33d6cc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van pot"
+ },
+ "klank.schrijf+w.raam": {
+  "file": "klank.schrijf_w.raam.c0f739137c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van raam"
+ },
+ "klank.schrijf+w.rok": {
+  "file": "klank.schrijf_w.rok.d4f9c04c40.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Rock"
+ },
+ "klank.schrijf+w.roos": {
+  "file": "klank.schrijf_w.roos.88f6b10c62.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Roos"
+ },
+ "klank.schrijf+w.soep": {
+  "file": "klank.schrijf_w.soep.6d52e92f12.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van soep"
+ },
+ "klank.schrijf+w.sok": {
+  "file": "klank.schrijf_w.sok.c7ab8789cd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van sok"
+ },
  "klank.schrijf+w.taart": {
   "file": "klank.schrijf_w.taart.ce3ed9c17f.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van taart"
+ },
+ "klank.schrijf+w.tak": {
+  "file": "klank.schrijf_w.tak.6b02c7403a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Tak"
  },
  "klank.schrijf+w.tas": {
   "file": "klank.schrijf_w.tas.b52c138815.mp3",
@@ -3922,6 +4042,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van Tom"
+ },
+ "klank.schrijf+w.vaas": {
+  "file": "klank.schrijf_w.vaas.cc9ee314dc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Vaas"
  },
  "klank.schrijf+w.veer": {
   "file": "klank.schrijf_w.veer.d7c37b6336.mp3",
@@ -3947,6 +4073,18 @@
   "abrupt": false,
   "heard": "Kijk, zo schrijf je het begin van vuur"
  },
+ "klank.schrijf+w.zeep": {
+  "file": "klank.schrijf_w.zeep.32f76e2d44.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van zeep"
+ },
+ "klank.schrijf+w.zon": {
+  "file": "klank.schrijf_w.zon.5679c5598f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kijk, zo schrijf je het begin van Zon"
+ },
  "klank.uitleg": {
   "file": "klank.uitleg.2bf6d82441.mp3",
   "ok": true,
@@ -3965,11 +4103,23 @@
   "abrupt": false,
   "heard": "Welke begint net zoals bed?"
  },
+ "klank.vraag+w.been": {
+  "file": "klank.vraag_w.been.281ed2e859.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals been?"
+ },
  "klank.vraag+w.beer": {
   "file": "klank.vraag_w.beer.7a0457956b.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals beer?"
+ },
+ "klank.vraag+w.bes": {
+  "file": "klank.vraag_w.bes.5fe1475a46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Bes?"
  },
  "klank.vraag+w.boek": {
   "file": "klank.vraag_w.boek.470be9634f.mp3",
@@ -4001,6 +4151,18 @@
   "abrupt": false,
   "heard": "Welke begint net zoals Do's"
  },
+ "klank.vraag+w.duim": {
+  "file": "klank.vraag_w.duim.da10a4b4cf.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Duim?"
+ },
+ "klank.vraag+w.ham": {
+  "file": "klank.vraag_w.ham.e0a74dcc70.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals ham?"
+ },
  "klank.vraag+w.hoed": {
   "file": "klank.vraag_w.hoed.79fa3c8efc.mp3",
   "ok": true,
@@ -4019,11 +4181,23 @@
   "abrupt": false,
   "heard": "Welke begint net zoals kaas?"
  },
+ "klank.vraag+w.kam": {
+  "file": "klank.vraag_w.kam.c934380e68.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals kam?"
+ },
  "klank.vraag+w.kip": {
   "file": "klank.vraag_w.kip.0022caad94.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals kip?"
+ },
+ "klank.vraag+w.koek": {
+  "file": "klank.vraag_w.koek.ccd0f494c1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals koek?"
  },
  "klank.vraag+w.kop": {
   "file": "klank.vraag_w.kop.f492c10c2d.mp3",
@@ -4037,17 +4211,59 @@
   "abrupt": false,
   "heard": "Welke begint net zo als maan?"
  },
+ "klank.vraag+w.man": {
+  "file": "klank.vraag_w.man.1c43ca3a95.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals man?"
+ },
+ "klank.vraag+w.mes": {
+  "file": "klank.vraag_w.mes.b732bc9fd8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Mes?"
+ },
  "klank.vraag+w.muis": {
   "file": "klank.vraag_w.muis.016029e469.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals muis?"
  },
+ "klank.vraag+w.muur": {
+  "file": "klank.vraag_w.muur.f0851c29c8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals muur"
+ },
+ "klank.vraag+w.neus": {
+  "file": "klank.vraag_w.neus.7ce3912951.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals neus?"
+ },
+ "klank.vraag+w.noot": {
+  "file": "klank.vraag_w.noot.3051a9ef82.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zo als nood?"
+ },
  "klank.vraag+w.paard": {
   "file": "klank.vraag_w.paard.305e768bde.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals paard"
+ },
+ "klank.vraag+w.pan": {
+  "file": "klank.vraag_w.pan.977449f36c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Pan?"
+ },
+ "klank.vraag+w.pen": {
+  "file": "klank.vraag_w.pen.58ad63563b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Ben?"
  },
  "klank.vraag+w.pet": {
   "file": "klank.vraag_w.pet.1c8017bdef.mp3",
@@ -4067,11 +4283,53 @@
   "abrupt": false,
   "heard": "Welke begint net zoals pop"
  },
+ "klank.vraag+w.pot": {
+  "file": "klank.vraag_w.pot.a251c445ca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals pot"
+ },
+ "klank.vraag+w.raam": {
+  "file": "klank.vraag_w.raam.120affb021.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals raam"
+ },
+ "klank.vraag+w.rok": {
+  "file": "klank.vraag_w.rok.441227286a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals rock?"
+ },
+ "klank.vraag+w.roos": {
+  "file": "klank.vraag_w.roos.b3a2feb9fe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Roos?"
+ },
+ "klank.vraag+w.soep": {
+  "file": "klank.vraag_w.soep.105d9cb430.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals soep?"
+ },
+ "klank.vraag+w.sok": {
+  "file": "klank.vraag_w.sok.f6564d3f88.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals sok"
+ },
  "klank.vraag+w.taart": {
   "file": "klank.vraag_w.taart.13e9ca2fc6.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals taart?"
+ },
+ "klank.vraag+w.tak": {
+  "file": "klank.vraag_w.tak.5b3b2325eb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals Tak?"
  },
  "klank.vraag+w.tas": {
   "file": "klank.vraag_w.tas.9ccdc4cac0.mp3",
@@ -4084,6 +4342,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals Ton?"
+ },
+ "klank.vraag+w.vaas": {
+  "file": "klank.vraag_w.vaas.ee3a5e2fc6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals vaas?"
  },
  "klank.vraag+w.veer": {
   "file": "klank.vraag_w.veer.c8792efe47.mp3",
@@ -4108,6 +4372,18 @@
   "ok": true,
   "abrupt": false,
   "heard": "Welke begint net zoals vuur"
+ },
+ "klank.vraag+w.zeep": {
+  "file": "klank.vraag_w.zeep.40f3107919.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals zeep?"
+ },
+ "klank.vraag+w.zon": {
+  "file": "klank.vraag_w.zon.8bd9392a56.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke begint net zoals zon?"
  },
  "klank.zelfde": {
   "file": "klank.zelfde.604add0493.mp3",
@@ -4169,11 +4445,23 @@
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van bed?"
  },
+ "letter.vraag+w.been": {
+  "file": "letter.vraag_w.been.a59f700436.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van been?"
+ },
  "letter.vraag+w.beer": {
   "file": "letter.vraag_w.beer.3741e43216.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van beer?"
+ },
+ "letter.vraag+w.bes": {
+  "file": "letter.vraag_w.bes.75ea7ed68b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van bes?"
  },
  "letter.vraag+w.boek": {
   "file": "letter.vraag_w.boek.d74cc671ce.mp3",
@@ -4205,6 +4493,18 @@
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van doos?"
  },
+ "letter.vraag+w.duim": {
+  "file": "letter.vraag_w.duim.c6b8fe39c0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van duim?"
+ },
+ "letter.vraag+w.ham": {
+  "file": "letter.vraag_w.ham.17f8edc4e5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van ham?"
+ },
  "letter.vraag+w.hoed": {
   "file": "letter.vraag_w.hoed.c10646fefc.mp3",
   "ok": true,
@@ -4223,11 +4523,23 @@
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van kaas?"
  },
+ "letter.vraag+w.kam": {
+  "file": "letter.vraag_w.kam.d084ad226c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van kamp?"
+ },
  "letter.vraag+w.kip": {
   "file": "letter.vraag_w.kip.e9cdf344bb.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van kip?"
+ },
+ "letter.vraag+w.koek": {
+  "file": "letter.vraag_w.koek.bfbccfcba0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van koek?"
  },
  "letter.vraag+w.kop": {
   "file": "letter.vraag_w.kop.25f4b5f492.mp3",
@@ -4241,17 +4553,59 @@
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van maan?"
  },
+ "letter.vraag+w.man": {
+  "file": "letter.vraag_w.man.443646e985.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van man?"
+ },
+ "letter.vraag+w.mes": {
+  "file": "letter.vraag_w.mes.de798dfc05.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van mes?"
+ },
  "letter.vraag+w.muis": {
   "file": "letter.vraag_w.muis.8dfe2f9d91.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van muis?"
  },
+ "letter.vraag+w.muur": {
+  "file": "letter.vraag_w.muur.ab798267ef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van muur?"
+ },
+ "letter.vraag+w.neus": {
+  "file": "letter.vraag_w.neus.ba3e27412d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van neus?"
+ },
+ "letter.vraag+w.noot": {
+  "file": "letter.vraag_w.noot.46ef764125.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van nood?"
+ },
  "letter.vraag+w.paard": {
   "file": "letter.vraag_w.paard.22a7430f7d.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van paard?"
+ },
+ "letter.vraag+w.pan": {
+  "file": "letter.vraag_w.pan.f781642688.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van pan?"
+ },
+ "letter.vraag+w.pen": {
+  "file": "letter.vraag_w.pen.c26b4eaec7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van pen?"
  },
  "letter.vraag+w.pet": {
   "file": "letter.vraag_w.pet.8cddde0006.mp3",
@@ -4271,11 +4625,53 @@
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van pop?"
  },
+ "letter.vraag+w.pot": {
+  "file": "letter.vraag_w.pot.ba9fc143a8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van pot?"
+ },
+ "letter.vraag+w.raam": {
+  "file": "letter.vraag_w.raam.60e1bc9049.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van raam?"
+ },
+ "letter.vraag+w.rok": {
+  "file": "letter.vraag_w.rok.b8638e5ca7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van rok?"
+ },
+ "letter.vraag+w.roos": {
+  "file": "letter.vraag_w.roos.2b9c5216ea.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van Roos?"
+ },
+ "letter.vraag+w.soep": {
+  "file": "letter.vraag_w.soep.f22fb2007f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van soep?"
+ },
+ "letter.vraag+w.sok": {
+  "file": "letter.vraag_w.sok.2a31e0dca5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van sok?"
+ },
  "letter.vraag+w.taart": {
   "file": "letter.vraag_w.taart.f474482e0a.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van taart?"
+ },
+ "letter.vraag+w.tak": {
+  "file": "letter.vraag_w.tak.920adf35de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van tak?"
  },
  "letter.vraag+w.tas": {
   "file": "letter.vraag_w.tas.d1737371ef.mp3",
@@ -4288,6 +4684,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van Tom?"
+ },
+ "letter.vraag+w.vaas": {
+  "file": "letter.vraag_w.vaas.dde4e231c2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van vaas?"
  },
  "letter.vraag+w.veer": {
   "file": "letter.vraag_w.veer.dea6c7b370.mp3",
@@ -4312,6 +4714,18 @@
   "ok": true,
   "abrupt": false,
   "heard": "Welke letter hoort bij het begin van vuur?"
+ },
+ "letter.vraag+w.zeep": {
+  "file": "letter.vraag_w.zeep.157c0d69f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van zeep?"
+ },
+ "letter.vraag+w.zon": {
+  "file": "letter.vraag_w.zon.98f2047ebe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Welke letter hoort bij het begin van zon?"
  },
  "lof.begin": {
   "file": "lof.begin.b6711321d8.mp3",
@@ -6053,17 +6467,47 @@
   "abrupt": false,
   "heard": "Wat rijmt op bed?"
  },
+ "rijm.vraag+w.been": {
+  "file": "rijm.vraag_w.been.da283f3f8f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op been?"
+ },
  "rijm.vraag+w.beer": {
   "file": "rijm.vraag_w.beer.e693fe2f38.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op beer?"
  },
+ "rijm.vraag+w.bes": {
+  "file": "rijm.vraag_w.bes.5f93ac4123.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op bes?"
+ },
+ "rijm.vraag+w.boek": {
+  "file": "rijm.vraag_w.boek.ac932c0da0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op boek?"
+ },
+ "rijm.vraag+w.boot": {
+  "file": "rijm.vraag_w.boot.b9c37769b5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op boot?"
+ },
  "rijm.vraag+w.doos": {
   "file": "rijm.vraag_w.doos.0576c8e5e1.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op doos?"
+ },
+ "rijm.vraag+w.ham": {
+  "file": "rijm.vraag_w.ham.a389296f07.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op ham?"
  },
  "rijm.vraag+w.hoed": {
   "file": "rijm.vraag_w.hoed.9c079da8fa.mp3",
@@ -6083,11 +6527,30 @@
   "abrupt": false,
   "heard": "Wat rijmt op jas?"
  },
+ "rijm.vraag+w.kaas": {
+  "file": "rijm.vraag_w.kaas.f6e7a2287d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op kaas?"
+ },
+ "rijm.vraag+w.kam": {
+  "file": "rijm.vraag_w.kam.9500d2c432.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Wat rijmt op cam?",
+  "reason": "andere woorden"
+ },
  "rijm.vraag+w.kip": {
   "file": "rijm.vraag_w.kip.8d63dcd1fa.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op kip?"
+ },
+ "rijm.vraag+w.koek": {
+  "file": "rijm.vraag_w.koek.00f61ea1c7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op koek?"
  },
  "rijm.vraag+w.kop": {
   "file": "rijm.vraag_w.kop.ca59454154.mp3",
@@ -6107,17 +6570,48 @@
   "abrupt": false,
   "heard": "Wat rijmt op maan?"
  },
+ "rijm.vraag+w.man": {
+  "file": "rijm.vraag_w.man.3500f22607.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op man?"
+ },
+ "rijm.vraag+w.mes": {
+  "file": "rijm.vraag_w.mes.78283fe235.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op mes?"
+ },
  "rijm.vraag+w.muis": {
   "file": "rijm.vraag_w.muis.a47fdd1f12.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op muis?"
  },
+ "rijm.vraag+w.muur": {
+  "file": "rijm.vraag_w.muur.6e74250cef.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op muur?"
+ },
+ "rijm.vraag+w.noot": {
+  "file": "rijm.vraag_w.noot.6216efa9dd.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Wat rijmt op nood?",
+  "reason": "andere woorden"
+ },
  "rijm.vraag+w.paard": {
   "file": "rijm.vraag_w.paard.0d492b1ab8.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op paard?"
+ },
+ "rijm.vraag+w.pan": {
+  "file": "rijm.vraag_w.pan.8ec3040c3a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op pan?"
  },
  "rijm.vraag+w.pet": {
   "file": "rijm.vraag_w.pet.cc226a1a66.mp3",
@@ -6131,6 +6625,12 @@
   "abrupt": false,
   "heard": "Wat rijmt op pop?"
  },
+ "rijm.vraag+w.rok": {
+  "file": "rijm.vraag_w.rok.6622cf71cc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op rok?"
+ },
  "rijm.vraag+w.roos": {
   "file": "rijm.vraag_w.roos.23b3035799.mp3",
   "ok": true,
@@ -6142,6 +6642,18 @@
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op schip?"
+ },
+ "rijm.vraag+w.sok": {
+  "file": "rijm.vraag_w.sok.64628392a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op sok?"
+ },
+ "rijm.vraag+w.steen": {
+  "file": "rijm.vraag_w.steen.f73d9ee241.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op steen?"
  },
  "rijm.vraag+w.taart": {
   "file": "rijm.vraag_w.taart.d138539b75.mp3",
@@ -6161,6 +6673,12 @@
   "abrupt": false,
   "heard": "Wat rijmt op ton?"
  },
+ "rijm.vraag+w.vaas": {
+  "file": "rijm.vraag_w.vaas.cd6194b7c9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op vaas?"
+ },
  "rijm.vraag+w.veer": {
   "file": "rijm.vraag_w.veer.e8344e8d60.mp3",
   "ok": true,
@@ -6172,6 +6690,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Wat rijmt op voet?"
+ },
+ "rijm.vraag+w.vuur": {
+  "file": "rijm.vraag_w.vuur.193d769c40.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Wat rijmt op vuur?"
  },
  "rijm.vraag+w.zon": {
   "file": "rijm.vraag_w.zon.9d142f06e2.mp3",
@@ -8813,11 +9337,24 @@
   "abrupt": false,
   "heard": "Bed"
  },
+ "w.bed+rijm.en+w.been+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.been_klank.zelfde.c3758c9945.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en been, die beginnen hetzelfde"
+ },
  "w.bed+rijm.en+w.beer+klank.zelfde": {
   "file": "w.bed_rijm.en_w.beer_klank.zelfde.a2dcd10f94.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Bed en beer. Die beginnen hetzelfde"
+ },
+ "w.bed+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.bed_rijm.en_w.bes_klank.zelfde.b16f15b686.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Pat en Bess, die beginnen hetzelfde",
+  "reason": "andere woorden"
  },
  "w.bed+rijm.en+w.boek+klank.zelfde": {
   "file": "w.bed_rijm.en_w.boek_klank.zelfde.59fedad92f.mp3",
@@ -8843,6 +9380,55 @@
   "abrupt": false,
   "heard": "Bed en pet, die rijmen"
  },
+ "w.been": {
+  "file": "w.been.941f24db73.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Been?"
+ },
+ "w.been+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.been_rijm.en_w.bed_klank.zelfde.7163ba1c3a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ben en bed, die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.been_rijm.en_w.beer_klank.zelfde.c2d415ed34.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ben en Beer, die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.been_rijm.en_w.bes_klank.zelfde.c20b35361d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ben en Bas die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.been_rijm.en_w.boek_klank.zelfde.1398f12a30.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en boek, die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.been_rijm.en_w.boom_klank.zelfde.72797a4f46.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en boom. Die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.been_rijm.en_w.boot_klank.zelfde.806231e7e9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en boot, die beginnen hetzelfde"
+ },
+ "w.been+rijm.en+w.steen+rijm.rijmen": {
+  "file": "w.been_rijm.en_w.steen_rijm.rijmen.7ad0a2d6de.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Ben en Steen, die rijmen",
+  "reason": "andere woorden"
+ },
  "w.beer": {
   "file": "w.beer.45864e3dc5.mp3",
   "ok": true,
@@ -8854,6 +9440,18 @@
   "ok": true,
   "abrupt": false,
   "heard": "Beer en bed, die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.been+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.been_klank.zelfde.c87bdc29e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en been. Die beginnen hetzelfde"
+ },
+ "w.beer+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.beer_rijm.en_w.bes_klank.zelfde.9146b906e8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Beer en Bes die beginnen hetzelfde"
  },
  "w.beer+rijm.en+w.boek+klank.zelfde": {
   "file": "w.beer_rijm.en_w.boek_klank.zelfde.db291e839d.mp3",
@@ -8879,6 +9477,56 @@
   "abrupt": false,
   "heard": "Beer en veer die rijmen"
  },
+ "w.bes": {
+  "file": "w.bes.e58840487b.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Best",
+  "reason": "ander woord"
+ },
+ "w.bes+rijm.en+w.bed+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.bed_klank.zelfde.e5bca4b25e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pers en bed, die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.been+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.been_klank.zelfde.3ce3080681.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pes en been. Die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.beer+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.beer_klank.zelfde.6a73ae22de.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bes en beer. Die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.boek+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.boek_klank.zelfde.fd54b9c1ff.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pes en boek. Die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.boom+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.boom_klank.zelfde.d81204aa89.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bes en boom, die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.boot+klank.zelfde": {
+  "file": "w.bes_rijm.en_w.boot_klank.zelfde.6b7a7c428d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Bes en boot, die beginnen hetzelfde"
+ },
+ "w.bes+rijm.en+w.mes+rijm.rijmen": {
+  "file": "w.bes_rijm.en_w.mes_rijm.rijmen.a0a7c79f7b.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "SMS die rijmen",
+  "reason": "andere woorden"
+ },
  "w.boek": {
   "file": "w.boek.160226ae10.mp3",
   "ok": true,
@@ -8891,11 +9539,23 @@
   "abrupt": false,
   "heard": "Boek en bed die beginnen hetzelfde"
  },
+ "w.boek+rijm.en+w.been+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.been_klank.zelfde.aaae075d3e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en been, die beginnen hetzelfde"
+ },
  "w.boek+rijm.en+w.beer+klank.zelfde": {
   "file": "w.boek_rijm.en_w.beer_klank.zelfde.08c0a579a5.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Boek en beer, die beginnen hetzelfde"
+ },
+ "w.boek+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.boek_rijm.en_w.bes_klank.zelfde.7d3ef8e5d2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en Bes die beginnen hetzelfde"
  },
  "w.boek+rijm.en+w.boom+klank.zelfde": {
   "file": "w.boek_rijm.en_w.boom_klank.zelfde.c1c05d0ef6.mp3",
@@ -8909,6 +9569,12 @@
   "abrupt": false,
   "heard": "Boek en boot die beginnen hetzelfde"
  },
+ "w.boek+rijm.en+w.koek+rijm.rijmen": {
+  "file": "w.boek_rijm.en_w.koek_rijm.rijmen.e415351471.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boek en koek die rijmen"
+ },
  "w.boom": {
   "file": "w.boom.10a288542a.mp3",
   "ok": true,
@@ -8921,11 +9587,23 @@
   "abrupt": false,
   "heard": "Boom en Beth, die beginnen hetzelfde"
  },
+ "w.boom+rijm.en+w.been+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.been_klank.zelfde.fdf9f9d9e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom en been. Die beginnen hetzelfde"
+ },
  "w.boom+rijm.en+w.beer+klank.zelfde": {
   "file": "w.boom_rijm.en_w.beer_klank.zelfde.bd6f95b2ca.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Boem en beer. Die beginnen hetzelfde"
+ },
+ "w.boom+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.boom_rijm.en_w.bes_klank.zelfde.27ccdfd6c2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boom en Bes? Die beginnen hetzelfde"
  },
  "w.boom+rijm.en+w.boek+klank.zelfde": {
   "file": "w.boom_rijm.en_w.boek_klank.zelfde.235d0fff36.mp3",
@@ -8951,11 +9629,23 @@
   "abrupt": false,
   "heard": "Boot en bed die beginnen hetzelfde"
  },
+ "w.boot+rijm.en+w.been+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.been_klank.zelfde.0b19b1a2f1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en been, die beginnen hetzelfde"
+ },
  "w.boot+rijm.en+w.beer+klank.zelfde": {
   "file": "w.boot_rijm.en_w.beer_klank.zelfde.8aca86f7b2.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Boot en beer, die beginnen hetzelfde"
+ },
+ "w.boot+rijm.en+w.bes+klank.zelfde": {
+  "file": "w.boot_rijm.en_w.bes_klank.zelfde.2e0fde0a0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Boot en Bes, die beginnen hetzelfde"
  },
  "w.boot+rijm.en+w.boek+klank.zelfde": {
   "file": "w.boot_rijm.en_w.boek_klank.zelfde.3bba94ccd5.mp3",
@@ -8969,6 +9659,13 @@
   "abrupt": false,
   "heard": "Boot en boom. Die beginnen hetzelfde"
  },
+ "w.boot+rijm.en+w.noot+rijm.rijmen": {
+  "file": "w.boot_rijm.en_w.noot_rijm.rijmen.26083aa28f.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Poot en noot die rijmen",
+  "reason": "andere woorden"
+ },
  "w.deur": {
   "file": "w.deur.9a02637f96.mp3",
   "ok": true,
@@ -8980,6 +9677,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Deur en doos? Die beginnen hetzelfde"
+ },
+ "w.deur+rijm.en+w.duim+klank.zelfde": {
+  "file": "w.deur_rijm.en_w.duim_klank.zelfde.bdd857f251.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Deur en duim. Die beginnen hetzelfde"
  },
  "w.doos": {
   "file": "w.doos.bbf539deb3.mp3",
@@ -8993,17 +9696,73 @@
   "abrupt": false,
   "heard": "Doos en deur, die beginnen hetzelfde"
  },
+ "w.doos+rijm.en+w.duim+klank.zelfde": {
+  "file": "w.doos_rijm.en_w.duim_klank.zelfde.3bf1ee3227.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Doos en duim. Die beginnen hetzelfde"
+ },
  "w.doos+rijm.en+w.roos+rijm.rijmen": {
   "file": "w.doos_rijm.en_w.roos_rijm.rijmen.15bf076cf8.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Doos en Roos die rijmen"
  },
+ "w.duim": {
+  "file": "w.duim.70e8915ed2.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Douw?",
+  "reason": "ander woord"
+ },
+ "w.duim+rijm.en+w.deur+klank.zelfde": {
+  "file": "w.duim_rijm.en_w.deur_klank.zelfde.b2ee8c8d1d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Duim en deur, die beginnen hetzelfde"
+ },
+ "w.duim+rijm.en+w.doos+klank.zelfde": {
+  "file": "w.duim_rijm.en_w.doos_klank.zelfde.22c5586e15.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dime en do's die beginnen hetzelfde"
+ },
+ "w.ham": {
+  "file": "w.ham.fb7793a504.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ham"
+ },
+ "w.ham+rijm.en+w.hoed+klank.zelfde": {
+  "file": "w.ham_rijm.en_w.hoed_klank.zelfde.8ad10f6573.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ham en hoed, die beginnen hetzelfde"
+ },
+ "w.ham+rijm.en+w.huis+klank.zelfde": {
+  "file": "w.ham_rijm.en_w.huis_klank.zelfde.fd7ee0c4e6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ham en huis, die beginnen hetzelfde"
+ },
+ "w.ham+rijm.en+w.kam+rijm.rijmen": {
+  "file": "w.ham_rijm.en_w.kam_rijm.rijmen.dd7795c2b3.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Ham en kamp die rijmen?",
+  "reason": "andere woorden"
+ },
  "w.hoed": {
   "file": "w.hoed.213f47daef.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Hoed"
+ },
+ "w.hoed+rijm.en+w.ham+klank.zelfde": {
+  "file": "w.hoed_rijm.en_w.ham_klank.zelfde.59870cacd7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Hoed en ham, die beginnen hetzelfde"
  },
  "w.hoed+rijm.en+w.huis+klank.zelfde": {
   "file": "w.hoed_rijm.en_w.huis_klank.zelfde.54884294a7.mp3",
@@ -9022,6 +9781,13 @@
   "ok": true,
   "abrupt": false,
   "heard": "Huis"
+ },
+ "w.huis+rijm.en+w.ham+klank.zelfde": {
+  "file": "w.huis_rijm.en_w.ham_klank.zelfde.607dfac54b.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Hij is een ham. Die beginnen hetzelfde",
+  "reason": "andere woorden"
  },
  "w.huis+rijm.en+w.hoed+klank.zelfde": {
   "file": "w.huis_rijm.en_w.hoed_klank.zelfde.e7d48692a8.mp3",
@@ -9053,17 +9819,73 @@
   "abrupt": false,
   "heard": "Kaas"
  },
+ "w.kaas+rijm.en+w.kam+klank.zelfde": {
+  "file": "w.kaas_rijm.en_w.kam_klank.zelfde.8b09150703.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas en kam, die beginnen hetzelfde"
+ },
  "w.kaas+rijm.en+w.kip+klank.zelfde": {
   "file": "w.kaas_rijm.en_w.kip_klank.zelfde.55c2ee8c5e.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kaas en kip. Die beginnen hetzelfde"
  },
+ "w.kaas+rijm.en+w.koek+klank.zelfde": {
+  "file": "w.kaas_rijm.en_w.koek_klank.zelfde.efb8785019.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas en koek. Die beginnen hetzelfde"
+ },
  "w.kaas+rijm.en+w.kop+klank.zelfde": {
   "file": "w.kaas_rijm.en_w.kop_klank.zelfde.2bcf2e91b2.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kaas en kop die beginnen hetzelfde"
+ },
+ "w.kaas+rijm.en+w.vaas+rijm.rijmen": {
+  "file": "w.kaas_rijm.en_w.vaas_rijm.rijmen.6c23475f97.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kaas en vaas die rijmen"
+ },
+ "w.kam": {
+  "file": "w.kam.1eeea8cd46.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Kom",
+  "reason": "ander woord"
+ },
+ "w.kam+rijm.en+w.ham+rijm.rijmen": {
+  "file": "w.kam_rijm.en_w.ham_rijm.rijmen.b37895d5c3.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Kom in ham die rijmen",
+  "reason": "andere woorden"
+ },
+ "w.kam+rijm.en+w.kaas+klank.zelfde": {
+  "file": "w.kam_rijm.en_w.kaas_klank.zelfde.385e05e76b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kam en kaas? Die beginnen hetzelfde"
+ },
+ "w.kam+rijm.en+w.kip+klank.zelfde": {
+  "file": "w.kam_rijm.en_w.kip_klank.zelfde.47bfcf3ad5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kam en kip, die beginnen hetzelfde"
+ },
+ "w.kam+rijm.en+w.koek+klank.zelfde": {
+  "file": "w.kam_rijm.en_w.koek_klank.zelfde.f7a7ea1484.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kam en koek, die beginnen hetzelfde"
+ },
+ "w.kam+rijm.en+w.kop+klank.zelfde": {
+  "file": "w.kam_rijm.en_w.kop_klank.zelfde.5c2e4e3299.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kam en kop, die beginnen hetzelfde"
  },
  "w.kip": {
   "file": "w.kip.633aa852a3.mp3",
@@ -9077,6 +9899,18 @@
   "abrupt": false,
   "heard": "Kip en kaas, die beginnen hetzelfde"
  },
+ "w.kip+rijm.en+w.kam+klank.zelfde": {
+  "file": "w.kip_rijm.en_w.kam_klank.zelfde.b784bc2858.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip en kam, die beginnen hetzelfde"
+ },
+ "w.kip+rijm.en+w.koek+klank.zelfde": {
+  "file": "w.kip_rijm.en_w.koek_klank.zelfde.611f55c8f9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kip en koek, die beginnen hetzelfde"
+ },
  "w.kip+rijm.en+w.kop+klank.zelfde": {
   "file": "w.kip_rijm.en_w.kop_klank.zelfde.218d45103f.mp3",
   "ok": true,
@@ -9088,6 +9922,42 @@
   "ok": true,
   "abrupt": false,
   "heard": "Kip en schip die rijmen"
+ },
+ "w.koek": {
+  "file": "w.koek.d29916387e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek?"
+ },
+ "w.koek+rijm.en+w.boek+rijm.rijmen": {
+  "file": "w.koek_rijm.en_w.boek_rijm.rijmen.72ed98008a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek en boek die rijmen"
+ },
+ "w.koek+rijm.en+w.kaas+klank.zelfde": {
+  "file": "w.koek_rijm.en_w.kaas_klank.zelfde.232348c08b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek en kaas. Die beginnen hetzelfde"
+ },
+ "w.koek+rijm.en+w.kam+klank.zelfde": {
+  "file": "w.koek_rijm.en_w.kam_klank.zelfde.e83ebdfd1e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek en kam, die beginnen hetzelfde"
+ },
+ "w.koek+rijm.en+w.kip+klank.zelfde": {
+  "file": "w.koek_rijm.en_w.kip_klank.zelfde.d5e7df7f98.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek en kip. Die beginnen hetzelfde"
+ },
+ "w.koek+rijm.en+w.kop+klank.zelfde": {
+  "file": "w.koek_rijm.en_w.kop_klank.zelfde.88633cf78b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Koek en kop, die beginnen hetzelfde"
  },
  "w.kop": {
   "file": "w.kop.bae8d4ecfa.mp3",
@@ -9101,11 +9971,23 @@
   "abrupt": false,
   "heard": "Kop en kaas, die beginnen hetzelfde"
  },
+ "w.kop+rijm.en+w.kam+klank.zelfde": {
+  "file": "w.kop_rijm.en_w.kam_klank.zelfde.b715087edb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop en kam? Die beginnen hetzelfde"
+ },
  "w.kop+rijm.en+w.kip+klank.zelfde": {
   "file": "w.kop_rijm.en_w.kip_klank.zelfde.06820fab22.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Kop en kip, die beginnen hetzelfde"
+ },
+ "w.kop+rijm.en+w.koek+klank.zelfde": {
+  "file": "w.kop_rijm.en_w.koek_klank.zelfde.eedc83ba0c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Kop en koek, die beginnen hetzelfde"
  },
  "w.kop+rijm.en+w.pop+rijm.rijmen": {
   "file": "w.kop_rijm.en_w.pop_rijm.rijmen.03b024de83.mp3",
@@ -9138,11 +10020,104 @@
   "abrupt": false,
   "heard": "Maan en kraan die rijmen"
  },
+ "w.maan+rijm.en+w.man+klank.zelfde": {
+  "file": "w.maan_rijm.en_w.man_klank.zelfde.2f89e572e0.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maand en man, die beginnen hetzelfde"
+ },
+ "w.maan+rijm.en+w.mes+klank.zelfde": {
+  "file": "w.maan_rijm.en_w.mes_klank.zelfde.d144be4cd1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maand en mes, die beginnen hetzelfde"
+ },
  "w.maan+rijm.en+w.muis+klank.zelfde": {
   "file": "w.maan_rijm.en_w.muis_klank.zelfde.5c477303fe.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Maan en muis die beginnen hetzelfde"
+ },
+ "w.maan+rijm.en+w.muur+klank.zelfde": {
+  "file": "w.maan_rijm.en_w.muur_klank.zelfde.376613ee39.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Maan en muur, die beginnen hetzelfde"
+ },
+ "w.man": {
+  "file": "w.man.ac1c3431e0.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Mama?",
+  "reason": "ander woord"
+ },
+ "w.man+rijm.en+w.maan+klank.zelfde": {
+  "file": "w.man_rijm.en_w.maan_klank.zelfde.71a0adb151.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Man en maan, die beginnen hetzelfde"
+ },
+ "w.man+rijm.en+w.mes+klank.zelfde": {
+  "file": "w.man_rijm.en_w.mes_klank.zelfde.beace3fa7e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Man en mes. Die beginnen hetzelfde"
+ },
+ "w.man+rijm.en+w.muis+klank.zelfde": {
+  "file": "w.man_rijm.en_w.muis_klank.zelfde.1f148b241f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Man en muis, die beginnen hetzelfde"
+ },
+ "w.man+rijm.en+w.muur+klank.zelfde": {
+  "file": "w.man_rijm.en_w.muur_klank.zelfde.39054b8ae1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Man en muur, die beginnen hetzelfde"
+ },
+ "w.man+rijm.en+w.pan+rijm.rijmen": {
+  "file": "w.man_rijm.en_w.pan_rijm.rijmen.1104cf7679.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Man en pan die rijmen"
+ },
+ "w.mes": {
+  "file": "w.mes.334744bd52.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "mess",
+  "reason": "ander woord"
+ },
+ "w.mes+rijm.en+w.bes+rijm.rijmen": {
+  "file": "w.mes_rijm.en_w.bes_rijm.rijmen.6e8056ae70.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Mes en best die rijmen",
+  "reason": "andere woorden"
+ },
+ "w.mes+rijm.en+w.maan+klank.zelfde": {
+  "file": "w.mes_rijm.en_w.maan_klank.zelfde.2a118ce5e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Mes en maan, die beginnen hetzelfde"
+ },
+ "w.mes+rijm.en+w.man+klank.zelfde": {
+  "file": "w.mes_rijm.en_w.man_klank.zelfde.83da4b4334.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Mes en man, die beginnen hetzelfde"
+ },
+ "w.mes+rijm.en+w.muis+klank.zelfde": {
+  "file": "w.mes_rijm.en_w.muis_klank.zelfde.fe97847236.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Mes en muis, die beginnen hetzelfde"
+ },
+ "w.mes+rijm.en+w.muur+klank.zelfde": {
+  "file": "w.mes_rijm.en_w.muur_klank.zelfde.7b15387888.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Mes en muur, die beginnen hetzelfde"
  },
  "w.muis": {
   "file": "w.muis.82ee936429.mp3",
@@ -9162,11 +10137,107 @@
   "abrupt": false,
   "heard": "Muis en maan. Die beginnen hetzelfde"
  },
+ "w.muis+rijm.en+w.man+klank.zelfde": {
+  "file": "w.muis_rijm.en_w.man_klank.zelfde.9f778acaf3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis en man, die beginnen hetzelfde"
+ },
+ "w.muis+rijm.en+w.mes+klank.zelfde": {
+  "file": "w.muis_rijm.en_w.mes_klank.zelfde.3be2b066c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis en mes, die beginnen hetzelfde"
+ },
+ "w.muis+rijm.en+w.muur+klank.zelfde": {
+  "file": "w.muis_rijm.en_w.muur_klank.zelfde.d4c31c6956.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muis en muur, die beginnen hetzelfde"
+ },
+ "w.muur": {
+  "file": "w.muur.848c5f2a49.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur?"
+ },
+ "w.muur+rijm.en+w.maan+klank.zelfde": {
+  "file": "w.muur_rijm.en_w.maan_klank.zelfde.c912fae80e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur en maan, die beginnen hetzelfde"
+ },
+ "w.muur+rijm.en+w.man+klank.zelfde": {
+  "file": "w.muur_rijm.en_w.man_klank.zelfde.8f8dba2b54.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur en man, die beginnen hetzelfde"
+ },
+ "w.muur+rijm.en+w.mes+klank.zelfde": {
+  "file": "w.muur_rijm.en_w.mes_klank.zelfde.cf741baacc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur en mes die beginnen hetzelfde"
+ },
+ "w.muur+rijm.en+w.muis+klank.zelfde": {
+  "file": "w.muur_rijm.en_w.muis_klank.zelfde.11d666128c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur en muis, die beginnen hetzelfde"
+ },
+ "w.muur+rijm.en+w.vuur+rijm.rijmen": {
+  "file": "w.muur_rijm.en_w.vuur_rijm.rijmen.f368c8232e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Muur en vuur die rijmen"
+ },
+ "w.neus": {
+  "file": "w.neus.a1265eaec3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Neus"
+ },
+ "w.neus+rijm.en+w.noot+klank.zelfde": {
+  "file": "w.neus_rijm.en_w.noot_klank.zelfde.c9ce93ece7.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Neus en noot, die beginnen hetzelfde"
+ },
+ "w.noot": {
+  "file": "w.noot.0fe875ada4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Noot"
+ },
+ "w.noot+rijm.en+w.boot+rijm.rijmen": {
+  "file": "w.noot_rijm.en_w.boot_rijm.rijmen.5a59a6c39d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Noot en boot die rijmen"
+ },
+ "w.noot+rijm.en+w.neus+klank.zelfde": {
+  "file": "w.noot_rijm.en_w.neus_klank.zelfde.9ecf185726.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Noot en neus die beginnen hetzelfde"
+ },
  "w.paard": {
   "file": "w.paard.5495113e9d.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Paard"
+ },
+ "w.paard+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.pan_klank.zelfde.38c3d3cffc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en pan? Die beginnen hetzelfde"
+ },
+ "w.paard+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.pen_klank.zelfde.5dcc45e310.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en pen, die beginnen hetzelfde"
  },
  "w.paard+rijm.en+w.pet+klank.zelfde": {
   "file": "w.paard_rijm.en_w.pet_klank.zelfde.6371d4eeda.mp3",
@@ -9186,11 +10257,109 @@
   "abrupt": false,
   "heard": "Paard en pop? Die beginnen hetzelfde"
  },
+ "w.paard+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.paard_rijm.en_w.pot_klank.zelfde.1f55e08d95.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Paard en pot. Die beginnen hetzelfde"
+ },
  "w.paard+rijm.en+w.taart+rijm.rijmen": {
   "file": "w.paard_rijm.en_w.taart_rijm.rijmen.f7a6b2f45b.mp3",
   "ok": true,
   "abrupt": false,
   "heard": "Paard en taart die rijmen"
+ },
+ "w.pan": {
+  "file": "w.pan.00d5d503d5.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Pam?",
+  "reason": "ander woord"
+ },
+ "w.pan+rijm.en+w.man+rijm.rijmen": {
+  "file": "w.pan_rijm.en_w.man_rijm.rijmen.72b9d4454d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en man die rijmen"
+ },
+ "w.pan+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.paard_klank.zelfde.8d2e02c7a3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en paard, die beginnen hetzelfde"
+ },
+ "w.pan+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.pen_klank.zelfde.ab29423c73.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en pen, die beginnen hetzelfde"
+ },
+ "w.pan+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.pet_klank.zelfde.24de9f8b4a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en pet die beginnen hetzelfde"
+ },
+ "w.pan+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.poes_klank.zelfde.3534c2bf3e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en poes, die beginnen hetzelfde"
+ },
+ "w.pan+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.pop_klank.zelfde.bbf972002b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en pop, die beginnen hetzelfde"
+ },
+ "w.pan+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.pan_rijm.en_w.pot_klank.zelfde.2b33b59de5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pan en pot, die beginnen hetzelfde"
+ },
+ "w.pen": {
+  "file": "w.pen.78823774e1.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Ben?",
+  "reason": "ander woord"
+ },
+ "w.pen+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.paard_klank.zelfde.18925d7e01.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en paard. Die beginnen hetzelfde"
+ },
+ "w.pen+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.pan_klank.zelfde.c0a2d75bfa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en pan, die beginnen hetzelfde"
+ },
+ "w.pen+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.pet_klank.zelfde.7c575e4d48.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en pet die beginnen hetzelfde"
+ },
+ "w.pen+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.poes_klank.zelfde.c10f631b9e.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en poes. Die beginnen hetzelfde"
+ },
+ "w.pen+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.pop_klank.zelfde.b556ef895b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en pop, die beginnen hetzelfde"
+ },
+ "w.pen+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.pen_rijm.en_w.pot_klank.zelfde.9b2c3547fd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pen en pot die beginnen hetzelfde"
  },
  "w.pet": {
   "file": "w.pet.f722c23606.mp3",
@@ -9210,6 +10379,18 @@
   "abrupt": false,
   "heard": "Pet en paard, die beginnen hetzelfde"
  },
+ "w.pet+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.pan_klank.zelfde.a9e2716c5c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pat en Pan, die beginnen hetzelfde"
+ },
+ "w.pet+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.pen_klank.zelfde.01942b3054.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en pen, die beginnen hetzelfde"
+ },
  "w.pet+rijm.en+w.poes+klank.zelfde": {
   "file": "w.pet_rijm.en_w.poes_klank.zelfde.fa1ecbddc3.mp3",
   "ok": true,
@@ -9221,6 +10402,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Pet en Pop? Die beginnen hetzelfde"
+ },
+ "w.pet+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.pet_rijm.en_w.pot_klank.zelfde.2c4c891935.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pet en pot, die beginnen hetzelfde"
  },
  "w.poes": {
   "file": "w.poes.933da4e64c.mp3",
@@ -9234,6 +10421,18 @@
   "abrupt": false,
   "heard": "Poes en paard, die beginnen hetzelfde"
  },
+ "w.poes+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.pan_klank.zelfde.1dc1e34404.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en Pan? Die beginnen hetzelfde"
+ },
+ "w.poes+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.pen_klank.zelfde.9646dfa04f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en Pen? Die beginnen hetzelfde"
+ },
  "w.poes+rijm.en+w.pet+klank.zelfde": {
   "file": "w.poes_rijm.en_w.pet_klank.zelfde.5e7ad910e1.mp3",
   "ok": true,
@@ -9245,6 +10444,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Poes en pop die beginnen hetzelfde"
+ },
+ "w.poes+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.poes_rijm.en_w.pot_klank.zelfde.c5d58a86e6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Poes en Pot, die beginnen hetzelfde"
  },
  "w.pop": {
   "file": "w.pop.b0661edca5.mp3",
@@ -9264,6 +10469,18 @@
   "abrupt": false,
   "heard": "Pop en paard, die beginnen hetzelfde"
  },
+ "w.pop+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.pan_klank.zelfde.bb7ba10363.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en pan, die beginnen hetzelfde"
+ },
+ "w.pop+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.pen_klank.zelfde.53c6607687.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en pen, die beginnen hetzelfde"
+ },
  "w.pop+rijm.en+w.pet+klank.zelfde": {
   "file": "w.pop_rijm.en_w.pet_klank.zelfde.84ca696a42.mp3",
   "ok": true,
@@ -9275,6 +10492,97 @@
   "ok": true,
   "abrupt": false,
   "heard": "Pop en poes, die beginnen hetzelfde"
+ },
+ "w.pop+rijm.en+w.pot+klank.zelfde": {
+  "file": "w.pop_rijm.en_w.pot_klank.zelfde.d169672383.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pop en pot, die beginnen hetzelfde"
+ },
+ "w.pot": {
+  "file": "w.pot.79d57bbe8d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot"
+ },
+ "w.pot+rijm.en+w.paard+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.paard_klank.zelfde.7448535af4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en paard. Die beginnen hetzelfde"
+ },
+ "w.pot+rijm.en+w.pan+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.pan_klank.zelfde.e0f0c44e9c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en pan, die beginnen hetzelfde"
+ },
+ "w.pot+rijm.en+w.pen+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.pen_klank.zelfde.0f2cc889cb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en pen, die beginnen hetzelfde"
+ },
+ "w.pot+rijm.en+w.pet+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.pet_klank.zelfde.fdb32930d2.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en pet, die beginnen hetzelfde"
+ },
+ "w.pot+rijm.en+w.poes+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.poes_klank.zelfde.ea80ba76e3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en poes. Die beginnen hetzelfde"
+ },
+ "w.pot+rijm.en+w.pop+klank.zelfde": {
+  "file": "w.pot_rijm.en_w.pop_klank.zelfde.31e7850b7b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Pot en pop, die beginnen hetzelfde"
+ },
+ "w.raam": {
+  "file": "w.raam.0e814e4bb1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Raam"
+ },
+ "w.raam+rijm.en+w.rok+klank.zelfde": {
+  "file": "w.raam_rijm.en_w.rok_klank.zelfde.1e0a67fd8b.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Raam en rok, die beginnen hetzelfde"
+ },
+ "w.raam+rijm.en+w.roos+klank.zelfde": {
+  "file": "w.raam_rijm.en_w.roos_klank.zelfde.b029fff4cd.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Raam en Roos. Die beginnen hetzelfde"
+ },
+ "w.rok": {
+  "file": "w.rok.bff08cfe9c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Rok"
+ },
+ "w.rok+rijm.en+w.raam+klank.zelfde": {
+  "file": "w.rok_rijm.en_w.raam_klank.zelfde.5ca1ffe0e9.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Rok en raam, die beginnen hetzelfde"
+ },
+ "w.rok+rijm.en+w.roos+klank.zelfde": {
+  "file": "w.rok_rijm.en_w.roos_klank.zelfde.4a8b5c5e84.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Rock en Roos die beginnen hetzelfde"
+ },
+ "w.rok+rijm.en+w.sok+rijm.rijmen": {
+  "file": "w.rok_rijm.en_w.sok_rijm.rijmen.4aac6353ed.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Rock en sock die rijmen",
+  "reason": "andere woorden"
  },
  "w.roos": {
   "file": "w.roos.ea7f915492.mp3",
@@ -9288,6 +10596,18 @@
   "abrupt": false,
   "heard": "Roos en doos die rijmen"
  },
+ "w.roos+rijm.en+w.raam+klank.zelfde": {
+  "file": "w.roos_rijm.en_w.raam_klank.zelfde.a41d98f5bb.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Roos en Raam? Die beginnen hetzelfde"
+ },
+ "w.roos+rijm.en+w.rok+klank.zelfde": {
+  "file": "w.roos_rijm.en_w.rok_klank.zelfde.64d527f535.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Roos en Rok, die beginnen hetzelfde"
+ },
  "w.schip": {
   "file": "w.schip.b6ec797c27.mp3",
   "ok": true,
@@ -9299,6 +10619,50 @@
   "ok": true,
   "abrupt": false,
   "heard": "Schip en kip die rijmen"
+ },
+ "w.soep": {
+  "file": "w.soep.189ee50533.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Soep"
+ },
+ "w.soep+rijm.en+w.sok+klank.zelfde": {
+  "file": "w.soep_rijm.en_w.sok_klank.zelfde.2ffa756de4.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Soep en sok. Die beginnen hetzelfde"
+ },
+ "w.sok": {
+  "file": "w.sok.a79674bbd7.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Is oké",
+  "reason": "ander woord"
+ },
+ "w.sok+rijm.en+w.rok+rijm.rijmen": {
+  "file": "w.sok_rijm.en_w.rok_rijm.rijmen.8569e5ede1.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Sok en rok die rijmen?"
+ },
+ "w.sok+rijm.en+w.soep+klank.zelfde": {
+  "file": "w.sok_rijm.en_w.soep_klank.zelfde.d361447e97.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Sok en soep, die beginnen hetzelfde"
+ },
+ "w.steen": {
+  "file": "w.steen.97d659e956.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Stijn",
+  "reason": "ander woord"
+ },
+ "w.steen+rijm.en+w.been+rijm.rijmen": {
+  "file": "w.steen_rijm.en_w.been_rijm.rijmen.ec7a47dc27.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Steen en been. Die rijmen"
  },
  "w.taart": {
   "file": "w.taart.852cd0af9e.mp3",
@@ -9312,6 +10676,12 @@
   "abrupt": false,
   "heard": "Taart en paard die rijmen"
  },
+ "w.taart+rijm.en+w.tak+klank.zelfde": {
+  "file": "w.taart_rijm.en_w.tak_klank.zelfde.40ef186937.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Taart en tak? Die beginnen hetzelfde"
+ },
  "w.taart+rijm.en+w.tas+klank.zelfde": {
   "file": "w.taart_rijm.en_w.tas_klank.zelfde.04f23715aa.mp3",
   "ok": true,
@@ -9323,6 +10693,30 @@
   "ok": true,
   "abrupt": false,
   "heard": "Taart en Ton, die beginnen hetzelfde"
+ },
+ "w.tak": {
+  "file": "w.tak.d0c594edca.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tak?"
+ },
+ "w.tak+rijm.en+w.taart+klank.zelfde": {
+  "file": "w.tak_rijm.en_w.taart_klank.zelfde.dcc19c34aa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Dak en taart? Die beginnen hetzelfde"
+ },
+ "w.tak+rijm.en+w.tas+klank.zelfde": {
+  "file": "w.tak_rijm.en_w.tas_klank.zelfde.daf4ca130a.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tak en tas. Die beginnen hetzelfde"
+ },
+ "w.tak+rijm.en+w.ton+klank.zelfde": {
+  "file": "w.tak_rijm.en_w.ton_klank.zelfde.18517a8a7d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tak en Ton, die beginnen hetzelfde"
  },
  "w.tas": {
   "file": "w.tas.11db63907c.mp3",
@@ -9342,6 +10736,12 @@
   "abrupt": false,
   "heard": "Tas en taart. Die beginnen hetzelfde"
  },
+ "w.tas+rijm.en+w.tak+klank.zelfde": {
+  "file": "w.tas_rijm.en_w.tak_klank.zelfde.757fd646c3.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Tas en Tak, die beginnen hetzelfde"
+ },
  "w.tas+rijm.en+w.ton+klank.zelfde": {
   "file": "w.tas_rijm.en_w.ton_klank.zelfde.03addc93a1.mp3",
   "ok": true,
@@ -9360,6 +10760,12 @@
   "abrupt": false,
   "heard": "Ton en taart, die beginnen hetzelfde"
  },
+ "w.ton+rijm.en+w.tak+klank.zelfde": {
+  "file": "w.ton_rijm.en_w.tak_klank.zelfde.e47238903f.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Ton en Tak, die beginnen hetzelfde"
+ },
  "w.ton+rijm.en+w.tas+klank.zelfde": {
   "file": "w.ton_rijm.en_w.tas_klank.zelfde.d1ebe858f1.mp3",
   "ok": true,
@@ -9371,6 +10777,43 @@
   "ok": true,
   "abrupt": false,
   "heard": "Ton en zon die rijmen"
+ },
+ "w.vaas": {
+  "file": "w.vaas.cce11906af.mp3",
+  "ok": false,
+  "abrupt": false,
+  "heard": "Vas",
+  "reason": "ander woord"
+ },
+ "w.vaas+rijm.en+w.kaas+rijm.rijmen": {
+  "file": "w.vaas_rijm.en_w.kaas_rijm.rijmen.6df144e93c.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vaas en kaas die rijmen"
+ },
+ "w.vaas+rijm.en+w.veer+klank.zelfde": {
+  "file": "w.vaas_rijm.en_w.veer_klank.zelfde.cc6a1a83fe.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vaas en veer, die beginnen hetzelfde"
+ },
+ "w.vaas+rijm.en+w.vis+klank.zelfde": {
+  "file": "w.vaas_rijm.en_w.vis_klank.zelfde.0f8cbc9dbc.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vaas en vis? Die beginnen hetzelfde"
+ },
+ "w.vaas+rijm.en+w.voet+klank.zelfde": {
+  "file": "w.vaas_rijm.en_w.voet_klank.zelfde.547a218e09.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vaas en voet, die beginnen hetzelfde"
+ },
+ "w.vaas+rijm.en+w.vuur+klank.zelfde": {
+  "file": "w.vaas_rijm.en_w.vuur_klank.zelfde.db9e37b7f8.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vaas en vuur, die beginnen hetzelfde"
  },
  "w.veer": {
   "file": "w.veer.a731381e22.mp3",
@@ -9384,6 +10827,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Veer en beer die rijmen"
+ },
+ "w.veer+rijm.en+w.vaas+klank.zelfde": {
+  "file": "w.veer_rijm.en_w.vaas_klank.zelfde.44881d23c6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Veer en vaas, die beginnen hetzelfde"
  },
  "w.veer+rijm.en+w.vis+klank.zelfde": {
   "file": "w.veer_rijm.en_w.vis_klank.zelfde.a7366ca107.mp3",
@@ -9408,6 +10857,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Vis"
+ },
+ "w.vis+rijm.en+w.vaas+klank.zelfde": {
+  "file": "w.vis_rijm.en_w.vaas_klank.zelfde.71af93ee4d.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vis en vaas. Die beginnen hetzelfde"
  },
  "w.vis+rijm.en+w.veer+klank.zelfde": {
   "file": "w.vis_rijm.en_w.veer_klank.zelfde.a2175bae9d.mp3",
@@ -9439,6 +10894,12 @@
   "abrupt": false,
   "heard": "Voet en hoed die rijmen"
  },
+ "w.voet+rijm.en+w.vaas+klank.zelfde": {
+  "file": "w.voet_rijm.en_w.vaas_klank.zelfde.482bb5f8ab.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Voet en vaas. Die beginnen hetzelfde"
+ },
  "w.voet+rijm.en+w.veer+klank.zelfde": {
   "file": "w.voet_rijm.en_w.veer_klank.zelfde.183ddfe3fb.mp3",
   "ok": true,
@@ -9463,6 +10924,18 @@
   "abrupt": false,
   "heard": "Vuur"
  },
+ "w.vuur+rijm.en+w.muur+rijm.rijmen": {
+  "file": "w.vuur_rijm.en_w.muur_rijm.rijmen.fb15b785aa.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur en muur die rijmen"
+ },
+ "w.vuur+rijm.en+w.vaas+klank.zelfde": {
+  "file": "w.vuur_rijm.en_w.vaas_klank.zelfde.277b7a73e5.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Vuur en vaas. Die beginnen hetzelfde"
+ },
  "w.vuur+rijm.en+w.veer+klank.zelfde": {
   "file": "w.vuur_rijm.en_w.veer_klank.zelfde.b8b31fca4e.mp3",
   "ok": true,
@@ -9481,6 +10954,18 @@
   "abrupt": false,
   "heard": "Vuur en voet, die beginnen hetzelfde"
  },
+ "w.zeep": {
+  "file": "w.zeep.786ff5cfc6.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeep"
+ },
+ "w.zeep+rijm.en+w.zon+klank.zelfde": {
+  "file": "w.zeep_rijm.en_w.zon_klank.zelfde.8ecf220644.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zeep en zon. Die beginnen hetzelfde"
+ },
  "w.zon": {
   "file": "w.zon.079e7064ed.mp3",
   "ok": true,
@@ -9492,6 +10977,12 @@
   "ok": true,
   "abrupt": false,
   "heard": "Zon en ton die rijmen"
+ },
+ "w.zon+rijm.en+w.zeep+klank.zelfde": {
+  "file": "w.zon_rijm.en_w.zeep_klank.zelfde.dae43ba120.mp3",
+  "ok": true,
+  "abrupt": false,
+  "heard": "Zon en zeep. Die beginnen hetzelfde"
  },
  "wie.mama": {
   "file": "wie.mama.f7e0a906f0.mp3",
