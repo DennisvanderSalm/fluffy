@@ -1,0 +1,4 @@
+inspreken
+# Wijzig dit bestand op main en de stem wordt ingesproken (workflow "Stem inspreken").
+# Eerste regel: proef (kost niets), inspreken, herstellen of controleren.
+# Aangevraagd: 2026-11-16, de 22 nieuwe woorden.
