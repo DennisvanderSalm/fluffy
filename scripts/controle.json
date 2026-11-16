@@ -9517,10 +9517,10 @@
   "heard": "Bes en boot, die beginnen hetzelfde"
  },
  "w.bes+rijm.en+w.mes+rijm.rijmen": {
-  "file": "w.bes_rijm.en_w.mes_rijm.rijmen.e27769f0f7.mp3",
+  "file": "w.bes_rijm.en_w.mes_rijm.rijmen.a509879335.mp3",
   "ok": false,
   "abrupt": false,
-  "heard": "Best en mest die rijmen",
+  "heard": "Bessemes die rijmen?",
   "reason": "andere woorden"
  },
  "w.boek": {
@@ -9849,11 +9849,10 @@
   "heard": "Kam"
  },
  "w.kam+rijm.en+w.ham+rijm.rijmen": {
-  "file": "w.kam_rijm.en_w.ham_rijm.rijmen.6321795381.mp3",
-  "ok": false,
+  "file": "w.kam_rijm.en_w.ham_rijm.rijmen.a7fa649262.mp3",
+  "ok": true,
   "abrupt": false,
-  "heard": "Kan men ham die rijmen?",
-  "reason": "andere woorden"
+  "heard": "Kam en ham, die rijmen"
  },
  "w.kam+rijm.en+w.kaas+klank.zelfde": {
   "file": "w.kam_rijm.en_w.kaas_klank.zelfde.385e05e76b.mp3",
@@ -10768,10 +10767,10 @@
   "heard": "Ton en zon die rijmen"
  },
  "w.vaas": {
-  "file": "w.vaas.cce11906af.mp3",
+  "file": "w.vaas.56454c70ae.mp3",
   "ok": true,
   "abrupt": false,
-  "heard": "Vas",
+  "heard": "Fast",
   "context": "Wat rijmt op vaas"
  },
  "w.vaas+rijm.en+w.kaas+rijm.rijmen": {
