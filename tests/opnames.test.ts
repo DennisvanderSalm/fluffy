@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { afterAll, describe, expect, it } from 'vitest';
 import { decodeMp3, endLoudness, freeDecoder, isAbrupt } from '../scripts/audio';
-import { compareHeard, sttMode, words } from '../scripts/vergelijk';
+import { compareHeard, compareInContext, soundKey, sttMode, words } from '../scripts/vergelijk';
 import { clipJobs } from '../src/core/audio/phrases';
 import { ALL_PHRASES } from '../src/domains';
 import { flaggedCommand, parseFlagged, stillFlagged } from '../src/core/audio/flagged';
@@ -61,6 +61,32 @@ describe('controle met spraakherkenning', () => {
     expect(compareHeard('x', 'Dus het is er één.', 'Dus het is er een')).toBeNull();
     expect(compareHeard('rekt.maan', 'Mmmm… maan', 'mmm maan')).toBeNull();
     expect(compareHeard('rekt.maan', 'Mmmm… maan', 'Maan.')).toBeNull();
+  });
+
+  it('anders opgeschreven maar hetzelfde uitgesproken is goed', () => {
+    expect(compareHeard('w.mes', 'mes', 'mess')).toBeNull();
+    expect(compareHeard('w.veer', 'veer', 'Fear')).toBeNull();
+    expect(compareHeard('x', 'Wat rijmt op kam?', 'Wat rijmt op cam?')).toBeNull();
+    expect(compareHeard('x', 'Wat rijmt op noot?', 'Wat rijmt op nood?')).toBeNull();
+    expect(compareHeard('x', 'Rok en sok, die rijmen.', 'Rock en sock die rijmen')).toBeNull();
+    expect(soundKey('schip')).toBe(soundKey('schip'));
+  });
+
+  it('een andere klinker of een klank erbij is fout', () => {
+    expect(compareHeard('w.kam', 'kam', 'Kom')).toBe('ander woord');
+    expect(compareHeard('w.vaas', 'vaas', 'Vas')).toBe('ander woord');
+    expect(compareHeard('w.steen', 'steen', 'Stijn')).toBe('ander woord');
+    expect(compareHeard('w.bes', 'bes', 'Best')).toBe('ander woord');
+    expect(compareHeard('w.pan', 'pan', 'Pam?')).toBe('ander woord');
+    expect(compareHeard('x', 'Boot en noot, die rijmen.', 'Poot en noot die rijmen')).toBe('andere woorden');
+    expect(compareHeard('x', 'Ham en kam, die rijmen.', 'Ham en kamp die rijmen?')).toBe('andere woorden');
+  });
+
+  it('tweede mening: het woord achter een zinnetje geplakt', () => {
+    expect(compareInContext('kam', 'Wat rijmt op kam?')).toBeNull();
+    expect(compareInContext('mes', 'Wat rijmt op mess')).toBeNull();
+    expect(compareInContext('kam', 'Wat rijmt op kom?')).toBe('ander woord');
+    expect(compareInContext('kam', '')).toBe('niets verstaan');
   });
 
   it('vindt een afgekapt of verkeerd woord', () => {

@@ -112,6 +112,20 @@ precies deze opnames van de woorden. Spreek je een woord opnieuw in, zoek de kni
 op (het script stopt met een melding). De opnames staan in `manifest.json` als eigen opname, dus
 `npm run stem` laat ze met rust. De beste klanken blijven die van een mens: zie hieronder.
 
+### Hoe de opnames gecontroleerd worden
+
+Niemand hoeft alles na te luisteren; drie controles vangen het meeste:
+
+1. **Spraakherkenning** (in `npm run stem`): wat hoort een computer in de opname? Vergeleken op klank,
+   niet op spelling: "mess" is goed voor mes, "kom" niet voor kam (`scripts/vergelijk.ts`).
+2. **Tweede mening voor losse woordjes**: een woord van een halve seconde wordt slecht verstaan. Wordt
+   het afgekeurd, dan plakt het script het achter "Wat rijmt op" en luistert opnieuw. In een zin
+   verstaat spraakherkenning het wel.
+3. **De klinker meten** (`python3 scripts/klinkers.py`, zonder internet): lijkt de klinker op die van
+   de andere woorden met die klinker? Een hulpmiddel: wat bovenaan staat, even zelf beluisteren.
+
+Wat na drie pogingen nog niet klopt, staat in `scripts/controle.json` en in het ouderdeel.
+
 ### Nieuwe woorden toevoegen
 
 1. Zet het woord in `src/domains/lezen/plaatjes.ts` (plaatje, beginklank, klanken, rijmpaar, uitgerekt)

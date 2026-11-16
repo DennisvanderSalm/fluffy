@@ -12,7 +12,7 @@ Gebruik (python3 met numpy en scipy, en ffmpeg met libmp3lame):
 
     python3 scripts/klanken.py            # maakt de opnames en werkt manifest.json bij
     python3 scripts/klanken.py --proef    # schrijft alleen wav's naar /tmp/klanken, om te luisteren
-    python3 scripts/klanken.py --nieuw    # alleen wat er nog niet is (na het inspreken van nieuwe woorden)
+    python3 scripts/klanken.py --nieuw    # alleen wat er nog niet is, of waarvan het woord opnieuw is ingesproken
 
 De opnames komen als "eigen opname" in manifest.json (wel onder clips, niet onder generated), en
 `npm run stem` slaat kl.* en rekt.* altijd over. De knippunten horen bij de opnames in scripts/bron/
@@ -34,6 +34,8 @@ MANIFEST = os.path.join(DIR, 'manifest.json')
 RESULTS = os.path.join(ROOT, 'scripts', 'controle.json')
 BRON = os.path.join(ROOT, 'scripts', 'bron')
 WORDS_TS = os.path.join(ROOT, 'src', 'domains', 'lezen', 'plaatjes.ts')
+# Uit welke opname van het woord elk uitgerekt woord gemaakt is (is het woord opnieuw ingesproken, dan opnieuw).
+BUILT = os.path.join(BRON, 'uitgerekt.json')
 
 # id → (bronopname, begin, eind, bewerking). Tijden in seconden in de bronopname.
 #   ('',)          zo laten
@@ -244,6 +246,12 @@ def main():
         if key in 'vh':
             x = x * min(8.0, 0.35 * vowel / max(peak_rms(x), 1e-9))
         sustained[key] = x
+    try:
+        with open(BUILT) as fh:
+            built = json.load(fh)
+    except FileNotFoundError:
+        built = {}
+    stale = set()
     waiting = []
     for w, key in stretched_words().items():
         cid = f'rekt.{w}'
@@ -252,12 +260,15 @@ def main():
         if f'w.{w}' not in clips:
             waiting.append(w)
             continue
+        if built.get(cid) != clips[f'w.{w}']:
+            stale.add(cid)
+        built[cid] = clips[f'w.{w}']
         word = fade(trim(decode(os.path.join(DIR, clips[f'w.{w}']))), 5, 20)
         out[cid] = finish(np.concatenate([sustained[key], np.zeros(int(PAUSE * SR)), word]))
     if waiting:
         print(f'Nog geen opname van het woord, dus nog niet uitgerekt: {", ".join(waiting)}')
     if only_new:
-        out = {cid: x for cid, x in out.items() if cid not in clips}
+        out = {cid: x for cid, x in out.items() if cid not in clips or cid in stale}
 
     if proef:
         os.makedirs('/tmp/klanken', exist_ok=True)
@@ -296,6 +307,8 @@ def main():
         print(f'  {cid} → {name}')
     with open(MANIFEST, 'w') as fh:
         fh.write(json.dumps(manifest, indent=1, ensure_ascii=False) + '\n')
+    with open(BUILT, 'w') as fh:
+        fh.write(json.dumps(dict(sorted(built.items())), indent=1) + '\n')
     with open(RESULTS, 'w') as fh:
         fh.write(json.dumps(results, indent=1, ensure_ascii=False) + '\n')
 

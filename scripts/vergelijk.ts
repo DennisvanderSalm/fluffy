@@ -55,6 +55,36 @@ export function similarity(a: string, b: string): number {
 }
 
 /**
+ * Hoe een woord klinkt, ruwweg. Spraakherkenning schrijft een los woordje vaak anders op dan het
+ * bedoeld is, terwijl het hetzelfde klinkt: "mess" (mes), "cam" (kam), "nood" (noot), "Fear" (veer),
+ * "Rock en sock" (rok en sok). Klinkers blijven staan: "kom" is geen "kam", "vas" geen "vaas".
+ */
+export function soundKey(word: string): string {
+  return word
+    .replace(/sch/g, 'sg').replace(/ch/g, 'g')
+    .replace(/ck/g, 'k').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/q/g, 'k').replace(/x/g, 'ks')
+    .replace(/ph/g, 'f').replace(/th/g, 't')
+    .replace(/ea(?=r)/g, 'ee').replace(/ij/g, 'ei').replace(/y/g, 'i').replace(/au/g, 'ou')
+    .replace(/v/g, 'f').replace(/z/g, 's')
+    // Dubbele medeklinker klinkt als één ("mess"); aan het eind klinkt d als t en b als p ("nood").
+    .replace(/([^aeiou])\1+/g, '$1')
+    .replace(/d$/, 't').replace(/b$/, 'p');
+}
+const sameSound = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => soundKey(w) === soundKey(b[i]));
+
+/**
+ * Tweede mening voor een los woordje: hetzelfde woord, maar achter een zinnetje geplakt
+ * ("Wat rijmt op" + opname). In een zin verstaat spraakherkenning een woord veel beter.
+ * null als het woord er aan het eind staat.
+ */
+export function compareInContext(intended: string, heard: string): string | null {
+  const want = words(intended);
+  const got = words(heard);
+  if (!got.length) return 'niets verstaan';
+  return sameSound(want, got.slice(-want.length)) ? null : 'ander woord';
+}
+
+/**
  * null als de opname klopt, anders een korte uitleg.
  * - Uitgerekte woordjes ("Mmmm… maan"): het woord aan het eind moet er zijn.
  * - Korte zinnen en losse woorden: precies gelijk.
@@ -69,6 +99,9 @@ export function compareHeard(id: string, intended: string, heard: string): strin
   const b = got.join(' ');
   // "lieve heersbeestjes" of "hetzijner": spaties tellen niet.
   if (a.replace(/ /g, '') === b.replace(/ /g, '')) return null;
+  // Getallen blijven streng (letterlijk): "five" is geen "vijf".
+  const numbers = numbersIn(want).length > 0 || NUMBERS.has(want[0]);
+  if (!numbers && sameSound(want, got)) return null;
   if (want.length === 1) return 'ander woord';
   if (numbersIn(want).join(' ') !== numbersIn(got).join(' ')) return 'ander getal';
   if (a.length >= 25 && similarity(a, b) >= 0.9) return null;

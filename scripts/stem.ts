@@ -38,7 +38,7 @@ import { join } from 'node:path';
 import { clipJobs, type ClipJob } from '../src/core/audio/phrases';
 import { ALL_PHRASES } from '../src/domains';
 import { decodeMp3, endLoudness, freeDecoder, ABRUPT } from './audio';
-import { compareHeard, sttMode } from './vergelijk';
+import { compareHeard, compareInContext, sttMode } from './vergelijk';
 
 const DIR = join(process.cwd(), 'public', 'audio', 'nl');
 const MANIFEST = join(DIR, 'manifest.json');
@@ -69,6 +69,8 @@ interface Verdict {
   heard: string;
   /** Waarom het niet goed is. */
   reason?: string;
+  /** Tweede mening bij een los woordje: wat spraakherkenning hoorde met het woord achter een zinnetje geplakt. */
+  context?: string;
 }
 
 const args = process.argv.slice(2);
@@ -194,12 +196,56 @@ async function speak(job: ClipJob, e: Env, take: number): Promise<Buffer> {
 
 /** Spraakherkenning: wat zegt deze opname? */
 async function transcribe(file: string, e: Env): Promise<string> {
+  const audio = new Blob([new Uint8Array(await readFile(join(DIR, file)))], { type: 'audio/mpeg' });
+  return transcribeAudio(audio, file, e);
+}
+
+/** Het zinnetje waar een los woordje achter geplakt wordt voor de tweede mening. */
+const CARRIER = 'rijm.vraag';
+const wantsContext = (id: string) => /^(w|kleur)\./.test(id) && !id.includes('+');
+
+/**
+ * Tweede mening voor een los woordje: "Wat rijmt op" + de opname, als één geluid. Een los woord van
+ * een halve seconde verstaat spraakherkenning slecht ("mes" wordt "mess", "kam" wordt "kom"); in
+ * een zin gaat dat veel beter. undefined als het niet kan (geen zinnetje, ander formaat).
+ */
+async function transcribeInContext(file: string, e: Env, m: Manifest): Promise<string | undefined> {
+  const carrier = m.clips[CARRIER];
+  if (!carrier) return undefined;
+  const a = await decodeMp3(join(DIR, carrier));
+  const b = await decodeMp3(join(DIR, file));
+  if (a.sampleRate !== b.sampleRate) return undefined;
+  const gap = Math.round(a.sampleRate * 0.12);
+  const pcm = new Int16Array(a.samples.length + gap + b.samples.length);
+  const put = (src: Float32Array, at: number) => {
+    for (let i = 0; i < src.length; i++) pcm[at + i] = Math.max(-1, Math.min(1, src[i])) * 32767;
+  };
+  put(a.samples, 0);
+  put(b.samples, a.samples.length + gap);
+  const header = Buffer.alloc(44);
+  header.write('RIFF', 0);
+  header.writeUInt32LE(36 + pcm.byteLength, 4);
+  header.write('WAVEfmt ', 8);
+  header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20);
+  header.writeUInt16LE(1, 22);
+  header.writeUInt32LE(a.sampleRate, 24);
+  header.writeUInt32LE(a.sampleRate * 2, 28);
+  header.writeUInt16LE(2, 32);
+  header.writeUInt16LE(16, 34);
+  header.write('data', 36);
+  header.writeUInt32LE(pcm.byteLength, 40);
+  const wav = new Blob([header, new Uint8Array(pcm.buffer)], { type: 'audio/wav' });
+  return transcribeAudio(wav, `${file}.wav`, e);
+}
+
+async function transcribeAudio(audio: Blob, file: string, e: Env): Promise<string> {
   const form = new FormData();
   form.append('model_id', 'scribe_v2');
   form.append('language_code', 'nl');
   form.append('tag_audio_events', 'false');
   form.append('timestamps_granularity', 'none');
-  form.append('file', new Blob([new Uint8Array(await readFile(join(DIR, file)))], { type: 'audio/mpeg' }), file);
+  form.append('file', audio, file);
   const res = await request(e, '/v1/speech-to-text', { method: 'POST', body: form }, `de controle van ${file}`);
   return ((await res.json()) as { text?: string }).text?.trim() ?? '';
 }
@@ -227,12 +273,18 @@ async function runPool<T>(items: T[], n: number, fn: (item: T) => Promise<void>)
 
 /** Controleert de opnames van `ids` die nog geen uitslag hebben (of een nieuw bestand). */
 /** Oordeel op grond van de metingen (opnieuw te berekenen als de vergelijking verbetert). */
-function judge(id: string, text: string, file: string, abrupt: boolean, heard: string): Verdict {
+function judge(id: string, text: string, file: string, abrupt: boolean, heard: string, context?: string): Verdict {
   const mode = sttMode(id, text);
-  const match = mode === 'check' ? compareHeard(id, text, heard) : null;
+  let match = mode === 'check' ? compareHeard(id, text, heard) : null;
+  // Los niet goed verstaan, maar in een zin wel: dan is het woord goed.
+  if (match && context !== undefined && !compareInContext(text, context)) match = null;
   // Een stukje zin wordt nooit los afgespeeld: afgekapt maakt dan niet uit.
   const reasons = [...(abrupt && mode !== 'stukje' ? ['afgekapt'] : []), ...(match ? [match] : [])];
-  return { file, ok: !reasons.length, abrupt, heard, ...(reasons.length ? { reason: reasons.join('; ') } : {}) };
+  return {
+    file, ok: !reasons.length, abrupt, heard,
+    ...(reasons.length ? { reason: reasons.join('; ') } : {}),
+    ...(context !== undefined ? { context } : {}),
+  };
 }
 
 /** Controleert de opnames van `ids`. Alleen nieuwe bestanden worden opnieuw gemeten. */
@@ -240,19 +292,31 @@ async function check(ids: string[], jobs: Map<string, ClipJob>, e: Env, m: Manif
   for (const id of ids) {
     const old = results[id];
     if (m.clips[id] && old?.file === m.clips[id]) {
-      results[id] = judge(id, jobs.get(id)!.text, old.file, old.abrupt ?? /afgekapt/.test(old.reason ?? ''), old.heard);
+      results[id] = judge(id, jobs.get(id)!.text, old.file, old.abrupt ?? /afgekapt/.test(old.reason ?? ''), old.heard, old.context);
     }
   }
+  // Losse woordjes die eerder zijn afgekeurd en nog geen tweede mening hebben, krijgen die nu.
+  const second = ids.filter((id) => {
+    const r = results[id];
+    return m.clips[id] && r?.file === m.clips[id] && !r.ok && r.context === undefined && wantsContext(id);
+  });
   const todo = ids.filter((id) => m.clips[id] && results[id]?.file !== m.clips[id]);
-  if (!todo.length) return writeResults(results);
+  if (!todo.length && !second.length) return writeResults(results);
   if (!e.key) fail('Zet ELEVENLABS_API_KEY in .env.local (zie ONTWIKKELAARS.md).');
+  await runPool(second, STT_CONCURRENCY, async (id) => {
+    const r = results[id];
+    const context = await transcribeInContext(r.file, e, m);
+    if (context !== undefined) results[id] = judge(id, jobs.get(id)!.text, r.file, r.abrupt, r.heard, context);
+  });
   let done = 0;
   await runPool(todo, STT_CONCURRENCY, async (id) => {
     const file = m.clips[id];
     const text = jobs.get(id)!.text;
     const abrupt = endLoudness(await decodeMp3(join(DIR, file))) > ABRUPT;
     const heard = sttMode(id, text) === 'check' ? await transcribe(file, e) : '';
-    results[id] = judge(id, text, file, abrupt, heard);
+    const doubt = wantsContext(id) && judge(id, text, file, abrupt, heard).reason?.includes('woord');
+    const context = doubt ? await transcribeInContext(file, e, m) : undefined;
+    results[id] = judge(id, text, file, abrupt, heard, context);
     done++;
     if (done % 10 === 0 || done === todo.length) {
       await writeResults(results);
@@ -287,7 +351,7 @@ function report(jobs: Map<string, ClipJob>, m: Manifest, results: Record<string,
   if (unchecked.length) console.log(`${unchecked.length} nog niet gecontroleerd (draai met --controle).`);
   if (bad.length) {
     console.log(`\n${bad.length} klinken nog niet goed. Beluister ze in het ouderdeel, en spreek ze zo nodig zelf in:\n`);
-    for (const id of bad) console.log(`  ${id}\n      bedoeld:  "${jobs.get(id)!.text}"\n      probleem: ${results[id].reason}${results[id].heard ? `\n      gehoord:  "${results[id].heard}"` : ''}`);
+    for (const id of bad) console.log(`  ${id}\n      bedoeld:  "${jobs.get(id)!.text}"\n      probleem: ${results[id].reason}${results[id].heard ? `\n      gehoord:  "${results[id].heard}"` : ''}${results[id].context !== undefined ? `\n      in een zin: "${results[id].context}"` : ''}`);
   }
   if (sounds.length) console.log(`\nLosse klanken (${sounds.length}) kan spraakherkenning niet beoordelen; die zijn alleen op afkappen gecontroleerd.`);
   if (pieces.length) console.log(`Stukjes zin (${pieces.length}) zegt de app alleen binnen een hele zin; die hele zinnen zijn wel gecontroleerd.`);
