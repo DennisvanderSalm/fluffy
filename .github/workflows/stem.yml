@@ -50,7 +50,7 @@ jobs:
         run: |
           # Brak een eerdere run af (tegoed op, storing)? Dan staat wat al klaar was in stem-tussenstand.
           if git fetch --depth=1 origin stem-tussenstand 2>/dev/null; then
-            git checkout FETCH_HEAD -- public/audio/nl scripts/controle.json
+            git checkout FETCH_HEAD -- public/audio/nl scripts/controle.json scripts/bron/uitgerekt.json
             echo "Verder met de opnames van de vorige keer."
           fi
       - name: Inspreken
@@ -95,7 +95,7 @@ jobs:
           if [ "$code" -ne 0 ]; then
             echo "::error::$(tail -n 6 /tmp/stem.log | tr '\r\n' '  ' | cut -c1-900)"
             # Wat al is ingesproken is betaald: bewaren voor de volgende keer (nog niet in de app).
-            git add public/audio/nl scripts/controle.json
+            git add public/audio/nl scripts/controle.json scripts/bron/uitgerekt.json
             if ! git diff --cached --quiet; then
               git config user.name "github-actions[bot]"
               git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -117,7 +117,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add public/audio/nl scripts/controle.json
+          git add public/audio/nl scripts/controle.json scripts/bron/uitgerekt.json
           if git diff --cached --quiet; then
             echo "Niets veranderd."
             exit 0
