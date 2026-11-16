@@ -75,7 +75,15 @@ jobs:
             echo "::error::Zet eerst de secret ELEVENLABS_API_KEY (Settings → Secrets and variables → Actions)."
             exit 1
           fi
-          npm run stem -- "${args[@]}"
+          # De laatste regels als foutmelding tonen, zodat je zonder het hele logboek ziet wat er misging.
+          set +e
+          npm run stem -- "${args[@]}" 2>&1 | tee /tmp/stem.log
+          code=${PIPESTATUS[0]}
+          set -e
+          if [ "$code" -ne 0 ]; then
+            echo "::error::$(tail -n 6 /tmp/stem.log | tr '\r\n' '  ' | cut -c1-900)"
+            exit "$code"
+          fi
       - name: Uitgerekte woorden knippen ("mmm… man")
         run: |
           if [[ "$WAT" == proef* ]] || [[ "$WAT" == *controleren* ]]; then exit 0; fi
